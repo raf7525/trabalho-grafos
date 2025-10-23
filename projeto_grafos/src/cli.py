@@ -2,7 +2,7 @@ import argparse
 import os
 from graphs.io import process_bairros_data, normalize_text
 from graphs.graph import Graph
-from solve import calculate_all_metrics
+from solve import calculate_all_metrics, calculate_degrees_and_rankings
 """
     comandos para rodar esse script:
     1.python src/cli.py process-nodes: PROCESSA OS DADOS DOS BAIRROS
@@ -67,6 +67,21 @@ def handle_calculate_metrics(args):
     except Exception as e:
         print(f"Erro ao calcular métricas: {e}")
 
+def handle_degrees_rankings(_):##passo 4 calculo de graus e rankings
+    """
+    Calcula graus e rankings dos bairros
+    """
+    try:
+        print("Carregando o grafo para cálculo de graus e rankings...")
+        g = _load_graph()
+        output_dir = os.path.join(_get_base_dir(), 'out')
+        os.makedirs(output_dir, exist_ok=True)
+        
+        calculate_degrees_and_rankings(g, output_dir)
+        print("\nCálculo de graus e rankings concluído com sucesso!")
+    except Exception as e:
+        print(f"Erro ao calcular graus e rankings: {e}")
+
 def main():
    
     parser = argparse.ArgumentParser(description="Análise de Grafos do Recife")
@@ -84,6 +99,10 @@ def main():
     
     parser_metrics = subparsers.add_parser("calculate-metrics", help="Calcula métricas globais, por microrregião e de ego-redes.")
     parser_metrics.set_defaults(func=handle_calculate_metrics)
+
+    
+    parser_degrees = subparsers.add_parser("degrees-rankings", help="Calcula graus e rankings dos bairros.")
+    parser_degrees.set_defaults(func=handle_degrees_rankings)
 
     args = parser.parse_args()
     args.func(args)
