@@ -1,29 +1,42 @@
 import argparse
 import os
 from graphs.io import process_bairros_data, normalize_text
-from graphs.graph import Graph
+from graphs.graph import Grafo
 from solve import calculate_all_metrics, calculate_degrees_and_rankings
-"""
-    comandos para rodar esse script:
-    1.python src/cli.py process-nodes: PROCESSA OS DADOS DOS BAIRROS
-    2.python src/cli.py build-graph : VE A ORDEM E TAMANHO DO GRAFO
-    3.python src/cli.py calculate-metrics : CALCULA AS METRICAS
-"""
+
+import pandas as pd
+
+def load_from_csv(self, nodes_path: str, edges_path: str):
+    
+    nodes_df = pd.read_csv(nodes_path)
+
+    for _, row in nodes_df.iterrows():
+        self.add_node(row['bairro'], {'microrregiao': str(row['microrregiao'])})
+
+    
+    edges_df = pd.read_csv(edges_path)
+    for _, row in edges_df.iterrows():
+        self.add_edge(row['bairro_origem'], row['bairro_destino'])
+
+
 def _get_base_dir():
     
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def _load_graph() -> Graph:
+def _load_graph() -> Grafo:
     
     base_dir = _get_base_dir()
     nodes_path = os.path.join(base_dir, 'data', 'bairros_unique.csv')
     edges_path = os.path.join(base_dir, 'data', 'adjacencias_bairros.csv')
     
     if not os.path.exists(nodes_path) or not os.path.exists(edges_path):
-        raise FileNotFoundError("Arquivos de dados não encontrados. Execute 'process-nodes' e certifique-se que 'adjacencias_bairros.csv' existe.")
+        raise FileNotFoundError(
+        "Arquivos de dados não encontrados. Execute 'process-nodes' e certifique-se que 'adjacencias_bairros.csv' existe."
+        )
 
-    g = Graph()
+    g = Grafo()
     g.load_from_csv(nodes_path, edges_path)
+    
     return g
 
 def handle_process_nodes(args):
@@ -67,10 +80,8 @@ def handle_calculate_metrics(args):
     except Exception as e:
         print(f"Erro ao calcular métricas: {e}")
 
-def handle_degrees_rankings(_):##passo 4 calculo de graus e rankings
-    """
-    Calcula graus e rankings dos bairros
-    """
+def handle_degrees_rankings(_):
+    
     try:
         print("Carregando o grafo para cálculo de graus e rankings...")
         g = _load_graph()
