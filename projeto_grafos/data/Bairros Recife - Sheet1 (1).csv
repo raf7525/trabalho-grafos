@@ -1,0 +1,495 @@
+Nome,Vizinho,Logradouro,Tipo,Tipo Normalizado,Peso
+Aflitos,Rosarinho,Rua Manuel de Carvalho,tertiary,Avenida Principal,1.8
+Zumbi,Prado,Rua Caratinga,residential,Rua local / de bairro,2
+Zumbi,Cordeiro,Rua Frei Teófilo de Virgoleta,residential,Rua local / de bairro,2
+Zumbi,Madalena,Rua Benfica,primary,Avenida Principal,1.2
+Zumbi,Torre,Rua Rondônia,residential,Rua local / de bairro,2
+Vasco da Gama,Casa Amarela,Rua Santa Maria Goretti,residential,Rua local / de bairro,2
+Vasco da Gama,Morro da Conceição,Rua Dois de Fevereiro,tertiary,Rua de ligação / Coletora local,1.8
+Vasco da Gama,Alto José Bonifácio,Rua Alto do Carola,residential,Rua local / de bairro,2
+Vasco da Gama,Nova Descoberta,Rua Mirandela,residential,Rua local / de bairro,2
+Vasco da Gama,Brejo de Beberibe,Rua Alto do Eucalipto,residential,Rua local / de bairro,2
+Várzea,Curado,Rua Diogo de Vasconcelos,tertiary,Rua de ligação / Coletora local,1.8
+Várzea,Cidade Universitária,Rua Gastão Vidigal,tertiary,Rua de ligação / Coletora local,1.8
+Várzea,Caxangá,Rua Elísio Medrado,tertiary,Rua de ligação / Coletora local,1.8
+Várzea,Iputinga,Avenida Joaquim Ribeiro,primary,Avenida Principal,1.2
+Totó,Coqueiral,Rua Juvêncio Marques da Cunha,tertiary,Rua de ligação / Coletora local,1.8
+Totó,Sancho,Rua Ana Carneiro D'Albuquerque,residential,Rua local / de bairro,2
+Totó,Curado,Rua Onze de Agosto,secondary,Avenida secundária,1.5
+Torrões,San Martin,Rua Damasqueiro,residential,Rua local / de bairro,2
+Torrões,Curado,Rua Jordão,residential,Rua local / de bairro,2
+Torrões,Engenho do Meio,Rua Engenho Terra do Dia,residential,Rua local / de bairro,2
+Torrões,Cordeiro,Rua Oscar Brandão,residential,Rua local / de bairro,2
+Torreão,Encruzilhada,Rua Cândido Lacerda,residential,Rua local / de bairro,2
+Torreão,Espinheiro,Rua Padre Miguelinho,residential,Rua local / de bairro,2
+Torreão,Santo Amaro,Rua Othon Paraíso,residential,Rua local / de bairro,2
+Torreão,Campo Grande,Rua Marechal Deodoro,residential,Rua local / de bairro,2
+Torre,Jaqueira,Rua José Bonifácio,primary,Avenida Principal,1.2
+Torre,Graças,Rua Professor Trajano de Mendonça,primary,Avenida Principal,1.2
+Torre,Cordeiro,Rua Conde de Irajá,secondary,Avenida secundária,1.5
+Torre,Madalena,,,,
+Torre,Zumbi,Praça Professor Campelo Barreto,secondary,Avenida secundária,1.5
+Torre,Santana,Rua Professora Aurora Soares,Alça de acesso à avenida principal,Avenida Principal,Alça de acesso à avenida principal
+Tejipió,Barro,,,,
+Tejipió,Coqueiral,Ponte Lacerda,primary,Avenida Principal,1.2
+Tejipió,Sancho,Rua do Sancho,tertiary,Rua de ligação / Coletora local,1.8
+Tejipió,Jardim São Paulo,Rua Itanhenga,secondary,Avenida secundária,1.5
+Tejipió,Curado,Rua Aprígio Guimarães,tertiary,Rua de ligação / Coletora local,1.8
+Tamarineira,Jaqueira,Rua Cônego Barata,primary,Avenida Principal,1.2
+Tamarineira,Rosarinho,Rua Silveira Lira,residential,Rua local / de bairro,2
+Tamarineira,Graças,Rua Padre Roma,primary,Avenida Principal,1.2
+Tamarineira,Arruda,Estrada Velha de Água Fria,secondary,Avenida secundária,1.5
+Tamarineira,Casa Amarela,Rua Jundiá,residential,Rua local / de bairro,2
+Tamarineira,Parnamirim,Rua Ibiapaba,residential,Rua local / de bairro,2
+Tamarineira,Mangabeira,Avenida Professor José dos Anjos,primary,Avenida Principal,1.2
+Soledade,Santo Amaro,Avenida Oliveira Lima,tertiary,Rua de ligação / Coletora local,1.8
+Soledade,Boa Vista,Rua do Riachuelo,tertiary,Rua de ligação / Coletora local,1.8
+Sítio dos Pintos,Caxangá,Ponte da Volta ao Mundo,secondary,Avenida secundária,1.5
+Sítio dos Pintos,Dois Irmãos,,,,
+Sítio dos Pintos,Guabiraba,Estrada da Mumbeca,secondary,Avenida secundária,1.5
+Santo Antônio,Bairro do Recife,Rua Diário de Pernambuco,residential,Rua local / de bairro,2
+Santo Antônio,Santo Amaro,Avenida Guararapes,secondary,Avenida secundária,1.5
+Santo Antônio,Boa Vista,Ponte Duarte Coelho,secondary,Avenida secundária,1.5
+Santo Antônio,Coelhos,Rua da Santa Cruz,tertiary,Rua de ligação / Coletora local,1.8
+Santo Amaro,Espinheiro,Rua Coelho Leite,residential,Rua local / de bairro,2
+Santo Amaro,Torreão,Avenida da Saudade,tertiary,Rua de ligação / Coletora local,1.8
+Santo Amaro,Bairro do Recife,Avenida Cruz Cabugá,secondary,Avenida secundária,1.5
+Santo Amaro,Boa Vista,Rua do Hospício,secondary,Avenida secundária,1.5
+Santo Amaro,Santo Antônio,Rua Princesa Isabel,secondary,Avenida secundária,1.5
+Santo Amaro,Soledade,Avenida Mário Melo,secondary,Avenida secundária,1.5
+Santo Amaro,Campo Grande,Rua Treze de Maio,residential,Rua local / de bairro,2
+Santana,Jaqueira,Rua Amaraji,residential,Rua local / de bairro,2
+Santana,Cordeiro,Rua Agrestina,residential,Rua local / de bairro,2
+Santana,Torre,Avenida Dezessete de Agosto,secondary,Avenida secundária,1.5
+Santana,Casa Forte,Rua Samuel Farias,residential,Rua local / de bairro,2
+Santana,Parnamirim,,,,
+Santana,Poço da Panela,Rua Astério Rufino Alves,tertiary,Rua de ligação / Coletora local,1.8
+Sancho,Coqueiral,Rua Doutor Urbano Vitalino de Melo Filho,residential,Rua local / de bairro,2
+Sancho,Tejipió,Rua I,residential,Rua local / de bairro,2
+Sancho,Totó,Rua Josita Almeida,residential,Rua local / de bairro,2
+Sancho,Curado,Rua Morena Flor,residential,Rua local / de bairro,2
+San Martin,Bongi,Avenida General San Martin,primary,Avenida Principal,1.2
+San Martin,Mangueira,Rua Aurino Eutíchio da Rocha,residential,Rua local / de bairro,2
+San Martin,Mustardinha,Rua Mossoró,residential,Rua local / de bairro,2
+San Martin,Prado,Rua Ourém,residential,Rua local / de bairro,2
+San Martin,Estância,Avenida João Cabral de Melo Neto,primary,Avenida Principal,1.2
+San Martin,Jardim São Paulo,Rua Arlindo Sá,residential,Rua local / de bairro,2
+San Martin,Jiquiá,Rua João Leite,residential,Rua local / de bairro,2
+San Martin,Curado,Rua Eduardo de Andrade,residential,Rua local / de bairro,2
+San Martin,Torrões,Rua Itaporanga,residential,Rua local / de bairro,2
+San Martin,Cordeiro,Rua Amália,residential,Rua local / de bairro,2
+Rosarinho,Aflitos,Rua Regueira Costa,tertiary,Rua de ligação / Coletora local,1.8
+Rosarinho,Ponto de Parada,Rua André Rebouças,residential,Rua local / de bairro,2
+Rosarinho,Tamarineira,Rua Doutor José Maria,tertiary,Rua de ligação / Coletora local,1.8
+Rosarinho,Encruzilhada,Avenida Norte Miguel Arraes de Alencar,primary,Avenida Principal,1.2
+Rosarinho,Graças,Rua Desembargador Martins Pereira,tertiary,Rua de ligação / Coletora local,1.8
+Rosarinho,Arruda,Avenida Santos Dumont,tertiary,Rua de ligação / Coletora local,1.8
+Prado,Afogados,Rua Carlos Gomes,secondary,Avenida secundária,1.5
+Prado,Bongi,Estrada do Bongi,secondary,Avenida secundária,1.5
+Prado,Ilha do Retiro,Rua Gervásio Campelo,residential,Rua local / de bairro,2
+Prado,San Martin,Avenida Engenheiro Abdias de Carvalho,Via arterial / Rodovia urbana,Via arterial / Rodovia urbana,Via arterial / Rodovia urbana
+Prado,Cordeiro,Rua Rodrigues de Mendonça,secondary,Avenida secundária,1.5
+Prado,Madalena,Rua Manoel de Arruda Câmara,secondary,Avenida secundária,1.5
+Prado,Zumbi,Rua Gomes Taborda,secondary,Avenida secundária,1.5
+Porto da Madeira,Beberibe,Rua Belo Horizonte,residential,Rua local / de bairro,2
+Porto da Madeira,Cajueiro,Rua Urca,residential,Rua local / de bairro,2
+Porto da Madeira,Fundão,Rua Arão Butler,residential,Rua local / de bairro,2
+Porto da Madeira,Água Fria,Rua Capitão Salgueiro,residential,Rua local / de bairro,2
+Ponto de Parada,Hipódromo,Rua Couto Magalhães,tertiary,Rua de ligação / Coletora local,1.8
+Ponto de Parada,Rosarinho,Rua Treze de Junho,tertiary,Rua de ligação / Coletora local,1.8
+Ponto de Parada,Encruzilhada,Avenida Beberibe,primary,Avenida Principal,1.2
+Ponto de Parada,Arruda,Rua José Austregésilo,residential,Rua local / de bairro,2
+Ponto de Parada,Campo Grande,Rua Mem de Sá,tertiary,Rua de ligação / Coletora local,1.8
+Poço da Panela,Cordeiro,Rua dos Arcos,residential,Rua local / de bairro,2
+Poço da Panela,Santana,Rua Paulo Inojosa,residential,Rua local / de bairro,2
+Poço da Panela,Casa Amarela,,,,
+Poço da Panela,Casa Forte,Rua Visconde de Ouro Preto,residential,Rua local / de bairro,2
+Poço da Panela,Iputinga,Ponte Engenheiro Jaime Gusmão,tertiary,Rua de ligação / Coletora local,1.8
+Poço da Panela,Monteiro,Rua Dom Malan,residential,Rua local / de bairro,2
+Pina,Afogados,Rua Manoel de Brito,primary,Avenida Principal,1.2
+Pina,Brasília Teimosa,Via Mangue - Pista Leste,primary,Avenida Principal,1.2
+Pina,Boa Viagem,Rua Melqui Ribeiro Roma,residential,Rua local / de bairro,2
+Pina,Imbiribeira,Rua São Luís,residential,Rua local / de bairro,2
+Peixinhos,Arruda,Rua Colorado,residential,Rua local / de bairro,2
+Peixinhos,Campo Grande,Rua Grisério,residential,Rua local / de bairro,2
+Peixinhos,Campina do Barreto,Avenida Poeta Vinicius de Morais,residential,Rua local / de bairro,2
+Pau-Ferro,Guabiraba,Rua Evaristo da Veiga,residential,Rua local / de bairro,2
+Pau-Ferro,Aldeia,Segunda Travessa General Souza Gomes,residential,Rua local / de bairro,2
+Passarinho,Brejo da Guabiraba,Avenida Chagas Ferreira,residential,Rua local / de bairro,2
+Passarinho,Brejo de Beberibe,Segunda Travessa Só Nos Dois,residential,Rua local / de bairro,2
+Passarinho,Dois Unidos,Rua Vargem linda,residential,Rua local / de bairro,2
+Passarinho,Guabiraba,Rua Pereira Barreto,residential,Rua local / de bairro,2
+Parnamirim,Jaqueira,Avenida Parnamirim,secondary,Avenida secundária,1.5
+Parnamirim,Tamarineira,Rua Tito Rosas,primary,Avenida Principal,1.2
+Parnamirim,Santana,Rua João Tude de Melo,primary,Avenida Principal,1.2
+Parnamirim,Casa Amarela,Praça Doutor Lula Cabral de Melo,tertiary,Rua de ligação / Coletora local,1.8
+Parnamirim,Casa Forte,Rua Doutor José de Góes,tertiary,Rua de ligação / Coletora local,1.8
+Paissandu,Joana Bezerra,Avenida Portugal,residential,Rua local / de bairro,2
+Paissandu,Boa Vista,Rua Paissandú,trunk,Via arterial / Rodovia urbana,1
+Paissandu,Derby,Avenida Beira Rio,secondary,Avenida secundária,1.5
+Paissandu,Ilha do Leite,Rua Antônio Gomes de Freitas,secondary,Avenida secundária,1.5
+Paissandu,Ilha do Retiro,Rua Francisco Alves,Ramal de ligação secundária,Avenida secundária_link,Ramal de ligação secundária
+Paissandu,Madalena,Rua do Paissandú,trunk,Via arterial / Rodovia urbana,1
+Oitenta,Aldeia,Rua Assis Brasil,residential,Rua local / de bairro,2
+Nova Descoberta,Alto do Mandu,Rua Alto da Brasileira,residential,Rua local / de bairro,2
+Nova Descoberta,Casa Amarela,Rua Córrego da Areia,tertiary,Rua de ligação / Coletora local,1.8
+Nova Descoberta,Córrego do Jenipapo,Rua Alto do Reservatório,residential,Rua local / de bairro,2
+Nova Descoberta,Macaxeira,Rua Alto Santa Luzia,tertiary,Rua de ligação / Coletora local,1.8
+Nova Descoberta,Vasco da Gama,Rua Nova Descoberta,secondary,Avenida secundária,1.5
+Nova Descoberta,Brejo da Guabiraba,Rua Piraju,residential,Rua local / de bairro,2
+Nova Descoberta,Brejo de Beberibe,Primeira Subida da Brasileira,residential,Rua local / de bairro,2
+Mustardinha,Afogados,Rua Grão Mogol,residential,Rua local / de bairro,2
+Mustardinha,Bongi,Rua Francisca Benigna Cavalcanti,residential,Rua local / de bairro,2
+Mustardinha,Mangueira,Rua Bertopolis,residential,Rua local / de bairro,2
+Mustardinha,San Martin,Rua Santa Rosa de Lima,residential,Rua local / de bairro,2
+Morro da Conceição,Alto José do Pinho,Rua do Morro da Conceição,tertiary,Rua de ligação / Coletora local,1.8
+Morro da Conceição,Casa Amarela,Estrada do Morro da Conceição,tertiary,Rua de ligação / Coletora local,1.8
+Morro da Conceição,Alto José Bonifácio,Rua da Mocidade,residential,Rua local / de bairro,2
+Morro da Conceição,Vasco da Gama,Rua Córrego do Ouro,residential,Rua local / de bairro,2
+Monteiro,Alto do Mandu,Rua Muniz Galvão,residential,Rua local / de bairro,2
+Monteiro,Casa Amarela,Rua Tramandaí,residential,Rua local / de bairro,2
+Monteiro,Iputinga,Rua das Levadas,residential,Rua local / de bairro,2
+Monteiro,Poço da Panela,Rua Biann de Medeiros,residential,Rua local / de bairro,2
+Monteiro,Apipucos,Rua de Apipucos,secondary,Avenida secundária,1.5
+Mangueira,Afogados,Rua Bernadete Xavier Gomes,residential,Rua local / de bairro,2
+Mangueira,Mustardinha,Rua Benício Dias,residential,Rua local / de bairro,2
+Mangueira,Jiquiá,Rua Mandari,residential,Rua local / de bairro,2
+Mangueira,San Martin,Rua Doutor Arsênio Tavares,residential,Rua local / de bairro,2
+Mangabeira,Tamarineira,Rua Azurita,residential,Rua local / de bairro,2
+Mangabeira,Arruda,Rua Lage de Una,residential,Rua local / de bairro,2
+Mangabeira,Alto José do Pinho,Rua Dom Mauricio,residential,Rua local / de bairro,2
+Mangabeira,Casa Amarela,Rua Aracatiara,residential,Rua local / de bairro,2
+Mangabeira,Bomba do Hemetério,Rua Maria Gonçalves,residential,Rua local / de bairro,2
+Madalena,Graças,Rua José Osório,primary,Avenida Principal,1.2
+Madalena,Derby,Rua Real da Torre,primary,Avenida Principal,1.2
+Madalena,Paissandu,Rua Lopes de Carvalho,residential,Rua local / de bairro,2
+Madalena,Ilha do Retiro,Túnel da Abolição,primary,Avenida Principal,1.2
+Madalena,Prado,Rua João Ivo da Silva,primary,Avenida Principal,1.2
+Madalena,Torre,Rua Doutor Artur Gonçalves,residential,Rua local / de bairro,2
+Madalena,Zumbi,Rua Araguatins,secondary,Avenida secundária,1.5
+Macaxeira,Alto do Mandu,Rua Maria Cândida,tertiary,Rua de ligação / Coletora local,1.8
+Macaxeira,Córrego do Jenipapo,Rua Nove de Março,residential,Rua local / de bairro,2
+Macaxeira,Nova Descoberta,Rua Ida Maria,residential,Rua local / de bairro,2
+Macaxeira,Apipucos,Praça Zumbi dos Palmares,tertiary,Rua de ligação / Coletora local,1.8
+Linha do Tiro,Beberibe,Rua Santa Mercedes,residential,Rua local / de bairro,2
+Linha do Tiro,Alto Santa Teresinha,Rua Sodrelândia,residential,Rua local / de bairro,2
+Linha do Tiro,Água Fria,Rua Ladeira de Pedra,tertiary,Rua de ligação / Coletora local,1.8
+Linha do Tiro,Alto José Bonifácio,Rua Araquem,residential,Rua local / de bairro,2
+Linha do Tiro,Brejo de Beberibe,Rua Rio Igarapé,residential,Rua local / de bairro,2
+Linha do Tiro,Dois Unidos,Rua Rio Tinto,residential,Rua local / de bairro,2
+Jordão,Boa Viagem,Rua Junqueiro,residential,Rua local / de bairro,2
+Jordão,Cohab,Rua da Batalha,residential,Rua local / de bairro,2
+Jordão,Ibura,Rua Tamareira,residential,Rua local / de bairro,2
+Joana Bezerra,Coelhos,Rua Braço do Norte,residential,Rua local / de bairro,2
+Joana Bezerra,Ilha do Leite,Rua Bahia Formosa,residential,Rua local / de bairro,2
+Joana Bezerra,Paissandu,Rua Ubaitaba,residential,Rua local / de bairro,2
+Joana Bezerra,Afogados,Rua Cambuí,residential,Rua local / de bairro,2
+Joana Bezerra,Ilha do Retiro,Rua Jaraguari,residential,Rua local / de bairro,2
+Jiquiá,Afogados,Rua Manoel Lopes de Barros,residential,Rua local / de bairro,2
+Jiquiá,Mangueira,Rua Ary Sérgio Cardim,residential,Rua local / de bairro,2
+Jiquiá,Areias,Rua Antônio Carneiro,residential,Rua local / de bairro,2
+Jiquiá,Imbiribeira,Rua Jorge Abrantes,residential,Rua local / de bairro,2
+Jiquiá,Estância,Rua Nair Ribeiro Gadelha,residential,Rua local / de bairro,2
+Jiquiá,Jardim São Paulo,Rua José Augusto de Barros,residential,Rua local / de bairro,2
+Jiquiá,San Martin,Rua Soldado Graciliano,residential,Rua local / de bairro,2
+Jardim São Paulo,Barro,Rua Professora Zênia Guerra,residential,Rua local / de bairro,2
+Jardim São Paulo,Tejipió,Rua Leobina Pereira,tertiary,Rua de ligação / Coletora local,1.8
+Jardim São Paulo,Areias,Rua Guarulhos,residential,Rua local / de bairro,2
+Jardim São Paulo,Estância,Rua Ana Pires Lustosa,residential,Rua local / de bairro,2
+Jardim São Paulo,Jiquiá,Rua José de Almeida Seixas,residential,Rua local / de bairro,2
+Jardim São Paulo,San Martin,Avenida São Paulo,secondary,Avenida secundária,1.5
+Jardim São Paulo,Curado,Rua Leandro Barreto,secondary,Avenida secundária,1.5
+Jaqueira,Tamarineira,Rua Neto de Mendonça,tertiary,Rua de ligação / Coletora local,1.8
+Jaqueira,Graças,Avenida Conselheiro Rosa e Silva,secondary,Avenida secundária,1.5
+Jaqueira,Torre,Rua Hoel Sette,tertiary,Rua de ligação / Coletora local,1.8
+Jaqueira,Santana,Rua do Futuro,tertiary,Rua de ligação / Coletora local,1.8
+Jaqueira,Parnamirim,Estrada do Arraial,secondary,Avenida secundária,1.5
+Iputinga,Cidade Universitária,Rua Alagoana,residential,Rua local / de bairro,2
+Iputinga,Engenho do Meio,Rua São Mateus,tertiary,Rua de ligação / Coletora local,1.8
+Iputinga,Caxangá,,,,
+Iputinga,Várzea,Rua Ministro João Alberto,tertiary,Rua de ligação / Coletora local,1.8
+Iputinga,Cordeiro,Rua Professor Teodulo Miranda,residential,Rua local / de bairro,2
+Iputinga,Monteiro,Rua Doutor Virgínio Marquês,residential,Rua local / de bairro,2
+Iputinga,Poço da Panela,Rua Doutor Virginio Marques,residential,Rua local / de bairro,2
+Iputinga,Apipucos,Rua Expedicionário Guilherme Brasileiro,residential,Rua local / de bairro,2
+Ipsep,Caçote,Rua Santos Cosme e Damião,residential,Rua local / de bairro,2
+Ipsep,Areias,Avenida General Bento da Gama,residential,Rua local / de bairro,2
+Ipsep,Ibura,Rua Theodomiro Selva,residential,Rua local / de bairro,2
+Ipsep,Imbiribeira,Rua Francisco Barreto,residential,Rua local / de bairro,2
+Imbiribeira,Afogados,Ponte Motocolombó,trunk,Via arterial / Rodovia urbana,1
+Imbiribeira,Boa Viagem,Rua Doutor Tavares Correia,tertiary,Rua de ligação / Coletora local,1.8
+Imbiribeira,Pina,Rua Joaquim Bandeira,secondary,Avenida secundária,1.5
+Imbiribeira,Areias,Rua Rio Oceânico,tertiary,Rua de ligação / Coletora local,1.8
+Imbiribeira,Ibura,Rua Rio Amazonas,tertiary,Rua de ligação / Coletora local,1.8
+Imbiribeira,Ipsep,Rua Rio Itororó,residential,Rua local / de bairro,2
+Imbiribeira,Jiquiá,Rua Rio Tocantins,residential,Rua local / de bairro,2
+Ilha do Retiro,Joana Bezerra,Rua João Elísio Ramos,secondary,Avenida secundária,1.5
+Ilha do Retiro,Derby,Avenida Sport Club do Recife,trunk,Via arterial / Rodovia urbana,1
+Ilha do Retiro,Paissandu,Ponte Prefeito Lima de Castro,trunk,Via arterial / Rodovia urbana,1
+Ilha do Retiro,Afogados,Rua Tabaiares,secondary,Avenida secundária,1.5
+Ilha do Retiro,Prado,Rua Astorga,residential,Rua local / de bairro,2
+Ilha do Retiro,Madalena,Avenida Visconde de Albuquerque,primary,Avenida Principal,1.2
+Ilha do Leite,Joana Bezerra,Rua Estado de Israel,tertiary,Rua de ligação / Coletora local,1.8
+Ilha do Leite,Boa Vista,Rua Marquês Amorim,residential,Rua local / de bairro,2
+Ilha do Leite,Coelhos,Rua Esperanto,residential,Rua local / de bairro,2
+Ilha do Leite,Paissandu,Rua General Joaquim Ignácio,secondary,Avenida secundária,1.5
+Ibura,Boa Viagem,Rua Frei Luís de Souza,residential,Rua local / de bairro,2
+Ibura,Cohab,Rua Moni Silva,residential,Rua local / de bairro,2
+Ibura,Jordão,Rua Virginópolis,residential,Rua local / de bairro,2
+Ibura,Barro,Rua Rio Prado,residential,Rua local / de bairro,2
+Ibura,Caçote,Emilio Monteiro Fonseca,residential,Rua local / de bairro,2
+Ibura,Areias,Rua Rio Xingu,secondary,Avenida secundária,1.5
+Ibura,Imbiribeira,Rua Flores da Cunha,residential,Rua local / de bairro,2
+Ibura,Ipsep,Rua Rio D' Douro,residential,Rua local / de bairro,2
+Hipódromo,Ponto de Parada,Rua Fonseca Oliveira,residential,Rua local / de bairro,2
+Hipódromo,Encruzilhada,Rua Carlos Fernandes,tertiary,Rua de ligação / Coletora local,1.8
+Hipódromo,Campo Grande,Rua Prudente de Morais,tertiary,Rua de ligação / Coletora local,1.8
+Guabiraba,Córrego do Jenipapo,Avenida Embaixador Assis Chateaubriand,secondary,Avenida secundária,1.5
+Guabiraba,Dois Irmãos,Rua Coronel Silvestre Bastos,residential,Rua local / de bairro,2
+Guabiraba,Sítio dos Pintos,,,,
+Guabiraba,Brejo da Guabiraba,Travessa Jornalista Waldete Agra,residential,Rua local / de bairro,2
+Guabiraba,Passarinho,,,,
+Guabiraba,Pau-Ferro,Estrada Pau de Ferro,residential,Rua local / de bairro,2
+Graças,Aflitos,Rua Amélia,secondary,Avenida secundária,1.5
+Graças,Jaqueira,Rua Antônio Novais,tertiary,Rua de ligação / Coletora local,1.8
+Graças,Rosarinho,Rua Paulino Gomes de Souza,tertiary,Rua de ligação / Coletora local,1.8
+Graças,Tamarineira,,,,
+Graças,Encruzilhada,Rua do Espinheiro,tertiary,Rua de ligação / Coletora local,1.8
+Graças,Espinheiro,Rua Alfredo de Carvalho,residential,Rua local / de bairro,2
+Graças,Boa Vista,Rua João Ramos,residential,Rua local / de bairro,2
+Graças,Derby,Rua Bruno Maia,tertiary,Rua de ligação / Coletora local,1.8
+Graças,Madalena,Rua Esmeraldino Bandeira,residential,Rua local / de bairro,2
+Graças,Torre,Rua Alberto Paiva,secondary,Avenida secundária,1.5
+Fundão,Cajueiro,Avenida Nova do Fundão,residential,Rua local / de bairro,2
+Fundão,Campina do Barreto,Rua Nova Jales,residential,Rua local / de bairro,2
+Fundão,Porto da Madeira,Avenida Cidade de Monteiro,primary,Avenida Principal,1.2
+Fundão,Água Fria,Rua Doutor Eudes Costa,tertiary,Rua de ligação / Coletora local,1.8
+Estância,Areias,Rua Teixeira de Melo,residential,Rua local / de bairro,2
+Estância,Jardim São Paulo,Rua Rocha Pombo,residential,Rua local / de bairro,2
+Estância,Jiquiá,Rua Marquês de Itanhaém,residential,Rua local / de bairro,2
+Estância,San Martin,Rua Humberto de Campos,residential,Rua local / de bairro,2
+Espinheiro,Aflitos,Rua Carneiro Vilela,residential,Rua local / de bairro,2
+Espinheiro,Encruzilhada,Rua Alfredo de Castro,tertiary,Rua de ligação / Coletora local,1.8
+Espinheiro,Graças,Rua da Hora,tertiary,Rua de ligação / Coletora local,1.8
+Espinheiro,Torreão,Rua Marquês do Paraná,residential,Rua local / de bairro,2
+Espinheiro,Santo Amaro,Rua Quarenta e Oito,secondary,Avenida secundária,1.5
+Espinheiro,Boa Vista,Rua do Príncipe,secondary,Avenida secundária,1.5
+Engenho do Meio,Curado,Rua Antônio Borges Uchoa,residential,Rua local / de bairro,2
+Engenho do Meio,Cidade Universitária,Rua Salvador Vital,residential,Rua local / de bairro,2
+Engenho do Meio,Torrões,Rua Dona Cosma Fróes,residential,Rua local / de bairro,2
+Engenho do Meio,Cordeiro,Rua Carneiro de Mariz,residential,Rua local / de bairro,2
+Engenho do Meio,Iputinga,Rua Antônio Curado,tertiary,Rua de ligação / Coletora local,1.8
+Encruzilhada,Aflitos,Avenida João de Barros,primary,Avenida Principal,1.2
+Encruzilhada,Hipódromo,Rua da Coragem,tertiary,Rua de ligação / Coletora local,1.8
+Encruzilhada,Ponto de Parada,,,,
+Encruzilhada,Rosarinho,Rua Pedro Alves,residential,Rua local / de bairro,2
+Encruzilhada,Espinheiro,Rua Afonso Batista,residential,Rua local / de bairro,2
+Encruzilhada,Graças,Rua Conselheiro Portela,secondary,Avenida secundária,1.5
+Encruzilhada,Torreão,Rua Dona Julieta,residential,Rua local / de bairro,2
+Encruzilhada,Campo Grande,Rua Retiro Saudoso,tertiary,Rua de ligação / Coletora local,1.8
+Dois Unidos,Beberibe,Avenida Hildebrando de Vasconcelos,tertiary,Rua de ligação / Coletora local,1.8
+Dois Unidos,Linha do Tiro,Rua Expedicionário Teodoro Sativa,residential,Rua local / de bairro,2
+Dois Unidos,Brejo de Beberibe,Rua Alfredo Freire,residential,Rua local / de bairro,2
+Dois Unidos,Passarinho,Rua Vale Fundo,tertiary,Rua de ligação / Coletora local,1.8
+Dois Irmãos,Caxangá,Rua Professor Cláudio Selva,residential,Rua local / de bairro,2
+Dois Irmãos,Córrego do Jenipapo,Estrada dos Pintos,tertiary,Rua de ligação / Coletora local,1.8
+Dois Irmãos,Apipucos,,,,
+Dois Irmãos,Sítio dos Pintos,Rua Sítio Sapucaia,residential,Rua local / de bairro,2
+Dois Irmãos,Guabiraba,Avenida da Recuperação,secondary,Avenida secundária,1.5
+Derby,Graças,Rua Barão de Goiana,tertiary,Rua de ligação / Coletora local,1.8
+Derby,Boa Vista,Praça do Derby,primary,Avenida Principal,1.2
+Derby,Paissandu,Avenida Governador Agamenon Magalhães,secondary,Avenida secundária,1.5
+Derby,Ilha do Retiro,Rua Epaminondas de Melo,residential,Rua local / de bairro,2
+Derby,Madalena,Rua Henrique Dias,secondary,Avenida secundária,1.5
+Curado,Sancho,Avenida Getúlio Vargas,tertiary,Rua de ligação / Coletora local,1.8
+Curado,Tejipió,Rua Papanduva,residential,Rua local / de bairro,2
+Curado,Totó,,,,
+Curado,Jardim São Paulo,Avenida Liberdade,secondary,Avenida secundária,1.5
+Curado,San Martin,Rodovia Luiz Gonzaga,trunk,Via arterial / Rodovia urbana,1
+Curado,Cidade Universitária,Avenida Visconde de São Leopoldo,trunk,Via arterial / Rodovia urbana,1
+Curado,Engenho do Meio,Rua José dos Santos,residential,Rua local / de bairro,2
+Curado,Torrões,Rua Quinze de Março,tertiary,Rua de ligação / Coletora local,1.8
+Curado,Várzea,Girador da Reitoria da UFPE,secondary,Avenida secundária,1.5
+Córrego do Jenipapo,Macaxeira,Rua dos Coquinhos,residential,Rua local / de bairro,2
+Córrego do Jenipapo,Nova Descoberta,Rua Popular,residential,Rua local / de bairro,2
+Córrego do Jenipapo,Apipucos,Rua Erundina Negreiros de Araújo,residential,Rua local / de bairro,2
+Córrego do Jenipapo,Dois Irmãos,Rua Francisco Campos,residential,Rua local / de bairro,2
+Córrego do Jenipapo,Brejo da Guabiraba,Rua Três Morros,residential,Rua local / de bairro,2
+Córrego do Jenipapo,Guabiraba,Avenida da Redenção,secondary,Avenida secundária,1.5
+Cordeiro,Prado,Rua Eurico de Souza Leão,residential,Rua local / de bairro,2
+Cordeiro,San Martin,Rua Francisco Vita,residential,Rua local / de bairro,2
+Cordeiro,Engenho do Meio,Rua Professor Evaldo Altino,residential,Rua local / de bairro,2
+Cordeiro,Torrões,Rua Adelino Frutuoso,residential,Rua local / de bairro,2
+Cordeiro,Torre,Rua Firmino de Barros,residential,Rua local / de bairro,2
+Cordeiro,Zumbi,Rua Clotilde de Oliveira,residential,Rua local / de bairro,2
+Cordeiro,Santana,Rua Honório Correia,secondary,Avenida secundária,1.5
+Cordeiro,Iputinga,Rua Alaíde,residential,Rua local / de bairro,2
+Cordeiro,Poço da Panela,Rua Joaquim Ferreira do Nascimento,residential,Rua local / de bairro,2
+Coqueiral,Sancho,Rua Doutor José Cornélio,tertiary,Rua de ligação / Coletora local,1.8
+Coqueiral,Tejipió,Rua Quinze de Novembro,tertiary,Rua de ligação / Coletora local,1.8
+Coqueiral,Totó,Rua Guanabara,tertiary,Rua de ligação / Coletora local,1.8
+Cohab,Jordão,Avenida Mato Grosso,residential,Rua local / de bairro,2
+Cohab,Barro,Rua Jornalista Nelson Rodrigues,residential,Rua local / de bairro,2
+Cohab,Ibura,Rua Rio Turiaçu,residential,Rua local / de bairro,2
+Coelhos,Joana Bezerra,Rua Terra Boa,residential,Rua local / de bairro,2
+Coelhos,Boa Vista,Rua Tereza Maria Freitas da Paz,residential,Rua local / de bairro,2
+Coelhos,Ilha do Leite,Segunda Travessa da Rua Júlio Bernardo,residential,Rua local / de bairro,2
+Coelhos,Santo Antônio,Rua Heliza da Conceição,residential,Rua local / de bairro,2
+Cidade Universitária,Curado,Avenida Jornalista Aníbal Fernandes,tertiary,Rua de ligação / Coletora local,1.8
+Cidade Universitária,Engenho do Meio,Avenida dos Reitores Joaquim Amazonas,tertiary,Rua de ligação / Coletora local,1.8
+Cidade Universitária,Várzea,Avenida da Engenharia,tertiary,Rua de ligação / Coletora local,1.8
+Cidade Universitária,Iputinga,Avenida Professor Moraes Rego,secondary,Avenida secundária,1.5
+Caxangá,Várzea,Rua Engenho Poeta,residential,Rua local / de bairro,2
+Caxangá,Iputinga,Rua Vicente Zirpoli,residential,Rua local / de bairro,2
+Caxangá,Apipucos,Rua Pedro Ernesto,residential,Rua local / de bairro,2
+Caxangá,Dois Irmãos,Rua Dona Inês Correa de Araújo,residential,Rua local / de bairro,2
+Caxangá,Sítio dos Pintos,Avenida Caxangá,primary,Avenida Principal,1.2
+Casa Forte,Santana,Rua de Casa Forte,tertiary,Rua de ligação / Coletora local,1.8
+Casa Forte,Casa Amarela,Estrada das Ubaias,secondary,Avenida secundária,1.5
+Casa Forte,Parnamirim,Rua Jerônimo de Albuquerque,tertiary,Rua de ligação / Coletora local,1.8
+Casa Forte,Poço da Panela,Rua Jader de Andrade,secondary,Avenida secundária,1.5
+Casa Amarela,Tamarineira,Rua Padre Lemos,secondary,Avenida secundária,1.5
+Casa Amarela,Alto José do Pinho,Rua Taquaratinga,tertiary,Rua de ligação / Coletora local,1.8
+Casa Amarela,Alto do Mandu,Rua Sempre Viva,residential,Rua local / de bairro,2
+Casa Amarela,Casa Forte,Rua Dona Ana Xavier,secondary,Avenida secundária,1.5
+Casa Amarela,Monteiro,Rua das Neves,residential,Rua local / de bairro,2
+Casa Amarela,Morro da Conceição,Rua Oscar de Barros,residential,Rua local / de bairro,2
+Casa Amarela,Parnamirim,Rua Paula Batista,secondary,Avenida secundária,1.5
+Casa Amarela,Poço da Panela,Rua Curupaiti,residential,Rua local / de bairro,2
+Casa Amarela,Mangabeira,Rua Major Nereu Guerra,tertiary,Rua de ligação / Coletora local,1.8
+Casa Amarela,Nova Descoberta,Rua Vasco da Gama,secondary,Avenida secundária,1.5
+Casa Amarela,Vasco da Gama,Rua Frederico Ozanan,residential,Rua local / de bairro,2
+Campo Grande,Hipódromo,Rua Manuel de Barros Lima,residential,Rua local / de bairro,2
+Campo Grande,Ponto de Parada,Rua Jerônimo Vilela,secondary,Avenida secundária,1.5
+Campo Grande,Encruzilhada,Estrada de Belém,secondary,Avenida secundária,1.5
+Campo Grande,Torreão,Rua Odorico Mendes,secondary,Avenida secundária,1.5
+Campo Grande,Bairro do Recife,Avenida Doutor Jayme da Fonte,secondary,Avenida secundária,1.5
+Campo Grande,Santo Amaro,Rua Barão de Igarassu,residential,Rua local / de bairro,2
+Campo Grande,Arruda,Rua Desenhista Eulino Santos,secondary,Avenida secundária,1.5
+Campo Grande,Peixinhos,Rua Oliveira Fonseca,residential,Rua local / de bairro,2
+Campina do Barreto,Arruda,Rua Iguatu,residential,Rua local / de bairro,2
+Campina do Barreto,Peixinhos,Rua dos Peixinhos,residential,Rua local / de bairro,2
+Campina do Barreto,Cajueiro,Rua Noroeste,residential,Rua local / de bairro,2
+Campina do Barreto,Fundão,Rua Constança,residential,Rua local / de bairro,2
+Campina do Barreto,Água Fria,Rua Jornalista José Campelo Júnior,residential,Rua local / de bairro,2
+Cajueiro,Campina do Barreto,Rua Maria Ramos,residential,Rua local / de bairro,2
+Cajueiro,Fundão,Rua Couto Soares,residential,Rua local / de bairro,2
+Cajueiro,Porto da Madeira,Rua Luiz Clericuzzi,residential,Rua local / de bairro,2
+Caçote,Areias,Avenida Justiça e Paz,residential,Rua local / de bairro,2
+Caçote,Ibura,Rua Feaca,residential,Rua local / de bairro,2
+Caçote,Ipsep,Rua Sindicato dos Bancários,residential,Rua local / de bairro,2
+Brejo de Beberibe,Linha do Tiro,Rua Alto José Bonifácio,secondary,Avenida secundária,1.5
+Brejo de Beberibe,Alto José Bonifácio,,,,
+Brejo de Beberibe,Nova Descoberta,Rua Pindaí,residential,Rua local / de bairro,2
+Brejo de Beberibe,Vasco da Gama,Rua Teolândia,residential,Rua local / de bairro,2
+Brejo de Beberibe,Brejo da Guabiraba,,,,
+Brejo de Beberibe,Dois Unidos,Rua Doutor Antônio da Rosa Borges,tertiary,Rua de ligação / Coletora local,1.8
+Brejo de Beberibe,Passarinho,Rua Só Nós Dois,residential,Rua local / de bairro,2
+Brejo da Guabiraba,Córrego do Jenipapo,Rua Arca de Noe,residential,Rua local / de bairro,2
+Brejo da Guabiraba,Nova Descoberta,Avenida Vereador Otacílio Azevedo,secondary,Avenida secundária,1.5
+Brejo da Guabiraba,Brejo de Beberibe,,,,
+Brejo da Guabiraba,Passarinho,Rua Santa Tereza,residential,Rua local / de bairro,2
+Brejo da Guabiraba,Guabiraba,Rua Jornalista Waldete Agra,residential,Rua local / de bairro,2
+Brasília Teimosa,Pina,Rua Atum,residential,Rua local / de bairro,2
+Bongi,Afogados,Rua Randolfo Pinto Ferreira,residential,Rua local / de bairro,2
+Bongi,Mustardinha,Rua Aparecida de Minas,residential,Rua local / de bairro,2
+Bongi,Prado,Rua Pio Muniz de Farias,residential,Rua local / de bairro,2
+Bongi,San Martin,Rua Doutor João Costa,residential,Rua local / de bairro,2
+Bomba do Hemetério,Arruda,Rua São Gabriel,residential,Rua local / de bairro,2
+Bomba do Hemetério,Alto José do Pinho,Rua Bomba do Hemetério,secondary,Avenida secundária,1.5
+Bomba do Hemetério,Mangabeira,Rua Desembargador Heraclito Cavalcanti,residential,Rua local / de bairro,2
+Bomba do Hemetério,Alto Santa Teresinha,Rua Chã de Alegria,secondary,Avenida secundária,1.5
+Bomba do Hemetério,Água Fria,Rua Julio Lima,residential,Rua local / de bairro,2
+Boa Vista,Espinheiro,Rua Rosário da Boa Vista,residential,Rua local / de bairro,2
+Boa Vista,Graças,Avenida Manoel Borba,secondary,Avenida secundária,1.5
+Boa Vista,Santo Amaro,Rua da Soledade,tertiary,Rua de ligação / Coletora local,1.8
+Boa Vista,Coelhos,Rua Gervásio Pires,tertiary,Rua de ligação / Coletora local,1.8
+Boa Vista,Derby,Avenida Conde da Boa Vista,secondary,Avenida secundária,1.5
+Boa Vista,Ilha do Leite,Rua Barão de São Borja,tertiary,Rua de ligação / Coletora local,1.8
+Boa Vista,Paissandu,Rua Joaquim de Brito,secondary,Avenida secundária,1.5
+Boa Vista,Santo Antônio,Rua Doutor José Mariano,secondary,Avenida secundária,1.5
+Boa Vista,Soledade,,,,
+Boa Viagem,Jordão,Rua Ribeiro de Brito,primary,Avenida Principal,1.2
+Boa Viagem,Pina,Avenida Hélio Falcão,residential,Rua local / de bairro,2
+Boa Viagem,Ibura,Viaduto Tacredo Neves,primary,Avenida Principal,1.2
+Boa Viagem,Imbiribeira,Avenida Marechal Mascarenhas de Moraes,trunk,Via arterial / Rodovia urbana,1
+Beberibe,Linha do Tiro,Rua Taguatinga,tertiary,Rua de ligação / Coletora local,1.8
+Beberibe,Porto da Madeira,Quinta Travessa Aníbal Benévolo,tertiary,Rua de ligação / Coletora local,1.8
+Beberibe,Água Fria,Avenida Aníbal Benévolo,tertiary,Rua de ligação / Coletora local,1.8
+Beberibe,Dois Unidos,Rua Uriel de Holanda,secondary,Avenida secundária,1.5
+Barro,Cohab,Avenida Doutor José Rufino,primary,Avenida Principal,1.2
+Barro,Tejipió,,,,
+Barro,Areias,Rua Dorothéia Vieira,residential,Rua local / de bairro,2
+Barro,Ibura,Travessa Doutor Jose Rufino,Acesso à via arterial,Via arterial / Rodovia urbana,Acesso à via arterial
+Barro,Jardim São Paulo,Rua Major Chagas de Oliveira,residential,Rua local / de bairro,2
+Bairro do Recife,Santo Amaro,Rua Álvares Cabral,residential,Rua local / de bairro,2
+Bairro do Recife,Santo Antônio,Rua Madre de Deus,secondary,Avenida secundária,1.5
+Bairro do Recife,Campo Grande,Rua Mariz e Barros,residential,Rua local / de bairro,2
+Arruda,Ponto de Parada,,,,
+Arruda,Rosarinho,Rua Salvador de Sá,tertiary,Rua de ligação / Coletora local,1.8
+Arruda,Tamarineira,Rua General Abreu e Lima,tertiary,Rua de ligação / Coletora local,1.8
+Arruda,Campo Grande,Rua do Machado,residential,Rua local / de bairro,2
+Arruda,Peixinhos,Rua Zeferino Agra,residential,Rua local / de bairro,2
+Arruda,Bomba do Hemetério,Rua Ramiz Galvão,residential,Rua local / de bairro,2
+Arruda,Campina do Barreto,Rua Coronel Urbano Ribeiro de Sena,tertiary,Rua de ligação / Coletora local,1.8
+Arruda,Mangabeira,Rua Raul Pompéia,residential,Rua local / de bairro,2
+Arruda,Água Fria,Rua Bom Conselho,residential,Rua local / de bairro,2
+Areias,Barro,Avenida Recife,Avenida principal,Avenida Principal,Avenida principal
+Areias,Caçote,Avenida Tapajós,residential,Rua local / de bairro,2
+Areias,Ibura,Avenida Dom Hélder Câmara,secondary,Avenida secundária,1.5
+Areias,Imbiribeira,Rua Pintor Antônio Albuquerque,secondary,Avenida secundária,1.5
+Areias,Ipsep,Rua Doutor Raposo Pinto,residential,Rua local / de bairro,2
+Areias,Estância,Rua Peroba,residential,Rua local / de bairro,2
+Areias,Jardim São Paulo,Rua Senador Alberto Pasqualini,tertiary,Rua de ligação / Coletora local,1.8
+Areias,Jiquiá,Rua Mearim,residential,Rua local / de bairro,2
+Apipucos,Caxangá,Rua Jorge Tasso Neto,residential,Rua local / de bairro,2
+Apipucos,Alto do Mandu,Rua Dois Irmãos,secondary,Avenida secundária,1.5
+Apipucos,Iputinga,Rua Maria de Fátima Soares,tertiary,Rua de ligação / Coletora local,1.8
+Apipucos,Monteiro,,,,
+Apipucos,Córrego do Jenipapo,Rua Caetés,residential,Rua local / de bairro,2
+Apipucos,Macaxeira,Rua Coronel João Batista do Rego Barros,tertiary,Rua de ligação / Coletora local,1.8
+Apipucos,Dois Irmãos,Rua Manuel de Medeiros,secondary,Avenida secundária,1.5
+Alto Santa Teresinha,Alto José do Pinho,Rua Aurea,residential,Rua local / de bairro,2
+Alto Santa Teresinha,Bomba do Hemetério,Rua Andricora,residential,Rua local / de bairro,2
+Alto Santa Teresinha,Linha do Tiro,Rua Professor José Amarino dos Reis,residential,Rua local / de bairro,2
+Alto Santa Teresinha,Água Fria,Rua Ampére,residential,Rua local / de bairro,2
+Alto Santa Teresinha,Alto José Bonifácio,Rua Jales,residential,Rua local / de bairro,2
+Alto José do Pinho,Casa Amarela,Rua Ori,residential,Rua local / de bairro,2
+Alto José do Pinho,Morro da Conceição,Rua Maragogi,tertiary,Rua de ligação / Coletora local,1.8
+Alto José do Pinho,Bomba do Hemetério,Rua Horácio Silva,residential,Rua local / de bairro,2
+Alto José do Pinho,Mangabeira,Rua Severino Bernardino Pereira,residential,Rua local / de bairro,2
+Alto José do Pinho,Alto Santa Teresinha,Rua do Rio,residential,Rua local / de bairro,2
+Alto José do Pinho,Alto José Bonifácio,Rua Valeriano Lobo,tertiary,Rua de ligação / Coletora local,1.8
+Alto José Bonifácio,Alto José do Pinho,Rua São Domingos Sávio,residential,Rua local / de bairro,2
+Alto José Bonifácio,Morro da Conceição,Rua Córrego do Euclides,secondary,Avenida secundária,1.5
+Alto José Bonifácio,Linha do Tiro,Rua Tejipio,residential,Rua local / de bairro,2
+Alto José Bonifácio,Alto Santa Teresinha,Rua Alto da Serrinha,residential,Rua local / de bairro,2
+Alto José Bonifácio,Vasco da Gama,Rua Gustavo Barrozo,residential,Rua local / de bairro,2
+Alto José Bonifácio,Brejo de Beberibe,Rua Doutor Benevenuto Teles Neto,residential,Rua local / de bairro,2
+Alto do Mandu,Casa Amarela,Rua Eliete Aguiar,residential,Rua local / de bairro,2
+Alto do Mandu,Monteiro,Rua Humaitá,residential,Rua local / de bairro,2
+Alto do Mandu,Macaxeira,Rua Cianorte,residential,Rua local / de bairro,2
+Alto do Mandu,Nova Descoberta,Rua Mandacaru,tertiary,Rua de ligação / Coletora local,1.8
+Alto do Mandu,Apipucos,Rua Fernão Velho,residential,Rua local / de bairro,2
+Aldeia,Pau-Ferro,Estrada do Orfanato,residential,Rua local / de bairro,2
+Aldeia,Oitenta,Rua José Rufino,tertiary,Rua de ligação / Coletora local,1.8
+Água Fria,Arruda,Rua Luiz Cerqueira,residential,Rua local / de bairro,2
+Água Fria,Beberibe,Rua da Cutia,residential,Rua local / de bairro,2
+Água Fria,Bomba do Hemetério,Rua São Sebastião,residential,Rua local / de bairro,2
+Água Fria,Campina do Barreto,Rua José Souza,tertiary,Rua de ligação / Coletora local,1.8
+Água Fria,Fundão,,,,
+Água Fria,Linha do Tiro,Rua Professor Adalberto Neves,residential,Rua local / de bairro,2
+Água Fria,Porto da Madeira,Rua Conselheiro Barros Barreto,residential,Rua local / de bairro,2
+Água Fria,Alto Santa Teresinha,Rua Egas Muniz,residential,Rua local / de bairro,2
+Afogados,Joana Bezerra,Rua Ursulino Pinto de Carvalho,residential,Rua local / de bairro,2
+Afogados,Bongi,Rua Doutor Adelino,secondary,Avenida secundária,1.5
+Afogados,Ilha do Retiro,Rua Manuel Batista de Azevedo,residential,Rua local / de bairro,2
+Afogados,Mangueira,Rua Cosme Viana,primary,Avenida Principal,1.2
+Afogados,Mustardinha,Rua Vinte e Um de Abril,primary,Avenida Principal,1.2
+Afogados,Prado,Estrada dos Remédios,primary,Avenida Principal,1.2
+Afogados,Pina,Praça da Paz,primary,Avenida Principal,1.2
+Afogados,Imbiribeira,Rua Itatiuba,residential,Rua local / de bairro,2
+Afogados,Jiquiá,Rua Visconde de Inhaúma,residential,Rua local / de bairro,2
+Aflitos,Encruzilhada,Rua Teles Júnior,tertiary,Rua de ligação / Coletora local,1.8
+Aflitos,Espinheiro,Rua Gomes de Matos Júnior,residential,Rua local / de bairro,2
+Aflitos,Graças,Rua Samuel Campelo,tertiary,Rua de ligação / Coletora local,1.8
