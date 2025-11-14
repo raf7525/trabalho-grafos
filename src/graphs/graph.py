@@ -1,161 +1,152 @@
-import pandas as pd
 from typing import List, Dict, Set, Iterable, Union
-        
-type NomeVertice = str
 
 class Vertice:
-    def __init__(self, nome: NomeVertice):
+    def __init__(self, nome: str):
         self.nome = nome
-        self.vizinhos: List[Vertice] = []
-        
+        self.vizinhos: List['Vertice'] = []
+        self.atributos: Dict[str, Union[str, int, float]] = {}
     
     def adicionar_vizinho(self, vizinho: 'Vertice') -> bool:
-        resultado = False
+        adicionou = False
         if vizinho not in self.vizinhos:
             self.vizinhos.append(vizinho)
-            self.vizinhos.sort(key=lambda v: v.nome)
-            resultado = True
-        return resultado
+            self.vizinhos.sort(key=lambda no: no.nome)
+            adicionou = True
+        return adicionou
     
     def adicionar_vizinhos(self, vizinhos: List['Vertice']):
-        [self.adicionar_vizinho(vizinho) for vizinho in vizinhos]
+        for vizinho in vizinhos:
+            self.adicionar_vizinho(vizinho)
     
-    def remover_vizinho(self, vizinho: 'Vertice'):
-        resultado = False
+    def remover_vizinho(self, vizinho: 'Vertice') -> bool:
+        removeu = False
         if vizinho in self.vizinhos:
             self.vizinhos.remove(vizinho)
-            resultado = True
-        return resultado
+            removeu = True
+        return removeu
     
     def remover_vizinhos(self, vizinhos: List['Vertice']):
-        [self.remover_vizinho(vizinho) for vizinho in vizinhos]
+        for vizinho in vizinhos:
+            self.remover_vizinho(vizinho)
 
     def limpar_vizinhos(self):
         self.vizinhos.clear()
 
-    def tem_adjagencia(self, vertice: 'Vertice'):
+    def esta_conectado_a(self, vertice: 'Vertice') -> bool:
         return vertice in self.vizinhos
     
     def __str__(self):
         return self.nome
-    
+
 
 class Grafo:
     def __init__(self):
-        self.vertices: Dict[NomeVertice, Vertice] = {}
-       
-        self.adj: Dict[str, Set[str]] = {}
-        self.nodes_attr: Dict[str, Dict] = {}
+        self.vertices: Dict[str, Vertice] = {}
+        self.arestas: Dict[tuple[str, str], Dict[str, Union[str, int, float]]] = {}
+        self.adjacencias: Dict[str, Set[str]] = {}
+        self.atributos_vertices: Dict[str, Dict] = {}
 
-    def pertence_ao_grafo(self, vertice: Vertice) -> bool:
-        return vertice.nome in self.vertices
+    def contem_no(self, no: Vertice) -> bool:
+        return no.nome in self.vertices
 
-    def adicionar_vertice(self, vertice: Vertice) -> bool:
-        resultado = False
-        vertice_tem_tipo_correto = isinstance(vertice, Vertice)
-        vertice_nao_visitado = vertice.nome not in self.vertices
-
-        if (vertice_tem_tipo_correto and vertice_nao_visitado):
-            self.vertices.update({ vertice.nome: vertice })
-           
-            if vertice.nome not in self.adj:
-                self.adj[vertice.nome] = set()
-                self.nodes_attr[vertice.nome] = {}
-            resultado = True
-        return resultado
-    
-    def adicionar_aresta(self, vertice_a: Vertice, vertice_b: Vertice) -> bool:
-        resultado = False
-        if self.pertence_ao_grafo(vertice_a) and self.pertence_ao_grafo(vertice_b):
-            vertice_a_obj = self.vertices.get(vertice_a.nome)
-            vertice_b_obj = self.vertices.get(vertice_b.nome)
+    def adicionar_no(self, no: Vertice) -> bool:
+        if not isinstance(no, Vertice):
+            return False
             
-            if vertice_a_obj and vertice_b_obj:
-                vertice_a_obj.adicionar_vizinho(vertice_b_obj)
-                vertice_b_obj.adicionar_vizinho(vertice_a_obj)
-                
-                
-                self.adj[vertice_a.nome].add(vertice_b.nome)
-                self.adj[vertice_b.nome].add(vertice_a.nome)
-                resultado = True
-        return resultado
+        if no.nome in self.vertices:
+            return False
+        
+        self.vertices[no.nome] = no
+        self.adjacencias[no.nome] = set()
+        self.atributos_vertices[no.nome] = no.atributos
+        return True
+    
+    def adicionar_aresta(self, no_origem: Vertice, no_destino: Vertice, peso: float = 1.0, **atributos) -> bool:
+        if not self.contem_no(no_origem) or not self.contem_no(no_destino):
+            return False
+        
+        self.vertices[no_origem.nome].adicionar_vizinho(no_destino)
+        self.vertices[no_destino.nome].adicionar_vizinho(no_origem)
+        
+        chave_aresta = tuple(sorted([no_origem.nome, no_destino.nome]))
+        self.arestas[chave_aresta] = {'peso': peso, **atributos}
+        
+        self.adjacencias[no_origem.nome].add(no_destino.nome)
+        self.adjacencias[no_destino.nome].add(no_origem.nome)
+        
+        return True
 
-    def criar_subrafo(self, vertices_para_incluir: Iterable[Union[Vertice, str]]) -> 'Grafo':
+    def obter_peso(self, nome_no_a: str, nome_no_b: str) -> float:
+        chave = tuple(sorted([nome_no_a, nome_no_b]))
+        aresta = self.arestas.get(chave)
+        return aresta['peso'] if aresta else float('inf')
+    
+    def obter_informacoes_aresta(self, nome_no_a: str, nome_no_b: str) -> Dict:
+        chave = tuple(sorted([nome_no_a, nome_no_b]))
+        return self.arestas.get(chave, {})
+    
+    def obter_vizinhos(self, nome_no: str) -> List[str]:
+        if nome_no not in self.vertices:
+            raise ValueError(f"Nó '{nome_no}' não encontrado no grafo.")
+        
+        no = self.vertices[nome_no]
+        return sorted([vizinho.nome for vizinho in no.vizinhos])
+
+    def criar_subgrafo(self, nos_para_incluir: Iterable[Union[Vertice, str]]) -> 'Grafo':
         subgrafo = Grafo()
         
-        nomes_vertices_incluidos = {str(v) for v in vertices_para_incluir}
+        nomes_incluidos = {str(no) for no in nos_para_incluir}
 
-        for nome in nomes_vertices_incluidos:
-            subgrafo.adicionar_vertice(Vertice(nome))
+        for nome in nomes_incluidos:
+            if nome in self.vertices:
+                novo_no = Vertice(nome)
+                novo_no.atributos = self.vertices[nome].atributos.copy()
+                subgrafo.adicionar_no(novo_no)
 
-        for nome in nomes_vertices_incluidos:
-            vertice_original = self.vertices.get(nome)
-            
-            if not vertice_original:
+        for nome in nomes_incluidos:
+            no_original = self.vertices.get(nome)
+            if not no_original:
                 continue
 
-            for vertice_vizinho in vertice_original.vizinhos:
-                if vertice_vizinho.nome in nomes_vertices_incluidos:
-                    vertice_a = subgrafo.vertices.get(nome)
-                    vertice_b = subgrafo.vertices.get(vertice_vizinho.nome)
+            for vizinho in no_original.vizinhos:
+                if vizinho.nome in nomes_incluidos:
+                    chave_aresta = tuple(sorted([nome, vizinho.nome]))
+                    info_aresta = self.arestas.get(chave_aresta, {'peso': 1.0}).copy()
+                    peso_aresta = info_aresta.pop('peso', 1.0)
                     
-                    if vertice_a and vertice_b:
-                        subgrafo.adicionar_aresta(vertice_a, vertice_b)
+                    subgrafo.adicionar_aresta(
+                        subgrafo.vertices[nome],
+                        subgrafo.vertices[vizinho.nome],
+                        peso=peso_aresta,
+                        **info_aresta
+                    )
 
         return subgrafo
-    
-    
-    def get_neighbors(self, node_id: str) -> List[str]:
-       
-        if node_id not in self.vertices:
-            raise ValueError(f"Nó '{node_id}' não encontrado no grafo.")
-        
-        vertice = self.vertices[node_id]
-        return sorted([v.nome for v in vertice.vizinhos])
-    
-    def load_from_csv(self, nodes_path: str, edges_path: str):
-        
-        nodes_df = pd.read_csv(nodes_path)
-        for _, row in nodes_df.iterrows():
-            vertice = Vertice(row['bairro'])
-            self.adicionar_vertice(vertice)
-            
-            self.nodes_attr[row['bairro']] = {'microrregiao': str(row['microrregiao'])}
-
-        
-        edges_df = pd.read_csv(edges_path)
-        for _, row in edges_df.iterrows():
-            origem = self.vertices.get(row['bairro_origem'])
-            destino = self.vertices.get(row['bairro_destino'])
-            
-            if origem and destino:
-                self.adicionar_aresta(origem, destino)
         
     @property
     def ordem(self) -> int:
         return len(self.vertices)
-
+    
     @property
     def tamanho(self) -> int:
-        return sum(len(neighbors) for neighbors in self.adj.values()) // 2
+        return len(self.arestas)
 
-    def get_order(self) -> int:
-        """Retorna a ordem do grafo (número de vértices)"""
-        return len(self.vertices)
-
-    def get_size(self) -> int:
-        """Retorna o tamanho do grafo (número de arestas)"""
-        return sum(len(neighbors) for neighbors in self.adj.values()) // 2
-
-    @staticmethod
-    def calculate_density(order: int, size: int) -> float:
-        if order < 2:
+    @property
+    def densidade(self) -> float:
+        if self.ordem < 2:
             return 0.0
-        return (2 * size) / (order * (order - 1)) 
-    
+        
+        arestas_maximas = (self.ordem * (self.ordem - 1)) / 2
+        return self.tamanho / arestas_maximas
+
     def __str__(self) -> str:
-        linhas = []
-        for key in sorted(self.vertices.keys()):
-            vizinhos = [v.nome for v in self.vertices[key].vizinhos]
-            linhas.append(f"{key}: {vizinhos}")
+        linhas = [f"Grafo com {self.ordem} nós e {self.tamanho} arestas"]
+        linhas.append(f"Densidade: {self.densidade:.4f}")
+        linhas.append("\nConexões:")
+        
+        for nome_no in sorted(self.vertices.keys()):
+            vizinhos = [vizinho.nome for vizinho in self.vertices[nome_no].vizinhos]
+            if vizinhos:
+                linhas.append(f"  {nome_no} -> {', '.join(vizinhos)}")
+        
         return "\n".join(linhas)

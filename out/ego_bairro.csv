@@ -1,95 +1,95 @@
 bairro,grau,ordem_ego,tamanho_ego,densidade_ego
-aflitos,4,5,4,0.4
-afogados,4,5,5,0.5
-agua fria,3,4,3,0.5
-alto do mandu,1,2,1,1.0
-alto jose bonifacio,0,1,0,0.0
-alto jose do pinho,0,1,0,0.0
-alto santa teresinha,1,2,1,1.0
-apipucos,0,1,0,0.0
-areias,3,4,3,0.5
-arruda,3,4,3,0.5
-barro,2,3,2,0.666667
-beberibe,3,4,3,0.5
-boa viagem,3,4,4,0.666667
-boa vista,4,5,4,0.4
-bomba do hemeterio,1,2,1,1.0
-bongi,3,4,4,0.666667
+aflitos,4,5,9,0.9
+afogados,9,10,17,0.377778
+agua fria,8,9,16,0.444444
+alto do mandu,5,6,10,0.666667
+alto jose bonifacio,6,7,12,0.571429
+alto jose do pinho,6,7,12,0.571429
+alto santa teresinha,5,6,10,0.666667
+apipucos,7,8,14,0.5
+areias,8,9,19,0.527778
+arruda,9,10,18,0.4
+bairro do recife,3,4,5,0.833333
+barro,5,6,9,0.6
+beberibe,4,5,7,0.7
+boa viagem,4,5,7,0.7
+boa vista,9,10,18,0.4
+bomba do hemeterio,5,6,10,0.666667
+bongi,4,5,8,0.8
 brasilia teimosa,1,2,1,1.0
-brejo da guabiraba,0,1,0,0.0
-brejo de beberibe,0,1,0,0.0
-cabanga,2,3,3,1.0
-cacote,0,1,0,0.0
-cajueiro,1,2,1,1.0
-campina do barreto,0,1,0,0.0
-campo grande,2,3,2,0.666667
-casa amarela,6,7,6,0.285714
-casa forte,1,2,1,1.0
-caxanga,2,3,2,0.666667
-cidade universitaria,2,3,3,1.0
-coelhos,1,2,1,1.0
-cohab,1,2,1,1.0
-coqueiral,1,2,1,1.0
-cordeiro,5,6,8,0.533333
-corrego do jenipapo,0,1,0,0.0
-curado,0,1,0,0.0
-derby,0,1,0,0.0
-dois irmaos,0,1,0,0.0
-dois unidos,2,3,2,0.666667
-encruzilhada,3,4,3,0.5
-engenho do meio,4,5,6,0.6
-espinheiro,1,2,1,1.0
-estancia,2,3,2,0.666667
-fundao,2,3,2,0.666667
-gracas,2,3,2,0.666667
-guabiraba,0,1,0,0.0
-hipodromo,0,1,0,0.0
-ibura,3,4,3,0.5
-ilha do leite,1,2,1,1.0
-ilha do retiro,3,4,4,0.666667
-ilha joana bezerra,1,2,1,1.0
-imbiribeira,2,3,3,1.0
-ipsep,3,4,4,0.666667
-iputinga,3,4,4,0.666667
-jaqueira,0,1,0,0.0
-jardim sao paulo,1,2,1,1.0
-jiquia,0,1,0,0.0
-jordao,1,2,1,1.0
-linha do tiro,1,2,1,1.0
-macaxeira,0,1,0,0.0
-madalena,4,5,7,0.7
-mangabeira,1,2,1,1.0
-mangueira,2,3,3,1.0
-monteiro,0,1,0,0.0
-morro da conceicao,1,2,1,1.0
-mustardinha,2,3,2,0.666667
-nova descoberta,0,1,0,0.0
-paissandu,0,1,0,0.0
-parnamirim,1,2,1,1.0
-passarinho,1,2,1,1.0
-pau-ferro,0,1,0,0.0
-peixinhos,0,1,0,0.0
-pina,2,3,2,0.666667
-poco,0,1,0,0.0
-ponto de parada,1,2,1,1.0
-porto da madeira,0,1,0,0.0
-prado,3,4,5,0.833333
-recife,0,1,0,0.0
-rosarinho,2,3,2,0.666667
-san martin,2,3,2,0.666667
-sancho,0,1,0,0.0
-santana,0,1,0,0.0
-santo amaro,3,4,3,0.5
-santo antonio,3,4,4,0.666667
-sao jose,3,4,4,0.666667
-sitio dos pintos,0,1,0,0.0
-soledade,0,1,0,0.0
-tamarineira,3,4,3,0.5
-tejipio,1,2,1,1.0
-torre,3,4,4,0.666667
-torreao,1,2,1,1.0
-torroes,0,1,0,0.0
-toto,0,1,0,0.0
-varzea,3,4,4,0.666667
-vasco da gama,1,2,1,1.0
-zumbi,0,1,0,0.0
+brejo da guabiraba,5,6,10,0.666667
+brejo de beberibe,7,8,14,0.5
+cabanga,0,1,0,0.0
+cacote,3,4,6,1.0
+cajueiro,3,4,5,0.833333
+campina do barreto,5,6,9,0.6
+campo grande,8,9,16,0.444444
+casa amarela,11,12,22,0.333333
+casa forte,4,5,8,0.8
+caxanga,5,6,9,0.6
+cidade universitaria,4,5,8,0.8
+coelhos,4,5,7,0.7
+cohab,3,4,5,0.833333
+coqueiral,3,4,5,0.833333
+cordeiro,9,10,18,0.4
+corrego do jenipapo,6,7,12,0.571429
+curado,9,10,17,0.377778
+derby,5,6,11,0.733333
+dois irmaos,5,6,10,0.666667
+dois unidos,4,5,7,0.7
+encruzilhada,8,9,19,0.527778
+engenho do meio,5,6,10,0.666667
+espinheiro,6,7,13,0.619048
+estancia,4,5,9,0.9
+fundao,4,5,8,0.8
+gracas,10,11,22,0.4
+guabiraba,6,7,10,0.47619
+hipodromo,3,4,6,1.0
+ibura,8,9,18,0.5
+ilha do leite,4,5,8,0.8
+ilha do retiro,6,7,13,0.619048
+imbiribeira,7,8,15,0.535714
+ipsep,4,5,9,0.9
+iputinga,8,9,16,0.444444
+jaqueira,5,6,10,0.666667
+jardim sao paulo,7,8,16,0.571429
+jiquia,7,8,16,0.571429
+joana bezerra,5,6,9,0.6
+jordao,3,4,5,0.833333
+linha do tiro,6,7,12,0.571429
+macaxeira,4,5,8,0.8
+madalena,7,8,15,0.535714
+mangabeira,5,6,10,0.666667
+mangueira,4,5,8,0.8
+monteiro,5,6,10,0.666667
+morro da conceicao,4,5,8,0.8
+mustardinha,4,5,8,0.8
+nova descoberta,7,8,14,0.5
+paissandu,6,7,13,0.619048
+parnamirim,5,6,10,0.666667
+passarinho,4,5,7,0.7
+pau-ferro,1,2,1,1.0
+peixinhos,3,4,5,0.833333
+pina,4,5,6,0.6
+poco da panela,6,7,12,0.571429
+ponto de parada,5,6,11,0.733333
+porto da madeira,4,5,7,0.7
+prado,7,8,14,0.5
+rosarinho,6,7,13,0.619048
+san martin,10,11,21,0.381818
+sancho,4,5,8,0.8
+santana,6,7,12,0.571429
+santo amaro,7,8,14,0.5
+santo antonio,4,5,7,0.7
+sao jose,0,1,0,0.0
+sitio dos pintos,3,4,5,0.833333
+soledade,2,3,3,1.0
+tamarineira,7,8,14,0.5
+tejipio,5,6,9,0.6
+torre,6,7,12,0.571429
+torreao,4,5,8,0.8
+torroes,4,5,8,0.8
+toto,3,4,5,0.833333
+varzea,4,5,7,0.7
+vasco da gama,5,6,10,0.666667
+zumbi,4,5,8,0.8

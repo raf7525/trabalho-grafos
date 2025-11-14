@@ -56,8 +56,8 @@ Boa Vista,Ilha do Leite,Rua Gervásio Pires,tertiary,1.8,Rua de ligação / Cole
 Boa Vista,Paissandu,Rua Barão de São Borja,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/320212004
 Boa Vista,Santo Antônio,Rua da Soledade,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/129728885
 Boa Vista,Soledade,Rua da Soledade,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/129728885
-Coelhos,Ilha do Leite,Rua Júlio Bernardo,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/367543798
-Coelhos,Santo Antônio,Rua Padopolis,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/367543812
+Coelhos,Ilha do Leite,Rua Terra Boa,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/367543779
+Coelhos,Santo Antônio,Rua Tereza Maria Freitas da Paz,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/1099922722
 Derby,Paissandu,Rua Barão de Goiana,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/132901896
 Derby,Ilha do Retiro,Praça do Derby,primary,1.2,Avenida principal,https://openstreetmap.org/way/383915969
 Derby,Madalena,Avenida Governador Agamenon Magalhães,trunk,1.0,Via arterial / Rodovia urbana,https://openstreetmap.org/way/966837057
@@ -88,8 +88,8 @@ Prado,Madalena,Rua Rodrigues de Mendonça,secondary,1.5,Avenida secundária	,htt
 Prado,Zumbi,Rua Manoel de Arruda Câmara,secondary,1.5,Avenida secundária	,https://openstreetmap.org/way/223532632
 Boa Viagem,Jordão,Rua Ribeiro de Brito,primary,1.2,Avenida principal,https://openstreetmap.org/way/854994655
 Boa Viagem,Pina,Avenida Hélio Falcão,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/968896542
-Boa Viagem,Ibura,Viaduto Tacredo Neves,primary,1.2,Avenida principal,https://openstreetmap.org/way/707010088
-Boa Viagem,Imbiribeira,Avenida Marechal Mascarenhas de Moraes,trunk,1.0,Via arterial / Rodovia urbana,https://openstreetmap.org/way/707010074
+Boa Viagem,Ibura,Viaduto Tancredo Neves,primary,1.2,Avenida principal,https://openstreetmap.org/way/129478150
+Boa Viagem,Imbiribeira,Viaduto Tacredo Neves,trunk_link,1.0,Via arterial / Rodovia urbana,https://openstreetmap.org/way/129481145
 Cohab,Jordão,Avenida Mato Grosso,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/222712034
 Cohab,Barro,Rua Rio Turiaçu,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/222689021
 Cohab,Ibura,Rua Sítio dos Moreiras,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/595526751
@@ -114,16 +114,16 @@ Caçote,Ipsep,Rua Sindicato dos Bancários,residential,2.0,Rua local / de bairro
 Areias,Ibura,Avenida Recife,primary,1.2,Avenida principal,https://openstreetmap.org/way/722757400
 Areias,Imbiribeira,Avenida Tapajós,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/656001731
 Areias,Ipsep,Rua Pintor Antônio Albuquerque,secondary,1.5,Avenida secundária	,https://openstreetmap.org/way/314754308
-Areias,Estância,Rua Mearim,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159256453
+Areias,Estância,Rua Peroba,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159762947
 Areias,Jardim São Paulo,Rua Senador Alberto Pasqualini,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/1359886532
-Areias,Jiquiá,Primeira Travessa Príncipe da Beira,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/511298461
+Areias,Jiquiá,Rua Mearim,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159256453
 Ibura,Imbiribeira,Rua Frei Luís de Souza,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/161830501
 Ibura,Ipsep,Rua Moni Silva,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/161908208
 Imbiribeira,Ipsep,Rua Doutor Tavares Correia,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/162651563
 Imbiribeira,Jiquiá,Rua Rio Oceânico,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/967575761
-Estância,Jardim São Paulo,Rua Sargento Jaime Pantaleão,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159256399
-Estância,Jiquiá,Rua João Pereti,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/143669318
-Estância,San Martin,Rua Barão de Buíque,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/143669301
+Estância,Jardim São Paulo,Rua Teixeira de Melo,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/483736257
+Estância,Jiquiá,Rua Rocha Pombo,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159762740
+Estância,San Martin,Rua Humberto de Campos,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/159762810
 Jardim São Paulo,Jiquiá,Rua Guarulhos,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/166189764
 Jardim São Paulo,San Martin,Rua Ana Pires Lustosa,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/166189798
 Jardim São Paulo,Curado,Rua Professora Zênia Guerra,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/166189695
@@ -195,7 +195,7 @@ Iputinga,Apipucos,Rua São Mateus,tertiary,1.8,Rua de ligação / Coletora local
 Monteiro,Poço da Panela,Rua Muniz Galvão,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/377690559
 Monteiro,Apipucos,Rua das Levadas,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/377690558
 Morro da Conceição,Alto José Bonifácio,Rua do Dende,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/1088315864
-Morro da Conceição,Vasco da Gama,Rua Itabaiana,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/1088315865
+Morro da Conceição,Vasco da Gama,Rua Fidelis Batista de Aguiar,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/1088315865
 Beberibe,Linha do Tiro,Rua Taguatinga,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/317313994
 Beberibe,Porto da Madeira,Quinta Travessa Aníbal Benévolo,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/142618024
 Beberibe,Água Fria,Avenida Aníbal Benévolo,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/317313974
@@ -226,7 +226,7 @@ Córrego do Jenipapo,Apipucos,Rua Erundina Negreiros de Araújo,residential,2.0,
 Córrego do Jenipapo,Dois Irmãos,Rua Francisco Campos,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/243740824
 Córrego do Jenipapo,Brejo da Guabiraba,Rua Três Morros,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/222819879
 Córrego do Jenipapo,Guabiraba,Avenida da Redenção,secondary,1.5,Avenida secundária	,https://openstreetmap.org/way/128677005
-Macaxeira,Nova Descoberta,Rua Ida Maria,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/222816832
+Macaxeira,Nova Descoberta,Rua Nova Iguaçu,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/222816832
 Macaxeira,Apipucos,Rua Maria Cândida,tertiary,1.8,Rua de ligação / Coletora local,https://openstreetmap.org/way/243741218
 Nova Descoberta,Vasco da Gama,Rua Alto da Brasileira,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/377690522
 Nova Descoberta,Brejo da Guabiraba,Rua Piraju,residential,2.0,Rua local / de bairro,https://openstreetmap.org/way/377690524

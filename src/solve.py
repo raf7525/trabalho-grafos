@@ -1,118 +1,87 @@
 import json
 import pandas as pd
+from pathlib import Path
 from graphs.graph import Grafo
+from graphs.io import carregar_grafo
 
-def calculate_all_metrics(graph: Grafo, output_dir: str):
-    
-    print("Calculando métricas globais...")
-    global_order = graph.get_order()
-    global_size = graph.get_size()
-    global_density = Grafo.calculate_density(global_order, global_size)
-    
-    global_metrics = {
-        "ordem": global_order,
-        "tamanho": global_size,
-        "densidade": round(global_density, 6)
+
+def calcular_metricas_globais(grafo: Grafo) -> dict:
+    metricas = {
+        "ordem": grafo.ordem,
+        "tamanho": grafo.tamanho,
+        "densidade": round(grafo.densidade, 6)
     }
-    with open(f"{output_dir}/recife_global.json", 'w', encoding='utf-8') as f:
-        json.dump(global_metrics, f, indent=4, ensure_ascii=False)
-    print(f"Salvo em {output_dir}/recife_global.json")
+    return metricas
 
-   
-    print("\nCalculando métricas por microrregião...")
-    microrregioes_metrics = []
-    
-    
-    micros = {}
-    for bairro, attrs in graph.nodes_attr.items():
-        microrregiao = attrs.get('microrregiao', 'N/A')
-        if microrregiao not in micros:
-            micros[microrregiao] = []
-        micros[microrregiao].append(bairro)
 
-    for mr_id, bairros in sorted(micros.items()):
-        subgraph = graph.criar_subrafo(bairros)
-        order = subgraph.get_order()
-        size = subgraph.get_size()
-        density = Grafo.calculate_density(order, size)
+def calcular_metricas_microrregioes(grafo: Grafo) -> list:
+    # Agrupa bairros por microrregião
+    microrregioes = {}
+    for nome_vertice, vertice in grafo.vertices.items():
+        microrregiao = vertice.atributos.get('microrregiao', 'N/A')
+        if microrregiao not in microrregioes:
+            microrregioes[microrregiao] = []
+        microrregioes[microrregiao].append(nome_vertice)
+    
+    # Calcula métricas para cada microrregião
+    metricas_por_micro = []
+    for micro_id in sorted(microrregioes.keys()):
+        bairros = microrregioes[micro_id]
+        subgrafo = grafo.criar_subgrafo(bairros)
         
-        microrregioes_metrics.append({
-            "microrregiao": mr_id,
-            "ordem": order,
-            "tamanho": size,
-            "densidade": round(density, 6)
+        metricas_por_micro.append({
+            "microrregiao": micro_id,
+            "ordem": subgrafo.ordem,
+            "tamanho": subgrafo.tamanho,
+            "densidade": round(subgrafo.densidade, 6)
         })
-
-    with open(f"{output_dir}/microrregioes.json", 'w', encoding='utf-8') as f:
-        json.dump(microrregioes_metrics, f, indent=4, ensure_ascii=False)
-    print(f"Salvo em {output_dir}/microrregioes.json")
     
-   
-    print("\nCalculando métricas de ego-rede...")
-    ego_metrics = []
-    for bairro in sorted(graph.adj.keys()):
-        vizinhos = graph.get_neighbors(bairro)
-       
-        ego_nodes = {bairro} | set(vizinhos)
+    return metricas_por_micro
+
+
+def calcular_metricas_ego(grafo: Grafo) -> pd.DataFrame:
+    dados_ego = []
+    
+    for nome_bairro in sorted(grafo.vertices.keys()):
+        # Obtém vizinhos
+        vizinhos = grafo.obter_vizinhos(nome_bairro)
+        grau = len(vizinhos)
         
-        ego_subgraph = graph.criar_subrafo(ego_nodes)
+        # Ego-rede = bairro + vizinhos
+        nos_ego = {nome_bairro} | set(vizinhos)
+        subgrafo_ego = grafo.criar_subgrafo(nos_ego)
         
-        ego_metrics.append({
-            "bairro": bairro,
-            "grau": len(vizinhos),
-            "ordem_ego": ego_subgraph.get_order(),
-            "tamanho_ego": ego_subgraph.get_size(),
-            "densidade_ego": round(Grafo.calculate_density(ego_subgraph.get_order(), ego_subgraph.get_size()), 6)
+        dados_ego.append({
+            "bairro": nome_bairro,
+            "grau": grau,
+            "ordem_ego": subgrafo_ego.ordem,
+            "tamanho_ego": subgrafo_ego.tamanho,
+            "densidade_ego": round(subgrafo_ego.densidade, 6)
         })
-
-    ego_df = pd.DataFrame(ego_metrics)
-    ego_df.to_csv(f"{output_dir}/ego_bairro.csv", index=False, encoding='utf-8')
-    print(f"Salvo em {output_dir}/ego_bairro.csv")
-
-def calculate_degrees_and_rankings(graph: Grafo, output_dir: str):
-    print("\nCalculando graus e rankings...")
     
-    
+    return pd.DataFrame(dados_ego)
+
+
+def calcular_graus_e_rankings(grafo: Grafo, caminho_ego_csv: str) -> dict:
     graus_data = []
-    for bairro in sorted(graph.adj.keys()):
-        grau = len(graph.get_neighbors(bairro))
+    for nome_bairro in sorted(grafo.vertices.keys()):
+        grau = len(grafo.obter_vizinhos(nome_bairro))
         graus_data.append({
-            "bairro": bairro,
+            "bairro": nome_bairro,
             "grau": grau
         })
     
-    
     graus_df = pd.DataFrame(graus_data)
-    graus_df.to_csv(f"{output_dir}/graus.csv", index=False, encoding='utf-8')
-    print(f"Lista de graus salva em {output_dir}/graus.csv")
     
+    ego_df = pd.read_csv(caminho_ego_csv)
     
-    ego_path = f"{output_dir}/ego_bairro.csv"
-    import os
-    if not os.path.exists(ego_path):
-        print("Erro: Arquivo ego_bairro.csv não encontrado. Execute calculate-metrics primeiro.")
-        return
+    idx_mais_denso = ego_df['densidade_ego'].idxmax()
+    bairro_mais_denso = ego_df.loc[idx_mais_denso]
     
-    ego_df = pd.read_csv(ego_path)
+    idx_maior_grau = graus_df['grau'].idxmax()
+    bairro_maior_grau = graus_df.loc[idx_maior_grau]
     
-   
-    max_densidade = ego_df['densidade_ego'].max()
-    bairro_mais_denso = ego_df[ego_df['densidade_ego'] == max_densidade].iloc[0]
-    
-    
-    max_grau = graus_df['grau'].max()
-    bairro_maior_grau = graus_df[graus_df['grau'] == max_grau].iloc[0]
-    
-    print("\n=== RANKINGS ===")
-    print(f"Bairro mais denso (maior densidade_ego): {bairro_mais_denso['bairro'].title()}")
-    print(f"  - Densidade ego: {bairro_mais_denso['densidade_ego']:.6f}")
-    print(f"  - Grau: {bairro_mais_denso['grau']}")
-    
-    print(f"\nBairro com maior grau: {bairro_maior_grau['bairro'].title()}")
-    print(f"  - Grau: {bairro_maior_grau['grau']}")
-    
-    
-    ranking_summary = {
+    ranking = {
         "bairro_mais_denso": {
             "bairro": str(bairro_mais_denso['bairro']),
             "densidade_ego": float(bairro_mais_denso['densidade_ego']),
@@ -124,7 +93,29 @@ def calculate_degrees_and_rankings(graph: Grafo, output_dir: str):
         }
     }
     
-    import json
-    with open(f"{output_dir}/rankings.json", 'w', encoding='utf-8') as f:
-        json.dump(ranking_summary, f, indent=4, ensure_ascii=False)
-    print(f"Resumo dos rankings salvo em {output_dir}/rankings.json")
+    return graus_df, ranking
+
+
+def orquestrar(caminho_nos: str, caminho_arestas: str, diretorio_saida: str = "out"):
+    Path(diretorio_saida).mkdir(parents=True, exist_ok=True)
+    
+    grafo = carregar_grafo(caminho_nos, caminho_arestas)
+    
+    metricas_globais = calcular_metricas_globais(grafo)
+    with open(f"{diretorio_saida}/recife_global.json", 'w', encoding='utf-8') as f:
+        json.dump(metricas_globais, f, indent=2, ensure_ascii=False)
+    
+    metricas_micro = calcular_metricas_microrregioes(grafo)
+    with open(f"{diretorio_saida}/microrregioes.json", 'w', encoding='utf-8') as f:
+        json.dump(metricas_micro, f, indent=2, ensure_ascii=False)
+    
+    ego_df = calcular_metricas_ego(grafo)
+    ego_df.to_csv(f"{diretorio_saida}/ego_bairro.csv", index=False, encoding='utf-8')
+    
+    graus_df, ranking = calcular_graus_e_rankings(grafo, f"{diretorio_saida}/ego_bairro.csv")
+    graus_df.to_csv(f"{diretorio_saida}/graus.csv", index=False, encoding='utf-8')
+    
+    with open(f"{diretorio_saida}/rankings.json", 'w', encoding='utf-8') as f:
+        json.dump(ranking, f, indent=2, ensure_ascii=False)
+    
+    print(f"\nArquivos gerados em '{diretorio_saida}/'")
