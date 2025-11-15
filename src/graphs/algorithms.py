@@ -99,23 +99,27 @@ class Sorting:
         
         for _ in range( len(graph.vertices) - 1):
             # Para cada aresta no grafo
-            for (nome_u, nome_v), info in graph.arestas.items():
+            for (origem, destino), info in graph.arestas.items():
                 peso_aresta = info['peso']
                 
                 # Relaxa em ambas as direções (grafo não direcionado)
-                if distancias[nome_u] + peso_aresta < distancias[nome_v]:
-                    distancias[nome_v] = distancias[nome_u] + peso_aresta
-                    anterior[nome_v] = nome_u
+                pode_relaxar_ida = distancias[origem] + peso_aresta < distancias[destino]
+                if pode_relaxar_ida:
+                    distancias[destino] = distancias[origem] + peso_aresta
+                    anterior[destino] = origem
                 
-                if distancias[nome_v] + peso_aresta < distancias[nome_u]:
-                    distancias[nome_u] = distancias[nome_v] + peso_aresta
-                    anterior[nome_u] = nome_v
+                pode_relaxar_volta = distancias[destino] + peso_aresta < distancias[origem]
+                if pode_relaxar_volta:
+                    distancias[origem] = distancias[destino] + peso_aresta
+                    anterior[origem] = destino
         
         # Verifica se há ciclos negativos
         tem_ciclo_negativo = False
-        for (nome_u, nome_v), info in graph.arestas.items():
+        for (origem, destino), info in graph.arestas.items():
             peso_aresta = info['peso']
-            if distancias[nome_u] + peso_aresta < distancias[nome_v] or distancias[nome_v] + peso_aresta < distancias[nome_u]:
+            pode_relaxar_ida = distancias[origem] + peso_aresta < distancias[destino]
+            pode_relaxar_volta = distancias[destino] + peso_aresta < distancias[origem]
+            if pode_relaxar_ida or pode_relaxar_volta:
                 tem_ciclo_negativo = True
                 break
         
