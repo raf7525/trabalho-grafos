@@ -1,10 +1,11 @@
-from typing import List, Dict, Set, Iterable, Union
+from typing import List, Dict, Set, Iterable, Union, Tuple
 
 class Vertice:
     def __init__(self, nome: str):
         self.nome = nome
         self.vizinhos: List['Vertice'] = []
         self.atributos: Dict[str, Union[str, int, float]] = {}
+    
     
     def adicionar_vizinho(self, vizinho: 'Vertice') -> bool:
         adicionou = False
@@ -138,6 +139,34 @@ class Grafo:
         
         arestas_maximas = (self.ordem * (self.ordem - 1)) / 2
         return self.tamanho / arestas_maximas
+    
+    def caminho_mais_curto_dijkstra(self, origem: Union[Vertice, str], destino: Union[Vertice, str]) -> Tuple[float, List[str]]:
+        """
+        Encontra o caminho mais curto entre dois vértices usando o algoritmo de Dijkstra.
+        Eficiente para grafos com pesos positivos.
+        """
+        from .algorithms import Sorting
+        
+        v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
+        v_destino = self.vertices[str(destino)] if isinstance(destino, str) else destino
+        
+        return Sorting.dijkstra(self, v_origem, v_destino)
+    
+    def caminho_mais_curto_bellman_ford(self, origem: Union[Vertice, str], destino: Union[Vertice, str] = None):
+        """
+        Encontra o caminho mais curto entre dois vértices usando o algoritmo de Bellman-Ford.
+        Funciona com pesos negativos e detecta ciclos negativos.
+            Se destino for None: Tupla (distancias_dict, anterior_dict, tem_ciclo_negativo)
+        """
+        from .algorithms import Sorting
+        
+        v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
+        
+        if destino is None:
+            return Sorting.bellman_ford(self, v_origem)
+        
+        v_destino = self.vertices[str(destino)] if isinstance(destino, str) else destino
+        return Sorting.bellman_ford(self, v_origem, v_destino)
 
     def __str__(self) -> str:
         linhas = [f"Grafo com {self.ordem} nós e {self.tamanho} arestas"]
