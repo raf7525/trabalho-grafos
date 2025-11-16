@@ -40,12 +40,14 @@
   - [x] Retorna todas distâncias quando destino = None
   - [x] Nomenclatura consistente com Dijkstra
   - [x] 14 testes unitários passando
-- [ ] **BFS (Breadth-First Search)** - busca em largura
-  - [x] Implementação básica (retorna parent dict)
-  - [ ] Adaptação completa para requisitos do projeto
-  - [ ] Retornar níveis/distâncias de cada vértice
-  - [ ] Retornar árvore de percurso
-  - [ ] Testes unitários
+- [x] **BFS (Breadth-First Search)** - busca em largura ✅
+  - [x] Implementação completa em `src/graphs/algorithms.py` ✅
+  - [x] Retornar níveis/distâncias de cada vértice ✅
+  - [x] Retornar árvore de percurso ✅
+  - [x] Retornar ordem de visitação ✅
+  - [x] Método helper `busca_em_largura()` na classe Grafo ✅
+  - [x] 9 testes unitários passando ✅
+  - [x] Integração com CLI ✅
 - [ ] **DFS (Depth-First Search)** - busca em profundidade
   - [ ] Implementação (apenas stub vazio)
   - [ ] Classificar arestas
@@ -72,8 +74,9 @@
 - [x] Integração com `solve.py` e `io.py`
 - [x] Execução via `python3 -m src.cli`
 - [x] Comando testado: gera todos os arquivos de métricas
+- [x] Integração com BFS (`--alg BFS --source <origem>`) ✅
 - [ ] Integração com algoritmos Dijkstra/Bellman-Ford
-- [ ] Integração com BFS/DFS
+- [ ] Integração com DFS
 
 ### Visualizações
 - [ ] ⚠️ **NÃO IMPLEMENTADO - REMOVIDO DO ESCOPO ATUAL**
@@ -87,12 +90,13 @@
 ### Parte 1 - Algoritmos de Percurso e Caminhos
 
 #### BFS (Breadth-First Search)
-- [x] Implementação básica existe
-- [ ] Adaptar para retornar níveis/distâncias
-- [ ] Retornar árvore de percurso completa
-- [ ] Gerar saída JSON: `percurso_bfs.json`
-- [ ] Testar com origem específica (ex: "nova descoberta")
-- [ ] Testes unitários
+- [x] Implementação completa em `src/graphs/algorithms.py` ✅
+- [x] Adaptar para retornar níveis/distâncias ✅
+- [x] Retornar árvore de percurso completa ✅
+- [x] Gerar saída JSON: `percurso_bfs_<origem>.json` ✅
+- [x] Testar com origem específica (ex: "nova descoberta") ✅
+- [x] Testes unitários (9 testes implementados) ✅
+- [x] Integração com CLI (`--alg BFS --source <origem>`) ✅
 
 #### DFS (Depth-First Search)
 - [ ] Implementar algoritmo completo em `src/graphs/algorithms.py`
@@ -128,7 +132,8 @@
 #### Outputs Obrigatórios de Algoritmos (conforme PDF)
 - [ ] `percurso_nova_descoberta_setubal.json` (Dijkstra - OBRIGATÓRIO)
 - [ ] `distancias_enderecos.csv` (matriz de distâncias entre bairros)
-- [ ] JSONs com resultados de BFS e DFS
+- [x] JSON com resultado de BFS: `percurso_bfs_nova_descoberta.json` ✅
+- [ ] JSON com resultado de DFS
 - [ ] ⚠️ Visualizações removidas do escopo atual
 
 ### Parte 2 - Dataset Adicional
@@ -170,11 +175,14 @@
 - [x] **14 testes passando** ✅
 
 #### Testes BFS
-- [ ] Implementar `tests/test_bfs.py` (atualmente vazio)
-- [ ] Testar em grafo pequeno conhecido
-- [ ] Validar níveis corretos a partir da origem
-- [ ] Testar bairro inalcançável
-- [ ] Verificar árvore de percurso (predecessores)
+- [x] Implementar `tests/test_bfs.py` ✅
+- [x] Testar em grafo pequeno conhecido ✅
+- [x] Validar níveis corretos a partir da origem ✅
+- [x] Testar bairro inalcançável ✅
+- [x] Verificar árvore de percurso (predecessores) ✅
+- [x] Testar com grafo real dos bairros ✅
+- [x] Testar caminho Nova Descoberta → Boa Viagem ✅
+- [x] **9 testes passando** ✅
 
 #### Testes DFS
 - [ ] Implementar `tests/test_dfs.py` (atualmente vazio)
@@ -185,9 +193,9 @@
 
 #### Executar Suite de Testes
 - [x] Comando: `pytest tests/` ✅
-- [x] **26/26 testes passando** (Dijkstra + Bellman-Ford) ✅
+- [x] **35/35 testes passando** (Dijkstra + Bellman-Ford + BFS) ✅
 - [x] Configuração pytest.ini ✅
-- [ ] Adicionar testes para BFS (0 testes atualmente)
+- [x] Testes para BFS (9 testes implementados e passando) ✅
 - [ ] Adicionar testes para DFS (0 testes atualmente)
 - [ ] Meta: 100% de cobertura dos 4 algoritmos principais
 
@@ -255,18 +263,20 @@
 - [x] `ego_bairro.csv` ✅
 - [x] `graus.csv` ✅
 - [x] `rankings.json` ✅
+- [x] `percurso_bfs_nova_descoberta.json` ✅
 - [ ] `percurso_nova_descoberta_setubal.json` ❌ (OBRIGATÓRIO)
 - [ ] `distancias_enderecos.csv` ❌
-- [ ] JSONs com resultados BFS/DFS ❌
+- [ ] JSON com resultado DFS ❌
 - [ ] ⚠️ HTMLs de visualização removidos do escopo atual
 
 #### Validação Final
 - [x] Executar `python3 -m src.cli --metricas` → OK ✅
-- [ ] Executar `python3 -m src.cli --alg BFS --source "nova descoberta"` → Pendente
+- [x] Executar `python3 -m src.cli --alg BFS --source "nova descoberta"` → OK ✅
+- [x] Executar `python3 -m src.cli --alg BFS --source "nova descoberta" --target "boa viagem"` → OK ✅
 - [ ] Executar `python3 -m src.cli --alg DFS --source "nova descoberta"` → Pendente
 - [ ] Executar `python3 -m src.cli --alg DIJKSTRA --source "nova descoberta" --target "boa viagem"` → Pendente
 - [ ] Executar `python3 -m src.cli --alg BELLMAN_FORD --source "nova descoberta" --target "boa viagem"` → Pendente
-- [x] Executar `pytest tests/` → 26/26 passando ✅
+- [x] Executar `pytest tests/` → 35/35 passando ✅
 - [ ] Verificar todos os JSONs/CSVs obrigatórios gerados
 - [ ] Ler PDF do relatório
 
@@ -284,29 +294,29 @@
 - **Estrutura do Projeto:** 100% ✅
 - **Carregamento de Dados:** 100% ✅
 - **Grafo e Métricas:** 100% ✅
-- **Algoritmos:** 50% ⚠️ (Dijkstra + Bellman-Ford completos, BFS parcial, DFS não iniciado)
-- **Testes:** 50% ⚠️ (26 testes para Dijkstra + Bellman-Ford, faltam BFS e DFS)
-- **CLI Básico:** 40% ⚠️ (métricas OK, falta integração com algoritmos)
-- **Integração CLI + Algoritmos:** 0% ❌
-- **Outputs Obrigatórios:** 60% ⚠️ (métricas OK, faltam JSONs de algoritmos)
+- **Algoritmos:** 75% ✅ (Dijkstra + Bellman-Ford + BFS completos, falta apenas DFS)
+- **Testes:** 75% ✅ (35 testes: 12 Dijkstra + 14 Bellman-Ford + 9 BFS)
+- **CLI Básico:** 60% ⚠️ (métricas + BFS OK, faltam Dijkstra/Bellman-Ford/DFS)
+- **Integração CLI + Algoritmos:** 33% ⚠️ (BFS integrado, faltam 3 algoritmos)
+- **Outputs Obrigatórios:** 70% ⚠️ (métricas + BFS OK, faltam outros JSONs)
 - **Visualizações:** 0% ❌ (removido do escopo atual)
 - **Relatório:** 0% ❌
 
 ### Por Pontuação (Base: 10.0 pontos - estimativa conservadora)
-- **Parte 1 (5.0 pts):** ~40% (2.0/5.0) 
+- **Parte 1 (5.0 pts):** ~60% (3.0/5.0)
   - Dijkstra: OK (implementação + testes) ✅
   - Bellman-Ford: OK (implementação + testes) ✅
-  - BFS: Parcial (implementação básica, sem testes) ⚠️
+  - BFS: OK (implementação + testes + CLI) ✅
   - DFS: Não iniciado ❌
-  - Integração CLI: Não feita ❌
+  - Integração CLI: Parcial (BFS OK, faltam 3) ⚠️
   - Outputs obrigatórios: Parciais ⚠️
-  
+
 - **Parte 2 (3.0 pts):** 0% (0/3.0) - Dataset adicional não iniciado ❌
-- **Testes (2.0 pts):** 50% (1.0/2.0) - Apenas Dijkstra + Bellman-Ford ⚠️
+- **Testes (2.0 pts):** 75% (1.5/2.0) - Dijkstra + Bellman-Ford + BFS completos ✅
 - **Bônus Visualizações (+1.0 pt):** 0% (0/1.0) - Removido do escopo ❌
 
-**Total Estimado Conservador:** ~3.0/10.0 pontos
-**Total Otimista (se completar BFS/DFS):** ~5.0/10.0 pontos
+**Total Estimado Conservador:** ~4.5/10.0 pontos
+**Total Otimista (se completar DFS + integrações CLI):** ~6.5/10.0 pontos
 
 ---
 
@@ -317,19 +327,19 @@
 2. ~~Implementar Bellman-Ford~~ ✅ COMPLETO
 3. ~~Testes Dijkstra~~ ✅ COMPLETO
 4. ~~Testes Bellman-Ford~~ ✅ COMPLETO
-5. **Completar BFS** - retornar níveis e árvore de percurso ⚠️ URGENTE
-6. **Implementar DFS completo** - com classificação de arestas ⚠️ URGENTE
-7. **Integrar Dijkstra no CLI** - aceitar `--source` e `--target` ⚠️ URGENTE
-8. **Integrar Bellman-Ford no CLI** ⚠️ URGENTE
-9. **Integrar BFS no CLI** ⚠️ URGENTE
-10. **Integrar DFS no CLI** ⚠️ URGENTE
-11. **Gerar `percurso_nova_descoberta_setubal.json`** ⚠️ OBRIGATÓRIO NO PDF
+5. ~~Completar BFS~~ ✅ COMPLETO - retorna níveis, árvore de percurso, ordem de visitação
+6. ~~Testes BFS~~ ✅ COMPLETO - 9 testes unitários
+7. ~~Integrar BFS no CLI~~ ✅ COMPLETO
+8. **Implementar DFS completo** - com classificação de arestas ⚠️ URGENTE
+9. **Integrar Dijkstra no CLI** - aceitar `--source` e `--target` ⚠️ URGENTE
+10. **Integrar Bellman-Ford no CLI** ⚠️ URGENTE
+11. **Integrar DFS no CLI** ⚠️ URGENTE
+12. **Gerar `percurso_nova_descoberta_setubal.json`** ⚠️ OBRIGATÓRIO NO PDF
 
 ### IMPORTANTE - Para Completar Requisitos (Médio Prazo)
-12. Criar testes unitários para BFS completo
 13. Criar testes unitários para DFS completo
 14. Gerar `distancias_enderecos.csv` (matriz de distâncias)
-15. Gerar JSONs de resultados para todos os algoritmos
+15. Gerar JSONs de resultados para Dijkstra e Bellman-Ford
 16. Executar suite completa de testes (meta: 40+ testes)
 17. Processar Parte 2 (dataset adicional, se fornecido)
 
@@ -353,42 +363,40 @@
 - **Top bairro (grau):** Casa Amarela (11 conexões)
 - **Top bairro (densidade ego):** Brasília Teimosa (1.0)
 
-### Comandos Funcionais
-- ✅ `python3 -m src.cli --dataset ./data/bairros_recife.csv --metricas --out ./out/`
-- ❌ Comandos com algoritmos (--alg) ainda não funcionam
-
-### Bibliotecas Instaladas
-- pandas, matplotlib, plotly, pyvis, pytest, unidecode
-
-### Outputs Obrigatórios Conforme PDF
-1. ✅ Métricas do grafo (recife_global.json, etc.)
-2. ❌ **percurso_nova_descoberta_setubal.json** (CRÍTICO - OBRIGATÓRIO)
-3. ❌ distancias_enderecos.csv
-4. ❌ Resultados dos 4 algoritmos em JSON
-
 ### Status dos Algoritmos
 - **Dijkstra:** ✅ Implementado e testado (12 testes)
 - **Bellman-Ford:** ✅ Implementado e testado (14 testes)
-- **BFS:** ⚠️ Implementação básica existe, precisa completar
+- **BFS:** ✅ Implementado, testado e integrado ao CLI (9 testes)
 - **DFS:** ❌ Apenas stub vazio, precisa implementar do zero
+
+### Comandos Funcionais
+- ✅ `python3 -m src.cli --dataset ./data/bairros_recife.csv --metricas --out ./out/`
+- ✅ `python3 -m src.cli --alg BFS --source "nova descoberta" --out ./out/`
+- ✅ `python3 -m src.cli --alg BFS --source "nova descoberta" --target "boa viagem" --out ./out/`
+- ❌ Comandos com Dijkstra/Bellman-Ford/DFS ainda não funcionam
 
 ---
 
 ## ⏰ ESTIMATIVA DE TEMPO
 
-### Já Completo (~12-18 horas)
+### Já Completo (~18-24 horas)
 - ✅ Implementar Dijkstra e Bellman-Ford
 - ✅ Criar testes Dijkstra + Bellman-Ford (26 testes)
+- ✅ Implementar BFS completo (níveis, árvore, ordem de visitação)
+- ✅ Criar testes BFS (9 testes)
+- ✅ Integrar BFS ao CLI
 - ✅ Documentação dos algoritmos
 
 ### Trabalho Restante Crítico
-- Completar BFS: **2-3 horas** ⚠️ URGENTE
+- ~~Completar BFS~~ ✅ COMPLETO
 - Implementar DFS completo: **3-4 horas** ⚠️ URGENTE
-- Integrar 4 algoritmos no CLI: **4-6 horas** ⚠️ URGENTE
+- Integrar Dijkstra no CLI: **1-2 horas** ⚠️ URGENTE
+- Integrar Bellman-Ford no CLI: **1-2 horas** ⚠️ URGENTE
+- Integrar DFS no CLI: **1-2 horas** ⚠️ URGENTE
 - Gerar outputs obrigatórios JSON: **2-3 horas** ⚠️ URGENTE
-- Criar testes BFS + DFS: **3-4 horas**
+- Criar testes DFS: **2-3 horas**
 - Criar matriz de distâncias: **2-3 horas**
-- **Subtotal Crítico:** ~16-23 horas
+- **Subtotal Crítico:** ~12-19 horas
 
 ### Trabalho Restante Opcional
 - Parte 2 (dataset adicional): **4-6 horas**
@@ -397,9 +405,9 @@
 - Revisão final e validação: **2-3 horas**
 - **Subtotal Opcional:** ~16-23 horas
 
-**TOTAL RESTANTE (Mínimo Crítico):** ~16-23 horas
-**TOTAL RESTANTE (Completo):** ~32-46 horas
+**TOTAL RESTANTE (Mínimo Crítico):** ~12-19 horas
+**TOTAL RESTANTE (Completo):** ~28-42 horas
 
 ---
 
-*Última atualização: 15 de novembro de 2025 - Revisão completa baseada no PDF do projeto*
+**Última atualização:** 16 de novembro de 2025 - BFS 100% completo (implementação + testes + CLI)
