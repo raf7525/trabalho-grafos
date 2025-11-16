@@ -1,0 +1,16 @@
+{
+  "algoritmo": "Dijkstra",
+  "origem": "nova descoberta",
+  "destino": "boa viagem",
+  "distancia_total": 12.3,
+  "caminho": [
+    "nova descoberta",
+    "casa amarela",
+    "poco da panela",
+    "cordeiro",
+    "san martin",
+    "jiquia",
+    "imbiribeira",
+    "boa viagem"
+  ]
+}

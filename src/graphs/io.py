@@ -1,6 +1,6 @@
 import pandas as pd
 import unidecode
-from .graph import Vertice, Grafo
+from src.graphs.graph import Vertice, Grafo
 
 def normalizar_texto(texto):
     if not isinstance(texto, str):
@@ -27,15 +27,21 @@ def processar_arquivo_bairros(caminho_entrada: str, caminho_saida: str) -> None:
 
 def carregar_grafo(caminho_arquivo_nos: str, caminho_arquivo_arestas: str) -> Grafo:
     grafo = Grafo()
-    dados_nos = pd.read_csv(caminho_arquivo_nos)
-
+    try:
+        dados_nos = pd.read_csv(caminho_arquivo_nos, encoding='utf-8', header=0)
+    except UnicodeDecodeError:
+        dados_nos = pd.read_csv(caminho_arquivo_nos, encoding='latin-1', header=0)
+        
     for _, linha in dados_nos.iterrows():
         nome_bairro = linha['bairro']
         no = Vertice(nome_bairro)
         no.atributos['microrregiao'] = linha['microrregiao']
         grafo.adicionar_no(no)
     
-    dados_arestas = pd.read_csv(caminho_arquivo_arestas)
+    try:
+        dados_arestas = pd.read_csv(caminho_arquivo_arestas, encoding='utf-8', header=0)
+    except UnicodeDecodeError:
+        dados_arestas = pd.read_csv(caminho_arquivo_arestas, encoding='latin-1', header=0)
     
     for _, linha in dados_arestas.iterrows():
         nome_origem = normalizar_texto(linha['Bairro'])

@@ -1,40 +1,55 @@
+import sys
+from pathlib import Path
 import pytest
+import math
+
+ROOT_DIR = Path(__file__).parent.parent
+sys.path.insert(0, str(ROOT_DIR))
+
 from src.graphs.graph import Grafo, Vertice
 from src.graphs.io import carregar_grafo
 
-
 class HelperTest:
-    """Classe auxiliar para testes com métodos reutilizáveis"""
-    
+
     @staticmethod
     def criar_grafo_com_vertices():
         """Cria um grafo com 5 vértices (A, B, C, D, E)"""
         grafo = Grafo()
         
-        vertices = {
-            'a': Vertice("A"),
-            'b': Vertice("B"),
-            'c': Vertice("C"),
-            'd': Vertice("D"),
-            'e': Vertice("E")
-        }
+        nomes_upper = ['A', 'B', 'C', 'D', 'E']
+        nomes_lower = ['a', 'b', 'c', 'd', 'e']
+        vertices = {}
         
-        for vertice in vertices.values():
+        for i in range(len(nomes_upper)):
+            nome_maiúsculo = nomes_upper[i]
+            chave_minúscula = nomes_lower[i]
+            
+            vertice = Vertice(nome_maiúsculo)
+            vertices[chave_minúscula] = vertice
+
             grafo.adicionar_no(vertice)
         
         return grafo, vertices
-        
+
     @staticmethod
     def carregar_grafo_real():
         """Carrega o grafo real dos bairros do Recife"""
-        return carregar_grafo(
-            "data/bairros_unique.csv",
-            "data/bairros_vizinhos_tratados.csv"
-        )
+        path_nos = str(ROOT_DIR / "data" / "bairros_unique.csv")
+
+        path_arestas = str(ROOT_DIR / "data" / "bairros_vizinhos_tratados.csv")
+        
+        try:
+            grafo = carregar_grafo(path_nos, path_arestas)
+            return grafo
+        except FileNotFoundError as e:
+            pytest.skip(f"Arquivos de dados não encontrados: {e}")
+        except Exception as e:
+            pytest.fail(f"Falha ao carregar grafo real: {e}")
     
     @staticmethod
-    def assert_caminho_valido(grafo: Grafo, caminho: list[str], origem_esperada: str, destino_esperado: str):
+    def assert_caminho_valido(grafo, caminho, origem_esperada, destino_esperado):
         """Verifica se um caminho é válido e contínuo"""
+        assert caminho is not None, "Caminho não pode ser nulo"
         assert len(caminho) > 0, "Caminho não pode estar vazio"
         assert caminho[0] == origem_esperada, f"Origem esperada: {origem_esperada}, obtida: {caminho[0]}"
         assert caminho[-1] == destino_esperado, f"Destino esperado: {destino_esperado}, obtido: {caminho[-1]}"
@@ -44,29 +59,34 @@ class HelperTest:
             vizinhos = grafo.obter_vizinhos(caminho[i])
             assert caminho[i + 1] in vizinhos, \
                 f"{caminho[i+1]} não é vizinho de {caminho[i]}"
-    
+
     @staticmethod
-    def calcular_distancia_caminho(grafo: Grafo, caminho: list[str]) -> float:
-        """Calcula a distância total de um caminho somando os pesos das arestas"""
-        distancia_total = 0
+    def calcular_distancia_caminho(grafo, caminho):
+        """Calcula o peso total de um caminho."""
+        distancia = 0.0
+        if len(caminho) < 2:
+            return 0.0
+            
         for i in range(len(caminho) - 1):
-            peso = grafo.obter_peso(caminho[i], caminho[i + 1])
-            distancia_total += peso
-        return distancia_total
-    
+            peso = grafo.obter_peso(caminho[i], caminho[i+1])
+            if peso == math.inf:
+                raise ValueError(f"Caminho inválido: Aresta {caminho[i]}-{caminho[i+1]} não existe")
+            distancia += peso
+        return distancia
+
     @staticmethod
-    def assert_distancia_infinita(distancia: float):
-        """Verifica se a distância é infinita"""
-        assert distancia == float('inf'), f"Esperado inf, obtido {distancia}"
-        
+    def assert_caminho_direto(caminho, u, v):
+        """Helper para testar caminhos diretos simples."""
+        assert len(caminho) == 2
+        assert caminho[0] == u
+        assert caminho[-1] == v
+
     @staticmethod
-    def assert_distancia_aproximada(distancia: float, valor_esperado: float):
-        """Verifica se a distância está próxima do valor esperado"""
-        assert distancia == pytest.approx(valor_esperado), \
-            f"Esperado {valor_esperado}, obtido {distancia}"
-    
+    def assert_distancia_infinita(dist):
+        """Verifica se um caminho é inalcançável."""
+        assert dist == math.inf, "Distância deveria ser infinita"
+
     @staticmethod
-    def assert_caminho_direto(caminho: list[str], origem: str, destino: str):
-        """Verifica se o caminho é direto (apenas 2 nós)"""
-        assert len(caminho) == 2, f"Caminho direto deve ter 2 nós, obteve {len(caminho)}"
-        assert caminho == [origem, destino], f"Caminho esperado: [{origem}, {destino}], obtido: {caminho}"
+    def assert_distancia_aproximada(dist, val, precisao=4):
+        """Compara floats com uma margem de aproximação."""
+        assert round(dist, precisao) == round(val, precisao)

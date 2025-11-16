@@ -77,7 +77,13 @@ def executar_bfs(grafo, origem, destino, diretorio_saida):
 def main():
     parser = argparse.ArgumentParser(description="Análise de Grafos - Teoria dos Grafos")
     
-    parser.add_argument('--dataset', type=str, required=True, help='Caminho para o dataset')
+    parser.add_argument(
+        '--dataset', 
+        type=str, 
+        required=False,
+        default='./data/bairros_vizinhos_tratados.csv',
+        help='Caminho para o dataset'
+    )
     parser.add_argument('--alg', type=str, choices=['BFS', 'DFS', 'DIJKSTRA', 'BELLMAN_FORD'], help='Algoritmo a executar')
     parser.add_argument('--source', type=str, help='Nó de origem')
     parser.add_argument('--target', type=str, help='Nó de destino')
@@ -87,43 +93,131 @@ def main():
     
     args = parser.parse_args()
     
-    Path(args.out).mkdir(parents=True, exist_ok=True)
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    
+    raiz = Path(__file__).parent.parent
+    path_nos = str(raiz / "data" / "bairros_unique.csv")
+    path_arestas = args.dataset
+
+    if not Path(path_arestas).exists():
+        print(f"Erro: Arquivo de dataset não encontrado em {path_arestas}")
+        return
     
     if args.metricas:
-        raiz = Path(__file__).parent.parent
+        print("Calculando métricas do grafo...")
+        path_nos_metricas = str(raiz / "data" / "bairros_unique.csv")
+        path_arestas_metricas = path_arestas
+
+        if not Path(path_nos_metricas).exists():
+            print(f"Erro: Arquivo de nós não encontrado em {path_nos_metricas}")
+            return
+        
         orquestrar(
-            str(raiz / "data" / "bairros_unique.csv"),
-            str(raiz / "data" / "bairros_vizinhos_tratados.csv"),
-            args.out
+            path_nos_metricas,
+            path_arestas_metricas,
+            str(out_dir)
         )
+        print("Métricas calculadas com sucesso.")
         return
     
     if args.alg:
-        # Carrega o grafo
-        raiz = Path(__file__).parent.parent
-        grafo = carregar_grafo(
-            str(raiz / "data" / "bairros_unique.csv"),
-            str(raiz / "data" / "bairros_vizinhos_tratados.csv")
-        )
+        print(f"Executando {args.alg}...")
+
+        if not args.source:
+            print(f"Erro: --source é obrigatório para executar {args.alg}.")
+            return
+
+        if args.alg in ['DIJKSTRA', 'BELLMAN_FORD'] and not args.target:
+            print(f"Erro: --target é obrigatório para {args.alg}.")
+            return
+
+        try:
+            grafo = carregar_grafo(path_nos, path_arestas) 
+            print(f"Grafo carregado: {grafo.ordem} vértices, {grafo.tamanho} arestas.")
+        except FileNotFoundError as e:
+            print(f"Erro ao carregar arquivos do grafo: {e}")
+            return
+        except Exception as e:
+            print(f"Erro inesperado ao carregar o grafo: {e}")
+            return
+
+        try:
+            origem_nome = normalizar_texto(args.source)
+            if origem_nome not in grafo.vertices:
+                raise KeyError(f"Vértice de origem '{args.source}' (normalizado para '{origem_nome}') não encontrado.")
+            
+            destino_nome = None
+            if args.target:
+                destino_nome = normalizar_texto(args.target)
+                if destino_nome not in grafo.vertices:
+
+                    if args.alg != 'BFS':
+                        raise KeyError(f"Vértice de destino '{args.target}' (normalizado para '{destino_nome}') não encontrado.")
+
+        except KeyError as e:
+            print(f"Erro: {e}")
+            return
+
+        resultado = {}
+        nome_arquivo = f"resultado_{args.alg.lower()}.json"
         
-        if args.alg == 'BFS':
-            if not args.source:
-                print("Erro: --source é obrigatório para BFS")
-                return
-            executar_bfs(grafo, args.source, args.target, args.out)
+        try:
+            if args.alg == 'DIJKSTRA':
+                dist, caminho = grafo.caminho_mais_curto_dijkstra(origem_nome, destino_nome)
+                resultado = {
+                    "algoritmo": "Dijkstra",
+                    "origem": origem_nome,
+                    "destino": destino_nome,
+                    "distancia_total": dist,
+                    "caminho": caminho
+                }
+                
+                if origem_nome == "nova descoberta" and (destino_nome == "boa viagem" or destino_nome == "setubal"):
+                    nome_arquivo = "percurso_nova_descoberta_setubal.json"
+                else:
+                    nome_arquivo = f"dijkstra_{origem_nome}_para_{destino_nome}.json"
+
+            elif args.alg == 'BELLMAN_FORD':
+                dist, caminho = grafo.caminho_mais_curto_bellman_ford(origem_nome, destino_nome)
+                resultado = {
+                    "algoritmo": "Bellman-Ford",
+                    "origem": origem_nome,
+                    "destino": destino_nome,
+                    "distancia_total": dist,
+                    "caminho": caminho
+                }
+                nome_arquivo = f"bellman_{origem_nome}_para_{destino_nome}.json"
+
+            elif args.alg == 'BFS':
+                executar_bfs(grafo, origem_nome, destino_nome, args.out)
+                resultado = None
+
+            elif args.alg == 'DFS':
+                print(f"Executando DFS a partir de {origem_nome}...")
+                print("Lógica do DFS ainda não implementada no cli.py.")
+                resultado = None
         
-        elif args.alg in ['DFS', 'DIJKSTRA', 'BELLMAN_FORD']:
-            print(f"Algoritmo {args.alg} ainda não integrado ao CLI")
-            print(f"Origem: {args.source}, Destino: {args.target}")
+        except ValueError as e:
+            print(f"Erro ao executar {args.alg}: {e}")
+            return
+
+        if resultado:
+            caminho_saida = out_dir / nome_arquivo
+            with open(caminho_saida, 'w', encoding='utf-8') as f:
+                json.dump(resultado, f, indent=2, ensure_ascii=False)
+            print(f"Resultado salvo em: {caminho_saida}")
         
         return
     
     if args.interactive:
-        print("Modo interativo ativado")
-        print(f"Dataset: {args.dataset}")
-        print(f"Saída: {args.out}")
+        print("Modo interativo ativado (não implementado)")
+        return
 
-# python3 -m src.cli --dataset ./data/bairros_recife.csv --metricas --out ./out/
+    if not args.metricas and not args.alg and not args.interactive:
+        print("Nenhuma ação especificada. Use --metricas ou --alg.")
+        parser.print_help()
+
 
 if __name__ == "__main__":
     main()
