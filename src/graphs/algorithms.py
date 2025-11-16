@@ -150,19 +150,56 @@ class Sorting:
         return distancias[end.nome], caminho
     
     @staticmethod
-    def breadth_first_search(start, adjacencia):
-        visitado = set([start])
-        fila = deque([start])
-        parent = {start: None}
+    def breadth_first_search(graph: Grafo, start: Vertice):
+        """
+        Executa busca em largura (BFS) a partir de um vértice inicial.
+        
+        Retorna:
+            dict: Dicionário contendo:
+                - 'niveis': dict[str, int] - nível de cada vértice na árvore BFS
+                - 'distancias': dict[str, int] - distância (em número de arestas) de cada vértice
+                - 'anterior': dict[str, str|None] - predecessor de cada vértice na árvore BFS
+                - 'arvore': dict[str, list[str]] - árvore de percurso (cada nó -> seus filhos)
+                - 'ordem_visita': list[str] - ordem em que os vértices foram visitados
+        """
+        visitado = set([start.nome])
+        fila = deque([start.nome])
+        anterior = {start.nome: None}
+        niveis = {start.nome: 0}
+        distancias = {start.nome: 0}
+        arvore = {start.nome: []}
+        ordem_visita = [start.nome]
+        
+        # Inicializa todos os outros vértices como não visitados
+        for nome in graph.vertices:
+            if nome != start.nome:
+                niveis[nome] = float('inf')
+                distancias[nome] = float('inf')
+                arvore[nome] = []
 
         while fila:
             u = fila.popleft()
-            for v in adjacencia[u]:
+            vertice_atual = graph.vertices[u]
+            
+            # Explora todos os vizinhos
+            for vizinho in vertice_atual.vizinhos:
+                v = vizinho.nome
                 if v not in visitado:
                     visitado.add(v)
-                    parent[v] = u
+                    anterior[v] = u
+                    niveis[v] = niveis[u] + 1
+                    distancias[v] = distancias[u] + 1
+                    arvore[u].append(v)
                     fila.append(v)
-        return parent
+                    ordem_visita.append(v)
+        
+        return {
+            'niveis': niveis,
+            'distancias': distancias,
+            'anterior': anterior,
+            'arvore': arvore,
+            'ordem_visita': ordem_visita
+        }
 
 
     @staticmethod

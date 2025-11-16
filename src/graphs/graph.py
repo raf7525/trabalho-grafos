@@ -167,6 +167,22 @@ class Grafo:
         
         v_destino = self.vertices[str(destino)] if isinstance(destino, str) else destino
         return Sorting.bellman_ford(self, v_origem, v_destino)
+    
+    def busca_em_largura(self, origem: Union[Vertice, str]):
+        """
+        Executa busca em largura (BFS) a partir de um vértice inicial.
+        
+        Retorna dict com:
+            - niveis: nível de cada vértice na árvore BFS
+            - distancias: distância em número de arestas
+            - anterior: predecessor de cada vértice
+            - arvore: estrutura da árvore de percurso
+            - ordem_visita: ordem de visitação dos vértices
+        """
+        from .algorithms import Sorting
+        
+        v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
+        return Sorting.breadth_first_search(self, v_origem)
 
     def __str__(self) -> str:
         linhas = [f"Grafo com {self.ordem} nós e {self.tamanho} arestas"]
