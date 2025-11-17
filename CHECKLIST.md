@@ -253,8 +253,8 @@
 - **Algoritmos:** 75% ✅ (Dijkstra + Bellman-Ford + BFS completos, falta apenas DFS)
 - **Testes:** 75% ✅ (35 testes: 12 Dijkstra + 14 Bellman-Ford + 9 BFS)
 - **CLI Básico:** 100% ✅
-- **Integração CLI + Algoritmos:** 75% ✅ (Dijkstra/BF/BFS OK, falta DFS)
-- **Outputs Obrigatórios:** 80% ⚠️ (métricas + BFS/Dijkstra OK, Faltam DFS e matriz)
+- **Integração CLI + Algoritmos:** 75% ✅ (Dijkstra/Bellman-Ford/BFS integrados e funcionando, falta DFS)
+- **Outputs Obrigatórios:** 85% ✅ (métricas + BFS + Dijkstra + Bellman-Ford OK, faltam DFS e matriz)
 - **Visualizações:** 0% ❌ (removido do escopo atual)
 - **Relatório:** 0% ❌
 
@@ -330,4 +330,4 @@
 
 ---
 
-**Última atualização:** 16 de novembro de 2025 - Conflito de merge do BFS resolvido. Status de Dijkstra/BF restaurado.
+**Última atualização:** 17 de novembro de 2025 - Pull do amigo integrado com sucesso! Dijkstra/Bellman-Ford agora totalmente integrados ao CLI. Todos testes (35/35) passando sem conflitos ✅
