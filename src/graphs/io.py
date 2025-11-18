@@ -1,6 +1,6 @@
 import pandas as pd
 import unidecode
-from src.graphs.graph import Vertice, Grafo
+from graphs.graph import Vertice, Grafo
 
 def normalizar_texto(texto):
     if not isinstance(texto, str):

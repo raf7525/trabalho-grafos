@@ -77,11 +77,14 @@ def executar_bfs(grafo, origem, destino, diretorio_saida):
 def main():
     parser = argparse.ArgumentParser(description="Análise de Grafos - Teoria dos Grafos")
     
+    raiz = Path(__file__).parent.parent
+    dataset_padrao = str(raiz / "data" / "bairros_vizinhos_tratados.csv")
+    
     parser.add_argument(
         '--dataset', 
         type=str, 
         required=False,
-        default='./data/bairros_vizinhos_tratados.csv',
+        default=dataset_padrao,
         help='Caminho para o dataset'
     )
     parser.add_argument('--alg', type=str, choices=['BFS', 'DFS', 'DIJKSTRA', 'BELLMAN_FORD'], help='Algoritmo a executar')
@@ -90,13 +93,13 @@ def main():
     parser.add_argument('--out', type=str, default='./out/', help='Diretório de saída')
     parser.add_argument('--interactive', action='store_true', help='Modo interativo')
     parser.add_argument('--metricas', action='store_true', help='Calcular métricas do grafo')
+    parser.add_argument('--viz', action='store_true', help='Gerar todas as visualizações analíticas')
     
     args = parser.parse_args()
     
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     
-    raiz = Path(__file__).parent.parent
     path_nos = str(raiz / "data" / "bairros_unique.csv")
     path_arestas = args.dataset
 
@@ -119,6 +122,12 @@ def main():
             str(out_dir)
         )
         print("Métricas calculadas com sucesso.")
+        return
+    
+    if args.viz:
+        print("\nGerando visualizações analíticas...")
+        from viz import gerar_todas_visualizacoes
+        gerar_todas_visualizacoes(path_nos, path_arestas)
         return
     
     if args.alg:

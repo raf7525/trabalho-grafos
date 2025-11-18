@@ -1,8 +1,8 @@
 import json
 import pandas as pd
 from pathlib import Path
-from src.graphs.graph import Grafo
-from src.graphs.io import carregar_grafo
+from graphs.graph import Grafo
+from graphs.io import carregar_grafo
 
 
 def calcular_metricas_globais(grafo: Grafo) -> dict:
