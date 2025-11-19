@@ -1,17 +1,87 @@
+import sys
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from pyvis.network import Network
 import json
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 from graphs.io import carregar_grafo
 from graphs.graph import Grafo
 
 
 plt.style.use('seaborn-v0_8-darkgrid')
-RAIZ = Path(__file__).parent.parent
+RAIZ = Path(__file__).parent.parent 
 DIRETORIO_SAIDA = RAIZ / "out"
 DIRETORIO_SAIDA.mkdir(parents=True, exist_ok=True)
+
+
+def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
+    if caminho_saida is None:
+        caminho_saida = str(DIRETORIO_SAIDA / "grafo_dados.json")
+    
+    nodes = []
+    for nome_bairro, vertice in grafo.vertices.items():
+        vizinhos = grafo.obter_vizinhos(nome_bairro)
+        grau = len(vizinhos)
+        microrregiao = vertice.atributos.get('microrregiao', 'Desconhecida')
+        
+        nos_ego = {nome_bairro} | set(vizinhos)
+        
+        arestas_ego = 0
+        for n1 in nos_ego:
+            for n2 in nos_ego:
+                if n1 < n2: # Evita duplicidade e laços
+                    if grafo.obter_peso(n1, n2) != float('inf'):
+                        arestas_ego += 1
+        
+        qtd_nos_ego = len(nos_ego)
+        densidade_ego = 0.0
+        if qtd_nos_ego > 1:
+            densidade_ego = (2 * arestas_ego) / (qtd_nos_ego * (qtd_nos_ego - 1))
+        
+        nodes.append({
+            "id": nome_bairro,
+            "label": nome_bairro.title(),
+            "group": microrregiao,
+            "value": grau, 
+            "title": (
+                f"<b>{nome_bairro.title()}</b><br>"
+                f"Microrregião: {microrregiao}<br>"
+                f"Grau: {grau}<br>"
+                f"Densidade Ego: {densidade_ego:.4f}"
+            )
+        })
+    
+    edges = []
+    arestas_processadas = set()
+    
+    for (origem, destino), attrs in grafo.arestas.items():
+        chave = tuple(sorted((origem, destino)))
+        if chave in arestas_processadas:
+            continue
+            
+        edges.append({
+            "from": origem,
+            "to": destino,
+            "label": str(attrs.get('peso', '')),
+            "title": f"Peso: {attrs.get('peso', '')}<br>Logradouro: {attrs.get('logradouro', 'N/A')}",
+            "color": {"color": "#848484", "opacity": 0.2}
+        })
+        arestas_processadas.add(chave)
+        
+    dados_completos = {
+        "nodes": nodes,
+        "edges": edges
+    }
+    
+    with open(caminho_saida, 'w', encoding='utf-8') as f:
+        json.dump(dados_completos, f, ensure_ascii=False, indent=2)
+        
+    print(f"✓ Dados JSON atualizados (com Densidade Ego) em: {caminho_saida}")
+    return caminho_saida
 
 
 def visualizar_mapa_cores_grau(grafo: Grafo, caminho_saida: str = None):
@@ -36,7 +106,7 @@ def visualizar_mapa_cores_grau(grafo: Grafo, caminho_saida: str = None):
     ax.set_xlabel("Grau (Número de Conexões)", fontsize=12, fontweight='bold')
     ax.set_ylabel("Bairro", fontsize=12, fontweight='bold')
     ax.set_title("Mapa de Cores por Grau dos Bairros\n(Cor mais intensa = mais conexões)", 
-                 fontsize=14, fontweight='bold', pad=20)
+                fontsize=14, fontweight='bold', pad=20)
     
     sm = plt.cm.ScalarMappable(cmap=plt.cm.YlOrRd, norm=norm)
     sm.set_array([])
@@ -85,7 +155,7 @@ def visualizar_densidade_por_microrregiao(grafo: Grafo, caminho_saida: str = Non
     ax.set_xlabel("Microrregião (RPA)", fontsize=12, fontweight='bold')
     ax.set_ylabel("Densidade Média de Ego-Subrede", fontsize=12, fontweight='bold')
     ax.set_title("Ranking de Densidade de Ego-Subrede por Microrregião", 
-                 fontsize=14, fontweight='bold', pad=20)
+                fontsize=14, fontweight='bold', pad=20)
     
     for barra in barras:
         altura = barra.get_height()
@@ -277,16 +347,24 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
         caminho_arestas = str(RAIZ / "data" / "bairros_vizinhos_tratados.csv")
     
     print("Carregando grafo...")
-    grafo = carregar_grafo(caminho_nos, caminho_arestas)
-    print(f"Grafo carregado: {grafo.ordem} vértices, {grafo.tamanho} arestas\n")
+    try:
+        grafo = carregar_grafo(caminho_nos, caminho_arestas)
+        print(f"Grafo carregado: {grafo.ordem} vértices, {grafo.tamanho} arestas\n")
+    except Exception as e:
+        print(f"Erro fatal ao carregar grafo: {e}")
+        return
     
     print("Gerando visualizações...\n")
     
-    visualizar_mapa_cores_grau(grafo)
-    visualizar_densidade_por_microrregiao(grafo)
-    visualizar_subgrafo_top10(grafo)
-    visualizar_distribuicao_graus(grafo)
-    visualizar_arvore_bfs(grafo, origem="boa vista")
+    try:
+        exportar_grafo_para_json(grafo) # FUNCAO NOVA
+        visualizar_mapa_cores_grau(grafo)
+        visualizar_densidade_por_microrregiao(grafo)
+        visualizar_subgrafo_top10(grafo)
+        visualizar_distribuicao_graus(grafo)
+        visualizar_arvore_bfs(grafo, origem="boa vista")
+    except Exception as e:
+        print(f"Erro ao gerar visualizações: {e}")
     
     print("\n" + "="*70)
     print("TODAS AS VISUALIZAÇÕES FORAM GERADAS COM SUCESSO!")

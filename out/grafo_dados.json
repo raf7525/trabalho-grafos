@@ -1,0 +1,3359 @@
+{
+  "nodes": [
+    {
+      "id": "aflitos",
+      "label": "Aflitos",
+      "group": 3,
+      "value": 4,
+      "title": "<b>Aflitos</b><br>Microrregião: 3<br>Grau: 4<br>Densidade Ego: 0.9000"
+    },
+    {
+      "id": "afogados",
+      "label": "Afogados",
+      "group": 5,
+      "value": 9,
+      "title": "<b>Afogados</b><br>Microrregião: 5<br>Grau: 9<br>Densidade Ego: 0.3778"
+    },
+    {
+      "id": "agua fria",
+      "label": "Agua Fria",
+      "group": 2,
+      "value": 8,
+      "title": "<b>Agua Fria</b><br>Microrregião: 2<br>Grau: 8<br>Densidade Ego: 0.4444"
+    },
+    {
+      "id": "alto do mandu",
+      "label": "Alto Do Mandu",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Alto Do Mandu</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "alto jose bonifacio",
+      "label": "Alto Jose Bonifacio",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Alto Jose Bonifacio</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "alto jose do pinho",
+      "label": "Alto Jose Do Pinho",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Alto Jose Do Pinho</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "alto santa teresinha",
+      "label": "Alto Santa Teresinha",
+      "group": 2,
+      "value": 5,
+      "title": "<b>Alto Santa Teresinha</b><br>Microrregião: 2<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "apipucos",
+      "label": "Apipucos",
+      "group": 3,
+      "value": 7,
+      "title": "<b>Apipucos</b><br>Microrregião: 3<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "areias",
+      "label": "Areias",
+      "group": 5,
+      "value": 8,
+      "title": "<b>Areias</b><br>Microrregião: 5<br>Grau: 8<br>Densidade Ego: 0.5278"
+    },
+    {
+      "id": "arruda",
+      "label": "Arruda",
+      "group": 2,
+      "value": 9,
+      "title": "<b>Arruda</b><br>Microrregião: 2<br>Grau: 9<br>Densidade Ego: 0.4000"
+    },
+    {
+      "id": "barro",
+      "label": "Barro",
+      "group": 5,
+      "value": 5,
+      "title": "<b>Barro</b><br>Microrregião: 5<br>Grau: 5<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "beberibe",
+      "label": "Beberibe",
+      "group": 2,
+      "value": 4,
+      "title": "<b>Beberibe</b><br>Microrregião: 2<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "boa viagem",
+      "label": "Boa Viagem",
+      "group": 6,
+      "value": 4,
+      "title": "<b>Boa Viagem</b><br>Microrregião: 6<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "boa vista",
+      "label": "Boa Vista",
+      "group": 1,
+      "value": 9,
+      "title": "<b>Boa Vista</b><br>Microrregião: 1<br>Grau: 9<br>Densidade Ego: 0.4000"
+    },
+    {
+      "id": "bomba do hemeterio",
+      "label": "Bomba Do Hemeterio",
+      "group": 2,
+      "value": 5,
+      "title": "<b>Bomba Do Hemeterio</b><br>Microrregião: 2<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "bongi",
+      "label": "Bongi",
+      "group": 5,
+      "value": 4,
+      "title": "<b>Bongi</b><br>Microrregião: 5<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "brasilia teimosa",
+      "label": "Brasilia Teimosa",
+      "group": 6,
+      "value": 1,
+      "title": "<b>Brasilia Teimosa</b><br>Microrregião: 6<br>Grau: 1<br>Densidade Ego: 1.0000"
+    },
+    {
+      "id": "brejo da guabiraba",
+      "label": "Brejo Da Guabiraba",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Brejo Da Guabiraba</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "brejo de beberibe",
+      "label": "Brejo De Beberibe",
+      "group": 3,
+      "value": 7,
+      "title": "<b>Brejo De Beberibe</b><br>Microrregião: 3<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "cabanga",
+      "label": "Cabanga",
+      "group": 1,
+      "value": 0,
+      "title": "<b>Cabanga</b><br>Microrregião: 1<br>Grau: 0<br>Densidade Ego: 0.0000"
+    },
+    {
+      "id": "cacote",
+      "label": "Cacote",
+      "group": 5,
+      "value": 3,
+      "title": "<b>Cacote</b><br>Microrregião: 5<br>Grau: 3<br>Densidade Ego: 1.0000"
+    },
+    {
+      "id": "cajueiro",
+      "label": "Cajueiro",
+      "group": 2,
+      "value": 3,
+      "title": "<b>Cajueiro</b><br>Microrregião: 2<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "campina do barreto",
+      "label": "Campina Do Barreto",
+      "group": 2,
+      "value": 5,
+      "title": "<b>Campina Do Barreto</b><br>Microrregião: 2<br>Grau: 5<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "campo grande",
+      "label": "Campo Grande",
+      "group": 2,
+      "value": 8,
+      "title": "<b>Campo Grande</b><br>Microrregião: 2<br>Grau: 8<br>Densidade Ego: 0.4444"
+    },
+    {
+      "id": "casa amarela",
+      "label": "Casa Amarela",
+      "group": 3,
+      "value": 11,
+      "title": "<b>Casa Amarela</b><br>Microrregião: 3<br>Grau: 11<br>Densidade Ego: 0.3333"
+    },
+    {
+      "id": "casa forte",
+      "label": "Casa Forte",
+      "group": 3,
+      "value": 4,
+      "title": "<b>Casa Forte</b><br>Microrregião: 3<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "caxanga",
+      "label": "Caxanga",
+      "group": 4,
+      "value": 5,
+      "title": "<b>Caxanga</b><br>Microrregião: 4<br>Grau: 5<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "cidade universitaria",
+      "label": "Cidade Universitaria",
+      "group": 4,
+      "value": 4,
+      "title": "<b>Cidade Universitaria</b><br>Microrregião: 4<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "coelhos",
+      "label": "Coelhos",
+      "group": 1,
+      "value": 4,
+      "title": "<b>Coelhos</b><br>Microrregião: 1<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "cohab",
+      "label": "Cohab",
+      "group": 6,
+      "value": 3,
+      "title": "<b>Cohab</b><br>Microrregião: 6<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "coqueiral",
+      "label": "Coqueiral",
+      "group": 5,
+      "value": 3,
+      "title": "<b>Coqueiral</b><br>Microrregião: 5<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "cordeiro",
+      "label": "Cordeiro",
+      "group": 4,
+      "value": 9,
+      "title": "<b>Cordeiro</b><br>Microrregião: 4<br>Grau: 9<br>Densidade Ego: 0.4000"
+    },
+    {
+      "id": "corrego do jenipapo",
+      "label": "Corrego Do Jenipapo",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Corrego Do Jenipapo</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "curado",
+      "label": "Curado",
+      "group": 5,
+      "value": 9,
+      "title": "<b>Curado</b><br>Microrregião: 5<br>Grau: 9<br>Densidade Ego: 0.3778"
+    },
+    {
+      "id": "derby",
+      "label": "Derby",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Derby</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.7333"
+    },
+    {
+      "id": "dois irmaos",
+      "label": "Dois Irmaos",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Dois Irmaos</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "dois unidos",
+      "label": "Dois Unidos",
+      "group": 2,
+      "value": 4,
+      "title": "<b>Dois Unidos</b><br>Microrregião: 2<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "encruzilhada",
+      "label": "Encruzilhada",
+      "group": 2,
+      "value": 8,
+      "title": "<b>Encruzilhada</b><br>Microrregião: 2<br>Grau: 8<br>Densidade Ego: 0.5278"
+    },
+    {
+      "id": "engenho do meio",
+      "label": "Engenho Do Meio",
+      "group": 4,
+      "value": 5,
+      "title": "<b>Engenho Do Meio</b><br>Microrregião: 4<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "espinheiro",
+      "label": "Espinheiro",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Espinheiro</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.6190"
+    },
+    {
+      "id": "estancia",
+      "label": "Estancia",
+      "group": 5,
+      "value": 4,
+      "title": "<b>Estancia</b><br>Microrregião: 5<br>Grau: 4<br>Densidade Ego: 0.9000"
+    },
+    {
+      "id": "fundao",
+      "label": "Fundao",
+      "group": 2,
+      "value": 4,
+      "title": "<b>Fundao</b><br>Microrregião: 2<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "gracas",
+      "label": "Gracas",
+      "group": 3,
+      "value": 10,
+      "title": "<b>Gracas</b><br>Microrregião: 3<br>Grau: 10<br>Densidade Ego: 0.4000"
+    },
+    {
+      "id": "guabiraba",
+      "label": "Guabiraba",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Guabiraba</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.4762"
+    },
+    {
+      "id": "hipodromo",
+      "label": "Hipodromo",
+      "group": 2,
+      "value": 3,
+      "title": "<b>Hipodromo</b><br>Microrregião: 2<br>Grau: 3<br>Densidade Ego: 1.0000"
+    },
+    {
+      "id": "ibura",
+      "label": "Ibura",
+      "group": 6,
+      "value": 8,
+      "title": "<b>Ibura</b><br>Microrregião: 6<br>Grau: 8<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "ilha do leite",
+      "label": "Ilha Do Leite",
+      "group": 1,
+      "value": 4,
+      "title": "<b>Ilha Do Leite</b><br>Microrregião: 1<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "ilha do retiro",
+      "label": "Ilha Do Retiro",
+      "group": 4,
+      "value": 6,
+      "title": "<b>Ilha Do Retiro</b><br>Microrregião: 4<br>Grau: 6<br>Densidade Ego: 0.6190"
+    },
+    {
+      "id": "joana bezerra",
+      "label": "Joana Bezerra",
+      "group": 1,
+      "value": 5,
+      "title": "<b>Joana Bezerra</b><br>Microrregião: 1<br>Grau: 5<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "imbiribeira",
+      "label": "Imbiribeira",
+      "group": 6,
+      "value": 7,
+      "title": "<b>Imbiribeira</b><br>Microrregião: 6<br>Grau: 7<br>Densidade Ego: 0.5357"
+    },
+    {
+      "id": "ipsep",
+      "label": "Ipsep",
+      "group": 6,
+      "value": 4,
+      "title": "<b>Ipsep</b><br>Microrregião: 6<br>Grau: 4<br>Densidade Ego: 0.9000"
+    },
+    {
+      "id": "iputinga",
+      "label": "Iputinga",
+      "group": 4,
+      "value": 8,
+      "title": "<b>Iputinga</b><br>Microrregião: 4<br>Grau: 8<br>Densidade Ego: 0.4444"
+    },
+    {
+      "id": "jaqueira",
+      "label": "Jaqueira",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Jaqueira</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "jardim sao paulo",
+      "label": "Jardim Sao Paulo",
+      "group": 5,
+      "value": 7,
+      "title": "<b>Jardim Sao Paulo</b><br>Microrregião: 5<br>Grau: 7<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "jiquia",
+      "label": "Jiquia",
+      "group": 5,
+      "value": 7,
+      "title": "<b>Jiquia</b><br>Microrregião: 5<br>Grau: 7<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "jordao",
+      "label": "Jordao",
+      "group": 6,
+      "value": 3,
+      "title": "<b>Jordao</b><br>Microrregião: 6<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "linha do tiro",
+      "label": "Linha Do Tiro",
+      "group": 2,
+      "value": 6,
+      "title": "<b>Linha Do Tiro</b><br>Microrregião: 2<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "macaxeira",
+      "label": "Macaxeira",
+      "group": 3,
+      "value": 4,
+      "title": "<b>Macaxeira</b><br>Microrregião: 3<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "madalena",
+      "label": "Madalena",
+      "group": 4,
+      "value": 7,
+      "title": "<b>Madalena</b><br>Microrregião: 4<br>Grau: 7<br>Densidade Ego: 0.5357"
+    },
+    {
+      "id": "mangabeira",
+      "label": "Mangabeira",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Mangabeira</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "mangueira",
+      "label": "Mangueira",
+      "group": 5,
+      "value": 4,
+      "title": "<b>Mangueira</b><br>Microrregião: 5<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "monteiro",
+      "label": "Monteiro",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Monteiro</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "morro da conceicao",
+      "label": "Morro Da Conceicao",
+      "group": 3,
+      "value": 4,
+      "title": "<b>Morro Da Conceicao</b><br>Microrregião: 3<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "mustardinha",
+      "label": "Mustardinha",
+      "group": 5,
+      "value": 4,
+      "title": "<b>Mustardinha</b><br>Microrregião: 5<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "nova descoberta",
+      "label": "Nova Descoberta",
+      "group": 3,
+      "value": 7,
+      "title": "<b>Nova Descoberta</b><br>Microrregião: 3<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "paissandu",
+      "label": "Paissandu",
+      "group": 1,
+      "value": 6,
+      "title": "<b>Paissandu</b><br>Microrregião: 1<br>Grau: 6<br>Densidade Ego: 0.6190"
+    },
+    {
+      "id": "parnamirim",
+      "label": "Parnamirim",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Parnamirim</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "passarinho",
+      "label": "Passarinho",
+      "group": 3,
+      "value": 4,
+      "title": "<b>Passarinho</b><br>Microrregião: 3<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "pau-ferro",
+      "label": "Pau-Ferro",
+      "group": 3,
+      "value": 1,
+      "title": "<b>Pau-Ferro</b><br>Microrregião: 3<br>Grau: 1<br>Densidade Ego: 1.0000"
+    },
+    {
+      "id": "peixinhos",
+      "label": "Peixinhos",
+      "group": 2,
+      "value": 3,
+      "title": "<b>Peixinhos</b><br>Microrregião: 2<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "pina",
+      "label": "Pina",
+      "group": 6,
+      "value": 4,
+      "title": "<b>Pina</b><br>Microrregião: 6<br>Grau: 4<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "poco da panela",
+      "label": "Poco Da Panela",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Poco Da Panela</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "ponto de parada",
+      "label": "Ponto De Parada",
+      "group": 2,
+      "value": 5,
+      "title": "<b>Ponto De Parada</b><br>Microrregião: 2<br>Grau: 5<br>Densidade Ego: 0.7333"
+    },
+    {
+      "id": "porto da madeira",
+      "label": "Porto Da Madeira",
+      "group": 2,
+      "value": 4,
+      "title": "<b>Porto Da Madeira</b><br>Microrregião: 2<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "prado",
+      "label": "Prado",
+      "group": 4,
+      "value": 7,
+      "title": "<b>Prado</b><br>Microrregião: 4<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "bairro do recife",
+      "label": "Bairro Do Recife",
+      "group": 1,
+      "value": 3,
+      "title": "<b>Bairro Do Recife</b><br>Microrregião: 1<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "rosarinho",
+      "label": "Rosarinho",
+      "group": 2,
+      "value": 6,
+      "title": "<b>Rosarinho</b><br>Microrregião: 2<br>Grau: 6<br>Densidade Ego: 0.6190"
+    },
+    {
+      "id": "san martin",
+      "label": "San Martin",
+      "group": 5,
+      "value": 10,
+      "title": "<b>San Martin</b><br>Microrregião: 5<br>Grau: 10<br>Densidade Ego: 0.3818"
+    },
+    {
+      "id": "sancho",
+      "label": "Sancho",
+      "group": 5,
+      "value": 4,
+      "title": "<b>Sancho</b><br>Microrregião: 5<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "santana",
+      "label": "Santana",
+      "group": 3,
+      "value": 6,
+      "title": "<b>Santana</b><br>Microrregião: 3<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "santo amaro",
+      "label": "Santo Amaro",
+      "group": 1,
+      "value": 7,
+      "title": "<b>Santo Amaro</b><br>Microrregião: 1<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "santo antonio",
+      "label": "Santo Antonio",
+      "group": 1,
+      "value": 4,
+      "title": "<b>Santo Antonio</b><br>Microrregião: 1<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "sao jose",
+      "label": "Sao Jose",
+      "group": 1,
+      "value": 0,
+      "title": "<b>Sao Jose</b><br>Microrregião: 1<br>Grau: 0<br>Densidade Ego: 0.0000"
+    },
+    {
+      "id": "sitio dos pintos",
+      "label": "Sitio Dos Pintos",
+      "group": 3,
+      "value": 3,
+      "title": "<b>Sitio Dos Pintos</b><br>Microrregião: 3<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "soledade",
+      "label": "Soledade",
+      "group": 1,
+      "value": 2,
+      "title": "<b>Soledade</b><br>Microrregião: 1<br>Grau: 2<br>Densidade Ego: 1.0000"
+    },
+    {
+      "id": "tamarineira",
+      "label": "Tamarineira",
+      "group": 3,
+      "value": 7,
+      "title": "<b>Tamarineira</b><br>Microrregião: 3<br>Grau: 7<br>Densidade Ego: 0.5000"
+    },
+    {
+      "id": "tejipio",
+      "label": "Tejipio",
+      "group": 5,
+      "value": 5,
+      "title": "<b>Tejipio</b><br>Microrregião: 5<br>Grau: 5<br>Densidade Ego: 0.6000"
+    },
+    {
+      "id": "torre",
+      "label": "Torre",
+      "group": 4,
+      "value": 6,
+      "title": "<b>Torre</b><br>Microrregião: 4<br>Grau: 6<br>Densidade Ego: 0.5714"
+    },
+    {
+      "id": "torreao",
+      "label": "Torreao",
+      "group": 2,
+      "value": 4,
+      "title": "<b>Torreao</b><br>Microrregião: 2<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "torroes",
+      "label": "Torroes",
+      "group": 4,
+      "value": 4,
+      "title": "<b>Torroes</b><br>Microrregião: 4<br>Grau: 4<br>Densidade Ego: 0.8000"
+    },
+    {
+      "id": "toto",
+      "label": "Toto",
+      "group": 5,
+      "value": 3,
+      "title": "<b>Toto</b><br>Microrregião: 5<br>Grau: 3<br>Densidade Ego: 0.8333"
+    },
+    {
+      "id": "varzea",
+      "label": "Varzea",
+      "group": 4,
+      "value": 4,
+      "title": "<b>Varzea</b><br>Microrregião: 4<br>Grau: 4<br>Densidade Ego: 0.7000"
+    },
+    {
+      "id": "vasco da gama",
+      "label": "Vasco Da Gama",
+      "group": 3,
+      "value": 5,
+      "title": "<b>Vasco Da Gama</b><br>Microrregião: 3<br>Grau: 5<br>Densidade Ego: 0.6667"
+    },
+    {
+      "id": "zumbi",
+      "label": "Zumbi",
+      "group": 4,
+      "value": 4,
+      "title": "<b>Zumbi</b><br>Microrregião: 4<br>Grau: 4<br>Densidade Ego: 0.8000"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_0",
+      "from": "aflitos",
+      "to": "rosarinho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Manuel de Carvalho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_1",
+      "from": "aflitos",
+      "to": "encruzilhada",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Teles Júnior",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_2",
+      "from": "aflitos",
+      "to": "espinheiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Gomes de Matos Júnior",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_3",
+      "from": "aflitos",
+      "to": "gracas",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Samuel Campelo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_4",
+      "from": "jaqueira",
+      "to": "tamarineira",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Neto de Mendonça",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_5",
+      "from": "gracas",
+      "to": "jaqueira",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Avenida Conselheiro Rosa e Silva",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_6",
+      "from": "jaqueira",
+      "to": "torre",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Hoel Sette",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_7",
+      "from": "jaqueira",
+      "to": "santana",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua do Futuro",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_8",
+      "from": "jaqueira",
+      "to": "parnamirim",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Estrada do Arraial",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_9",
+      "from": "hipodromo",
+      "to": "ponto de parada",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Fonseca Oliveira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_10",
+      "from": "encruzilhada",
+      "to": "hipodromo",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Carlos Fernandes",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_11",
+      "from": "campo grande",
+      "to": "hipodromo",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Prudente de Morais",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_12",
+      "from": "ponto de parada",
+      "to": "rosarinho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Couto Magalhães",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_13",
+      "from": "encruzilhada",
+      "to": "ponto de parada",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Beberibe",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_14",
+      "from": "arruda",
+      "to": "ponto de parada",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua José Austregésilo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_15",
+      "from": "campo grande",
+      "to": "ponto de parada",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Mem de Sá",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_16",
+      "from": "rosarinho",
+      "to": "tamarineira",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Regueira Costa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_17",
+      "from": "encruzilhada",
+      "to": "rosarinho",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua André Rebouças",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_18",
+      "from": "gracas",
+      "to": "rosarinho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Desembargador Martins Pereira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_19",
+      "from": "arruda",
+      "to": "rosarinho",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Norte Miguel Arraes de Alencar",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_20",
+      "from": "gracas",
+      "to": "tamarineira",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Cônego Barata",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_21",
+      "from": "arruda",
+      "to": "tamarineira",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Estrada Velha de Água Fria",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_22",
+      "from": "casa amarela",
+      "to": "tamarineira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Jundiá",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_23",
+      "from": "parnamirim",
+      "to": "tamarineira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ibiapaba",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_24",
+      "from": "mangabeira",
+      "to": "tamarineira",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Professor José dos Anjos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_25",
+      "from": "encruzilhada",
+      "to": "espinheiro",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida João de Barros",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_26",
+      "from": "encruzilhada",
+      "to": "gracas",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Conselheiro Portela",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_27",
+      "from": "encruzilhada",
+      "to": "torreao",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua da Coragem",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_28",
+      "from": "campo grande",
+      "to": "encruzilhada",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Retiro Saudoso",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_29",
+      "from": "espinheiro",
+      "to": "gracas",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua da Hora",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_30",
+      "from": "espinheiro",
+      "to": "torreao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Marquês do Paraná",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_31",
+      "from": "espinheiro",
+      "to": "santo amaro",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Quarenta e Oito",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_32",
+      "from": "boa vista",
+      "to": "espinheiro",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua do Príncipe",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_33",
+      "from": "boa vista",
+      "to": "gracas",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Amélia",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_34",
+      "from": "derby",
+      "to": "gracas",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua João Ramos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_35",
+      "from": "gracas",
+      "to": "madalena",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Bruno Maia",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_36",
+      "from": "gracas",
+      "to": "torre",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Antônio Novais",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_37",
+      "from": "santo amaro",
+      "to": "torreao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Othon Paraíso",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_38",
+      "from": "campo grande",
+      "to": "torreao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Cândido Lacerda",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_39",
+      "from": "coelhos",
+      "to": "joana bezerra",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Braço do Norte",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_40",
+      "from": "ilha do leite",
+      "to": "joana bezerra",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Bahia Formosa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_41",
+      "from": "joana bezerra",
+      "to": "paissandu",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ubaitaba",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_42",
+      "from": "afogados",
+      "to": "joana bezerra",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Cambuí",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_43",
+      "from": "ilha do retiro",
+      "to": "joana bezerra",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Jaraguari",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_44",
+      "from": "bairro do recife",
+      "to": "santo amaro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Álvares Cabral",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_45",
+      "from": "bairro do recife",
+      "to": "santo antonio",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Madre de Deus",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_46",
+      "from": "bairro do recife",
+      "to": "campo grande",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua do Apolo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_47",
+      "from": "boa vista",
+      "to": "santo amaro",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida da Saudade",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_48",
+      "from": "santo amaro",
+      "to": "santo antonio",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Avenida Cruz Cabugá",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_49",
+      "from": "santo amaro",
+      "to": "soledade",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Coelho Leite",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_50",
+      "from": "campo grande",
+      "to": "santo amaro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Treze de Maio",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_51",
+      "from": "boa vista",
+      "to": "coelhos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Rosário da Boa Vista",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_52",
+      "from": "boa vista",
+      "to": "derby",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Avenida Manoel Borba",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_53",
+      "from": "boa vista",
+      "to": "ilha do leite",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Gervásio Pires",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_54",
+      "from": "boa vista",
+      "to": "paissandu",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Barão de São Borja",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_55",
+      "from": "boa vista",
+      "to": "santo antonio",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua da Soledade",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_56",
+      "from": "boa vista",
+      "to": "soledade",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua da Soledade",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_57",
+      "from": "coelhos",
+      "to": "ilha do leite",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Terra Boa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_58",
+      "from": "coelhos",
+      "to": "santo antonio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Tereza Maria Freitas da Paz",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_59",
+      "from": "derby",
+      "to": "paissandu",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Barão de Goiana",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_60",
+      "from": "derby",
+      "to": "ilha do retiro",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Praça do Derby",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_61",
+      "from": "derby",
+      "to": "madalena",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Avenida Governador Agamenon Magalhães",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_62",
+      "from": "ilha do leite",
+      "to": "paissandu",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Estado de Israel",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_63",
+      "from": "ilha do retiro",
+      "to": "paissandu",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Portugal",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_64",
+      "from": "madalena",
+      "to": "paissandu",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Rua Paissandú",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_65",
+      "from": "afogados",
+      "to": "bongi",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Doutor Adelino",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_66",
+      "from": "afogados",
+      "to": "ilha do retiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ursulino Pinto de Carvalho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_67",
+      "from": "afogados",
+      "to": "mangueira",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Cosme Viana",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_68",
+      "from": "afogados",
+      "to": "mustardinha",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Vinte e Um de Abril",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_69",
+      "from": "afogados",
+      "to": "prado",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Manuel Batista de Azevedo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_70",
+      "from": "afogados",
+      "to": "pina",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Estrada dos Remédios",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_71",
+      "from": "afogados",
+      "to": "imbiribeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Itatiuba",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_72",
+      "from": "afogados",
+      "to": "jiquia",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Visconde de Inhaúma",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_73",
+      "from": "bongi",
+      "to": "mustardinha",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Randolfo Pinto Ferreira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_74",
+      "from": "bongi",
+      "to": "prado",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Pio Muniz de Farias",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_75",
+      "from": "bongi",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Aparecida de Minas",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_76",
+      "from": "brasilia teimosa",
+      "to": "pina",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Atum",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_77",
+      "from": "ilha do retiro",
+      "to": "prado",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua João Elísio Ramos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_78",
+      "from": "ilha do retiro",
+      "to": "madalena",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Astorga",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_79",
+      "from": "mangueira",
+      "to": "mustardinha",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Benício Dias",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_80",
+      "from": "jiquia",
+      "to": "mangueira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Mandari",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_81",
+      "from": "mangueira",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Doutor Arsênio Tavares",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_82",
+      "from": "mustardinha",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Francisca Benigna Cavalcanti",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_83",
+      "from": "prado",
+      "to": "san martin",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Carlos Gomes",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_84",
+      "from": "cordeiro",
+      "to": "prado",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Gervásio Campelo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_85",
+      "from": "madalena",
+      "to": "prado",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Rodrigues de Mendonça",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_86",
+      "from": "prado",
+      "to": "zumbi",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Manoel de Arruda Câmara",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_87",
+      "from": "boa viagem",
+      "to": "jordao",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Ribeiro de Brito",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_88",
+      "from": "boa viagem",
+      "to": "pina",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Hélio Falcão",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_89",
+      "from": "boa viagem",
+      "to": "ibura",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Viaduto Tancredo Neves",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_90",
+      "from": "boa viagem",
+      "to": "imbiribeira",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Viaduto Tacredo Neves",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_91",
+      "from": "cohab",
+      "to": "jordao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Mato Grosso",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_92",
+      "from": "barro",
+      "to": "cohab",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Rio Turiaçu",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_93",
+      "from": "cohab",
+      "to": "ibura",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Sítio dos Moreiras",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_94",
+      "from": "ibura",
+      "to": "jordao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Junqueiro",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_95",
+      "from": "imbiribeira",
+      "to": "pina",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Manoel de Brito",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_96",
+      "from": "barro",
+      "to": "tejipio",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Doutor José Rufino",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_97",
+      "from": "areias",
+      "to": "barro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Dorothéia Vieira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_98",
+      "from": "barro",
+      "to": "ibura",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Travessa Doutor Jose Rufino",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_99",
+      "from": "barro",
+      "to": "jardim sao paulo",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Major Chagas de Oliveira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_100",
+      "from": "coqueiral",
+      "to": "sancho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Doutor José Cornélio",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_101",
+      "from": "coqueiral",
+      "to": "tejipio",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Quinze de Novembro",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_102",
+      "from": "coqueiral",
+      "to": "toto",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Guanabara",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_103",
+      "from": "sancho",
+      "to": "tejipio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Doutor Urbano Vitalino de Melo Filho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_104",
+      "from": "sancho",
+      "to": "toto",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Josita Almeida",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_105",
+      "from": "curado",
+      "to": "sancho",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Morena Flor",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_106",
+      "from": "jardim sao paulo",
+      "to": "tejipio",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Itanhenga",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_107",
+      "from": "curado",
+      "to": "tejipio",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua do Sancho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_108",
+      "from": "curado",
+      "to": "toto",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Juvêncio Marques da Cunha",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_109",
+      "from": "areias",
+      "to": "cacote",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Justiça e Paz",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_110",
+      "from": "cacote",
+      "to": "ibura",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Feaca",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_111",
+      "from": "cacote",
+      "to": "ipsep",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Sindicato dos Bancários",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_112",
+      "from": "areias",
+      "to": "ibura",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Recife",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_113",
+      "from": "areias",
+      "to": "imbiribeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Tapajós",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_114",
+      "from": "areias",
+      "to": "ipsep",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Pintor Antônio Albuquerque",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_115",
+      "from": "areias",
+      "to": "estancia",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Peroba",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_116",
+      "from": "areias",
+      "to": "jardim sao paulo",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Senador Alberto Pasqualini",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_117",
+      "from": "areias",
+      "to": "jiquia",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Mearim",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_118",
+      "from": "ibura",
+      "to": "imbiribeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Frei Luís de Souza",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_119",
+      "from": "ibura",
+      "to": "ipsep",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Moni Silva",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_120",
+      "from": "imbiribeira",
+      "to": "ipsep",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Doutor Tavares Correia",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_121",
+      "from": "imbiribeira",
+      "to": "jiquia",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Rio Oceânico",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_122",
+      "from": "estancia",
+      "to": "jardim sao paulo",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Teixeira de Melo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_123",
+      "from": "estancia",
+      "to": "jiquia",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Rocha Pombo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_124",
+      "from": "estancia",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Humberto de Campos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_125",
+      "from": "jardim sao paulo",
+      "to": "jiquia",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Guarulhos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_126",
+      "from": "jardim sao paulo",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ana Pires Lustosa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_127",
+      "from": "curado",
+      "to": "jardim sao paulo",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Professora Zênia Guerra",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_128",
+      "from": "jiquia",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Manoel Lopes de Barros",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_129",
+      "from": "curado",
+      "to": "san martin",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida General San Martin",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_130",
+      "from": "san martin",
+      "to": "torroes",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Eduardo de Andrade",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_131",
+      "from": "cordeiro",
+      "to": "san martin",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Amália",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_132",
+      "from": "cidade universitaria",
+      "to": "curado",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida Getúlio Vargas",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_133",
+      "from": "curado",
+      "to": "engenho do meio",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Rodovia Luiz Gonzaga",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_134",
+      "from": "curado",
+      "to": "torroes",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Avenida Engenheiro Abdias de Carvalho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_135",
+      "from": "curado",
+      "to": "varzea",
+      "label": "1.0",
+      "title": "Peso: 1.0<br>Logradouro: Avenida Visconde de São Leopoldo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_136",
+      "from": "cidade universitaria",
+      "to": "engenho do meio",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida Jornalista Aníbal Fernandes",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_137",
+      "from": "cidade universitaria",
+      "to": "varzea",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida dos Reitores Joaquim Amazonas",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_138",
+      "from": "cidade universitaria",
+      "to": "iputinga",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Girador da Reitoria da UFPE",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_139",
+      "from": "engenho do meio",
+      "to": "torroes",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Antônio Borges Uchoa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_140",
+      "from": "cordeiro",
+      "to": "engenho do meio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Carneiro de Mariz",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_141",
+      "from": "engenho do meio",
+      "to": "iputinga",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Antônio Curado",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_142",
+      "from": "cordeiro",
+      "to": "torroes",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Damasqueiro",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_143",
+      "from": "caxanga",
+      "to": "varzea",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Engenho Poeta",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_144",
+      "from": "caxanga",
+      "to": "iputinga",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Vicente Zirpoli",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_145",
+      "from": "apipucos",
+      "to": "caxanga",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Pedro Ernesto",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_146",
+      "from": "caxanga",
+      "to": "dois irmaos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Dona Inês Correa de Araújo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_147",
+      "from": "caxanga",
+      "to": "sitio dos pintos",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Caxangá",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_148",
+      "from": "iputinga",
+      "to": "varzea",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Diogo de Vasconcelos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_149",
+      "from": "arruda",
+      "to": "campo grande",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua do Machado",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_150",
+      "from": "arruda",
+      "to": "peixinhos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Zeferino Agra",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_151",
+      "from": "arruda",
+      "to": "bomba do hemeterio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ramiz Galvão",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_152",
+      "from": "arruda",
+      "to": "campina do barreto",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Coronel Urbano Ribeiro de Sena",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_153",
+      "from": "arruda",
+      "to": "mangabeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Raul Pompéia",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_154",
+      "from": "agua fria",
+      "to": "arruda",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Bom Conselho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_155",
+      "from": "campo grande",
+      "to": "peixinhos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Oliveira Fonseca",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_156",
+      "from": "campina do barreto",
+      "to": "peixinhos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Avenida Poeta Vinicius de Morais",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_157",
+      "from": "cordeiro",
+      "to": "torre",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Eurico de Souza Leão",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_158",
+      "from": "cordeiro",
+      "to": "zumbi",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Francisco Vita",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_159",
+      "from": "cordeiro",
+      "to": "santana",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Firmino de Barros",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_160",
+      "from": "cordeiro",
+      "to": "iputinga",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Professor Evaldo Altino",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_161",
+      "from": "cordeiro",
+      "to": "poco da panela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Alaíde",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_162",
+      "from": "madalena",
+      "to": "torre",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua José Osório",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_163",
+      "from": "madalena",
+      "to": "zumbi",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Araguatins",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_164",
+      "from": "torre",
+      "to": "zumbi",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua Professor Trajano de Mendonça",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_165",
+      "from": "santana",
+      "to": "torre",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Rua José Bonifácio",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_166",
+      "from": "casa forte",
+      "to": "santana",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Samuel Farias",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_167",
+      "from": "parnamirim",
+      "to": "santana",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Amaraji",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_168",
+      "from": "poco da panela",
+      "to": "santana",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Astério Rufino Alves",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_169",
+      "from": "alto jose do pinho",
+      "to": "casa amarela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Ori",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_170",
+      "from": "alto jose do pinho",
+      "to": "morro da conceicao",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Maragogi",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_171",
+      "from": "alto jose do pinho",
+      "to": "bomba do hemeterio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Horácio Silva",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_172",
+      "from": "alto jose do pinho",
+      "to": "mangabeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Severino Bernardino Pereira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_173",
+      "from": "alto jose do pinho",
+      "to": "alto santa teresinha",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua do Rio",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_174",
+      "from": "alto jose bonifacio",
+      "to": "alto jose do pinho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Valeriano Lobo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_175",
+      "from": "alto do mandu",
+      "to": "casa amarela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Eliete Aguiar",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_176",
+      "from": "alto do mandu",
+      "to": "monteiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Humaitá",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_177",
+      "from": "alto do mandu",
+      "to": "macaxeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Cianorte",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_178",
+      "from": "alto do mandu",
+      "to": "nova descoberta",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Mandacaru",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_179",
+      "from": "alto do mandu",
+      "to": "apipucos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Fernão Velho",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_180",
+      "from": "casa amarela",
+      "to": "casa forte",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Padre Lemos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_181",
+      "from": "casa amarela",
+      "to": "monteiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Sempre Viva",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_182",
+      "from": "casa amarela",
+      "to": "morro da conceicao",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Taquaratinga",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_183",
+      "from": "casa amarela",
+      "to": "parnamirim",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Dona Ana Xavier",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_184",
+      "from": "casa amarela",
+      "to": "poco da panela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Curupaiti",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_185",
+      "from": "casa amarela",
+      "to": "mangabeira",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Major Nereu Guerra",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_186",
+      "from": "casa amarela",
+      "to": "nova descoberta",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Vasco da Gama",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_187",
+      "from": "casa amarela",
+      "to": "vasco da gama",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Frederico Ozanan",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_188",
+      "from": "casa forte",
+      "to": "parnamirim",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Jerônimo de Albuquerque",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_189",
+      "from": "casa forte",
+      "to": "poco da panela",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua de Casa Forte",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_190",
+      "from": "iputinga",
+      "to": "monteiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Doutor Virgínio Marquês",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_191",
+      "from": "iputinga",
+      "to": "poco da panela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Doutor Virginio Marques",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_192",
+      "from": "apipucos",
+      "to": "iputinga",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua São Mateus",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_193",
+      "from": "monteiro",
+      "to": "poco da panela",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Muniz Galvão",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_194",
+      "from": "apipucos",
+      "to": "monteiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua das Levadas",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_195",
+      "from": "alto jose bonifacio",
+      "to": "morro da conceicao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua do Dende",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_196",
+      "from": "morro da conceicao",
+      "to": "vasco da gama",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Fidelis Batista de Aguiar",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_197",
+      "from": "beberibe",
+      "to": "linha do tiro",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Taguatinga",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_198",
+      "from": "beberibe",
+      "to": "porto da madeira",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Quinta Travessa Aníbal Benévolo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_199",
+      "from": "agua fria",
+      "to": "beberibe",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida Aníbal Benévolo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_200",
+      "from": "beberibe",
+      "to": "dois unidos",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Uriel de Holanda",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_201",
+      "from": "bomba do hemeterio",
+      "to": "mangabeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua São Gabriel",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_202",
+      "from": "alto santa teresinha",
+      "to": "bomba do hemeterio",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Bomba do Hemetério",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_203",
+      "from": "agua fria",
+      "to": "bomba do hemeterio",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Julio Lima",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_204",
+      "from": "cajueiro",
+      "to": "campina do barreto",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Couto Soares",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_205",
+      "from": "cajueiro",
+      "to": "fundao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua André Bezerra",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_206",
+      "from": "cajueiro",
+      "to": "porto da madeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Maria Ramos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_207",
+      "from": "campina do barreto",
+      "to": "fundao",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Iguatu",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_208",
+      "from": "agua fria",
+      "to": "campina do barreto",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Constança",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_209",
+      "from": "fundao",
+      "to": "porto da madeira",
+      "label": "1.2",
+      "title": "Peso: 1.2<br>Logradouro: Avenida Cidade de Monteiro",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_210",
+      "from": "agua fria",
+      "to": "fundao",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Doutor Eudes Costa",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_211",
+      "from": "alto santa teresinha",
+      "to": "linha do tiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Santa Mercedes",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_212",
+      "from": "agua fria",
+      "to": "linha do tiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Sodrelândia",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_213",
+      "from": "alto jose bonifacio",
+      "to": "linha do tiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Araquem",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_214",
+      "from": "brejo de beberibe",
+      "to": "linha do tiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Rio Igarapé",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_215",
+      "from": "dois unidos",
+      "to": "linha do tiro",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Rio Tinto",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_216",
+      "from": "agua fria",
+      "to": "porto da madeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Belo Horizonte",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_217",
+      "from": "agua fria",
+      "to": "alto santa teresinha",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Andricora",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_218",
+      "from": "alto jose bonifacio",
+      "to": "alto santa teresinha",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Professor José Amarino dos Reis",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_219",
+      "from": "alto jose bonifacio",
+      "to": "vasco da gama",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua São Domingos Sávio",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_220",
+      "from": "alto jose bonifacio",
+      "to": "brejo de beberibe",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Gustavo Barrozo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_221",
+      "from": "corrego do jenipapo",
+      "to": "macaxeira",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua dos Coquinhos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_222",
+      "from": "corrego do jenipapo",
+      "to": "nova descoberta",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Popular",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_223",
+      "from": "apipucos",
+      "to": "corrego do jenipapo",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Erundina Negreiros de Araújo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_224",
+      "from": "corrego do jenipapo",
+      "to": "dois irmaos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Francisco Campos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_225",
+      "from": "brejo da guabiraba",
+      "to": "corrego do jenipapo",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Três Morros",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_226",
+      "from": "corrego do jenipapo",
+      "to": "guabiraba",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Avenida da Redenção",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_227",
+      "from": "macaxeira",
+      "to": "nova descoberta",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Nova Iguaçu",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_228",
+      "from": "apipucos",
+      "to": "macaxeira",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Maria Cândida",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_229",
+      "from": "nova descoberta",
+      "to": "vasco da gama",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Alto da Brasileira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_230",
+      "from": "brejo da guabiraba",
+      "to": "nova descoberta",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Piraju",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_231",
+      "from": "brejo de beberibe",
+      "to": "nova descoberta",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Primeira Subida da Brasileira",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_232",
+      "from": "brejo de beberibe",
+      "to": "vasco da gama",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Santa Maria Goretti",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_233",
+      "from": "apipucos",
+      "to": "dois irmaos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Jorge Tasso Neto",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_234",
+      "from": "dois irmaos",
+      "to": "sitio dos pintos",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Professor Cláudio Selva",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_235",
+      "from": "dois irmaos",
+      "to": "guabiraba",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Estrada dos Pintos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_236",
+      "from": "guabiraba",
+      "to": "sitio dos pintos",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Rua Manuel de Medeiros",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_237",
+      "from": "brejo da guabiraba",
+      "to": "brejo de beberibe",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Arca de Noe",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_238",
+      "from": "brejo da guabiraba",
+      "to": "passarinho",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Avenida Vereador Otacílio Azevedo",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_239",
+      "from": "brejo da guabiraba",
+      "to": "guabiraba",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Santa Tereza",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_240",
+      "from": "brejo de beberibe",
+      "to": "dois unidos",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Rua Doutor Antônio da Rosa Borges",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_241",
+      "from": "brejo de beberibe",
+      "to": "passarinho",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Só Nós Dois",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_242",
+      "from": "dois unidos",
+      "to": "passarinho",
+      "label": "1.8",
+      "title": "Peso: 1.8<br>Logradouro: Avenida Hildebrando de Vasconcelos",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_243",
+      "from": "guabiraba",
+      "to": "passarinho",
+      "label": "2.0",
+      "title": "Peso: 2.0<br>Logradouro: Rua Vargem linda",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    },
+    {
+      "id": "edge_244",
+      "from": "guabiraba",
+      "to": "pau-ferro",
+      "label": "1.5",
+      "title": "Peso: 1.5<br>Logradouro: Estrada da Mumbeca",
+      "color": {
+        "color": "#848484",
+        "opacity": 0.2
+      }
+    }
+  ]
+}

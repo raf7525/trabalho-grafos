@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafo Recife - Backend Python</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body { background-color: #1a1a1a; color: #eee; margin: 0; height: 100vh; width: 100vw; overflow: hidden; }
+        #header { background-color: #2d2d2d; padding: 15px; border-bottom: 1px solid #444; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; z-index: 100; }
+        #mynetwork { width: 100%; height: calc(100vh - 80px); background-color: #222; }
+        select, button { font-size: 0.9rem; }
+        .info-panel { position: absolute; bottom: 20px; left: 20px; background: rgba(30, 30, 30, 0.95); padding: 15px; border-radius: 8px; border: 1px solid #555; display: none; max-width: 350px; z-index: 1000; }
+        
+        .toast-container { position: absolute; top: 20px; right: 20px; z-index: 2000; }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <strong class="me-2">Python Backend</strong>
+        <select id="algoritmo" class="form-select-sm">
+            <option value="bfs">BFS (Largura)</option>
+            <option value="dijkstra">Dijkstra (Peso)</option>
+            <option value="bellman">Bellman-Ford</option>
+            <option value="dfs">DFS (Profundidade)</option>
+        </select>
+        <span class="text-muted">|</span>
+        <select id="origem"><option disabled selected>Origem...</option></select>
+        <span class="text-muted">➜</span>
+        <select id="destino"><option disabled selected>Destino...</option></select>
+        <button onclick="consultarPython()" class="btn btn-primary btn-sm">▶ Executar no Python</button>
+        <button onclick="resetar()" class="btn btn-outline-secondary btn-sm">Limpar</button>
+        <button onclick="rotaObrigatoria()" class="btn btn-warning btn-sm ms-auto">⭐ Rota PDF</button>
+    </div>
+
+    <div id="mynetwork"></div>
+    <div id="info" class="info-panel"></div>
+
+    <div class="toast-container">
+        <div id="liveToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toast-msg">
+                    Algo deu errado.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let network, allNodes, allEdges, nodeMap = {}, edgesMap = {};
+
+        // Carrega visualização inicial
+        fetch('./grafo_dados.json')
+            .then(r => r.json())
+            .then(data => init(data))
+            .catch(e => showToast("Erro ao carregar grafo. O servidor Python está rodando?"));
+
+        function init(data) {
+            allNodes = new vis.DataSet(data.nodes);
+            allEdges = new vis.DataSet(data.edges);
+            data.nodes.forEach(n => nodeMap[n.id] = n);
+            
+            // Mapa para achar ID da aresta rápido
+            data.edges.forEach(e => {
+                if(!edgesMap[e.from]) edgesMap[e.from] = {};
+                if(!edgesMap[e.to]) edgesMap[e.to] = {};
+                edgesMap[e.from][e.to] = e.id;
+                edgesMap[e.to][e.from] = e.id;
+            });
+
+            const sorted = [...data.nodes].sort((a,b) => a.label.localeCompare(b.label));
+            sorted.forEach(n => {
+                document.getElementById('origem').add(new Option(n.label, n.id));
+                document.getElementById('destino').add(new Option(n.label, n.id));
+            });
+
+            const container = document.getElementById('mynetwork');
+            network = new vis.Network(container, { 
+                nodes: allNodes, 
+                edges: allEdges,
+                physics: { stabilization: { iterations: 100 }, barnesHut: { gravitationalConstant: -4000 } }
+            }, {
+                nodes: { shape: 'dot', font: { color: 'white' }, borderWidth: 2 },
+                edges: { color: { color: '#666', opacity: 0.2 }, width: 1, smooth: { type: 'continuous' } }
+            });
+        }
+
+        function consultarPython() {
+            const o = document.getElementById('origem').value;
+            const d = document.getElementById('destino').value;
+            const alg = document.getElementById('algoritmo').value;
+
+            if (!o || !d || o.includes("...") || d.includes("...")) return showToast("Selecione origem e destino!");
+            
+            resetarVisual();
+
+            const url = `/api/calcular?alg=${alg}&origem=${encodeURIComponent(o)}&destino=${encodeURIComponent(d)}`;
+
+            fetch(url)
+                .then(response => {
+                    if (response.status === 501) {
+                        return response.json().then(err => { throw new Error("NOT_IMPLEMENTED: " + err.erro); });
+                    }
+                    if (!response.ok) {
+                        return response.json().then(err => { throw new Error(err.erro); });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    destacarCaminho(data.caminho, data.algoritmo, data.custo);
+                })
+                .catch(error => {
+                    let msg = error.message;
+                    if (msg.startsWith("NOT_IMPLEMENTED:")) {
+                        msg = msg.replace("NOT_IMPLEMENTED: ", "");
+                        document.getElementById('liveToast').classList.replace('bg-danger', 'bg-warning');
+                        document.getElementById('liveToast').classList.add('text-dark');
+                        document.getElementById('liveToast').classList.remove('text-white');
+                    } else {
+                        document.getElementById('liveToast').classList.replace('bg-warning', 'bg-danger');
+                        document.getElementById('liveToast').classList.remove('text-dark');
+                        document.getElementById('liveToast').classList.add('text-white');
+                    }
+                    showToast(msg);
+                });
+        }
+
+        function destacarCaminho(path, nomeAlg, custo) {
+            let updates = path.map((id, i) => ({
+                id: id,
+                color: { background: i===0?'#00ff00':(i===path.length-1?'#ff0000':'#0d6efd'), border: '#fff' },
+                size: 30, font: { size: 16, background: '#000' }
+            }));
+            allNodes.update(updates);
+
+            let edgeUpdates = [];
+            for(let i=0; i<path.length-1; i++) {
+                let u=path[i], v=path[i+1];
+                let id = edgesMap[u][v];
+                if(id) edgeUpdates.push({ id: id, color: { color: '#0d6efd', opacity: 1 }, width: 4 });
+            }
+            allEdges.update(edgeUpdates);
+            network.fit({ nodes: path, animation: true });
+
+            const info = document.getElementById('info');
+            info.style.display = 'block';
+            info.style.borderLeft = `5px solid #0d6efd`;
+            info.innerHTML = `<h5>${nomeAlg} (Python)</h5>
+                <div class="mb-2">Custo: <b>${custo}</b> | Nós: <b>${path.length}</b></div>
+                <div style="max-height:100px;overflow-y:auto;font-size:0.9em">${path.map(id => nodeMap[id].label).join(' ➝ ')}</div>`;
+        }
+
+        function showToast(msg) {
+            document.getElementById('toast-msg').innerText = msg;
+            const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+            toast.show();
+        }
+
+        function rotaObrigatoria() {
+            document.getElementById('origem').value = "nova descoberta";
+            document.getElementById('destino').value = "boa viagem";
+            document.getElementById('algoritmo').value = "dijkstra";
+            consultarPython();
+        }
+
+        function resetarVisual() {
+            allNodes.update(allNodes.getIds().map(id => ({ id: id, color: null, size: nodeMap[id].value ? undefined : 20, font: { size: 14, background: 'transparent' } })));
+            allEdges.update(allEdges.getIds().map(id => ({ id: id, color: { color: '#666', opacity: 0.2 }, width: 1 })));
+            document.getElementById('info').style.display = 'none';
+        }
+        function resetar() {
+            resetarVisual();
+            document.getElementById('origem').value = "Origem...";
+            document.getElementById('destino').value = "Destino...";
+            network.fit();
+        }
+    </script>
+</body>
+</html>
