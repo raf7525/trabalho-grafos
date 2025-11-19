@@ -357,7 +357,7 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
     print("Gerando visualizações...\n")
     
     try:
-        exportar_grafo_para_json(grafo) # FUNCAO NOVA
+        exportar_grafo_para_json(grafo)
         visualizar_mapa_cores_grau(grafo)
         visualizar_densidade_por_microrregiao(grafo)
         visualizar_subgrafo_top10(grafo)
