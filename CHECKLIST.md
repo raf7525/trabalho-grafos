@@ -1,5 +1,32 @@
 # Checklist - Projeto Teoria dos Grafos
 
+**Data:** 20 de novembro de 2025
+
+## 📋 STATUS GERAL DO PROJETO
+
+**Pontuação Estimada:** 5.5-6.0/10.0 pontos (conservador)
+
+### Resumo Executivo
+- ✅ **3/4 algoritmos obrigatórios completos** (BFS, Dijkstra, Bellman-Ford)
+- ❌ **DFS não implementado** (único algoritmo faltando)
+- ✅ **35/35 testes passando** 
+- ✅ **CLI funcional** com 3 algoritmos integrados
+- ✅ **Arquivo obrigatório `percurso_nova_descoberta_setubal.json` gerado**
+- ❌ **Matriz de distâncias faltando**
+- ❌ **Parte 2 (dataset adicional) não iniciada**
+
+### Progresso por Categoria
+- **Estrutura do Projeto:** 100% ✅
+- **Carregamento de Dados:** 100% ✅
+- **Algoritmos:** 75% ⚠️ (3/4 completos - falta DFS)
+- **Testes:** 75% ⚠️ (35 testes - falta DFS)
+- **CLI:** 75% ⚠️ (falta integração DFS)
+- **Outputs Obrigatórios:** 85% ⚠️ (faltam DFS e matriz)
+- **Parte 2:** 0% ❌
+- **Relatório PDF:** 0% ❌
+
+---
+
 ## ✅ CONCLUÍDO
 
 ### Estrutura do Projeto
@@ -253,6 +280,84 @@
 
 ---
 
+## 📊 ANÁLISE DETALHADA POR REQUISITO DO PDF
+
+### Parte 1: Implementação dos Algoritmos (5.0 pontos)
+
+| Algoritmo | Status | Implementação | Testes | CLI | Output JSON | Pontos Estimados |
+|-----------|--------|---------------|--------|-----|-------------|------------------|
+| **BFS** | ✅ Completo | ✅ | ✅ 9 testes | ✅ | ✅ | 1.25/1.25 |
+| **DFS** | ❌ Não feito | ❌ | ❌ 0 testes | ❌ | ❌ | 0.0/1.25 |
+| **Dijkstra** | ✅ Completo | ✅ | ✅ 12 testes | ✅ | ✅ | 1.25/1.25 |
+| **Bellman-Ford** | ✅ Completo | ✅ | ✅ 14 testes | ✅ | ✅ | 1.25/1.25 |
+| **Integração** | ⚠️ Parcial | ✅ | - | ✅ | ⚠️ | 0.5/0.75 |
+
+**Subtotal Parte 1:** ~4.25/5.0 pontos
+
+### Parte 2: Dataset Adicional (3.0 pontos)
+
+| Item | Status | Pontos |
+|------|--------|--------|
+| Processar segundo dataset | ❌ | 0.0/1.0 |
+| Executar algoritmos | ❌ | 0.0/1.0 |
+| Comparar resultados | ❌ | 0.0/0.5 |
+| Análise de performance | ❌ | 0.0/0.5 |
+
+**Subtotal Parte 2:** 0.0/3.0 pontos
+
+### Parte 3: Testes Unitários (2.0 pontos)
+
+| Item | Status | Pontos |
+|------|--------|--------|
+| Infraestrutura de testes | ✅ | 0.3/0.3 |
+| Testes BFS | ✅ 9 testes | 0.4/0.4 |
+| Testes DFS | ❌ 0 testes | 0.0/0.4 |
+| Testes Dijkstra | ✅ 12 testes | 0.5/0.5 |
+| Testes Bellman-Ford | ✅ 14 testes | 0.5/0.5 |
+| Coverage > 80% | ⚠️ ~75% | 0.0/0.4 |
+
+**Subtotal Parte 3:** 1.7/2.0 pontos
+
+### 📁 Arquivos Obrigatórios (Conforme PDF)
+
+**Gerados ✅:**
+- ✅ `recife_global.json`
+- ✅ `microrregioes.json`
+- ✅ `ego_bairro.csv`
+- ✅ `graus.csv`
+- ✅ `rankings.json`
+- ✅ `percurso_bfs_nova_descoberta.json`
+- ✅ `percurso_nova_descoberta_setubal.json` **(OBRIGATÓRIO)**
+- ✅ `caminho_bellman_ford_*.json`
+
+**Faltando ❌:**
+- ❌ `percurso_dfs_*.json`
+- ❌ `distancias_enderecos.csv`
+- ❌ Relatório final (PDF)
+
+### 🎯 Prioridades para Atingir Cada Nota
+
+**Para 6.0 (Nota Mínima):**
+- Implementar DFS básico sem classificação de arestas
+- Adicionar 5-6 testes simples
+- Gerar JSON de saída
+- **Tempo:** 4-5 horas
+
+**Para 7.0-7.5 (Nota Boa):**
+- Implementar DFS completo com classificação
+- Adicionar 8-10 testes robustos
+- Gerar matriz de distâncias
+- **Tempo:** 8-11 horas
+
+**Para 9.0-10.0 (Nota Excelente):**
+- Todo o anterior +
+- Processar Parte 2 (dataset adicional)
+- Escrever relatório PDF
+- Adicionar análises comparativas
+- **Tempo:** 20-30 horas
+
+---
+
 ## 📊 PROGRESSO GERAL (ATUALIZADO E CORRIGIDO)
 
 ### Por Categoria
@@ -285,7 +390,7 @@
 
 ---
 
-## 🎯 PRÓXIMOS PASSOS PRIORITÁRIOS (ATUALIZADO)
+## 🎯 PRÓXIMOS PASSOS PRIORITÁRIOS
 
 ### CRÍTICO - Para Pontuação Básica (Curto Prazo)
 1. ~~Implementar Dijkstra~~ ✅ COMPLETO
@@ -307,6 +412,43 @@
 15. Gerar JSONs de resultados para Bellman-Ford (Dijkstra já está feito)
 16. Executar suite completa de testes (meta: 40+ testes)
 17. Processar Parte 2 (dataset adicional, se fornecido)
+
+---
+
+## 📝 NOTAS IMPORTANTES
+
+### Pontos Fortes do Projeto
+1. ✅ **Código bem estruturado** - Classes, separação de responsabilidades
+2. ✅ **Testes abrangentes** - 35 testes para 3 algoritmos  
+3. ✅ **CLI funcional** - Interface completa e bem documentada
+4. ✅ **Output obrigatório principal** - `percurso_nova_descoberta_setubal.json` presente
+5. ✅ **Documentação completa** - README.md criado
+
+### Pontos Fracos / Bloqueadores
+1. ❌ **DFS ausente** - Único algoritmo obrigatório não implementado (~1.5 pontos perdidos)
+2. ❌ **Parte 2 não iniciada** - Dataset adicional (~3.0 pontos perdidos)
+3. ❌ **Matriz de distâncias faltando** - Output importante ausente
+4. ❌ **Sem relatório PDF** - Documentação final não escrita
+
+### Dados do Grafo
+- **Dados:** 94 bairros, 245 conexões, densidade 0.056
+- **Bairros isolados:** Cabanga, São José (0 arestas)
+- **Externos ignorados:** Aldeia, Oitinga (não são Recife)
+- **Top bairro (grau):** Casa Amarela (11 conexões)
+- **Top bairro (densidade ego):** Brasília Teimosa (1.0)
+
+### Comandos Funcionais
+- ✅ `python3 -m src.cli --dataset ./data/bairros_recife.csv --metricas --out ./out/`
+- ✅ `python3 -m src.cli --alg BFS --source "nova descoberta" --out ./out/`
+- ✅ `python3 -m src.cli --alg DIJKSTRA --source "nova descoberta" --target "boa viagem" --out ./out/`
+- ✅ `python3 -m src.cli --alg BELLMAN_FORD --source "nova descoberta" --target "boa viagem" --out ./out/`
+- ❌ Comandos com DFS ainda não funcionam
+
+### Status dos Algoritmos (Conforme PDF)
+- **Dijkstra:** ✅ Completo (implementação + 12 testes + CLI + JSON)
+- **Bellman-Ford:** ✅ Completo (implementação + 14 testes + CLI + JSON)
+- **BFS:** ✅ Completo (implementação + 9 testes + CLI + JSON)
+- **DFS:** ❌ Apenas stub vazio (precisa implementar do zero)
 
 ---
 
