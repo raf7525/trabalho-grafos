@@ -1,7 +1,7 @@
 from collections import deque
 import heapq
 from typing import List, Tuple
-from graphs.graph import Grafo, Vertice
+from src.graphs.graph import Grafo, Vertice
 
 class PositiveFloat(float):
     def __new__(cls, value):
