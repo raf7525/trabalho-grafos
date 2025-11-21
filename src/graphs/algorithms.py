@@ -203,6 +203,118 @@ class Sorting:
 
 
     @staticmethod
-    def depth_first_search():
-        pass
+    def depth_first_search(graph: Grafo, start: Vertice):
+        """
+        Executa busca em profundidade (DFS) a partir de um vértice inicial.
+        
+        Retorna:
+            dict: Dicionário contendo:
+                - 'descoberta': dict[str, int] - timestamp de descoberta de cada vértice
+                - 'finalizacao': dict[str, int] - timestamp de finalização de cada vértice
+                - 'anterior': dict[str, str|None] - predecessor de cada vértice na árvore DFS
+                - 'classificacao_arestas': dict[tuple, str] - classificação de cada aresta
+                    * 'arvore': aresta da árvore DFS
+                    * 'retorno': aresta para ancestral (indica ciclo)
+                    * 'avanco': aresta para descendente
+                    * 'cruzamento': aresta entre subárvores diferentes
+                - 'ordem_visita': list[str] - ordem de descoberta dos vértices
+                - 'tem_ciclo': bool - indica se o grafo contém ciclos
+                - 'componentes': list[list[str]] - componentes conexos do grafo
+        """
+        # Estados dos vértices: 'nao_visitado', 'visitando', 'visitado'
+        estado = {nome: 'nao_visitado' for nome in graph.vertices}
+        descoberta = {}
+        finalizacao = {}
+        anterior = {nome: None for nome in graph.vertices}
+        classificacao_arestas = {}
+        ordem_visita = []
+        tempo = [0]  # Lista para permitir modificação dentro da função aninhada
+        tem_ciclo = False
+        componentes = []
+        
+        def dfs_visitar(u: str, pai: str = None):
+            """Função auxiliar recursiva para visitar vértices
+            
+            Args:
+                u: Vértice atual sendo visitado
+                pai: Vértice predecessor (para grafos não-direcionados)
+            """
+            nonlocal tem_ciclo
+            
+            # Marca como visitando e registra descoberta
+            estado[u] = 'visitando'
+            tempo[0] += 1
+            descoberta[u] = tempo[0]
+            ordem_visita.append(u)
+            
+            vertice_atual = graph.vertices[u]
+            
+            # Explora todos os vizinhos
+            for vizinho in vertice_atual.vizinhos:
+                v = vizinho.nome
+                # Cria chave de aresta ordenada para grafos não-direcionados
+                aresta = tuple(sorted([u, v]))
+                
+                if estado[v] == 'nao_visitado':
+                    # Aresta de árvore
+                    anterior[v] = u
+                    classificacao_arestas[aresta] = 'arvore'
+                    dfs_visitar(v, u)
+                    
+                elif estado[v] == 'visitando' and v != pai:
+                    # Aresta de retorno - indica ciclo
+                    # Ignora se v é o pai direto (evita falso positivo em grafos não-direcionados)
+                    if aresta not in classificacao_arestas:
+                        classificacao_arestas[aresta] = 'retorno'
+                    tem_ciclo = True
+                    
+                elif estado[v] == 'visitado':
+                    # Verifica se é aresta de avanço ou cruzamento
+                    if aresta not in classificacao_arestas:
+                        if descoberta[u] < descoberta[v]:
+                            # u foi descoberto antes de v - pode ser avanço
+                            if v in _obter_descendentes(u, anterior):
+                                classificacao_arestas[aresta] = 'avanco'
+                            else:
+                                classificacao_arestas[aresta] = 'cruzamento'
+                        else:
+                            # v foi descoberto antes de u
+                            classificacao_arestas[aresta] = 'cruzamento'
+            
+            # Marca como visitado e registra finalização
+            estado[u] = 'visitado'
+            tempo[0] += 1
+            finalizacao[u] = tempo[0]
+        
+        def _obter_descendentes(u: str, anterior_dict: dict) -> set:
+            """Obtém todos os descendentes de u na árvore DFS"""
+            descendentes = set()
+            for vertice, pai in anterior_dict.items():
+                if pai == u:
+                    descendentes.add(vertice)
+                    descendentes.update(_obter_descendentes(vertice, anterior_dict))
+            return descendentes
+        
+        # Executa DFS a partir do vértice inicial
+        dfs_visitar(start.nome)
+        componentes.append(ordem_visita.copy())
+        
+        # Visita vértices não alcançados (outras componentes conexas)
+        for nome in graph.vertices:
+            if estado[nome] == 'nao_visitado':
+                componente_atual = []
+                vertices_antes = len(ordem_visita)
+                dfs_visitar(nome)
+                componente_atual = ordem_visita[vertices_antes:]
+                componentes.append(componente_atual)
+        
+        return {
+            'descoberta': descoberta,
+            'finalizacao': finalizacao,
+            'anterior': anterior,
+            'classificacao_arestas': classificacao_arestas,
+            'ordem_visita': ordem_visita,
+            'tem_ciclo': tem_ciclo,
+            'componentes': componentes
+        }
     

@@ -183,6 +183,24 @@ class Grafo:
         
         v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
         return Sorting.breadth_first_search(self, v_origem)
+    
+    def busca_em_profundidade(self, origem: Union[Vertice, str]):
+        """
+        Executa busca em profundidade (DFS) a partir de um vértice inicial.
+        
+        Retorna dict com:
+            - descoberta: timestamp de descoberta de cada vértice
+            - finalizacao: timestamp de finalização de cada vértice
+            - anterior: predecessor de cada vértice
+            - classificacao_arestas: classificação das arestas
+            - ordem_visita: ordem de descoberta dos vértices
+            - tem_ciclo: indica se há ciclos no grafo
+            - componentes: componentes conexos do grafo
+        """
+        from .algorithms import Sorting
+        
+        v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
+        return Sorting.depth_first_search(self, v_origem)
 
     def __str__(self) -> str:
         linhas = [f"Grafo com {self.ordem} nós e {self.tamanho} arestas"]

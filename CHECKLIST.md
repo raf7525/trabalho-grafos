@@ -48,11 +48,16 @@
   - [x] Método helper `busca_em_largura()` na classe Grafo ✅
   - [x] 9 testes unitários passando ✅
   - [x] Integração com CLI ✅
-- [ ] **DFS (Depth-First Search)** - busca em profundidade
-  - [ ] Implementação (apenas stub vazio)
-  - [ ] Classificar arestas
-  - [ ] Detectar ciclos
-  - [ ] Testes unitários
+- [x] **DFS (Depth-First Search)** - busca em profundidade ✅
+  - [x] Implementação completa com 106 linhas ✅
+  - [x] Classificar arestas (árvore, retorno, avanço, cruzamento) ✅
+  - [x] Detectar ciclos (grafos não-direcionados) ✅
+  - [x] Timestamps de descoberta e finalização ✅
+  - [x] Identificar componentes conexos ✅
+  - [x] Método helper `busca_em_profundidade()` na classe Grafo ✅
+  - [x] 11 testes unitários passando ✅
+  - [x] Integração com CLI ✅
+  - [x] Gerar saída JSON: `percurso_dfs_<origem>.json` ✅
 
 
 ### Métricas e Análises (solve.py)
@@ -75,8 +80,8 @@
 - [x] Execução via `python3 -m src.cli`
 - [x] Comando testado: gera todos os arquivos de métricas
 - [x] Integração com BFS (`--alg BFS --source <origem>`) ✅
+- [x] Integração com DFS (`--alg DFS --source <origem>`) ✅
 - [x] Integração com algoritmos Dijkstra/Bellman-Ford ✅
-- [ ] Integração com DFS
 
 ### Visualizações
 - [ ] ⚠️ **NÃO IMPLEMENTADO - REMOVIDO DO ESCOPO ATUAL**
@@ -99,11 +104,13 @@
 - [x] Integração com CLI (`--alg BFS --source <origem>`) ✅
 
 #### DFS (Depth-First Search)
-- [ ] Implementar algoritmo completo em `src/graphs/algorithms.py`
-- [ ] Classificar arestas (árvore, retorno, avanço, cruzamento)
-- [ ] Detectar ciclos no grafo
-- [ ] Retornar ordem de descoberta/finalização (timestamps)
-- [ ] Gerar saída JSON: `percurso_dfs.json`
+- [x] Implementar algoritmo completo em `src/graphs/algorithms.py` ✅
+- [x] Classificar arestas (árvore, retorno, avanço, cruzamento) ✅
+- [x] Detectar ciclos no grafo ✅
+- [x] Retornar ordem de descoberta/finalização (timestamps) ✅
+- [x] Gerar saída JSON: `percurso_dfs_<origem>.json` ✅
+- [x] 11 testes unitários passando ✅
+- [x] Integração com CLI (`--alg DFS --source <origem>`) ✅
 
 #### Dijkstra
 - [x] Implementar em `src/graphs/algorithms.py` ✅
@@ -185,17 +192,19 @@
 - [x] **9 testes passando** ✅
 
 #### Testes DFS
-- [ ] Implementar `tests/test_dfs.py` (atualmente vazio)
-- [ ] Validar classificação de arestas
-- [ ] Testar detecção de ciclos
-- [ ] Verificar ordem de descoberta e finalização
-- [ ] Testar em grafo pequeno e no grafo real
+- [x] Implementar `tests/test_dfs.py` ✅
+- [x] Validar classificação de arestas ✅
+- [x] Testar detecção de ciclos ✅
+- [x] Verificar ordem de descoberta e finalização ✅
+- [x] Testar em grafo pequeno e no grafo real ✅
+- [x] **11 testes passando** ✅
 
 #### Executar Suite de Testes
 - [x] Comando: `pytest tests/` ✅
-- [x] **35/35 testes passando** (Dijkstra + Bellman-Ford + BFS) ✅
+- [x] **46/46 testes passando** (Dijkstra + Bellman-Ford + BFS + DFS) ✅
 - [x] Configuração pytest.ini ✅
 - [x] Testes para BFS (9 testes implementados e passando) ✅
+- [x] Testes para DFS (11 testes implementados e passando) ✅
 - [ ] Adicionar testes para DFS (0 testes atualmente)
 - [ ] Meta: 100% de cobertura dos 4 algoritmos principais
 
@@ -250,29 +259,29 @@
 - **Estrutura do Projeto:** 100% ✅
 - **Carregamento de Dados:** 100% ✅
 - **Grafo e Métricas:** 100% ✅
-- **Algoritmos:** 75% ✅ (Dijkstra + Bellman-Ford + BFS completos, falta apenas DFS)
-- **Testes:** 75% ✅ (35 testes: 12 Dijkstra + 14 Bellman-Ford + 9 BFS)
+- **Algoritmos:** 100% ✅ (Dijkstra + Bellman-Ford + BFS + DFS completos)
+- **Testes:** 90% ✅ (46 testes: 12 Dijkstra + 14 Bellman-Ford + 9 BFS + 11 DFS)
 - **CLI Básico:** 100% ✅
-- **Integração CLI + Algoritmos:** 75% ✅ (Dijkstra/Bellman-Ford/BFS integrados e funcionando, falta DFS)
-- **Outputs Obrigatórios:** 85% ✅ (métricas + BFS + Dijkstra + Bellman-Ford OK, faltam DFS e matriz)
+- **Integração CLI + Algoritmos:** 100% ✅ (Dijkstra/Bellman-Ford/BFS/DFS integrados e funcionando)
+- **Outputs Obrigatórios:** 90% ✅ (métricas + BFS + Dijkstra + Bellman-Ford + DFS OK, falta apenas matriz)
 - **Visualizações:** 0% ❌ (removido do escopo atual)
 - **Relatório:** 0% ❌
 
 ### Por Pontuação (Base: 10.0 pontos - estimativa conservadora)
-- **Parte 1 (5.0 pts):** ~80% (4.0/5.0)
+- **Parte 1 (5.0 pts):** ~95% (4.75/5.0)
   - Dijkstra: OK (implementação + testes + CLI + output) ✅
   - Bellman-Ford: OK (implementação + testes + CLI) ✅
   - BFS: OK (implementação + testes + CLI + output) ✅
-  - DFS: Não iniciado ❌
-  - Integração CLI: Quase completa (falta DFS) ✅
-  - Outputs obrigatórios: Quase completos (falta DFS) ⚠️
+  - DFS: OK (implementação + testes + CLI + output) ✅
+  - Integração CLI: Completa ✅
+  - Outputs obrigatórios: Completos (falta apenas matriz de distâncias) ⚠️
 
 - **Parte 2 (3.0 pts):** 0% (0/3.0) - Dataset adicional não iniciado ❌
-- **Testes (2.0 pts):** 75% (1.5/2.0) - Dijkstra + Bellman-Ford + BFS completos ✅
+- **Testes (2.0 pts):** 90% (1.8/2.0) - Dijkstra + Bellman-Ford + BFS + DFS completos ✅
 - **Bônus Visualizações (+1.0 pt):** 0% (0/1.0) - Removido do escopo ❌
 
-**Total Estimado Conservador:** ~5.5/10.0 pontos
-**Total Otimista (se completar DFS):** ~7.0/10.0 pontos
+**Total Estimado Conservador:** ~6.5/10.0 pontos
+**Total Otimista (se completar matriz):** ~7.0/10.0 pontos
 
 ---
 

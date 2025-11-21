@@ -74,6 +74,84 @@ def executar_bfs(grafo, origem, destino, diretorio_saida):
     print(f"Vértices alcançados: {dados_saida['estatisticas']['vertices_alcancados']}/{dados_saida['estatisticas']['vertices_totais']}")
 
 
+def executar_dfs(grafo, origem, destino, diretorio_saida):
+    """Executa DFS e gera arquivo JSON com resultados"""
+    origem_normalizada = normalizar_texto(origem)
+    
+    if origem_normalizada not in grafo.vertices:
+        print(f"Erro: Bairro de origem '{origem}' não encontrado no grafo.")
+        print(f"Bairros disponíveis: {sorted(list(grafo.vertices.keys())[:10])}...")
+        return
+    
+    print(f"Executando DFS a partir de '{origem_normalizada}'...")
+    resultado = grafo.busca_em_profundidade(origem_normalizada)
+    
+    # Converte classificação de arestas para formato JSON-friendly
+    classificacao_json = {f"{u}-{v}": tipo for (u, v), tipo in resultado['classificacao_arestas'].items()}
+    
+    # Prepara dados para JSON
+    dados_saida = {
+        "algoritmo": "DFS",
+        "origem": origem_normalizada,
+        "descoberta": resultado['descoberta'],
+        "finalizacao": resultado['finalizacao'],
+        "anterior": resultado['anterior'],
+        "classificacao_arestas": classificacao_json,
+        "ordem_visita": resultado['ordem_visita'],
+        "tem_ciclo": resultado['tem_ciclo'],
+        "componentes": resultado['componentes'],
+        "estatisticas": {
+            "vertices_alcancados": len(resultado['ordem_visita']),
+            "vertices_totais": len(grafo.vertices),
+            "numero_componentes": len(resultado['componentes']),
+            "arestas_arvore": sum(1 for t in classificacao_json.values() if t == 'arvore'),
+            "arestas_retorno": sum(1 for t in classificacao_json.values() if t == 'retorno'),
+            "arestas_avanco": sum(1 for t in classificacao_json.values() if t == 'avanco'),
+            "arestas_cruzamento": sum(1 for t in classificacao_json.values() if t == 'cruzamento')
+        }
+    }
+    
+    # Se destino foi especificado, adiciona informações do caminho
+    if destino:
+        destino_normalizado = normalizar_texto(destino)
+        if destino_normalizado in grafo.vertices:
+            if destino_normalizado in resultado['descoberta']:
+                # Reconstrói caminho usando predecessores
+                caminho = []
+                atual = destino_normalizado
+                while atual is not None:
+                    caminho.append(atual)
+                    atual = resultado['anterior'].get(atual)
+                caminho.reverse()
+                
+                dados_saida["destino"] = destino_normalizado
+                dados_saida["caminho"] = caminho
+                dados_saida["distancia_arestas"] = len(caminho) - 1
+                print(f"Caminho encontrado: {' -> '.join(caminho)}")
+                print(f"Distância (arestas): {len(caminho) - 1}")
+            else:
+                dados_saida["destino"] = destino_normalizado
+                dados_saida["caminho"] = []
+                dados_saida["distancia_arestas"] = "inf"
+                print(f"Destino '{destino_normalizado}' não é alcançável a partir de '{origem_normalizada}'")
+    
+    # Informações sobre ciclos
+    if resultado['tem_ciclo']:
+        print(f"⚠️  Grafo contém ciclos! Arestas de retorno: {dados_saida['estatisticas']['arestas_retorno']}")
+    else:
+        print("✓ Grafo é acíclico (floresta/árvore)")
+    
+    print(f"Componentes conexos: {dados_saida['estatisticas']['numero_componentes']}")
+    
+    # Salva arquivo JSON
+    arquivo_saida = Path(diretorio_saida) / f"percurso_dfs_{origem_normalizada.replace(' ', '_')}.json"
+    with open(arquivo_saida, 'w', encoding='utf-8') as f:
+        json.dump(dados_saida, f, ensure_ascii=False, indent=2)
+    
+    print(f"Resultado salvo em: {arquivo_saida}")
+    print(f"Vértices alcançados: {dados_saida['estatisticas']['vertices_alcancados']}/{dados_saida['estatisticas']['vertices_totais']}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Análise de Grafos - Teoria dos Grafos")
     
@@ -203,8 +281,7 @@ def main():
                 resultado = None
 
             elif args.alg == 'DFS':
-                print(f"Executando DFS a partir de {origem_nome}...")
-                print("Lógica do DFS ainda não implementada no cli.py.")
+                executar_dfs(grafo, origem_nome, destino_nome, args.out)
                 resultado = None
         
         except ValueError as e:
