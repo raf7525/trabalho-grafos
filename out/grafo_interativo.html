@@ -119,6 +119,7 @@
             ) return notificar('Selecione origem e destino', 'warning');
             
             resetarVisual();
+            
             (async () => {
                 try {
                     const params = new URLSearchParams({
@@ -139,6 +140,7 @@
                 }
             })();
         }
+
         function destacarCaminho(caminho, alg, custo) {
             const cor = COLORS[alg.toLowerCase()] || COLORS.dijkstra;
             
