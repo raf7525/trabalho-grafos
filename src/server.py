@@ -2,21 +2,14 @@ import http.server
 import socketserver
 import json
 import urllib.parse
-import sys
-from pathlib import Path
 
-CURRENT_DIR = Path(__file__).parent
-ROOT_DIR = CURRENT_DIR.parent
-OUT_DIR = ROOT_DIR / "out"
-sys.path.insert(0, str(CURRENT_DIR))
-
-from graphs.io import carregar_grafo
-from graphs.graph import Grafo
-from graphs.algorithms import Sorting
+from src.graphs.io import carregar_grafo
+from src.graphs.algorithms import Sorting
+from src.config import OUT_DIR, BAIRROS_FILE, ARESTAS_FILE
 
 print("Carregando grafo do Recife...")
-path_nos = str(ROOT_DIR / "data" / "bairros_unique.csv")
-path_arestas = str(ROOT_DIR / "data" / "bairros_vizinhos_tratados.csv")
+path_nos = str(BAIRROS_FILE)
+path_arestas = str(ARESTAS_FILE)
 GRAFO_GLOBAL = carregar_grafo(path_nos, path_arestas)
 print(f"Grafo carregado! {GRAFO_GLOBAL.ordem} nós.")
 

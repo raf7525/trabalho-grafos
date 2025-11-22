@@ -3,10 +3,9 @@ import sys
 import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
-
-from solve import orquestrar
-from graphs.io import carregar_grafo, normalizar_texto
+from src.solve import orquestrar
+from src.graphs.io import carregar_grafo, normalizar_texto
+from src.config import ARESTAS_FILE, OUT_DIR, BAIRROS_FILE, ROOT_DIR
 
 
 def executar_bfs(grafo, origem, destino, diretorio_saida):
@@ -66,7 +65,7 @@ def executar_bfs(grafo, origem, destino, diretorio_saida):
                 print(f"Destino '{destino_normalizado}' não é alcançável a partir de '{origem_normalizada}'")
     
     # Salva arquivo JSON
-    arquivo_saida = Path(diretorio_saida) / f"percurso_bfs_{origem_normalizada.replace(' ', '_')}.json"
+    arquivo_saida = OUT_DIR / f"percurso_bfs_{origem_normalizada.replace(' ', '_')}.json"
     with open(arquivo_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_saida, f, ensure_ascii=False, indent=2)
     
@@ -137,14 +136,14 @@ def executar_dfs(grafo, origem, destino, diretorio_saida):
     
     # Informações sobre ciclos
     if resultado['tem_ciclo']:
-        print(f"⚠️  Grafo contém ciclos! Arestas de retorno: {dados_saida['estatisticas']['arestas_retorno']}")
+        print(f"[AVISO] Grafo contém ciclos! Arestas de retorno: {dados_saida['estatisticas']['arestas_retorno']}")
     else:
-        print("✓ Grafo é acíclico (floresta/árvore)")
+        print("[OK] Grafo é acíclico (floresta/árvore)")
     
     print(f"Componentes conexos: {dados_saida['estatisticas']['numero_componentes']}")
     
     # Salva arquivo JSON
-    arquivo_saida = Path(diretorio_saida) / f"percurso_dfs_{origem_normalizada.replace(' ', '_')}.json"
+    arquivo_saida = OUT_DIR / f"percurso_dfs_{origem_normalizada.replace(' ', '_')}.json"
     with open(arquivo_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_saida, f, ensure_ascii=False, indent=2)
     
@@ -155,8 +154,7 @@ def executar_dfs(grafo, origem, destino, diretorio_saida):
 def main():
     parser = argparse.ArgumentParser(description="Análise de Grafos - Teoria dos Grafos")
     
-    raiz = Path(__file__).parent.parent
-    dataset_padrao = str(raiz / "data" / "bairros_vizinhos_tratados.csv")
+    dataset_padrao = str(ARESTAS_FILE)
     
     parser.add_argument(
         '--dataset', 
@@ -168,7 +166,7 @@ def main():
     parser.add_argument('--alg', type=str, choices=['BFS', 'DFS', 'DIJKSTRA', 'BELLMAN_FORD'], help='Algoritmo a executar')
     parser.add_argument('--source', type=str, help='Nó de origem')
     parser.add_argument('--target', type=str, help='Nó de destino')
-    parser.add_argument('--out', type=str, default='./out/', help='Diretório de saída')
+    parser.add_argument('--out', type=str, default=str(OUT_DIR), help='Diretório de saída')
     parser.add_argument('--interactive', action='store_true', help='Modo interativo')
     parser.add_argument('--metricas', action='store_true', help='Calcular métricas do grafo')
     parser.add_argument('--viz', action='store_true', help='Gerar todas as visualizações analíticas')
@@ -178,7 +176,7 @@ def main():
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     
-    path_nos = str(raiz / "data" / "bairros_unique.csv")
+    path_nos = str(BAIRROS_FILE)
     path_arestas = args.dataset
 
     if not Path(path_arestas).exists():
@@ -187,7 +185,7 @@ def main():
     
     if args.metricas:
         print("Calculando métricas do grafo...")
-        path_nos_metricas = str(raiz / "data" / "bairros_unique.csv")
+        path_nos_metricas = str(BAIRROS_FILE)
         path_arestas_metricas = path_arestas
 
         if not Path(path_nos_metricas).exists():

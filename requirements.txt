@@ -4,5 +4,4 @@ plotly
 pyvis
 pytest
 unidecode
-Network
-pyvis
+flask

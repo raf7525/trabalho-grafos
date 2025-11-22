@@ -3,193 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <title>Grafo Recife</title>
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #1a1a1a; color: #eee; margin: 0; height: 100vh; width: 100vw; overflow: hidden; }
-        #header { background-color: #2d2d2d; padding: 15px; border-bottom: 1px solid #444; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; z-index: 100; }
-        #mynetwork { width: 100%; height: calc(100vh - 80px); background-color: #222; }
-        select, button { font-size: 0.9rem; }
-        .info-panel { position: absolute; bottom: 20px; left: 20px; background: rgba(30, 30, 30, 0.95); padding: 15px; border-radius: 8px; border: 1px solid #555; display: none; max-width: 350px; z-index: 1000; }
-        
-        .toast-container { position: absolute; top: 20px; right: 20px; z-index: 2000; }
+        body { margin: 0; height: 100vh; overflow: hidden; }
+        #container-grafo { width: 100%; height: calc(100vh - 80px); }
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100">
 
-    <div id="header">
-        <strong class="me-2">WAZE</strong>
-        <select id="algoritmo" class="form-select-sm">
+    <header class="bg-gray-800 border-b border-gray-700 px-4 py-3 flex flex-wrap gap-3 items-center">
+        <span class="font-bold text-lg">WAZE</span>
+        <select id="algoritmo" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
             <option value="bfs">BFS</option>
             <option value="dijkstra">Dijkstra</option>
             <option value="bellman">Bellman-Ford</option>
             <option value="dfs">DFS</option>
         </select>
-        <span class="text-muted">|</span>
-        <select id="origem"><option disabled selected>Origem...</option></select>
-        <span class="text-muted">➜</span>
-        <select id="destino"><option disabled selected>Destino...</option></select>
-        <button onclick="consultarPython()" class="btn btn-primary btn-sm">▶ Executar no Python</button>
-        <button onclick="resetar()" class="btn btn-outline-secondary btn-sm">Limpar</button>
-        <button onclick="rotaObrigatoria()" class="btn btn-warning btn-sm ms-auto">⭐ Rota PDF</button>
+        <span class="text-gray-500">|</span>
+        <select id="origem" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
+            <option disabled selected>Origem...</option>
+        </select>
+        <span class="text-gray-500">→</span>
+        <select id="destino" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
+            <option disabled selected>Destino...</option>
+        </select>
+        <button onclick="executar()" class="px-4 py-1 bg-blue-600 hover:bg-blue-700 rounded text-sm font-medium">
+            Executar
+        </button>
+        <button onclick="limpar()" class="px-4 py-1 bg-gray-600 hover:bg-gray-700 rounded text-sm">
+            Limpar
+        </button>
+        <button onclick="rotaPDF()" class="px-4 py-1 bg-yellow-600 hover:bg-yellow-700 rounded text-sm ml-auto">
+            Rota PDF
+        </button>
+    </header>
+
+    <div id="container-grafo" class="bg-gray-800"></div>
+    
+    <div id="info" class="hidden fixed bottom-5 left-5 bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-sm shadow-xl">
+        <h3 id="info-title" class="text-lg font-bold mb-2"></h3>
+        <div id="info-stats" class="text-sm mb-3"></div>
+        <div id="info-path" class="text-xs overflow-y-auto max-h-24 text-gray-300"></div>
     </div>
 
-    <div id="mynetwork"></div>
-    <div id="info" class="info-panel"></div>
-
-    <div class="toast-container">
-        <div id="liveToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body" id="toast-msg">
-                    Algo deu errado.
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
+    <div id="toast" class="hidden fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white"></div>
 
     <script>
-        let network, allNodes, allEdges, nodeMap = {}, edgesMap = {};
+        const API_URL = '/api/calcular';
+        const COLORS = {
+            dijkstra: '#FF7A00',
+            bfs: '#FFB784',
+            bellman: '#FFBC7D',
+            dfs: '#FFA500',
+            start: '#00ff00',
+            end: '#ff0000'
+        };
 
-        // Carrega visualização inicial
+        let network, nodes, edges, nodeMap = {}, edgeMap = {};
+
         fetch('./grafo_dados.json')
             .then(r => r.json())
-            .then(data => init(data))
-            .catch(e => showToast("Erro ao carregar grafo. O servidor Python está rodando?"));
+            .then(init)
+            .catch(() => notificar('Erro ao carregar grafo', 'error'));
 
         function init(data) {
-            allNodes = new vis.DataSet(data.nodes);
-            allEdges = new vis.DataSet(data.edges);
-            data.nodes.forEach(n => nodeMap[n.id] = n);
+            nodes = new vis.DataSet(data.nodes);
+            edges = new vis.DataSet(data.edges);
             
-            // Mapa para achar ID da aresta rápido
+            data.nodes.forEach(n => nodeMap[n.id] = n);
             data.edges.forEach(e => {
-                if(!edgesMap[e.from]) edgesMap[e.from] = {};
-                if(!edgesMap[e.to]) edgesMap[e.to] = {};
-                edgesMap[e.from][e.to] = e.id;
-                edgesMap[e.to][e.from] = e.id;
+                edgeMap[e.from] = edgeMap[e.from] || {};
+                edgeMap[e.to] = edgeMap[e.to] || {};
+                edgeMap[e.from][e.to] = e.id;
+                edgeMap[e.to][e.from] = e.id;
             });
 
-            const sorted = [...data.nodes].sort((a,b) => a.label.localeCompare(b.label));
+            popularSelects(data.nodes);
+            criarGrafo();
+        }
+
+        function popularSelects(nodeList) {
+            const sorted = [...nodeList].sort((a,b) => a.label.localeCompare(b.label));
+            const selectOrigem = document.getElementById('origem');
+            const selectDestino = document.getElementById('destino');
+            
             sorted.forEach(n => {
-                document.getElementById('origem').add(new Option(n.label, n.id));
-                document.getElementById('destino').add(new Option(n.label, n.id));
-            });
-
-            const container = document.getElementById('mynetwork');
-            network = new vis.Network(container, { 
-                nodes: allNodes, 
-                edges: allEdges,
-                physics: { stabilization: { iterations: 100 }, barnesHut: { gravitationalConstant: -4000 } }
-            }, {
-                nodes: { shape: 'dot', font: { color: 'white' }, borderWidth: 2 },
-                edges: { color: { color: '#666', opacity: 0.2 }, width: 1, smooth: { type: 'continuous' } }
+                selectOrigem.add(new Option(n.label, n.id));
+                selectDestino.add(new Option(n.label, n.id));
             });
         }
 
-        function consultarPython() {
-            const o = document.getElementById('origem').value;
-            const d = document.getElementById('destino').value;
-            const alg = document.getElementById('algoritmo').value;
+        function criarGrafo() {
+            network = new vis.Network(
+                document.getElementById('container-grafo'),
+                { nodes, edges },
+                {
+                    nodes: { shape: 'dot', font: { color: 'white' }, borderWidth: 2 },
+                    edges: { color: { color: '#666', opacity: 0.2 }, width: 1, smooth: { type: 'continuous' } },
+                    physics: { stabilization: { iterations: 100 }, barnesHut: { gravitationalConstant: -4000 } }
+                }
+            );
+        }
 
-            if (!o || !d || o.includes("...") || d.includes("...")) return showToast("Selecione origem e destino!");
+        function executar() {
+            const selectOrigem = document.getElementById('origem');
+            const selectDestino = document.getElementById('destino');
+            const selectAlgoritmo = document.getElementById('algoritmo');
+            
+            if (
+            !selectOrigem.value 
+            || !selectDestino.value 
+            || selectOrigem.value.includes('...') 
+            || selectDestino.value.includes('...')
+            ) return notificar('Selecione origem e destino', 'warning');
             
             resetarVisual();
+            (async () => {
+                try {
+                    const params = new URLSearchParams({
+                        alg: selectAlgoritmo.value,
+                        origem: selectOrigem.value,
+                        destino: selectDestino.value
+                    });
+                    const url = `${API_URL}?${params.toString()}`;
 
-            const url = `/api/calcular?alg=${alg}&origem=${encodeURIComponent(o)}&destino=${encodeURIComponent(d)}`;
+                    const response = await fetch(url);
+                    const data = await response.json();
 
-            fetch(url)
-                .then(response => {
-                    if (response.status === 501) {
-                        return response.json().then(err => { throw new Error("NOT_IMPLEMENTED: " + err.erro); });
-                    }
-                    if (!response.ok) {
-                        return response.json().then(err => { throw new Error(err.erro); });
-                    }
-                    return response.json();
-                })
-                .then(data => {
+                    if (!response.ok) throw data;
+
                     destacarCaminho(data.caminho, data.algoritmo, data.custo);
-                })
-                .catch(error => {
-                    let msg = error.message;
-                    if (msg.startsWith("NOT_IMPLEMENTED:")) {
-                        msg = msg.replace("NOT_IMPLEMENTED: ", "");
-                        document.getElementById('liveToast').classList.replace('bg-danger', 'bg-warning');
-                        document.getElementById('liveToast').classList.add('text-dark');
-                        document.getElementById('liveToast').classList.remove('text-white');
-                    } else {
-                        document.getElementById('liveToast').classList.replace('bg-warning', 'bg-danger');
-                        document.getElementById('liveToast').classList.remove('text-dark');
-                        document.getElementById('liveToast').classList.add('text-white');
-                    }
-                    showToast(msg);
-                });
+                } catch (err) {
+                    notificar(err.erro);
+                }
+            })();
         }
-
-        function destacarCaminho(path, nomeAlg, custo) {
-            let color;
-        
-            if(nomeAlg === 'DIJKSTRA') {
-                color = '#FF7A00';
-            } else if(nomeAlg === 'BFS') {
-                color = '#FFB784';
-            } else if(nomeAlg === 'BELLMAN') {
-                color = '#FFBC7D';
-            } else if(nomeAlg === 'DFS') {
-                color = '#FFA500';
-            } else {
-                color = '#FF7A00';
-            }
+        function destacarCaminho(caminho, alg, custo) {
+            const cor = COLORS[alg.toLowerCase()] || COLORS.dijkstra;
             
-            let updates = path.map((id, i) => ({
-                id: id,
-                color: { background: i===0?'#00ff00':(i===path.length-1?'#ff0000':`${color}`), border: '#fff' },
-                size: 30, font: { size: 16, background: '#000' }
-            }));
-            allNodes.update(updates);
+            nodes.update(caminho.map((id, i) => ({
+                id,
+                color: { 
+                    background: i === 0 ? COLORS.start : i === caminho.length - 1 ? COLORS.end : cor,
+                    border: '#fff'
+                },
+                size: 30,
+                font: { size: 16, background: '#000' }
+            })));
 
-            let edgeUpdates = [];
-            for(let i=0; i<path.length-1; i++) {
-                let u=path[i], v=path[i+1];
-                let id = edgesMap[u][v];
-                if(id) edgeUpdates.push({ id: id, color: { color: `${color}`, opacity: 1 }, width: 4 });
+            const arestasAtualizadas = [];
+            for (let i = 0; i < caminho.length - 1; i++) {
+                const edgeId = edgeMap[caminho[i]]?.[caminho[i+1]];
+                if (edgeId) arestasAtualizadas.push({ id: edgeId, color: { color: cor, opacity: 1 }, width: 4 });
             }
-            allEdges.update(edgeUpdates);
-            network.fit({ nodes: path, animation: true });
+            edges.update(arestasAtualizadas);
 
-            const info = document.getElementById('info');
-            info.style.display = 'block';
-            info.style.borderLeft = `5px solid #0d6efd`;
-            info.innerHTML = `<h5>${nomeAlg} (Python)</h5>
-                <div class="mb-2">Custo: <b>${custo}</b> | Nós: <b>${path.length}</b></div>
-                <div style="max-height:100px;overflow-y:auto;font-size:0.9em">${path.map(id => nodeMap[id].label).join(' ➝ ')}</div>`;
+            network.fit({ nodes: caminho, animation: true });
+            mostrarInfo(alg, custo, caminho);
         }
 
-        function showToast(msg) {
-            document.getElementById('toast-msg').innerText = msg;
-            const toast = new bootstrap.Toast(document.getElementById('liveToast'));
-            toast.show();
+        function mostrarInfo(alg, custo, caminho) {
+            const panelInfo = document.getElementById('info');
+            const titulo = document.getElementById('info-title');
+            const stats = document.getElementById('info-stats');
+            const path = document.getElementById('info-path');
+            
+            panelInfo.classList.remove('hidden');
+            titulo.textContent = `${alg} (Python)`;
+            stats.innerHTML = `Custo: <b>${custo}</b> | Nós: <b>${caminho.length}</b>`;
+            path.textContent = caminho.map(id => nodeMap[id].label).join(' → ');
         }
 
-        function rotaObrigatoria() {
-            document.getElementById('origem').value = "nova descoberta";
-            document.getElementById('destino').value = "boa viagem";
-            document.getElementById('algoritmo').value = "dijkstra";
-            consultarPython();
+        function notificar(msg, tipo = 'error') {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.className = `fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white ${
+                tipo === 'error' ? 'bg-red-600' : 'bg-yellow-600'
+            }`;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
         }
 
         function resetarVisual() {
-            allNodes.update(allNodes.getIds().map(id => ({ id: id, color: null, size: nodeMap[id].value ? undefined : 20, font: { size: 14, background: 'transparent' } })));
-            allEdges.update(allEdges.getIds().map(id => ({ id: id, color: { color: '#666', opacity: 0.2 }, width: 1 })));
-            document.getElementById('info').style.display = 'none';
+            nodes.update(nodes.getIds().map(id => ({
+                id,
+                color: null,
+                size: nodeMap[id].value || 20,
+                font: { size: 14, background: 'transparent' }
+            })));
+            edges.update(edges.getIds().map(id => ({
+                id,
+                color: { color: '#666', opacity: 0.2 },
+                width: 1
+            })));
+            info.classList.add('hidden');
         }
-        function resetar() {
+
+        function limpar() {
             resetarVisual();
-            document.getElementById('origem').value = "Origem...";
-            document.getElementById('destino').value = "Destino...";
+            origem.value = destino.value = 'Origem...';
             network.fit();
+        }
+
+        function rotaPDF() {
+            origem.value = 'nova descoberta';
+            destino.value = 'boa viagem';
+            algoritmo.value = 'dijkstra';
+            executar();
         }
     </script>
 </body>

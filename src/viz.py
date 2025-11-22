@@ -1,26 +1,38 @@
-import sys
-from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from pyvis.network import Network
+from itertools import combinations
 import json
 
-sys.path.insert(0, str(Path(__file__).parent))
-
-from graphs.io import carregar_grafo
-from graphs.graph import Grafo
-
+from src.graphs.io import carregar_grafo
+from src.graphs.graph import Grafo
+from src.config import OUT_DIR
 
 plt.style.use('seaborn-v0_8-darkgrid')
-RAIZ = Path(__file__).parent.parent 
-DIRETORIO_SAIDA = RAIZ / "out"
-DIRETORIO_SAIDA.mkdir(parents=True, exist_ok=True)
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+
+def _calcular_densidade_ego(grafo: Grafo, nome_bairro: str, vizinhos: list) -> float:
+    nos_ego = {nome_bairro, *vizinhos}
+    qtd_nos = len(nos_ego)
+    if qtd_nos <= 1:
+        return 0.0
+    
+    arestas_ego = sum(
+        1
+        for n1, n2 in combinations(nos_ego, 2)
+        if grafo.obter_peso(n1, n2) != float('inf')
+    )
+    
+    return (2 * arestas_ego) / (qtd_nos * (qtd_nos - 1))
+
 
 
 def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / "grafo_dados.json")
+        caminho_saida = str(OUT_DIR / "grafo_dados.json")
     
     nodes = []
     for nome_bairro, vertice in grafo.vertices.items():
@@ -28,19 +40,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
         grau = len(vizinhos)
         microrregiao = vertice.atributos.get('microrregiao', 'Desconhecida')
         
-        nos_ego = {nome_bairro} | set(vizinhos)
-        
-        arestas_ego = 0
-        for n1 in nos_ego:
-            for n2 in nos_ego:
-                if n1 < n2: # Evita duplicidade e laços
-                    if grafo.obter_peso(n1, n2) != float('inf'):
-                        arestas_ego += 1
-        
-        qtd_nos_ego = len(nos_ego)
-        densidade_ego = 0.0
-        if qtd_nos_ego > 1:
-            densidade_ego = (2 * arestas_ego) / (qtd_nos_ego * (qtd_nos_ego - 1))
+        densidade_ego = _calcular_densidade_ego(grafo, nome_bairro, vizinhos)
         
         nodes.append({
             "id": nome_bairro,
@@ -48,9 +48,9 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
             "group": microrregiao,
             "value": grau, 
             "title": (
-                f"<b>{nome_bairro.title()}</b><br>"
-                f"Microrregião: {microrregiao}<br>"
-                f"Grau: {grau}<br>"
+                f"{nome_bairro.title()}\n"
+                f"Microrregião: {microrregiao}\n"
+                f"Grau: {grau}\n"
                 f"Densidade Ego: {densidade_ego:.4f}"
             )
         })
@@ -67,7 +67,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
             "from": origem,
             "to": destino,
             "label": str(attrs.get('peso', '')),
-            "title": f"Peso: {attrs.get('peso', '')}<br>Logradouro: {attrs.get('logradouro', 'N/A')}",
+            "title": f"Peso: {attrs.get('peso', '')} Logradouro: {attrs.get('logradouro', 'N/A')}",
             "color": {"color": "#848484", "opacity": 0.2}
         })
         arestas_processadas.add(chave)
@@ -80,13 +80,13 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     with open(caminho_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_completos, f, ensure_ascii=False, indent=2)
         
-    print(f"✓ Dados JSON atualizados (com Densidade Ego) em: {caminho_saida}")
+    print(f"[OK] Dados JSON atualizados (com Densidade Ego) em: {caminho_saida}")
     return caminho_saida
 
 
 def visualizar_mapa_cores_grau(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / "viz_mapa_cores_grau.png")
+        caminho_saida = str(OUT_DIR / "viz_mapa_cores_grau.png")
     
     dados_graus = []
     for nome_bairro, vertice in grafo.vertices.items():
@@ -117,13 +117,13 @@ def visualizar_mapa_cores_grau(grafo: Grafo, caminho_saida: str = None):
     plt.savefig(caminho_saida, dpi=300, bbox_inches='tight')
     plt.close()
     
-    print(f"✓ Visualização 1 salva em: {caminho_saida}")
+    print(f"[OK] Visualização 1 salva em: {caminho_saida}")
     return caminho_saida
 
 
 def visualizar_densidade_por_microrregiao(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / "viz_densidade_microrregiao.png")
+        caminho_saida = str(OUT_DIR / "viz_densidade_microrregiao.png")
     
     microrregioes_densidades = {}
     
@@ -168,13 +168,13 @@ def visualizar_densidade_por_microrregiao(grafo: Grafo, caminho_saida: str = Non
     plt.savefig(caminho_saida, dpi=300, bbox_inches='tight')
     plt.close()
     
-    print(f"✓ Visualização 2 salva em: {caminho_saida}")
+    print(f"[OK] Visualização 2 salva em: {caminho_saida}")
     return caminho_saida
 
 
 def visualizar_subgrafo_top10(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / "viz_subgrafo_top10.html")
+        caminho_saida = str(OUT_DIR / "viz_subgrafo_top10.html")
     
     dados_graus = []
     for nome_bairro, vertice in grafo.vertices.items():
@@ -205,7 +205,7 @@ def visualizar_subgrafo_top10(grafo: Grafo, caminho_saida: str = None):
                     label=nome_no.title(),
                     size=tamanho,
                     color=cor,
-                    title=f"Bairro: {nome_no.title()}<br>Grau: {grau}<br>{'★ TOP 10' if eh_top10 else ''}",
+                    title=f"Bairro: {nome_no.title()} Grau: {grau} {'TOP 10' if eh_top10 else ''}",
                     font={'size': 14 if eh_top10 else 10})
     
     arestas_adicionadas = set()
@@ -220,14 +220,14 @@ def visualizar_subgrafo_top10(grafo: Grafo, caminho_saida: str = None):
     
     net.save_graph(caminho_saida)
     
-    print(f"✓ Visualização 3 salva em: {caminho_saida}")
+    print(f"[OK] Visualização 3 salva em: {caminho_saida}")
     print(f"  Top 10 bairros: {', '.join([b.title() for b in top10_bairros])}")
     return caminho_saida
 
 
 def visualizar_distribuicao_graus(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / "viz_distribuicao_graus.png")
+        caminho_saida = str(OUT_DIR / "viz_distribuicao_graus.png")
     
     graus = [len(vertice.vizinhos) for vertice in grafo.vertices.values()]
     
@@ -260,13 +260,13 @@ def visualizar_distribuicao_graus(grafo: Grafo, caminho_saida: str = None):
     plt.savefig(caminho_saida, dpi=300, bbox_inches='tight')
     plt.close()
     
-    print(f"✓ Visualização 4 salva em: {caminho_saida}")
+    print(f"[OK] Visualização 4 salva em: {caminho_saida}")
     return caminho_saida
 
 
 def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida: str = None):
     if caminho_saida is None:
-        caminho_saida = str(DIRETORIO_SAIDA / f"viz_arvore_bfs_{origem.replace(' ', '_')}.html")
+        caminho_saida = str(OUT_DIR / f"viz_arvore_bfs_{origem.replace(' ', '_')}.html")
     
     resultado_bfs = grafo.busca_em_largura(origem)
     niveis = resultado_bfs['niveis']
@@ -292,7 +292,7 @@ def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida
                     label=f"{nome_no.title()}\nNível {nivel}",
                     size=tamanho,
                     color=cor_hex,
-                    title=f"Bairro: {nome_no.title()}<br>Nível BFS: {nivel}<br>{'★ ORIGEM' if eh_origem else ''}",
+                    title=f"Bairro: {nome_no.title()} Nível BFS: {nivel} {'ORIGEM' if eh_origem else ''}",
                     level=nivel,
                     font={'size': 16 if eh_origem else 12})
     
@@ -329,7 +329,7 @@ def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida
     
     net.save_graph(caminho_saida)
     
-    print(f"✓ Visualização 5 salva em: {caminho_saida}")
+    print(f"[OK] Visualização 5 salva em: {caminho_saida}")
     print(f"  Origem: {origem.title()}")
     print(f"  Níveis encontrados: {max_nivel + 1}")
     print(f"  Vértices alcançados: {len([v for v in niveis.values() if v != float('inf')])}/{len(niveis)}")
@@ -368,7 +368,7 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
     
     print("\n" + "="*70)
     print("TODAS AS VISUALIZAÇÕES FORAM GERADAS COM SUCESSO!")
-    print(f"Arquivos salvos em: {DIRETORIO_SAIDA}")
+    print(f"Arquivos salvos em: {OUT_DIR}")
     print("="*70 + "\n")
 
 

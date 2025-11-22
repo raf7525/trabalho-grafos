@@ -8,6 +8,7 @@ sys.path.insert(0, str(ROOT_DIR))
 
 from src.graphs.graph import Grafo, Vertice
 from src.graphs.io import carregar_grafo
+from src.config import BAIRROS_FILE, ARESTAS_FILE
 
 class HelperTest:
 
@@ -34,17 +35,10 @@ class HelperTest:
     @staticmethod
     def carregar_grafo_real():
         """Carrega o grafo real dos bairros do Recife"""
-        path_nos = str(ROOT_DIR / "data" / "bairros_unique.csv")
-
-        path_arestas = str(ROOT_DIR / "data" / "bairros_vizinhos_tratados.csv")
+        path_nos = str(BAIRROS_FILE)
+        path_arestas = str(ARESTAS_FILE)
         
-        try:
-            grafo = carregar_grafo(path_nos, path_arestas)
-            return grafo
-        except FileNotFoundError as e:
-            pytest.skip(f"Arquivos de dados não encontrados: {e}")
-        except Exception as e:
-            pytest.fail(f"Falha ao carregar grafo real: {e}")
+        return carregar_grafo(path_nos, path_arestas)
     
     @staticmethod
     def assert_caminho_valido(grafo, caminho, origem_esperada, destino_esperado):

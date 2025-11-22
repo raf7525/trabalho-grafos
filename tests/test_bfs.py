@@ -207,7 +207,7 @@ class TestBFS:
         
         assert origem in grafo.vertices
         assert destino in grafo.vertices
-        
+        # tocaram na minha porta
         resultado = grafo.busca_em_largura(origem)
         
         # Boa Viagem deve ser alcançável (distância finita)

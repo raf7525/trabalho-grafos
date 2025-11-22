@@ -201,6 +201,28 @@ class Sorting:
             'ordem_visita': ordem_visita
         }
 
+    @staticmethod
+    def bfs_shortest_path(graph: Grafo, start: Vertice, end: Vertice) -> Tuple[float, List[str]]:
+        """
+        BFS para encontrar caminho mais curto entre dois vértices.
+        Interface unificada compatível com Dijkstra e Bellman-Ford.
+        
+        Retorna:
+            tuple: (custo, caminho) onde custo é o número de arestas e caminho é lista de nomes
+        """
+        resultado = Sorting.breadth_first_search(graph, start)
+        
+        if end.nome not in resultado['distancias'] or resultado['distancias'][end.nome] == float('inf'):
+            return float('inf'), []
+        
+        # Reconstrói o caminho
+        caminho = []
+        atual = end.nome
+        while atual is not None:
+            caminho.append(atual)
+            atual = resultado['anterior'].get(atual)
+        
+        return resultado['distancias'][end.nome], list(reversed(caminho))
 
     @staticmethod
     def depth_first_search(graph: Grafo, start: Vertice):
