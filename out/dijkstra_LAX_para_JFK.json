@@ -1,0 +1,7 @@
+{
+  "algoritmo": "Dijkstra",
+  "origem": "LAX",
+  "destino": "JFK",
+  "distancia_total": Infinity,
+  "caminho": []
+}

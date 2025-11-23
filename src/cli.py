@@ -251,19 +251,17 @@ def main():
                 destino_nome = args.target
             
             if origem_nome not in grafo.vertices:
-                raise KeyError(f"Vértice de origem '{args.source}' não encontrado no grafo.")
+                if usar_normalizacao:
+                    raise KeyError(f"Vértice de origem '{args.source}' (normalizado para '{origem_nome}') não encontrado.")
+                else:
+                    raise KeyError(f"Vértice de origem '{origem_nome}' não encontrado. Vértices disponíveis: {sorted(list(grafo.vertices.keys()))[:10]}...")
             
             if destino_nome and destino_nome not in grafo.vertices:
                 if args.alg != 'BFS':
-                    raise KeyError(f"Vértice de destino '{args.target}' não encontrado no grafo.")
-            
-            destino_nome = None
-            if args.target:
-                destino_nome = normalizar_texto(args.target)
-                if destino_nome not in grafo.vertices:
-
-                    if args.alg != 'BFS':
+                    if usar_normalizacao:
                         raise KeyError(f"Vértice de destino '{args.target}' (normalizado para '{destino_nome}') não encontrado.")
+                    else:
+                        raise KeyError(f"Vértice de destino '{destino_nome}' não encontrado. Vértices disponíveis: {sorted(list(grafo.vertices.keys()))[:10]}...")
 
         except KeyError as e:
             print(f"Erro: {e}")

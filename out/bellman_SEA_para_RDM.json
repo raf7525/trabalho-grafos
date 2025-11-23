@@ -1,0 +1,10 @@
+{
+  "algoritmo": "Bellman-Ford",
+  "origem": "SEA",
+  "destino": "RDM",
+  "distancia_total": 228.0,
+  "caminho": [
+    "SEA",
+    "RDM"
+  ]
+}
