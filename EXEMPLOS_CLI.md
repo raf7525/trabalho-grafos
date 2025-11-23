@@ -4,34 +4,34 @@
 
 ### Calcular Métricas
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --metricas
+python -m src.cli --dataset data/adjacencias_bairros.csv --metricas
 ```
 
 ### Gerar Visualizações
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --viz
+python -m src.cli --dataset data/adjacencias_bairros.csv --viz
 ```
 
 ### Executar Algoritmos
 
 **BFS:**
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --alg BFS --source "Boa Viagem"
+python -m src.cli --dataset data/adjacencias_bairros.csv --alg BFS --source "Boa Viagem"
 ```
 
 **DFS:**
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --alg DFS --source "Boa Vista"
+python -m src.cli --dataset data/adjacencias_bairros.csv --alg DFS --source "Boa Vista"
 ```
 
 **Dijkstra:**
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --alg DIJKSTRA --source "Nova Descoberta" --target "Boa Viagem"
+python -m src.cli --dataset data/adjacencias_bairros.csv --alg DIJKSTRA --source "Nova Descoberta" --target "Boa Viagem"
 ```
 
 **Bellman-Ford:**
 ```bash
-python -m src.cli --dataset data/bairros_vizinhos_tratados.csv --alg BELLMAN_FORD --source "Nova Descoberta" --target "Boa Viagem"
+python -m src.cli --dataset data/adjacencias_bairros.csv --alg BELLMAN_FORD --source "Nova Descoberta" --target "Boa Viagem"
 ```
 
 ---

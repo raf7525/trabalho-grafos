@@ -1,12 +1,13 @@
 import copy
 import json
 import time
+import csv
 from typing import Any, Dict, List
 import pandas as pd
 from pathlib import Path
 from src.graphs.graph import Grafo, Vertice
 from src.graphs.io import carregar_grafo
-
+from src.config import ENDERECOS_FILE
 
 def calcular_metricas_globais(grafo: Grafo) -> dict:
     metricas = {
@@ -92,6 +93,42 @@ def calcular_graus_e_rankings(grafo: Grafo, caminho_ego_csv: str) -> dict:
     
     return graus_df, ranking
 
+def gerar_tabela_distancias_enderecos(grafo: Grafo, output_dir: Path):
+    if not ENDERECOS_FILE.exists():
+        print(f"[AVISO] Arquivo {ENDERECOS_FILE} não encontrado. Pulando matriz de endereços.")
+        return
+
+    print(f"\n--- Gerando Matriz de Endereços (Seção 6) ---")
+    resultados = []
+    try:
+        with open(ENDERECOS_FILE, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                b_origem = row['bairro_origem'].strip().lower()
+                b_destino = row['bairro_destino'].strip().lower()
+                custo, caminho_str = "N/A", "Bairro não encontrado"
+                
+                if b_origem in grafo.vertices and b_destino in grafo.vertices:
+                    dist, path = grafo.caminho_mais_curto_dijkstra(b_origem, b_destino)
+                    custo = f"{dist:.2f}" if dist != float('inf') else "INF"
+                    caminho_str = " -> ".join(path)
+                
+                resultados.append({
+                    "Endereco_X": row['endereco_origem'],
+                    "Endereco_Y": row['endereco_destino'],
+                    "Bairro_X": b_origem,
+                    "Bairro_Y": b_destino,
+                    "Custo": custo,
+                    "Caminho": caminho_str
+                })
+
+        if resultados:
+            df = pd.DataFrame(resultados)
+            df.to_csv(output_dir / "distancias_enderecos.csv", index=False)
+            print(f"[OK] Matriz salva em: {output_dir / 'distancias_enderecos.csv'}")
+    except Exception as e:
+        print(f"[ERRO] Falha ao processar endereços: {e}")
+
 def orquestrar(caminho_nos: str, caminho_arestas: str, diretorio_saida: str = "out"):
     Path(diretorio_saida).mkdir(parents=True, exist_ok=True)
     
@@ -104,6 +141,8 @@ def orquestrar(caminho_nos: str, caminho_arestas: str, diretorio_saida: str = "o
     metricas_micro = calcular_metricas_microrregioes(grafo)
     with open(f"{diretorio_saida}/microrregioes.json", 'w', encoding='utf-8') as f:
         json.dump(metricas_micro, f, indent=2, ensure_ascii=False)
+    
+    gerar_tabela_distancias_enderecos(grafo, Path(diretorio_saida))
     
     ego_df = calcular_metricas_ego(grafo)
     ego_df.to_csv(f"{diretorio_saida}/ego_bairro.csv", index=False, encoding='utf-8')
@@ -126,7 +165,6 @@ def _run_benchmark(algorithm_func, *args, **kwargs) -> tuple[Any, float]:
     result = algorithm_func(*args, **kwargs)
     end_time = time.perf_counter()
     return result, end_time - start_time
-
 
 # --- Lógica da Parte 2 ---
 
