@@ -11,7 +11,7 @@ class PositiveFloat(float):
 
 class Sorting:
     @staticmethod
-    def dijkstra(graph: Grafo, start: Vertice, end: Vertice):
+    def dijkstra(grafo: Grafo, inicio: str, fim: str):
         
         distancias = {}
         visitados = set()
@@ -19,22 +19,22 @@ class Sorting:
         fila: List[Tuple[int, str]] = []
         
         
-        for nome in graph.vertices:
+        for nome in grafo.vertices:
             distancias[nome] = float('inf')
             
-        distancias.update({start.nome: 0})
-        heapq.heappush(fila, (0, start.nome))
+        distancias.update({inicio: 0})
+        heapq.heappush(fila, (0, inicio))
         
         while fila:
             _, nome_atual = heapq.heappop(fila)
-            vertice = graph.vertices[nome_atual]
+            vertice = grafo.vertices[nome_atual]
             
             visitados.add(vertice)
             
             for vizinho in vertice.vizinhos:
                 if vizinho in visitados: continue
     
-                peso_aresta = PositiveFloat(graph.obter_peso(nome_atual, vizinho.nome))
+                peso_aresta = PositiveFloat(grafo.obter_peso(nome_atual, vizinho.nome))
                 nova_distancia = distancias[nome_atual] + peso_aresta
                 
                 if nova_distancia < distancias[vizinho.nome]:
@@ -43,64 +43,64 @@ class Sorting:
                     heapq.heappush(fila, (nova_distancia, vizinho.nome))
 
         caminho = []
-        atual = end.nome
+        atual = fim
         
-        if atual not in anterior and atual != start.nome:
+        if atual not in anterior and atual != inicio:
             return float('inf'), []
         
         while atual is not None:
             caminho.append(atual)
             atual = anterior.get(atual)
-            if atual == start.nome:
+            if atual == inicio:
                 caminho.append(atual)
                 break
         
         caminho.reverse()
         
-        return distancias[end.nome], caminho
+        return distancias[fim], caminho
 
     @staticmethod
-    def bellman_ford(graph: Union[Grafo, GrafoDirecionado], start: Vertice, end: Vertice = None):
+    def bellman_ford(grafo: Union[Grafo, GrafoDirecionado], inicio: str, fim: str = None):
         
        
         distancias = {}
         anterior = {}
         
         
-        for nome_vertice in graph.vertices:
+        for nome_vertice in grafo.vertices:
             distancias[nome_vertice] = float('inf')
         
-        distancias[start.nome] = 0
+        distancias[inicio] = 0
         
        
-        def get_edges_to_relax():
-            if isinstance(graph, GrafoDirecionado):
-                yield from graph.obter_arestas_direcionadas()
+        def obter_arestas_para_relaxar():
+            if isinstance(grafo, GrafoDirecionado):
+                yield from grafo.obter_arestas_direcionadas()
             else: 
-                for u_name, vertice_u in graph.vertices.items():
+                for nome_u, vertice_u in grafo.vertices.items():
                     for vizinho_v in vertice_u.vizinhos:
-                        v_name = vizinho_v.nome
-                        peso_aresta = graph.obter_peso(u_name, v_name)
-                        yield u_name, v_name, peso_aresta
+                        nome_v = vizinho_v.nome
+                        peso_aresta = grafo.obter_peso(nome_u, nome_v)
+                        yield nome_u, nome_v, peso_aresta
 
         
-        for _ in range(len(graph.vertices)):
-            relaxed_in_this_pass = False
-            for u_name, v_name, peso_aresta in get_edges_to_relax():
-                if distancias[u_name] != float('inf') and distancias[u_name] + peso_aresta < distancias[v_name]:
-                    distancias[v_name] = distancias[u_name] + peso_aresta
-                    anterior[v_name] = u_name
-                    relaxed_in_this_pass = True
+        for _ in range(len(grafo.vertices)):
+            relaxou_nesta_passada = False
+            for nome_u, nome_v, peso_aresta in obter_arestas_para_relaxar():
+                if distancias[nome_u] != float('inf') and distancias[nome_u] + peso_aresta < distancias[nome_v]:
+                    distancias[nome_v] = distancias[nome_u] + peso_aresta
+                    anterior[nome_v] = nome_u
+                    relaxou_nesta_passada = True
             
         
         tem_ciclo_negativo = False
-        for u_name, v_name, peso_aresta in get_edges_to_relax():
-            if distancias[u_name] != float('inf') and distancias[u_name] + peso_aresta < distancias[v_name]:
+        for nome_u, nome_v, peso_aresta in obter_arestas_para_relaxar():
+            if distancias[nome_u] != float('inf') and distancias[nome_u] + peso_aresta < distancias[nome_v]:
                 tem_ciclo_negativo = True
                 break
         
        
-        if end is None:
+        if fim is None:
             return distancias, anterior, tem_ciclo_negativo
         
         
@@ -109,51 +109,51 @@ class Sorting:
         
         
         caminho = []
-        atual = end.nome
+        atual = fim
         
-        if atual not in anterior and atual != start.nome:
-            return float('inf'), [] 
+        if atual not in anterior and atual != inicio:
+            return float('inf'), []
         
-        path_nodes = set() 
+        nos_caminho = set() 
         while atual is not None:
-            if atual in path_nodes: 
+            if atual in nos_caminho: 
                 return float('inf'), [] 
-            path_nodes.add(atual)
+            nos_caminho.add(atual)
             caminho.append(atual)
             atual = anterior.get(atual)
-            if atual == start.nome: 
+            if atual == inicio: 
                 caminho.append(atual)
                 break
         
         
-        if caminho and caminho[-1] != start.nome:
+        if caminho and caminho[-1] != inicio:
             return float('inf'), []
 
         caminho.reverse()
         
-        return distancias[end.nome], caminho
+        return distancias[fim], caminho
     
     @staticmethod
-    def breadth_first_search(graph: Grafo, start: Vertice):
+    def breadth_first_search(grafo: Grafo, inicio: str):
         
-        visitado = set([start.nome])
-        fila = deque([start.nome])
-        anterior = {start.nome: None}
-        niveis = {start.nome: 0}
-        distancias = {start.nome: 0}
-        arvore = {start.nome: []}
-        ordem_visita = [start.nome]
+        visitado = set([inicio])
+        fila = deque([inicio])
+        anterior = {inicio: None}
+        niveis = {inicio: 0}
+        distancias = {inicio: 0}
+        arvore = {inicio: []}
+        ordem_visita = [inicio]
         
         
-        for nome in graph.vertices:
-            if nome != start.nome:
+        for nome in grafo.vertices:
+            if nome != inicio:
                 niveis[nome] = float('inf')
                 distancias[nome] = float('inf')
                 arvore[nome] = []
 
         while fila:
             u = fila.popleft()
-            vertice_atual = graph.vertices[u]
+            vertice_atual = grafo.vertices[u]
             
             
             for vizinho in vertice_atual.vizinhos:
@@ -176,30 +176,30 @@ class Sorting:
         }
 
     @staticmethod
-    def bfs_shortest_path(graph: Grafo, start: Vertice, end: Vertice) -> Tuple[float, List[str]]:
+    def bfs_shortest_path(grafo: Grafo, inicio: str, fim: str) -> Tuple[float, List[str]]:
         
-        resultado = Sorting.breadth_first_search(graph, start)
+        resultado = Sorting.breadth_first_search(grafo, inicio)
         
-        if end.nome not in resultado['distancias'] or resultado['distancias'][end.nome] == float('inf'):
+        if fim not in resultado['distancias'] or resultado['distancias'][fim] == float('inf'):
             return float('inf'), []
         
         
         caminho = []
-        atual = end.nome
+        atual = fim
         while atual is not None:
             caminho.append(atual)
             atual = resultado['anterior'].get(atual)
         
-        return resultado['distancias'][end.nome], list(reversed(caminho))
+        return resultado['distancias'][fim], list(reversed(caminho))
 
     @staticmethod
-    def depth_first_search(graph: Grafo, start: Vertice):
+    def depth_first_search(grafo: Grafo, inicio: str):
         
         
-        estado = {nome: 'nao_visitado' for nome in graph.vertices}
+        estado = {nome: 'nao_visitado' for nome in grafo.vertices}
         descoberta = {}
         finalizacao = {}
-        anterior = {nome: None for nome in graph.vertices}
+        anterior = {nome: None for nome in grafo.vertices}
         classificacao_arestas = {}
         ordem_visita = []
         tempo = [0]  
@@ -216,7 +216,7 @@ class Sorting:
             descoberta[u] = tempo[0]
             ordem_visita.append(u)
             
-            vertice_atual = graph.vertices[u]
+            vertice_atual = grafo.vertices[u]
             
             
             for vizinho in vertice_atual.vizinhos:
@@ -254,21 +254,21 @@ class Sorting:
             tempo[0] += 1
             finalizacao[u] = tempo[0]
         
-        def _obter_descendentes(u: str, anterior_dict: dict) -> set:
+        def _obter_descendentes(u: str, dicionario_anterior: dict) -> set:
             
             descendentes = set()
-            for vertice, pai in anterior_dict.items():
+            for vertice, pai in dicionario_anterior.items():
                 if pai == u:
                     descendentes.add(vertice)
                     descendentes.update(_obter_descendentes(vertice, anterior_dict))
             return descendentes
         
        
-        dfs_visitar(start.nome)
+        dfs_visitar(inicio)
         componentes.append(ordem_visita.copy())
         
         
-        for nome in graph.vertices:
+        for nome in grafo.vertices:
             if estado[nome] == 'nao_visitado':
                 componente_atual = []
                 vertices_antes = len(ordem_visita)

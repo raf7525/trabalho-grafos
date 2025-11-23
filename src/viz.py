@@ -34,7 +34,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
         caminho_saida = str(OUT_DIR / "grafo_dados.json")
     
-    nodes = []
+    nos = []
     for nome_bairro, vertice in grafo.vertices.items():
         vizinhos = grafo.obter_vizinhos(nome_bairro)
         grau = len(vizinhos)
@@ -55,7 +55,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
             f"Densidade Ego: {densidade_ego:.4f}"
         )
         
-        nodes.append({
+        nos.append({
             "id": nome_bairro,
             "label": nome_bairro.title(),
             "group": microrregiao,
@@ -64,7 +64,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
             "title_plain": tooltip_text
         })
     
-    edges = []
+    arestas = []
     arestas_processadas = set()
     
     for (origem, destino), attrs in grafo.arestas.items():
@@ -76,7 +76,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
         logradouro = attrs.get('logradouro', 'N/A')
         tooltip_edge = f"Peso: <b>{peso}</b><br>Via: {logradouro}"
 
-        edges.append({
+        arestas.append({
             "from": origem,
             "to": destino,
             "label": str(peso),
@@ -86,8 +86,8 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
         arestas_processadas.add(chave)
         
     dados_completos = {
-        "nodes": nodes,
-        "edges": edges
+        "nodes": nos,
+        "edges": arestas
     }
     
     with open(caminho_saida, 'w', encoding='utf-8') as f:
@@ -207,18 +207,18 @@ def visualizar_subgrafo_top10(grafo: Grafo, caminho_saida: str = None):
     net = Network(height="750px", width="100%", bgcolor="#222222", font_color="white")
     net.barnes_hut(gravity=-8000, central_gravity=0.3, spring_length=200)
     
-    for nome_no, vertice in subgrafo.vertices.items():
+    for nome_vertice, vertice in subgrafo.vertices.items():
         grau = len(vertice.vizinhos)
-        eh_top10 = nome_no in top10_bairros
+        eh_top10 = nome_vertice in top10_bairros
         
         tamanho = 30 + (grau * 3) if eh_top10 else 15 + (grau * 2)
         cor = "#ff6b6b" if eh_top10 else "#4ecdc4"
         
-        net.add_node(nome_no, 
-                    label=nome_no.title(),
+        net.add_node(nome_vertice, 
+                    label=nome_vertice.title(),
                     size=tamanho,
                     color=cor,
-                    title=f"Bairro: {nome_no.title()} Grau: {grau} {'TOP 10' if eh_top10 else ''}",
+                    title=f"Bairro: {nome_vertice.title()} Grau: {grau} {'TOP 10' if eh_top10 else ''}",
                     font={'size': 14 if eh_top10 else 10})
     
     arestas_adicionadas = set()
@@ -291,21 +291,21 @@ def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida
     max_nivel = max([v for v in niveis.values() if v != float('inf')])
     cores_niveis = plt.cm.rainbow([i/max_nivel for i in range(max_nivel + 1)])
     
-    for nome_no, nivel in niveis.items():
+    for nome_vertice, nivel in niveis.items():
         if nivel == float('inf'):
             continue
         
-        eh_origem = nome_no == origem
+        eh_origem = nome_vertice == origem
         tamanho = 40 if eh_origem else 20 + (5 * (max_nivel - nivel))
         
         cor_rgb = cores_niveis[nivel]
         cor_hex = mcolors.rgb2hex(cor_rgb[:3])
         
-        net.add_node(nome_no,
-                    label=f"{nome_no.title()}\nNível {nivel}",
+        net.add_node(nome_vertice,
+                    label=f"{nome_vertice.title()}\nNível {nivel}",
                     size=tamanho,
                     color=cor_hex,
-                    title=f"Bairro: {nome_no.title()} Nível BFS: {nivel} {'ORIGEM' if eh_origem else ''}",
+                    title=f"Bairro: {nome_vertice.title()} Nível BFS: {nivel} {'ORIGEM' if eh_origem else ''}",
                     level=nivel,
                     font={'size': 16 if eh_origem else 12})
     

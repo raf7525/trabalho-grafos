@@ -245,29 +245,29 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
     
     # Tenta encontrar uma aresta que não forme um ciclo negativo quando seu peso for negativo.
     # Vamos tentar JFK -> CLT (Charlotte)
-    source_node_nw = "JFK"
-    target_node_nw = "CLT"
-    neg_weight_value = -10.0 # Peso negativo pequeno
+    vertice_origem_pn = "JFK"
+    vertice_destino_pn = "CLT"
+    valor_peso_negativo = -10.0 # Peso negativo pequeno
 
     # Garante que os nós existem no grafo para modificação
-    if (grafo_neg_weights_no_cycle.contem_vertice(Vertice(source_node_nw)) and 
-        grafo_neg_weights_no_cycle.contem_vertice(Vertice(target_node_nw))):
+    if (grafo_neg_weights_no_cycle.contem_vertice(Vertice(vertice_origem_pn)) and 
+        grafo_neg_weights_no_cycle.contem_vertice(Vertice(vertice_destino_pn))):
         
         # Atributos originais da aresta, se houver
-        original_edge_info = grafo_neg_weights_no_cycle.obter_informacoes_aresta(source_node_nw, target_node_nw)
+        informacoes_aresta_original = grafo_neg_weights_no_cycle.obter_informacoes_aresta(vertice_origem_pn, vertice_destino_pn)
         
         # Remove aresta original e adiciona uma nova com peso negativo
         grafo_neg_weights_no_cycle.remover_aresta(
-            grafo_neg_weights_no_cycle.vertices[source_node_nw],
-            grafo_neg_weights_no_cycle.vertices[target_node_nw]
+            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn]
         )
         grafo_neg_weights_no_cycle.adicionar_aresta(
-            grafo_neg_weights_no_cycle.vertices[source_node_nw],
-            grafo_neg_weights_no_cycle.vertices[target_node_nw],
-            peso=neg_weight_value,
-            **original_edge_info # Preserva outros atributos
+            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
+            peso=valor_peso_negativo,
+            **informacoes_aresta_original # Preserva outros atributos
         )
-        print(f"Modificada aresta {source_node_nw} -> {target_node_nw} para peso {neg_weight_value}.")
+        print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
         
         try:
             (cost_nw, path_nw), time_bf_nw = _run_benchmark(

@@ -34,9 +34,9 @@ def carregar_grafo(caminho_arquivo_nos: str, caminho_arquivo_arestas: str) -> Gr
         
     for _, linha in dados_nos.iterrows():
         nome_bairro = linha['bairro']
-        no = Vertice(nome_bairro)
-        no.atributos['microrregiao'] = linha['microrregiao']
-        grafo.adicionar_vertice(no)
+        vertice = Vertice(nome_bairro)
+        vertice.atributos['microrregiao'] = linha['microrregiao']
+        grafo.adicionar_vertice(vertice)
     
     try:
         dados_arestas = pd.read_csv(caminho_arquivo_arestas, encoding='utf-8', header=0)
@@ -48,17 +48,17 @@ def carregar_grafo(caminho_arquivo_nos: str, caminho_arquivo_arestas: str) -> Gr
         nome_destino = normalizar_texto(linha['Vizinho'])
         peso = float(linha['Peso'])
         
-        no_origem = grafo.vertices.get(nome_origem)
-        no_destino = grafo.vertices.get(nome_destino)
+        vertice_origem = grafo.vertices.get(nome_origem)
+        vertice_destino = grafo.vertices.get(nome_destino)
         
-        if no_origem and no_destino:
+        if vertice_origem and vertice_destino:
             atributos = {
                 'logradouro': linha['Logradouro'],
                 'tipo': linha['Tipo'],
                 'tipo_normalizado': linha['Tipo Normalizado'],
                 'id_rua': linha['Id Rua']
             }
-            grafo.adicionar_aresta(no_origem, no_destino, peso=peso, **atributos)
+            grafo.adicionar_aresta(vertice_origem, vertice_destino, peso=peso, **atributos)
     
     return grafo
 
@@ -66,12 +66,12 @@ def carregar_grafo(caminho_arquivo_nos: str, caminho_arquivo_arestas: str) -> Gr
 def carregar_dataset_parte2(caminho_csv: str = None) -> GrafoDirecionado:
     grafo = GrafoDirecionado()
     
-    df = pd.read_csv(caminho_csv)
+    dados = pd.read_csv(caminho_csv)
     
-    aeroportos_origem = df[['Origin_airport', 'Origin_city']].rename(
+    aeroportos_origem = dados[['Origin_airport', 'Origin_city']].rename(
         columns={'Origin_airport': 'aeroporto', 'Origin_city': 'cidade'}
     )
-    aeroportos_destino = df[['Destination_airport', 'Destination_city']].rename(
+    aeroportos_destino = dados[['Destination_airport', 'Destination_city']].rename(
         columns={'Destination_airport': 'aeroporto', 'Destination_city': 'cidade'}
     )
     
@@ -85,7 +85,7 @@ def carregar_dataset_parte2(caminho_csv: str = None) -> GrafoDirecionado:
         grafo.adicionar_vertice(vertice)
     
     arestas_adicionadas = 0
-    for _, linha in df.iterrows():
+    for _, linha in dados.iterrows():
         origem_codigo = linha['Origin_airport']
         destino_codigo = linha['Destination_airport']
         

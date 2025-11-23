@@ -11,7 +11,7 @@ class Vertice:
         adicionou = False
         if vizinho not in self.vizinhos:
             self.vizinhos.append(vizinho)
-            self.vizinhos.sort(key=lambda no: no.nome)
+            self.vizinhos.sort(key=lambda vertice: vertice.nome)
             adicionou = True
         return adicionou
     
@@ -47,8 +47,8 @@ class Grafo:
         self.adjacencias: Dict[str, Set[str]] = {}
         self.atributos_vertices: Dict[str, Dict] = {}
 
-    def contem_vertice(self, no: Vertice) -> bool:
-        return no.nome in self.vertices
+    def contem_vertice(self, vertice: Vertice) -> bool:
+        return vertice.nome in self.vertices
 
     def adicionar_vertice(self, vertice: Vertice) -> bool:
         if not isinstance(vertice, Vertice):
