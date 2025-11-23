@@ -491,12 +491,33 @@ python -m src.cli --dataset data/usa_airport_dataset.csv --alg DIJKSTRA --source
 
 # Final do final
 
-COMO CONSEGUIMOS OS DADOS ?
-- conseguiu malha geometrica dos bairros usando QGIS gerando uma lista de adjecencia dos bairros
-- a partir dessa lista usamos osmnx para conseguir os logradouros que ligavam esses bairros
-- calculando dijkstra para os dois bairros e pagando a primeira aresta do resultado que seria a rua
-- para os pesos usamos o tipo de rua (rua local, avenida etc...)
-- pegamos o ID de cada logradouro para criar um link que liga a rua real e pode ser acessado :)
+## COMO CONSEGUIMOS OS DADOS - METODOLOGIA DE OBTENÇÃO
+
+A construção do dataset de bairros do Recife e suas interconexões foi um processo meticuloso que envolveu múltiplas etapas de análise geoespacial e processamento de dados urbanos.
+
+### Etapa 1: Obtenção da Malha Geométrica dos Bairros
+Utilizamos o **QGIS** para organizar todos os bairros do recife de forma mais clara para nós, anotando quais ficam junto de quais, afim de já organizar como as arestas ficariam.
+
+### Etapa 2: Identificação dos Logradouros de Conexão
+Com a lista de bairros adjacentes, utilizamos a biblioteca **OSMnx** (OpenStreetMap Networks in Python) para consultar a base de dados do OpenStreetMap e identificar os logradouros reais que conectam cada par de bairros vizinhos. Esta etapa garantiu que as arestas do grafo representassem conexões viárias reais e não apenas adjacências geográficas teóricas.
+
+### Etapa 3: Determinação da Via Principal de Conexão
+Para cada par de bairros conectados, calculamos o caminho mais curto utilizando o algoritmo de Dijkstra através do qgis. Em seguida, extraímos a primeira aresta deste percurso, que representa a principal via de acesso entre os dois bairros. Esta metodologia assegurou que cada aresta do grafo corresponda ao logradouro mais relevante para a conectividade entre bairros.
+
+### Etapa 4: Definição dos Pesos das Arestas
+Os pesos das arestas foram determinados com base na classificação hierárquica das vias urbanas. Utilizamos as seguintes categorias:
+- **Ruas locais**: peso base
+- **Avenidas**: peso reduzido (maior facilidade de trânsito)
+- **Vias arteriais**: peso reduzido
+- **Vias de trânsito rápido**: peso mínimo
+
+Esta classificação reflete a realidade do trânsito urbano, onde vias de maior hierarquia oferecem melhor fluidez e conectividade.
+
+### Etapa 5: Rastreabilidade e Verificação
+Para cada logradouro identificado, registramos o ID único fornecido pelo OpenStreetMap, criando uma referência direta que permite acessar informações detalhadas sobre cada via. Esta abordagem garante a rastreabilidade dos dados e possibilita futuras validações ou expansões do dataset.
+
+### Resultado Final
+O processo resultou em um grafo de 94 bairros (vértices) conectados por 245 vias principais (arestas), onde cada aresta representa uma conexão viária real e documentada, com pesos que refletem a hierarquia do sistema viário urbano do Recife.
 
 PARTE 2
 - opcionalmente fazer uma visualização extra para parte 2 com o grafo a partir do dataset para ficar bonito
