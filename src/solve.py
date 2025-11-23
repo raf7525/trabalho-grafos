@@ -265,7 +265,7 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
             grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
             grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
             peso=valor_peso_negativo,
-            **informacoes_aresta_original # Preserva outros atributos
+            **informacoes_aresta_original 
         )
         print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
         
@@ -301,37 +301,35 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
         print(f"Não foi possível executar teste de Bellman-Ford (pesos negativos, sem ciclo): vértices {source_node_nw} ou {target_node_nw} não encontrados no grafo.")
 
 
-    # --- Teste de Bellman-Ford com Pesos Negativos E COM Ciclo Negativo ---
+    
     print("\n--- Testando Bellman-Ford com pesos negativos (COM ciclo) ---")
     grafo_neg_cycle = copy.deepcopy(grafo)
     
     cycle_nodes = ["SEA", "RDM", "GEG"]
-    # Garante que todos os nós do ciclo existam no grafo
     for node_name in cycle_nodes:
         if not grafo_neg_cycle.contem_vertice(Vertice(node_name)):
             grafo_neg_cycle.adicionar_vertice(Vertice(node_name))
 
-    # Define arestas para o ciclo negativo
+    
     edges_to_create = [
         ("SEA", "RDM", 100),
         ("RDM", "GEG", 100),
         ("GEG", "SEA", -300)
     ]
     
-    # Remove arestas existentes e adiciona novas com pesos especificados
+   
     for u_name, v_name, weight in edges_to_create:
         u = grafo_neg_cycle.vertices[u_name]
         v = grafo_neg_cycle.vertices[v_name]
         
-        # Remove aresta direcionada existente (u, v) se houver
         grafo_neg_cycle.remover_aresta(u, v)
         
-        # Adiciona nova aresta direcionada
+        
         grafo_neg_cycle.adicionar_aresta(u, v, peso=weight)
 
     try:
         start_time_cycle_new = time.perf_counter()
-        # Chama Bellman-Ford a partir de um nó DENTRO do ciclo
+       
         grafo_neg_cycle.caminho_mais_curto_bellman_ford("SEA", "LAX") 
     except ValueError as e:
         end_time_cycle_new = time.perf_counter()

@@ -180,7 +180,7 @@ def main():
         print(f"Erro: Arquivo de dataset não encontrado em {path_arestas}")
         return
     
-    # Parte 2: Análise completa de aeroportos
+    
     if args.parte2:
         print("\nExecutando análise completa da Parte 2 (Aeroportos)...")
         dataset_parte2 = args.dataset if args.dataset != dataset_padrao else str(DATASET_2_CSV)
@@ -223,7 +223,7 @@ def main():
             print(f"Erro: --target é obrigatório para {args.alg}.")
             return
 
-        # Detecta se é Parte 2 baseado no dataset
+       
         eh_parte2 = 'airport' in args.dataset.lower() or 'aeroporto' in args.dataset.lower()
         
         try:
@@ -242,7 +242,7 @@ def main():
             return
 
         try:
-            # Normaliza apenas para Parte 1 (bairros)
+            
             if usar_normalizacao:
                 origem_nome = normalizar_texto(args.source)
                 destino_nome = normalizar_texto(args.target) if args.target else None
