@@ -1,7 +1,7 @@
 from collections import deque
 import heapq
-from typing import List, Tuple
-from src.graphs.graph import Grafo, Vertice
+from typing import List, Tuple, Union
+from src.graphs.graph import Grafo, GrafoDirecionado, Vertice
 
 class PositiveFloat(float):
     def __new__(cls, value):
@@ -74,52 +74,46 @@ class Sorting:
         return distancias[end.nome], caminho
 
     @staticmethod
-    def bellman_ford(graph: Grafo, start: Vertice, end: Vertice = None):
+    def bellman_ford(graph: Union[Grafo, GrafoDirecionado], start: Vertice, end: Vertice = None):
         """
-        Initialize the 'distances' and 'previous' containers
-        Set the distance for the starting vertex to 0
-        Relax all edges |V| - 1 times
-            For each edge in the graph
-                If the distance to the destination can be shortened
-                    Update the distance and previous vertex
-        Check for negative cycles
-        If end is specified, reconstruct the path
+        Encontra o caminho mais curto entre dois vértices usando o algoritmo de Bellman-Ford.
+        Funciona com pesos negativos e detecta ciclos negativos.
+            Se destino for None: Tupla (distancias_dict, anterior_dict, tem_ciclo_negativo)
         """
         # Inicializa distâncias e predecessores
         distancias = {}
         anterior = {}
         
         # Inicializa todos os vértices como infinito
-        for nome in graph.vertices:
-            distancias[nome] = float('inf')
+        for nome_vertice in graph.vertices:
+            distancias[nome_vertice] = float('inf')
         
         distancias[start.nome] = 0
         
+        # Generator for edges
+        def get_edges_to_relax():
+            if isinstance(graph, GrafoDirecionado):
+                yield from graph.obter_arestas_direcionadas()
+            else: # Grafo (undirected)
+                for u_name, vertice_u in graph.vertices.items():
+                    for vizinho_v in vertice_u.vizinhos:
+                        v_name = vizinho_v.nome
+                        peso_aresta = graph.obter_peso(u_name, v_name)
+                        yield u_name, v_name, peso_aresta
+
         # Relaxa todas as arestas |V| - 1 vezes
-        
-        for _ in range( len(graph.vertices) - 1):
-            # Para cada aresta no grafo
-            for (origem, destino), info in graph.arestas.items():
-                peso_aresta = info['peso']
-                
-                # Relaxa em ambas as direções (grafo não direcionado)
-                pode_relaxar_ida = distancias[origem] + peso_aresta < distancias[destino]
-                if pode_relaxar_ida:
-                    distancias[destino] = distancias[origem] + peso_aresta
-                    anterior[destino] = origem
-                
-                pode_relaxar_volta = distancias[destino] + peso_aresta < distancias[origem]
-                if pode_relaxar_volta:
-                    distancias[origem] = distancias[destino] + peso_aresta
-                    anterior[origem] = destino
-        
-        # Verifica se há ciclos negativos
+        for _ in range(len(graph.vertices)):
+            relaxed_in_this_pass = False
+            for u_name, v_name, peso_aresta in get_edges_to_relax():
+                if distancias[u_name] != float('inf') and distancias[u_name] + peso_aresta < distancias[v_name]:
+                    distancias[v_name] = distancias[u_name] + peso_aresta
+                    anterior[v_name] = u_name
+                    relaxed_in_this_pass = True
+            
+        # Verifica se há ciclos negativos (V-ésima passagem)
         tem_ciclo_negativo = False
-        for (origem, destino), info in graph.arestas.items():
-            peso_aresta = info['peso']
-            pode_relaxar_ida = distancias[origem] + peso_aresta < distancias[destino]
-            pode_relaxar_volta = distancias[destino] + peso_aresta < distancias[origem]
-            if pode_relaxar_ida or pode_relaxar_volta:
+        for u_name, v_name, peso_aresta in get_edges_to_relax():
+            if distancias[u_name] != float('inf') and distancias[u_name] + peso_aresta < distancias[v_name]:
                 tem_ciclo_negativo = True
                 break
         
@@ -136,15 +130,23 @@ class Sorting:
         atual = end.nome
         
         if atual not in anterior and atual != start.nome:
-            return float('inf'), []
+            return float('inf'), [] # Caminho não encontrado
         
+        path_nodes = set() # Para detectar ciclos durante a reconstrução do caminho
         while atual is not None:
+            if atual in path_nodes: 
+                return float('inf'), [] # Caminho inválido
+            path_nodes.add(atual)
             caminho.append(atual)
             atual = anterior.get(atual)
-            if atual == start.nome:
+            if atual == start.nome: # Se o início for alcançado, adiciona e para
                 caminho.append(atual)
                 break
         
+        # Se o nó inicial não for alcançado, significa que não é acessível a partir do destino
+        if caminho and caminho[-1] != start.nome:
+            return float('inf'), []
+
         caminho.reverse()
         
         return distancias[end.nome], caminho

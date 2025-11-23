@@ -7,7 +7,7 @@ OUT_DIR = ROOT_DIR / "out"
 TEMPLATES_DIR = SRC_DIR / "templates"
 
 BAIRROS_FILE = DATA_DIR / "bairros_unique.csv"
-ARESTAS_FILE = DATA_DIR / "bairros_vizinhos_tratados.csv"
+ARESTAS_FILE = DATA_DIR / "adjacencias_bairros.csv"
 
 DATASET_2_DIR = DATA_DIR / "dataset_parte2"
 DATASET_2_CSV = DATASET_2_DIR / "Airports_2008_2009_200k.csv"
