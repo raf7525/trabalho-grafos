@@ -131,3 +131,9 @@ o gráfico mostra a árvore de busca em largura (BFS) a partir de um bairro orig
 - Setas direcionadas mostrando o caminho da busca
 
 Demonstra como a conectividade se espalha a partir de um ponto e quais bairros são mais "próximos" em termos de saltos na rede.
+
+## parte 2
+
+Na parte dois usamos um dataset de voos pelos estados unidos, a primeira parte foi tratar os dados para facilitar o uso deles, por isso separamos em 2 csv e tiramos todos os dados não úteis, após isso começamos criamos os grafos com os nós,arestas,pesos e por fim testamos os algorítmos nos grafos criados, descobrimos por exemplo que o dfs por algum motivo está com o tempo muito acima enquanto o dfs sendo o mais rápido de todos, o djkstra também é muito mais rápido que o bell-man ford.
+
+Um fato a se destacar é que não usamos pesos negativos visto que nossa medida de peso seria com base na distância, portanto não tem como se ter distâncias negativas.
