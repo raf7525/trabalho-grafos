@@ -28,7 +28,7 @@ class HelperTest:
             vertice = Vertice(nome_maiúsculo)
             vertices[chave_minúscula] = vertice
 
-            grafo.adicionar_no(vertice)
+            grafo.adicionar_vertice(vertice)
         
         return grafo, vertices
 
