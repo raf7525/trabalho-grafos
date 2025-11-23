@@ -16,9 +16,7 @@ def calcular_metricas_globais(grafo: Grafo) -> dict:
     }
     return metricas
 
-
 def calcular_metricas_microrregioes(grafo: Grafo) -> list:
-    # Agrupa bairros por microrregião
     microrregioes = {}
     for nome_vertice, vertice in grafo.vertices.items():
         microrregiao = vertice.atributos.get('microrregiao', 'N/A')
@@ -26,7 +24,6 @@ def calcular_metricas_microrregioes(grafo: Grafo) -> list:
             microrregioes[microrregiao] = []
         microrregioes[microrregiao].append(nome_vertice)
     
-    # Calcula métricas para cada microrregião
     metricas_por_micro = []
     for micro_id in sorted(microrregioes.keys()):
         bairros = microrregioes[micro_id]
@@ -41,16 +38,13 @@ def calcular_metricas_microrregioes(grafo: Grafo) -> list:
     
     return metricas_por_micro
 
-
 def calcular_metricas_ego(grafo: Grafo) -> pd.DataFrame:
     dados_ego = []
     
     for nome_bairro in sorted(grafo.vertices.keys()):
-        # Obtém vizinhos
         vizinhos = grafo.obter_vizinhos(nome_bairro)
         grau = len(vizinhos)
         
-        # Ego-rede = bairro + vizinhos
         nos_ego = {nome_bairro} | set(vizinhos)
         subgrafo_ego = grafo.criar_subgrafo(nos_ego)
         
@@ -97,7 +91,6 @@ def calcular_graus_e_rankings(grafo: Grafo, caminho_ego_csv: str) -> dict:
     }
     
     return graus_df, ranking
-
 
 def orquestrar(caminho_nos: str, caminho_arestas: str, diretorio_saida: str = "out"):
     Path(diretorio_saida).mkdir(parents=True, exist_ok=True)

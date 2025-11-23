@@ -1,0 +1,30 @@
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.line {
+    width: 24px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.gradient-bar {
+    height: 8px;
+    width: 100%;
+    background: linear-gradient(to right, 
+        hsl(0, 90%, 50%),
+        hsl(30, 90%, 50%),
+        hsl(60, 90%, 50%),
+        hsl(120, 90%, 50%),
+        hsl(240, 90%, 50%)
+    );
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+div.vis-tooltip { white-space: pre-line; }

@@ -25,3 +25,5 @@ PNG_METADATA = {
     'viz_densidade_microrregiao.png': ('Densidade por Microrregião', 'Análise de densidade local'),
     'viz_distribuicao_graus.png': ('Distribuição de Graus', 'Histograma da conectividade')
 }
+
+PORT = 8000

@@ -5,658 +5,752 @@
       "label": "Aflitos",
       "group": 3,
       "value": 4,
-      "title": "Aflitos\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.9000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Aflitos</strong>Microrregião: <b>3</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.9000</b></div>",
+      "title_plain": "Aflitos\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.9000"
     },
     {
       "id": "afogados",
       "label": "Afogados",
       "group": 5,
       "value": 9,
-      "title": "Afogados\nMicrorregião: 5\nGrau: 9\nDensidade Ego: 0.3778"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Afogados</strong>Microrregião: <b>5</b><br>Grau: <b>9</b><br>Densidade Ego: <b>0.3778</b></div>",
+      "title_plain": "Afogados\nMicrorregião: 5\nGrau: 9\nDensidade Ego: 0.3778"
     },
     {
       "id": "agua fria",
       "label": "Agua Fria",
       "group": 2,
       "value": 8,
-      "title": "Agua Fria\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.4444"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Agua Fria</strong>Microrregião: <b>2</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.4444</b></div>",
+      "title_plain": "Agua Fria\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.4444"
     },
     {
       "id": "alto do mandu",
       "label": "Alto Do Mandu",
       "group": 3,
       "value": 5,
-      "title": "Alto Do Mandu\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Alto Do Mandu</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Alto Do Mandu\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "alto jose bonifacio",
       "label": "Alto Jose Bonifacio",
       "group": 3,
       "value": 6,
-      "title": "Alto Jose Bonifacio\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Alto Jose Bonifacio</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Alto Jose Bonifacio\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "alto jose do pinho",
       "label": "Alto Jose Do Pinho",
       "group": 3,
       "value": 6,
-      "title": "Alto Jose Do Pinho\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Alto Jose Do Pinho</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Alto Jose Do Pinho\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "alto santa teresinha",
       "label": "Alto Santa Teresinha",
       "group": 2,
       "value": 5,
-      "title": "Alto Santa Teresinha\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Alto Santa Teresinha</strong>Microrregião: <b>2</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Alto Santa Teresinha\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "apipucos",
       "label": "Apipucos",
       "group": 3,
       "value": 7,
-      "title": "Apipucos\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Apipucos</strong>Microrregião: <b>3</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Apipucos\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "areias",
       "label": "Areias",
       "group": 5,
       "value": 8,
-      "title": "Areias\nMicrorregião: 5\nGrau: 8\nDensidade Ego: 0.5278"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Areias</strong>Microrregião: <b>5</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.5278</b></div>",
+      "title_plain": "Areias\nMicrorregião: 5\nGrau: 8\nDensidade Ego: 0.5278"
     },
     {
       "id": "arruda",
       "label": "Arruda",
       "group": 2,
       "value": 9,
-      "title": "Arruda\nMicrorregião: 2\nGrau: 9\nDensidade Ego: 0.4000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Arruda</strong>Microrregião: <b>2</b><br>Grau: <b>9</b><br>Densidade Ego: <b>0.4000</b></div>",
+      "title_plain": "Arruda\nMicrorregião: 2\nGrau: 9\nDensidade Ego: 0.4000"
     },
     {
       "id": "barro",
       "label": "Barro",
       "group": 5,
       "value": 5,
-      "title": "Barro\nMicrorregião: 5\nGrau: 5\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Barro</strong>Microrregião: <b>5</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Barro\nMicrorregião: 5\nGrau: 5\nDensidade Ego: 0.6000"
     },
     {
       "id": "beberibe",
       "label": "Beberibe",
       "group": 2,
       "value": 4,
-      "title": "Beberibe\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Beberibe</strong>Microrregião: <b>2</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Beberibe\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "boa viagem",
       "label": "Boa Viagem",
       "group": 6,
       "value": 4,
-      "title": "Boa Viagem\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Boa Viagem</strong>Microrregião: <b>6</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Boa Viagem\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "boa vista",
       "label": "Boa Vista",
       "group": 1,
       "value": 9,
-      "title": "Boa Vista\nMicrorregião: 1\nGrau: 9\nDensidade Ego: 0.4000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Boa Vista</strong>Microrregião: <b>1</b><br>Grau: <b>9</b><br>Densidade Ego: <b>0.4000</b></div>",
+      "title_plain": "Boa Vista\nMicrorregião: 1\nGrau: 9\nDensidade Ego: 0.4000"
     },
     {
       "id": "bomba do hemeterio",
       "label": "Bomba Do Hemeterio",
       "group": 2,
       "value": 5,
-      "title": "Bomba Do Hemeterio\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Bomba Do Hemeterio</strong>Microrregião: <b>2</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Bomba Do Hemeterio\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "bongi",
       "label": "Bongi",
       "group": 5,
       "value": 4,
-      "title": "Bongi\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Bongi</strong>Microrregião: <b>5</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Bongi\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "brasilia teimosa",
       "label": "Brasilia Teimosa",
       "group": 6,
       "value": 1,
-      "title": "Brasilia Teimosa\nMicrorregião: 6\nGrau: 1\nDensidade Ego: 1.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Brasilia Teimosa</strong>Microrregião: <b>6</b><br>Grau: <b>1</b><br>Densidade Ego: <b>1.0000</b></div>",
+      "title_plain": "Brasilia Teimosa\nMicrorregião: 6\nGrau: 1\nDensidade Ego: 1.0000"
     },
     {
       "id": "brejo da guabiraba",
       "label": "Brejo Da Guabiraba",
       "group": 3,
       "value": 5,
-      "title": "Brejo Da Guabiraba\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Brejo Da Guabiraba</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Brejo Da Guabiraba\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "brejo de beberibe",
       "label": "Brejo De Beberibe",
       "group": 3,
       "value": 7,
-      "title": "Brejo De Beberibe\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Brejo De Beberibe</strong>Microrregião: <b>3</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Brejo De Beberibe\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "cabanga",
       "label": "Cabanga",
       "group": 1,
       "value": 0,
-      "title": "Cabanga\nMicrorregião: 1\nGrau: 0\nDensidade Ego: 0.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cabanga</strong>Microrregião: <b>1</b><br>Grau: <b>0</b><br>Densidade Ego: <b>0.0000</b></div>",
+      "title_plain": "Cabanga\nMicrorregião: 1\nGrau: 0\nDensidade Ego: 0.0000"
     },
     {
       "id": "cacote",
       "label": "Cacote",
       "group": 5,
       "value": 3,
-      "title": "Cacote\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 1.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cacote</strong>Microrregião: <b>5</b><br>Grau: <b>3</b><br>Densidade Ego: <b>1.0000</b></div>",
+      "title_plain": "Cacote\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 1.0000"
     },
     {
       "id": "cajueiro",
       "label": "Cajueiro",
       "group": 2,
       "value": 3,
-      "title": "Cajueiro\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cajueiro</strong>Microrregião: <b>2</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Cajueiro\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "campina do barreto",
       "label": "Campina Do Barreto",
       "group": 2,
       "value": 5,
-      "title": "Campina Do Barreto\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Campina Do Barreto</strong>Microrregião: <b>2</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Campina Do Barreto\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.6000"
     },
     {
       "id": "campo grande",
       "label": "Campo Grande",
       "group": 2,
       "value": 8,
-      "title": "Campo Grande\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.4444"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Campo Grande</strong>Microrregião: <b>2</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.4444</b></div>",
+      "title_plain": "Campo Grande\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.4444"
     },
     {
       "id": "casa amarela",
       "label": "Casa Amarela",
       "group": 3,
       "value": 11,
-      "title": "Casa Amarela\nMicrorregião: 3\nGrau: 11\nDensidade Ego: 0.3333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Casa Amarela</strong>Microrregião: <b>3</b><br>Grau: <b>11</b><br>Densidade Ego: <b>0.3333</b></div>",
+      "title_plain": "Casa Amarela\nMicrorregião: 3\nGrau: 11\nDensidade Ego: 0.3333"
     },
     {
       "id": "casa forte",
       "label": "Casa Forte",
       "group": 3,
       "value": 4,
-      "title": "Casa Forte\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Casa Forte</strong>Microrregião: <b>3</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Casa Forte\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "caxanga",
       "label": "Caxanga",
       "group": 4,
       "value": 5,
-      "title": "Caxanga\nMicrorregião: 4\nGrau: 5\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Caxanga</strong>Microrregião: <b>4</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Caxanga\nMicrorregião: 4\nGrau: 5\nDensidade Ego: 0.6000"
     },
     {
       "id": "cidade universitaria",
       "label": "Cidade Universitaria",
       "group": 4,
       "value": 4,
-      "title": "Cidade Universitaria\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cidade Universitaria</strong>Microrregião: <b>4</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Cidade Universitaria\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "coelhos",
       "label": "Coelhos",
       "group": 1,
       "value": 4,
-      "title": "Coelhos\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Coelhos</strong>Microrregião: <b>1</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Coelhos\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "cohab",
       "label": "Cohab",
       "group": 6,
       "value": 3,
-      "title": "Cohab\nMicrorregião: 6\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cohab</strong>Microrregião: <b>6</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Cohab\nMicrorregião: 6\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "coqueiral",
       "label": "Coqueiral",
       "group": 5,
       "value": 3,
-      "title": "Coqueiral\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Coqueiral</strong>Microrregião: <b>5</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Coqueiral\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "cordeiro",
       "label": "Cordeiro",
       "group": 4,
       "value": 9,
-      "title": "Cordeiro\nMicrorregião: 4\nGrau: 9\nDensidade Ego: 0.4000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Cordeiro</strong>Microrregião: <b>4</b><br>Grau: <b>9</b><br>Densidade Ego: <b>0.4000</b></div>",
+      "title_plain": "Cordeiro\nMicrorregião: 4\nGrau: 9\nDensidade Ego: 0.4000"
     },
     {
       "id": "corrego do jenipapo",
       "label": "Corrego Do Jenipapo",
       "group": 3,
       "value": 6,
-      "title": "Corrego Do Jenipapo\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Corrego Do Jenipapo</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Corrego Do Jenipapo\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "curado",
       "label": "Curado",
       "group": 5,
       "value": 9,
-      "title": "Curado\nMicrorregião: 5\nGrau: 9\nDensidade Ego: 0.3778"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Curado</strong>Microrregião: <b>5</b><br>Grau: <b>9</b><br>Densidade Ego: <b>0.3778</b></div>",
+      "title_plain": "Curado\nMicrorregião: 5\nGrau: 9\nDensidade Ego: 0.3778"
     },
     {
       "id": "derby",
       "label": "Derby",
       "group": 3,
       "value": 5,
-      "title": "Derby\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.7333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Derby</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.7333</b></div>",
+      "title_plain": "Derby\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.7333"
     },
     {
       "id": "dois irmaos",
       "label": "Dois Irmaos",
       "group": 3,
       "value": 5,
-      "title": "Dois Irmaos\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Dois Irmaos</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Dois Irmaos\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "dois unidos",
       "label": "Dois Unidos",
       "group": 2,
       "value": 4,
-      "title": "Dois Unidos\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Dois Unidos</strong>Microrregião: <b>2</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Dois Unidos\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "encruzilhada",
       "label": "Encruzilhada",
       "group": 2,
       "value": 8,
-      "title": "Encruzilhada\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.5278"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Encruzilhada</strong>Microrregião: <b>2</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.5278</b></div>",
+      "title_plain": "Encruzilhada\nMicrorregião: 2\nGrau: 8\nDensidade Ego: 0.5278"
     },
     {
       "id": "engenho do meio",
       "label": "Engenho Do Meio",
       "group": 4,
       "value": 5,
-      "title": "Engenho Do Meio\nMicrorregião: 4\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Engenho Do Meio</strong>Microrregião: <b>4</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Engenho Do Meio\nMicrorregião: 4\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "espinheiro",
       "label": "Espinheiro",
       "group": 3,
       "value": 6,
-      "title": "Espinheiro\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.6190"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Espinheiro</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.6190</b></div>",
+      "title_plain": "Espinheiro\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.6190"
     },
     {
       "id": "estancia",
       "label": "Estancia",
       "group": 5,
       "value": 4,
-      "title": "Estancia\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.9000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Estancia</strong>Microrregião: <b>5</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.9000</b></div>",
+      "title_plain": "Estancia\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.9000"
     },
     {
       "id": "fundao",
       "label": "Fundao",
       "group": 2,
       "value": 4,
-      "title": "Fundao\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Fundao</strong>Microrregião: <b>2</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Fundao\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "gracas",
       "label": "Gracas",
       "group": 3,
       "value": 10,
-      "title": "Gracas\nMicrorregião: 3\nGrau: 10\nDensidade Ego: 0.4000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Gracas</strong>Microrregião: <b>3</b><br>Grau: <b>10</b><br>Densidade Ego: <b>0.4000</b></div>",
+      "title_plain": "Gracas\nMicrorregião: 3\nGrau: 10\nDensidade Ego: 0.4000"
     },
     {
       "id": "guabiraba",
       "label": "Guabiraba",
       "group": 3,
       "value": 6,
-      "title": "Guabiraba\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.4762"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Guabiraba</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.4762</b></div>",
+      "title_plain": "Guabiraba\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.4762"
     },
     {
       "id": "hipodromo",
       "label": "Hipodromo",
       "group": 2,
       "value": 3,
-      "title": "Hipodromo\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 1.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Hipodromo</strong>Microrregião: <b>2</b><br>Grau: <b>3</b><br>Densidade Ego: <b>1.0000</b></div>",
+      "title_plain": "Hipodromo\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 1.0000"
     },
     {
       "id": "ibura",
       "label": "Ibura",
       "group": 6,
       "value": 8,
-      "title": "Ibura\nMicrorregião: 6\nGrau: 8\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Ibura</strong>Microrregião: <b>6</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Ibura\nMicrorregião: 6\nGrau: 8\nDensidade Ego: 0.5000"
     },
     {
       "id": "ilha do leite",
       "label": "Ilha Do Leite",
       "group": 1,
       "value": 4,
-      "title": "Ilha Do Leite\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Ilha Do Leite</strong>Microrregião: <b>1</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Ilha Do Leite\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "ilha do retiro",
       "label": "Ilha Do Retiro",
       "group": 4,
       "value": 6,
-      "title": "Ilha Do Retiro\nMicrorregião: 4\nGrau: 6\nDensidade Ego: 0.6190"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Ilha Do Retiro</strong>Microrregião: <b>4</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.6190</b></div>",
+      "title_plain": "Ilha Do Retiro\nMicrorregião: 4\nGrau: 6\nDensidade Ego: 0.6190"
     },
     {
       "id": "joana bezerra",
       "label": "Joana Bezerra",
       "group": 1,
       "value": 5,
-      "title": "Joana Bezerra\nMicrorregião: 1\nGrau: 5\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Joana Bezerra</strong>Microrregião: <b>1</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Joana Bezerra\nMicrorregião: 1\nGrau: 5\nDensidade Ego: 0.6000"
     },
     {
       "id": "imbiribeira",
       "label": "Imbiribeira",
       "group": 6,
       "value": 7,
-      "title": "Imbiribeira\nMicrorregião: 6\nGrau: 7\nDensidade Ego: 0.5357"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Imbiribeira</strong>Microrregião: <b>6</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5357</b></div>",
+      "title_plain": "Imbiribeira\nMicrorregião: 6\nGrau: 7\nDensidade Ego: 0.5357"
     },
     {
       "id": "ipsep",
       "label": "Ipsep",
       "group": 6,
       "value": 4,
-      "title": "Ipsep\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.9000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Ipsep</strong>Microrregião: <b>6</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.9000</b></div>",
+      "title_plain": "Ipsep\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.9000"
     },
     {
       "id": "iputinga",
       "label": "Iputinga",
       "group": 4,
       "value": 8,
-      "title": "Iputinga\nMicrorregião: 4\nGrau: 8\nDensidade Ego: 0.4444"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Iputinga</strong>Microrregião: <b>4</b><br>Grau: <b>8</b><br>Densidade Ego: <b>0.4444</b></div>",
+      "title_plain": "Iputinga\nMicrorregião: 4\nGrau: 8\nDensidade Ego: 0.4444"
     },
     {
       "id": "jaqueira",
       "label": "Jaqueira",
       "group": 3,
       "value": 5,
-      "title": "Jaqueira\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Jaqueira</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Jaqueira\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "jardim sao paulo",
       "label": "Jardim Sao Paulo",
       "group": 5,
       "value": 7,
-      "title": "Jardim Sao Paulo\nMicrorregião: 5\nGrau: 7\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Jardim Sao Paulo</strong>Microrregião: <b>5</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Jardim Sao Paulo\nMicrorregião: 5\nGrau: 7\nDensidade Ego: 0.5714"
     },
     {
       "id": "jiquia",
       "label": "Jiquia",
       "group": 5,
       "value": 7,
-      "title": "Jiquia\nMicrorregião: 5\nGrau: 7\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Jiquia</strong>Microrregião: <b>5</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Jiquia\nMicrorregião: 5\nGrau: 7\nDensidade Ego: 0.5714"
     },
     {
       "id": "jordao",
       "label": "Jordao",
       "group": 6,
       "value": 3,
-      "title": "Jordao\nMicrorregião: 6\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Jordao</strong>Microrregião: <b>6</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Jordao\nMicrorregião: 6\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "linha do tiro",
       "label": "Linha Do Tiro",
       "group": 2,
       "value": 6,
-      "title": "Linha Do Tiro\nMicrorregião: 2\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Linha Do Tiro</strong>Microrregião: <b>2</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Linha Do Tiro\nMicrorregião: 2\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "macaxeira",
       "label": "Macaxeira",
       "group": 3,
       "value": 4,
-      "title": "Macaxeira\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Macaxeira</strong>Microrregião: <b>3</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Macaxeira\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "madalena",
       "label": "Madalena",
       "group": 4,
       "value": 7,
-      "title": "Madalena\nMicrorregião: 4\nGrau: 7\nDensidade Ego: 0.5357"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Madalena</strong>Microrregião: <b>4</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5357</b></div>",
+      "title_plain": "Madalena\nMicrorregião: 4\nGrau: 7\nDensidade Ego: 0.5357"
     },
     {
       "id": "mangabeira",
       "label": "Mangabeira",
       "group": 3,
       "value": 5,
-      "title": "Mangabeira\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Mangabeira</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Mangabeira\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "mangueira",
       "label": "Mangueira",
       "group": 5,
       "value": 4,
-      "title": "Mangueira\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Mangueira</strong>Microrregião: <b>5</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Mangueira\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "monteiro",
       "label": "Monteiro",
       "group": 3,
       "value": 5,
-      "title": "Monteiro\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Monteiro</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Monteiro\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "morro da conceicao",
       "label": "Morro Da Conceicao",
       "group": 3,
       "value": 4,
-      "title": "Morro Da Conceicao\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Morro Da Conceicao</strong>Microrregião: <b>3</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Morro Da Conceicao\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "mustardinha",
       "label": "Mustardinha",
       "group": 5,
       "value": 4,
-      "title": "Mustardinha\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Mustardinha</strong>Microrregião: <b>5</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Mustardinha\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "nova descoberta",
       "label": "Nova Descoberta",
       "group": 3,
       "value": 7,
-      "title": "Nova Descoberta\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Nova Descoberta</strong>Microrregião: <b>3</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Nova Descoberta\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "paissandu",
       "label": "Paissandu",
       "group": 1,
       "value": 6,
-      "title": "Paissandu\nMicrorregião: 1\nGrau: 6\nDensidade Ego: 0.6190"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Paissandu</strong>Microrregião: <b>1</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.6190</b></div>",
+      "title_plain": "Paissandu\nMicrorregião: 1\nGrau: 6\nDensidade Ego: 0.6190"
     },
     {
       "id": "parnamirim",
       "label": "Parnamirim",
       "group": 3,
       "value": 5,
-      "title": "Parnamirim\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Parnamirim</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Parnamirim\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "passarinho",
       "label": "Passarinho",
       "group": 3,
       "value": 4,
-      "title": "Passarinho\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Passarinho</strong>Microrregião: <b>3</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Passarinho\nMicrorregião: 3\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "pau-ferro",
       "label": "Pau-Ferro",
       "group": 3,
       "value": 1,
-      "title": "Pau-Ferro\nMicrorregião: 3\nGrau: 1\nDensidade Ego: 1.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Pau-Ferro</strong>Microrregião: <b>3</b><br>Grau: <b>1</b><br>Densidade Ego: <b>1.0000</b></div>",
+      "title_plain": "Pau-Ferro\nMicrorregião: 3\nGrau: 1\nDensidade Ego: 1.0000"
     },
     {
       "id": "peixinhos",
       "label": "Peixinhos",
       "group": 2,
       "value": 3,
-      "title": "Peixinhos\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Peixinhos</strong>Microrregião: <b>2</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Peixinhos\nMicrorregião: 2\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "pina",
       "label": "Pina",
       "group": 6,
       "value": 4,
-      "title": "Pina\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Pina</strong>Microrregião: <b>6</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Pina\nMicrorregião: 6\nGrau: 4\nDensidade Ego: 0.6000"
     },
     {
       "id": "poco da panela",
       "label": "Poco Da Panela",
       "group": 3,
       "value": 6,
-      "title": "Poco Da Panela\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Poco Da Panela</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Poco Da Panela\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "ponto de parada",
       "label": "Ponto De Parada",
       "group": 2,
       "value": 5,
-      "title": "Ponto De Parada\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.7333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Ponto De Parada</strong>Microrregião: <b>2</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.7333</b></div>",
+      "title_plain": "Ponto De Parada\nMicrorregião: 2\nGrau: 5\nDensidade Ego: 0.7333"
     },
     {
       "id": "porto da madeira",
       "label": "Porto Da Madeira",
       "group": 2,
       "value": 4,
-      "title": "Porto Da Madeira\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Porto Da Madeira</strong>Microrregião: <b>2</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Porto Da Madeira\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "prado",
       "label": "Prado",
       "group": 4,
       "value": 7,
-      "title": "Prado\nMicrorregião: 4\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Prado</strong>Microrregião: <b>4</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Prado\nMicrorregião: 4\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "bairro do recife",
       "label": "Bairro Do Recife",
       "group": 1,
       "value": 3,
-      "title": "Bairro Do Recife\nMicrorregião: 1\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Bairro Do Recife</strong>Microrregião: <b>1</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Bairro Do Recife\nMicrorregião: 1\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "rosarinho",
       "label": "Rosarinho",
       "group": 2,
       "value": 6,
-      "title": "Rosarinho\nMicrorregião: 2\nGrau: 6\nDensidade Ego: 0.6190"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Rosarinho</strong>Microrregião: <b>2</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.6190</b></div>",
+      "title_plain": "Rosarinho\nMicrorregião: 2\nGrau: 6\nDensidade Ego: 0.6190"
     },
     {
       "id": "san martin",
       "label": "San Martin",
       "group": 5,
       "value": 10,
-      "title": "San Martin\nMicrorregião: 5\nGrau: 10\nDensidade Ego: 0.3818"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>San Martin</strong>Microrregião: <b>5</b><br>Grau: <b>10</b><br>Densidade Ego: <b>0.3818</b></div>",
+      "title_plain": "San Martin\nMicrorregião: 5\nGrau: 10\nDensidade Ego: 0.3818"
     },
     {
       "id": "sancho",
       "label": "Sancho",
       "group": 5,
       "value": 4,
-      "title": "Sancho\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Sancho</strong>Microrregião: <b>5</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Sancho\nMicrorregião: 5\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "santana",
       "label": "Santana",
       "group": 3,
       "value": 6,
-      "title": "Santana\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Santana</strong>Microrregião: <b>3</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Santana\nMicrorregião: 3\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "santo amaro",
       "label": "Santo Amaro",
       "group": 1,
       "value": 7,
-      "title": "Santo Amaro\nMicrorregião: 1\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Santo Amaro</strong>Microrregião: <b>1</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Santo Amaro\nMicrorregião: 1\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "santo antonio",
       "label": "Santo Antonio",
       "group": 1,
       "value": 4,
-      "title": "Santo Antonio\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Santo Antonio</strong>Microrregião: <b>1</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Santo Antonio\nMicrorregião: 1\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "sao jose",
       "label": "Sao Jose",
       "group": 1,
       "value": 0,
-      "title": "Sao Jose\nMicrorregião: 1\nGrau: 0\nDensidade Ego: 0.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Sao Jose</strong>Microrregião: <b>1</b><br>Grau: <b>0</b><br>Densidade Ego: <b>0.0000</b></div>",
+      "title_plain": "Sao Jose\nMicrorregião: 1\nGrau: 0\nDensidade Ego: 0.0000"
     },
     {
       "id": "sitio dos pintos",
       "label": "Sitio Dos Pintos",
       "group": 3,
       "value": 3,
-      "title": "Sitio Dos Pintos\nMicrorregião: 3\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Sitio Dos Pintos</strong>Microrregião: <b>3</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Sitio Dos Pintos\nMicrorregião: 3\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "soledade",
       "label": "Soledade",
       "group": 1,
       "value": 2,
-      "title": "Soledade\nMicrorregião: 1\nGrau: 2\nDensidade Ego: 1.0000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Soledade</strong>Microrregião: <b>1</b><br>Grau: <b>2</b><br>Densidade Ego: <b>1.0000</b></div>",
+      "title_plain": "Soledade\nMicrorregião: 1\nGrau: 2\nDensidade Ego: 1.0000"
     },
     {
       "id": "tamarineira",
       "label": "Tamarineira",
       "group": 3,
       "value": 7,
-      "title": "Tamarineira\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Tamarineira</strong>Microrregião: <b>3</b><br>Grau: <b>7</b><br>Densidade Ego: <b>0.5000</b></div>",
+      "title_plain": "Tamarineira\nMicrorregião: 3\nGrau: 7\nDensidade Ego: 0.5000"
     },
     {
       "id": "tejipio",
       "label": "Tejipio",
       "group": 5,
       "value": 5,
-      "title": "Tejipio\nMicrorregião: 5\nGrau: 5\nDensidade Ego: 0.6000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Tejipio</strong>Microrregião: <b>5</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6000</b></div>",
+      "title_plain": "Tejipio\nMicrorregião: 5\nGrau: 5\nDensidade Ego: 0.6000"
     },
     {
       "id": "torre",
       "label": "Torre",
       "group": 4,
       "value": 6,
-      "title": "Torre\nMicrorregião: 4\nGrau: 6\nDensidade Ego: 0.5714"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Torre</strong>Microrregião: <b>4</b><br>Grau: <b>6</b><br>Densidade Ego: <b>0.5714</b></div>",
+      "title_plain": "Torre\nMicrorregião: 4\nGrau: 6\nDensidade Ego: 0.5714"
     },
     {
       "id": "torreao",
       "label": "Torreao",
       "group": 2,
       "value": 4,
-      "title": "Torreao\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Torreao</strong>Microrregião: <b>2</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Torreao\nMicrorregião: 2\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "torroes",
       "label": "Torroes",
       "group": 4,
       "value": 4,
-      "title": "Torroes\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Torroes</strong>Microrregião: <b>4</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Torroes\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
     },
     {
       "id": "toto",
       "label": "Toto",
       "group": 5,
       "value": 3,
-      "title": "Toto\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 0.8333"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Toto</strong>Microrregião: <b>5</b><br>Grau: <b>3</b><br>Densidade Ego: <b>0.8333</b></div>",
+      "title_plain": "Toto\nMicrorregião: 5\nGrau: 3\nDensidade Ego: 0.8333"
     },
     {
       "id": "varzea",
       "label": "Varzea",
       "group": 4,
       "value": 4,
-      "title": "Varzea\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.7000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Varzea</strong>Microrregião: <b>4</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.7000</b></div>",
+      "title_plain": "Varzea\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.7000"
     },
     {
       "id": "vasco da gama",
       "label": "Vasco Da Gama",
       "group": 3,
       "value": 5,
-      "title": "Vasco Da Gama\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Vasco Da Gama</strong>Microrregião: <b>3</b><br>Grau: <b>5</b><br>Densidade Ego: <b>0.6667</b></div>",
+      "title_plain": "Vasco Da Gama\nMicrorregião: 3\nGrau: 5\nDensidade Ego: 0.6667"
     },
     {
       "id": "zumbi",
       "label": "Zumbi",
       "group": 4,
       "value": 4,
-      "title": "Zumbi\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
+      "title": "<div style='font-family:sans-serif;padding:4px;'><strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>Zumbi</strong>Microrregião: <b>4</b><br>Grau: <b>4</b><br>Densidade Ego: <b>0.8000</b></div>",
+      "title_plain": "Zumbi\nMicrorregião: 4\nGrau: 4\nDensidade Ego: 0.8000"
     }
   ],
   "edges": [
@@ -664,7 +758,7 @@
       "from": "aflitos",
       "to": "rosarinho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Manuel de Carvalho",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Manuel de Carvalho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -674,7 +768,7 @@
       "from": "aflitos",
       "to": "encruzilhada",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Teles Júnior",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Teles Júnior",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -684,7 +778,7 @@
       "from": "aflitos",
       "to": "espinheiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Gomes de Matos Júnior",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Gomes de Matos Júnior",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -694,7 +788,7 @@
       "from": "aflitos",
       "to": "gracas",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Samuel Campelo",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Samuel Campelo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -704,7 +798,7 @@
       "from": "jaqueira",
       "to": "tamarineira",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Neto de Mendonça",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Neto de Mendonça",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -714,7 +808,7 @@
       "from": "gracas",
       "to": "jaqueira",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Avenida Conselheiro Rosa e Silva",
+      "title": "Peso: <b>1.5</b><br>Via: Avenida Conselheiro Rosa e Silva",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -724,7 +818,7 @@
       "from": "jaqueira",
       "to": "torre",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Hoel Sette",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Hoel Sette",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -734,7 +828,7 @@
       "from": "jaqueira",
       "to": "santana",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua do Futuro",
+      "title": "Peso: <b>1.8</b><br>Via: Rua do Futuro",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -744,7 +838,7 @@
       "from": "jaqueira",
       "to": "parnamirim",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Estrada do Arraial",
+      "title": "Peso: <b>1.5</b><br>Via: Estrada do Arraial",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -754,7 +848,7 @@
       "from": "hipodromo",
       "to": "ponto de parada",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Fonseca Oliveira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Fonseca Oliveira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -764,7 +858,7 @@
       "from": "encruzilhada",
       "to": "hipodromo",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Carlos Fernandes",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Carlos Fernandes",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -774,7 +868,7 @@
       "from": "campo grande",
       "to": "hipodromo",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Prudente de Morais",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Prudente de Morais",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -784,7 +878,7 @@
       "from": "ponto de parada",
       "to": "rosarinho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Couto Magalhães",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Couto Magalhães",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -794,7 +888,7 @@
       "from": "encruzilhada",
       "to": "ponto de parada",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Beberibe",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Beberibe",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -804,7 +898,7 @@
       "from": "arruda",
       "to": "ponto de parada",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua José Austregésilo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua José Austregésilo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -814,7 +908,7 @@
       "from": "campo grande",
       "to": "ponto de parada",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Mem de Sá",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Mem de Sá",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -824,7 +918,7 @@
       "from": "rosarinho",
       "to": "tamarineira",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Regueira Costa",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Regueira Costa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -834,7 +928,7 @@
       "from": "encruzilhada",
       "to": "rosarinho",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua André Rebouças",
+      "title": "Peso: <b>2.0</b><br>Via: Rua André Rebouças",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -844,7 +938,7 @@
       "from": "gracas",
       "to": "rosarinho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Desembargador Martins Pereira",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Desembargador Martins Pereira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -854,7 +948,7 @@
       "from": "arruda",
       "to": "rosarinho",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Norte Miguel Arraes de Alencar",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Norte Miguel Arraes de Alencar",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -864,7 +958,7 @@
       "from": "gracas",
       "to": "tamarineira",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Cônego Barata",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Cônego Barata",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -874,7 +968,7 @@
       "from": "arruda",
       "to": "tamarineira",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Estrada Velha de Água Fria",
+      "title": "Peso: <b>1.5</b><br>Via: Estrada Velha de Água Fria",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -884,7 +978,7 @@
       "from": "casa amarela",
       "to": "tamarineira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Jundiá",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Jundiá",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -894,7 +988,7 @@
       "from": "parnamirim",
       "to": "tamarineira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ibiapaba",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ibiapaba",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -904,7 +998,7 @@
       "from": "mangabeira",
       "to": "tamarineira",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Professor José dos Anjos",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Professor José dos Anjos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -914,7 +1008,7 @@
       "from": "encruzilhada",
       "to": "espinheiro",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida João de Barros",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida João de Barros",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -924,7 +1018,7 @@
       "from": "encruzilhada",
       "to": "gracas",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Conselheiro Portela",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Conselheiro Portela",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -934,7 +1028,7 @@
       "from": "encruzilhada",
       "to": "torreao",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua da Coragem",
+      "title": "Peso: <b>1.8</b><br>Via: Rua da Coragem",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -944,7 +1038,7 @@
       "from": "campo grande",
       "to": "encruzilhada",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Retiro Saudoso",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Retiro Saudoso",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -954,7 +1048,7 @@
       "from": "espinheiro",
       "to": "gracas",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua da Hora",
+      "title": "Peso: <b>1.8</b><br>Via: Rua da Hora",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -964,7 +1058,7 @@
       "from": "espinheiro",
       "to": "torreao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Marquês do Paraná",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Marquês do Paraná",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -974,7 +1068,7 @@
       "from": "espinheiro",
       "to": "santo amaro",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Quarenta e Oito",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Quarenta e Oito",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -984,7 +1078,7 @@
       "from": "boa vista",
       "to": "espinheiro",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua do Príncipe",
+      "title": "Peso: <b>1.5</b><br>Via: Rua do Príncipe",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -994,7 +1088,7 @@
       "from": "boa vista",
       "to": "gracas",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Amélia",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Amélia",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1004,7 +1098,7 @@
       "from": "derby",
       "to": "gracas",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua João Ramos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua João Ramos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1014,7 +1108,7 @@
       "from": "gracas",
       "to": "madalena",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Bruno Maia",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Bruno Maia",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1024,7 +1118,7 @@
       "from": "gracas",
       "to": "torre",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Antônio Novais",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Antônio Novais",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1034,7 +1128,7 @@
       "from": "santo amaro",
       "to": "torreao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Othon Paraíso",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Othon Paraíso",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1044,7 +1138,7 @@
       "from": "campo grande",
       "to": "torreao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Cândido Lacerda",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Cândido Lacerda",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1054,7 +1148,7 @@
       "from": "coelhos",
       "to": "joana bezerra",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Braço do Norte",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Braço do Norte",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1064,7 +1158,7 @@
       "from": "ilha do leite",
       "to": "joana bezerra",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Bahia Formosa",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Bahia Formosa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1074,7 +1168,7 @@
       "from": "joana bezerra",
       "to": "paissandu",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ubaitaba",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ubaitaba",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1084,7 +1178,7 @@
       "from": "afogados",
       "to": "joana bezerra",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Cambuí",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Cambuí",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1094,7 +1188,7 @@
       "from": "ilha do retiro",
       "to": "joana bezerra",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Jaraguari",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Jaraguari",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1104,7 +1198,7 @@
       "from": "bairro do recife",
       "to": "santo amaro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Álvares Cabral",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Álvares Cabral",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1114,7 +1208,7 @@
       "from": "bairro do recife",
       "to": "santo antonio",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Madre de Deus",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Madre de Deus",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1124,7 +1218,7 @@
       "from": "bairro do recife",
       "to": "campo grande",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua do Apolo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua do Apolo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1134,7 +1228,7 @@
       "from": "boa vista",
       "to": "santo amaro",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida da Saudade",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida da Saudade",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1144,7 +1238,7 @@
       "from": "santo amaro",
       "to": "santo antonio",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Avenida Cruz Cabugá",
+      "title": "Peso: <b>1.5</b><br>Via: Avenida Cruz Cabugá",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1154,7 +1248,7 @@
       "from": "santo amaro",
       "to": "soledade",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Coelho Leite",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Coelho Leite",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1164,7 +1258,7 @@
       "from": "campo grande",
       "to": "santo amaro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Treze de Maio",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Treze de Maio",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1174,7 +1268,7 @@
       "from": "boa vista",
       "to": "coelhos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Rosário da Boa Vista",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Rosário da Boa Vista",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1184,7 +1278,7 @@
       "from": "boa vista",
       "to": "derby",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Avenida Manoel Borba",
+      "title": "Peso: <b>1.5</b><br>Via: Avenida Manoel Borba",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1194,7 +1288,7 @@
       "from": "boa vista",
       "to": "ilha do leite",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Gervásio Pires",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Gervásio Pires",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1204,7 +1298,7 @@
       "from": "boa vista",
       "to": "paissandu",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Barão de São Borja",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Barão de São Borja",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1214,7 +1308,7 @@
       "from": "boa vista",
       "to": "santo antonio",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua da Soledade",
+      "title": "Peso: <b>1.8</b><br>Via: Rua da Soledade",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1224,7 +1318,7 @@
       "from": "boa vista",
       "to": "soledade",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua da Soledade",
+      "title": "Peso: <b>1.8</b><br>Via: Rua da Soledade",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1234,7 +1328,7 @@
       "from": "coelhos",
       "to": "ilha do leite",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Terra Boa",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Terra Boa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1244,7 +1338,7 @@
       "from": "coelhos",
       "to": "santo antonio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Tereza Maria Freitas da Paz",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Tereza Maria Freitas da Paz",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1254,7 +1348,7 @@
       "from": "derby",
       "to": "paissandu",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Barão de Goiana",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Barão de Goiana",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1264,7 +1358,7 @@
       "from": "derby",
       "to": "ilha do retiro",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Praça do Derby",
+      "title": "Peso: <b>1.2</b><br>Via: Praça do Derby",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1274,7 +1368,7 @@
       "from": "derby",
       "to": "madalena",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Avenida Governador Agamenon Magalhães",
+      "title": "Peso: <b>1.0</b><br>Via: Avenida Governador Agamenon Magalhães",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1284,7 +1378,7 @@
       "from": "ilha do leite",
       "to": "paissandu",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Estado de Israel",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Estado de Israel",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1294,7 +1388,7 @@
       "from": "ilha do retiro",
       "to": "paissandu",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Portugal",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Portugal",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1304,7 +1398,7 @@
       "from": "madalena",
       "to": "paissandu",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Rua Paissandú",
+      "title": "Peso: <b>1.0</b><br>Via: Rua Paissandú",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1314,7 +1408,7 @@
       "from": "afogados",
       "to": "bongi",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Doutor Adelino",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Doutor Adelino",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1324,7 +1418,7 @@
       "from": "afogados",
       "to": "ilha do retiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ursulino Pinto de Carvalho",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ursulino Pinto de Carvalho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1334,7 +1428,7 @@
       "from": "afogados",
       "to": "mangueira",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Cosme Viana",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Cosme Viana",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1344,7 +1438,7 @@
       "from": "afogados",
       "to": "mustardinha",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Vinte e Um de Abril",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Vinte e Um de Abril",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1354,7 +1448,7 @@
       "from": "afogados",
       "to": "prado",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Manuel Batista de Azevedo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Manuel Batista de Azevedo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1364,7 +1458,7 @@
       "from": "afogados",
       "to": "pina",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Estrada dos Remédios",
+      "title": "Peso: <b>1.2</b><br>Via: Estrada dos Remédios",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1374,7 +1468,7 @@
       "from": "afogados",
       "to": "imbiribeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Itatiuba",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Itatiuba",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1384,7 +1478,7 @@
       "from": "afogados",
       "to": "jiquia",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Visconde de Inhaúma",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Visconde de Inhaúma",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1394,7 +1488,7 @@
       "from": "bongi",
       "to": "mustardinha",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Randolfo Pinto Ferreira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Randolfo Pinto Ferreira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1404,7 +1498,7 @@
       "from": "bongi",
       "to": "prado",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Pio Muniz de Farias",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Pio Muniz de Farias",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1414,7 +1508,7 @@
       "from": "bongi",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Aparecida de Minas",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Aparecida de Minas",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1424,7 +1518,7 @@
       "from": "brasilia teimosa",
       "to": "pina",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Atum",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Atum",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1434,7 +1528,7 @@
       "from": "ilha do retiro",
       "to": "prado",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua João Elísio Ramos",
+      "title": "Peso: <b>1.5</b><br>Via: Rua João Elísio Ramos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1444,7 +1538,7 @@
       "from": "ilha do retiro",
       "to": "madalena",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Astorga",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Astorga",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1454,7 +1548,7 @@
       "from": "mangueira",
       "to": "mustardinha",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Benício Dias",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Benício Dias",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1464,7 +1558,7 @@
       "from": "jiquia",
       "to": "mangueira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Mandari",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Mandari",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1474,7 +1568,7 @@
       "from": "mangueira",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Doutor Arsênio Tavares",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Doutor Arsênio Tavares",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1484,7 +1578,7 @@
       "from": "mustardinha",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Francisca Benigna Cavalcanti",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Francisca Benigna Cavalcanti",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1494,7 +1588,7 @@
       "from": "prado",
       "to": "san martin",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Carlos Gomes",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Carlos Gomes",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1504,7 +1598,7 @@
       "from": "cordeiro",
       "to": "prado",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Gervásio Campelo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Gervásio Campelo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1514,7 +1608,7 @@
       "from": "madalena",
       "to": "prado",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Rodrigues de Mendonça",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Rodrigues de Mendonça",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1524,7 +1618,7 @@
       "from": "prado",
       "to": "zumbi",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Manoel de Arruda Câmara",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Manoel de Arruda Câmara",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1534,7 +1628,7 @@
       "from": "boa viagem",
       "to": "jordao",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Ribeiro de Brito",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Ribeiro de Brito",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1544,7 +1638,7 @@
       "from": "boa viagem",
       "to": "pina",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Hélio Falcão",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Hélio Falcão",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1554,7 +1648,7 @@
       "from": "boa viagem",
       "to": "ibura",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Viaduto Tancredo Neves",
+      "title": "Peso: <b>1.2</b><br>Via: Viaduto Tancredo Neves",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1564,7 +1658,7 @@
       "from": "boa viagem",
       "to": "imbiribeira",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Viaduto Tacredo Neves",
+      "title": "Peso: <b>1.0</b><br>Via: Viaduto Tacredo Neves",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1574,7 +1668,7 @@
       "from": "cohab",
       "to": "jordao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Mato Grosso",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Mato Grosso",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1584,7 +1678,7 @@
       "from": "barro",
       "to": "cohab",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Rio Turiaçu",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Rio Turiaçu",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1594,7 +1688,7 @@
       "from": "cohab",
       "to": "ibura",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Sítio dos Moreiras",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Sítio dos Moreiras",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1604,7 +1698,7 @@
       "from": "ibura",
       "to": "jordao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Junqueiro",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Junqueiro",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1614,7 +1708,7 @@
       "from": "imbiribeira",
       "to": "pina",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Manoel de Brito",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Manoel de Brito",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1624,7 +1718,7 @@
       "from": "barro",
       "to": "tejipio",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Doutor José Rufino",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Doutor José Rufino",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1634,7 +1728,7 @@
       "from": "areias",
       "to": "barro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Dorothéia Vieira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Dorothéia Vieira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1644,7 +1738,7 @@
       "from": "barro",
       "to": "ibura",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Travessa Doutor Jose Rufino",
+      "title": "Peso: <b>1.0</b><br>Via: Travessa Doutor Jose Rufino",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1654,7 +1748,7 @@
       "from": "barro",
       "to": "jardim sao paulo",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Major Chagas de Oliveira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Major Chagas de Oliveira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1664,7 +1758,7 @@
       "from": "coqueiral",
       "to": "sancho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Doutor José Cornélio",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Doutor José Cornélio",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1674,7 +1768,7 @@
       "from": "coqueiral",
       "to": "tejipio",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Quinze de Novembro",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Quinze de Novembro",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1684,7 +1778,7 @@
       "from": "coqueiral",
       "to": "toto",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Guanabara",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Guanabara",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1694,7 +1788,7 @@
       "from": "sancho",
       "to": "tejipio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Doutor Urbano Vitalino de Melo Filho",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Doutor Urbano Vitalino de Melo Filho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1704,7 +1798,7 @@
       "from": "sancho",
       "to": "toto",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Josita Almeida",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Josita Almeida",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1714,7 +1808,7 @@
       "from": "curado",
       "to": "sancho",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Morena Flor",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Morena Flor",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1724,7 +1818,7 @@
       "from": "jardim sao paulo",
       "to": "tejipio",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Itanhenga",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Itanhenga",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1734,7 +1828,7 @@
       "from": "curado",
       "to": "tejipio",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua do Sancho",
+      "title": "Peso: <b>1.8</b><br>Via: Rua do Sancho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1744,7 +1838,7 @@
       "from": "curado",
       "to": "toto",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Juvêncio Marques da Cunha",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Juvêncio Marques da Cunha",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1754,7 +1848,7 @@
       "from": "areias",
       "to": "cacote",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Justiça e Paz",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Justiça e Paz",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1764,7 +1858,7 @@
       "from": "cacote",
       "to": "ibura",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Feaca",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Feaca",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1774,7 +1868,7 @@
       "from": "cacote",
       "to": "ipsep",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Sindicato dos Bancários",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Sindicato dos Bancários",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1784,7 +1878,7 @@
       "from": "areias",
       "to": "ibura",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Recife",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Recife",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1794,7 +1888,7 @@
       "from": "areias",
       "to": "imbiribeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Tapajós",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Tapajós",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1804,7 +1898,7 @@
       "from": "areias",
       "to": "ipsep",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Pintor Antônio Albuquerque",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Pintor Antônio Albuquerque",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1814,7 +1908,7 @@
       "from": "areias",
       "to": "estancia",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Peroba",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Peroba",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1824,7 +1918,7 @@
       "from": "areias",
       "to": "jardim sao paulo",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Senador Alberto Pasqualini",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Senador Alberto Pasqualini",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1834,7 +1928,7 @@
       "from": "areias",
       "to": "jiquia",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Mearim",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Mearim",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1844,7 +1938,7 @@
       "from": "ibura",
       "to": "imbiribeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Frei Luís de Souza",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Frei Luís de Souza",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1854,7 +1948,7 @@
       "from": "ibura",
       "to": "ipsep",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Moni Silva",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Moni Silva",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1864,7 +1958,7 @@
       "from": "imbiribeira",
       "to": "ipsep",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Doutor Tavares Correia",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Doutor Tavares Correia",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1874,7 +1968,7 @@
       "from": "imbiribeira",
       "to": "jiquia",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Rio Oceânico",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Rio Oceânico",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1884,7 +1978,7 @@
       "from": "estancia",
       "to": "jardim sao paulo",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Teixeira de Melo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Teixeira de Melo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1894,7 +1988,7 @@
       "from": "estancia",
       "to": "jiquia",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Rocha Pombo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Rocha Pombo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1904,7 +1998,7 @@
       "from": "estancia",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Humberto de Campos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Humberto de Campos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1914,7 +2008,7 @@
       "from": "jardim sao paulo",
       "to": "jiquia",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Guarulhos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Guarulhos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1924,7 +2018,7 @@
       "from": "jardim sao paulo",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ana Pires Lustosa",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ana Pires Lustosa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1934,7 +2028,7 @@
       "from": "curado",
       "to": "jardim sao paulo",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Professora Zênia Guerra",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Professora Zênia Guerra",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1944,7 +2038,7 @@
       "from": "jiquia",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Manoel Lopes de Barros",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Manoel Lopes de Barros",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1954,7 +2048,7 @@
       "from": "curado",
       "to": "san martin",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida General San Martin",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida General San Martin",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1964,7 +2058,7 @@
       "from": "san martin",
       "to": "torroes",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Eduardo de Andrade",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Eduardo de Andrade",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1974,7 +2068,7 @@
       "from": "cordeiro",
       "to": "san martin",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Amália",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Amália",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1984,7 +2078,7 @@
       "from": "cidade universitaria",
       "to": "curado",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida Getúlio Vargas",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida Getúlio Vargas",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -1994,7 +2088,7 @@
       "from": "curado",
       "to": "engenho do meio",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Rodovia Luiz Gonzaga",
+      "title": "Peso: <b>1.0</b><br>Via: Rodovia Luiz Gonzaga",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2004,7 +2098,7 @@
       "from": "curado",
       "to": "torroes",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Avenida Engenheiro Abdias de Carvalho",
+      "title": "Peso: <b>1.0</b><br>Via: Avenida Engenheiro Abdias de Carvalho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2014,7 +2108,7 @@
       "from": "curado",
       "to": "varzea",
       "label": "1.0",
-      "title": "Peso: 1.0 Logradouro: Avenida Visconde de São Leopoldo",
+      "title": "Peso: <b>1.0</b><br>Via: Avenida Visconde de São Leopoldo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2024,7 +2118,7 @@
       "from": "cidade universitaria",
       "to": "engenho do meio",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida Jornalista Aníbal Fernandes",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida Jornalista Aníbal Fernandes",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2034,7 +2128,7 @@
       "from": "cidade universitaria",
       "to": "varzea",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida dos Reitores Joaquim Amazonas",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida dos Reitores Joaquim Amazonas",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2044,7 +2138,7 @@
       "from": "cidade universitaria",
       "to": "iputinga",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Girador da Reitoria da UFPE",
+      "title": "Peso: <b>1.5</b><br>Via: Girador da Reitoria da UFPE",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2054,7 +2148,7 @@
       "from": "engenho do meio",
       "to": "torroes",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Antônio Borges Uchoa",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Antônio Borges Uchoa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2064,7 +2158,7 @@
       "from": "cordeiro",
       "to": "engenho do meio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Carneiro de Mariz",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Carneiro de Mariz",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2074,7 +2168,7 @@
       "from": "engenho do meio",
       "to": "iputinga",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Antônio Curado",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Antônio Curado",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2084,7 +2178,7 @@
       "from": "cordeiro",
       "to": "torroes",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Damasqueiro",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Damasqueiro",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2094,7 +2188,7 @@
       "from": "caxanga",
       "to": "varzea",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Engenho Poeta",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Engenho Poeta",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2104,7 +2198,7 @@
       "from": "caxanga",
       "to": "iputinga",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Vicente Zirpoli",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Vicente Zirpoli",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2114,7 +2208,7 @@
       "from": "apipucos",
       "to": "caxanga",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Pedro Ernesto",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Pedro Ernesto",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2124,7 +2218,7 @@
       "from": "caxanga",
       "to": "dois irmaos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Dona Inês Correa de Araújo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Dona Inês Correa de Araújo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2134,7 +2228,7 @@
       "from": "caxanga",
       "to": "sitio dos pintos",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Caxangá",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Caxangá",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2144,7 +2238,7 @@
       "from": "iputinga",
       "to": "varzea",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Diogo de Vasconcelos",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Diogo de Vasconcelos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2154,7 +2248,7 @@
       "from": "arruda",
       "to": "campo grande",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua do Machado",
+      "title": "Peso: <b>2.0</b><br>Via: Rua do Machado",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2164,7 +2258,7 @@
       "from": "arruda",
       "to": "peixinhos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Zeferino Agra",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Zeferino Agra",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2174,7 +2268,7 @@
       "from": "arruda",
       "to": "bomba do hemeterio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ramiz Galvão",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ramiz Galvão",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2184,7 +2278,7 @@
       "from": "arruda",
       "to": "campina do barreto",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Coronel Urbano Ribeiro de Sena",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Coronel Urbano Ribeiro de Sena",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2194,7 +2288,7 @@
       "from": "arruda",
       "to": "mangabeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Raul Pompéia",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Raul Pompéia",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2204,7 +2298,7 @@
       "from": "agua fria",
       "to": "arruda",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Bom Conselho",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Bom Conselho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2214,7 +2308,7 @@
       "from": "campo grande",
       "to": "peixinhos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Oliveira Fonseca",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Oliveira Fonseca",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2224,7 +2318,7 @@
       "from": "campina do barreto",
       "to": "peixinhos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Avenida Poeta Vinicius de Morais",
+      "title": "Peso: <b>2.0</b><br>Via: Avenida Poeta Vinicius de Morais",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2234,7 +2328,7 @@
       "from": "cordeiro",
       "to": "torre",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Eurico de Souza Leão",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Eurico de Souza Leão",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2244,7 +2338,7 @@
       "from": "cordeiro",
       "to": "zumbi",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Francisco Vita",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Francisco Vita",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2254,7 +2348,7 @@
       "from": "cordeiro",
       "to": "santana",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Firmino de Barros",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Firmino de Barros",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2264,7 +2358,7 @@
       "from": "cordeiro",
       "to": "iputinga",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Professor Evaldo Altino",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Professor Evaldo Altino",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2274,7 +2368,7 @@
       "from": "cordeiro",
       "to": "poco da panela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Alaíde",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Alaíde",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2284,7 +2378,7 @@
       "from": "madalena",
       "to": "torre",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua José Osório",
+      "title": "Peso: <b>1.2</b><br>Via: Rua José Osório",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2294,7 +2388,7 @@
       "from": "madalena",
       "to": "zumbi",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Araguatins",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Araguatins",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2304,7 +2398,7 @@
       "from": "torre",
       "to": "zumbi",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua Professor Trajano de Mendonça",
+      "title": "Peso: <b>1.2</b><br>Via: Rua Professor Trajano de Mendonça",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2314,7 +2408,7 @@
       "from": "santana",
       "to": "torre",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Rua José Bonifácio",
+      "title": "Peso: <b>1.2</b><br>Via: Rua José Bonifácio",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2324,7 +2418,7 @@
       "from": "casa forte",
       "to": "santana",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Samuel Farias",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Samuel Farias",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2334,7 +2428,7 @@
       "from": "parnamirim",
       "to": "santana",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Amaraji",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Amaraji",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2344,7 +2438,7 @@
       "from": "poco da panela",
       "to": "santana",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Astério Rufino Alves",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Astério Rufino Alves",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2354,7 +2448,7 @@
       "from": "alto jose do pinho",
       "to": "casa amarela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Ori",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Ori",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2364,7 +2458,7 @@
       "from": "alto jose do pinho",
       "to": "morro da conceicao",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Maragogi",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Maragogi",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2374,7 +2468,7 @@
       "from": "alto jose do pinho",
       "to": "bomba do hemeterio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Horácio Silva",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Horácio Silva",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2384,7 +2478,7 @@
       "from": "alto jose do pinho",
       "to": "mangabeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Severino Bernardino Pereira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Severino Bernardino Pereira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2394,7 +2488,7 @@
       "from": "alto jose do pinho",
       "to": "alto santa teresinha",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua do Rio",
+      "title": "Peso: <b>2.0</b><br>Via: Rua do Rio",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2404,7 +2498,7 @@
       "from": "alto jose bonifacio",
       "to": "alto jose do pinho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Valeriano Lobo",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Valeriano Lobo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2414,7 +2508,7 @@
       "from": "alto do mandu",
       "to": "casa amarela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Eliete Aguiar",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Eliete Aguiar",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2424,7 +2518,7 @@
       "from": "alto do mandu",
       "to": "monteiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Humaitá",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Humaitá",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2434,7 +2528,7 @@
       "from": "alto do mandu",
       "to": "macaxeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Cianorte",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Cianorte",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2444,7 +2538,7 @@
       "from": "alto do mandu",
       "to": "nova descoberta",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Mandacaru",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Mandacaru",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2454,7 +2548,7 @@
       "from": "alto do mandu",
       "to": "apipucos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Fernão Velho",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Fernão Velho",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2464,7 +2558,7 @@
       "from": "casa amarela",
       "to": "casa forte",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Padre Lemos",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Padre Lemos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2474,7 +2568,7 @@
       "from": "casa amarela",
       "to": "monteiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Sempre Viva",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Sempre Viva",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2484,7 +2578,7 @@
       "from": "casa amarela",
       "to": "morro da conceicao",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Taquaratinga",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Taquaratinga",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2494,7 +2588,7 @@
       "from": "casa amarela",
       "to": "parnamirim",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Dona Ana Xavier",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Dona Ana Xavier",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2504,7 +2598,7 @@
       "from": "casa amarela",
       "to": "poco da panela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Curupaiti",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Curupaiti",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2514,7 +2608,7 @@
       "from": "casa amarela",
       "to": "mangabeira",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Major Nereu Guerra",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Major Nereu Guerra",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2524,7 +2618,7 @@
       "from": "casa amarela",
       "to": "nova descoberta",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Vasco da Gama",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Vasco da Gama",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2534,7 +2628,7 @@
       "from": "casa amarela",
       "to": "vasco da gama",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Frederico Ozanan",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Frederico Ozanan",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2544,7 +2638,7 @@
       "from": "casa forte",
       "to": "parnamirim",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Jerônimo de Albuquerque",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Jerônimo de Albuquerque",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2554,7 +2648,7 @@
       "from": "casa forte",
       "to": "poco da panela",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua de Casa Forte",
+      "title": "Peso: <b>1.8</b><br>Via: Rua de Casa Forte",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2564,7 +2658,7 @@
       "from": "iputinga",
       "to": "monteiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Doutor Virgínio Marquês",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Doutor Virgínio Marquês",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2574,7 +2668,7 @@
       "from": "iputinga",
       "to": "poco da panela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Doutor Virginio Marques",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Doutor Virginio Marques",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2584,7 +2678,7 @@
       "from": "apipucos",
       "to": "iputinga",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua São Mateus",
+      "title": "Peso: <b>1.8</b><br>Via: Rua São Mateus",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2594,7 +2688,7 @@
       "from": "monteiro",
       "to": "poco da panela",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Muniz Galvão",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Muniz Galvão",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2604,7 +2698,7 @@
       "from": "apipucos",
       "to": "monteiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua das Levadas",
+      "title": "Peso: <b>2.0</b><br>Via: Rua das Levadas",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2614,7 +2708,7 @@
       "from": "alto jose bonifacio",
       "to": "morro da conceicao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua do Dende",
+      "title": "Peso: <b>2.0</b><br>Via: Rua do Dende",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2624,7 +2718,7 @@
       "from": "morro da conceicao",
       "to": "vasco da gama",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Fidelis Batista de Aguiar",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Fidelis Batista de Aguiar",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2634,7 +2728,7 @@
       "from": "beberibe",
       "to": "linha do tiro",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Taguatinga",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Taguatinga",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2644,7 +2738,7 @@
       "from": "beberibe",
       "to": "porto da madeira",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Quinta Travessa Aníbal Benévolo",
+      "title": "Peso: <b>1.8</b><br>Via: Quinta Travessa Aníbal Benévolo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2654,7 +2748,7 @@
       "from": "agua fria",
       "to": "beberibe",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida Aníbal Benévolo",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida Aníbal Benévolo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2664,7 +2758,7 @@
       "from": "beberibe",
       "to": "dois unidos",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Uriel de Holanda",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Uriel de Holanda",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2674,7 +2768,7 @@
       "from": "bomba do hemeterio",
       "to": "mangabeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua São Gabriel",
+      "title": "Peso: <b>2.0</b><br>Via: Rua São Gabriel",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2684,7 +2778,7 @@
       "from": "alto santa teresinha",
       "to": "bomba do hemeterio",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Bomba do Hemetério",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Bomba do Hemetério",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2694,7 +2788,7 @@
       "from": "agua fria",
       "to": "bomba do hemeterio",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Julio Lima",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Julio Lima",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2704,7 +2798,7 @@
       "from": "cajueiro",
       "to": "campina do barreto",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Couto Soares",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Couto Soares",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2714,7 +2808,7 @@
       "from": "cajueiro",
       "to": "fundao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua André Bezerra",
+      "title": "Peso: <b>2.0</b><br>Via: Rua André Bezerra",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2724,7 +2818,7 @@
       "from": "cajueiro",
       "to": "porto da madeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Maria Ramos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Maria Ramos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2734,7 +2828,7 @@
       "from": "campina do barreto",
       "to": "fundao",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Iguatu",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Iguatu",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2744,7 +2838,7 @@
       "from": "agua fria",
       "to": "campina do barreto",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Constança",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Constança",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2754,7 +2848,7 @@
       "from": "fundao",
       "to": "porto da madeira",
       "label": "1.2",
-      "title": "Peso: 1.2 Logradouro: Avenida Cidade de Monteiro",
+      "title": "Peso: <b>1.2</b><br>Via: Avenida Cidade de Monteiro",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2764,7 +2858,7 @@
       "from": "agua fria",
       "to": "fundao",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Doutor Eudes Costa",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Doutor Eudes Costa",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2774,7 +2868,7 @@
       "from": "alto santa teresinha",
       "to": "linha do tiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Santa Mercedes",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Santa Mercedes",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2784,7 +2878,7 @@
       "from": "agua fria",
       "to": "linha do tiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Sodrelândia",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Sodrelândia",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2794,7 +2888,7 @@
       "from": "alto jose bonifacio",
       "to": "linha do tiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Araquem",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Araquem",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2804,7 +2898,7 @@
       "from": "brejo de beberibe",
       "to": "linha do tiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Rio Igarapé",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Rio Igarapé",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2814,7 +2908,7 @@
       "from": "dois unidos",
       "to": "linha do tiro",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Rio Tinto",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Rio Tinto",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2824,7 +2918,7 @@
       "from": "agua fria",
       "to": "porto da madeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Belo Horizonte",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Belo Horizonte",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2834,7 +2928,7 @@
       "from": "agua fria",
       "to": "alto santa teresinha",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Andricora",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Andricora",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2844,7 +2938,7 @@
       "from": "alto jose bonifacio",
       "to": "alto santa teresinha",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Professor José Amarino dos Reis",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Professor José Amarino dos Reis",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2854,7 +2948,7 @@
       "from": "alto jose bonifacio",
       "to": "vasco da gama",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua São Domingos Sávio",
+      "title": "Peso: <b>2.0</b><br>Via: Rua São Domingos Sávio",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2864,7 +2958,7 @@
       "from": "alto jose bonifacio",
       "to": "brejo de beberibe",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Gustavo Barrozo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Gustavo Barrozo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2874,7 +2968,7 @@
       "from": "corrego do jenipapo",
       "to": "macaxeira",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua dos Coquinhos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua dos Coquinhos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2884,7 +2978,7 @@
       "from": "corrego do jenipapo",
       "to": "nova descoberta",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Popular",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Popular",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2894,7 +2988,7 @@
       "from": "apipucos",
       "to": "corrego do jenipapo",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Erundina Negreiros de Araújo",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Erundina Negreiros de Araújo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2904,7 +2998,7 @@
       "from": "corrego do jenipapo",
       "to": "dois irmaos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Francisco Campos",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Francisco Campos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2914,7 +3008,7 @@
       "from": "brejo da guabiraba",
       "to": "corrego do jenipapo",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Três Morros",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Três Morros",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2924,7 +3018,7 @@
       "from": "corrego do jenipapo",
       "to": "guabiraba",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Avenida da Redenção",
+      "title": "Peso: <b>1.5</b><br>Via: Avenida da Redenção",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2934,7 +3028,7 @@
       "from": "macaxeira",
       "to": "nova descoberta",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Nova Iguaçu",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Nova Iguaçu",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2944,7 +3038,7 @@
       "from": "apipucos",
       "to": "macaxeira",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Maria Cândida",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Maria Cândida",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2954,7 +3048,7 @@
       "from": "nova descoberta",
       "to": "vasco da gama",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Alto da Brasileira",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Alto da Brasileira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2964,7 +3058,7 @@
       "from": "brejo da guabiraba",
       "to": "nova descoberta",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Piraju",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Piraju",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2974,7 +3068,7 @@
       "from": "brejo de beberibe",
       "to": "nova descoberta",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Primeira Subida da Brasileira",
+      "title": "Peso: <b>2.0</b><br>Via: Primeira Subida da Brasileira",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2984,7 +3078,7 @@
       "from": "brejo de beberibe",
       "to": "vasco da gama",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Santa Maria Goretti",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Santa Maria Goretti",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -2994,7 +3088,7 @@
       "from": "apipucos",
       "to": "dois irmaos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Jorge Tasso Neto",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Jorge Tasso Neto",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3004,7 +3098,7 @@
       "from": "dois irmaos",
       "to": "sitio dos pintos",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Professor Cláudio Selva",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Professor Cláudio Selva",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3014,7 +3108,7 @@
       "from": "dois irmaos",
       "to": "guabiraba",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Estrada dos Pintos",
+      "title": "Peso: <b>1.8</b><br>Via: Estrada dos Pintos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3024,7 +3118,7 @@
       "from": "guabiraba",
       "to": "sitio dos pintos",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Rua Manuel de Medeiros",
+      "title": "Peso: <b>1.5</b><br>Via: Rua Manuel de Medeiros",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3034,7 +3128,7 @@
       "from": "brejo da guabiraba",
       "to": "brejo de beberibe",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Arca de Noe",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Arca de Noe",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3044,7 +3138,7 @@
       "from": "brejo da guabiraba",
       "to": "passarinho",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Avenida Vereador Otacílio Azevedo",
+      "title": "Peso: <b>1.5</b><br>Via: Avenida Vereador Otacílio Azevedo",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3054,7 +3148,7 @@
       "from": "brejo da guabiraba",
       "to": "guabiraba",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Santa Tereza",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Santa Tereza",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3064,7 +3158,7 @@
       "from": "brejo de beberibe",
       "to": "dois unidos",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Rua Doutor Antônio da Rosa Borges",
+      "title": "Peso: <b>1.8</b><br>Via: Rua Doutor Antônio da Rosa Borges",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3074,7 +3168,7 @@
       "from": "brejo de beberibe",
       "to": "passarinho",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Só Nós Dois",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Só Nós Dois",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3084,7 +3178,7 @@
       "from": "dois unidos",
       "to": "passarinho",
       "label": "1.8",
-      "title": "Peso: 1.8 Logradouro: Avenida Hildebrando de Vasconcelos",
+      "title": "Peso: <b>1.8</b><br>Via: Avenida Hildebrando de Vasconcelos",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3094,7 +3188,7 @@
       "from": "guabiraba",
       "to": "passarinho",
       "label": "2.0",
-      "title": "Peso: 2.0 Logradouro: Rua Vargem linda",
+      "title": "Peso: <b>2.0</b><br>Via: Rua Vargem linda",
       "color": {
         "color": "#848484",
         "opacity": 0.2
@@ -3104,7 +3198,7 @@
       "from": "guabiraba",
       "to": "pau-ferro",
       "label": "1.5",
-      "title": "Peso: 1.5 Logradouro: Estrada da Mumbeca",
+      "title": "Peso: <b>1.5</b><br>Via: Estrada da Mumbeca",
       "color": {
         "color": "#848484",
         "opacity": 0.2

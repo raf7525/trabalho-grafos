@@ -1,219 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Grafo Recife</title>
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafo Interativo - Recife</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { margin: 0; height: 100vh; overflow: hidden; }
-        #container-grafo { width: 100%; height: calc(100vh - 80px); }
-    </style>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="grafos_interativos.css">
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gray-100 h-screen flex overflow-hidden font-sans">
 
-    <header class="bg-gray-800 border-b border-gray-700 px-4 py-3 flex flex-wrap gap-3 items-center">
-        <span class="font-bold text-lg">WAZE</span>
-        <select id="algoritmo" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
-            <option value="bfs">BFS</option>
-            <option value="dijkstra">Dijkstra</option>
-            <option value="bellman">Bellman-Ford</option>
-            <option value="dfs">DFS</option>
-        </select>
-        <span class="text-gray-500">|</span>
-        <select id="origem" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
-            <option disabled selected>Origem...</option>
-        </select>
-        <span class="text-gray-500">→</span>
-        <select id="destino" class="px-3 py-1 bg-gray-700 border border-gray-600 rounded text-sm">
-            <option disabled selected>Destino...</option>
-        </select>
-        <button onclick="executar()" class="px-4 py-1 bg-blue-600 hover:bg-blue-700 rounded text-sm font-medium">
-            Executar
-        </button>
-        <button onclick="limpar()" class="px-4 py-1 bg-gray-600 hover:bg-gray-700 rounded text-sm">
-            Limpar
-        </button>
-        <button onclick="rotaPDF()" class="px-4 py-1 bg-yellow-600 hover:bg-yellow-700 rounded text-sm ml-auto">
-            Rota PDF
-        </button>
-    </header>
+    <aside class="w-80 bg-white shadow-2xl z-10 flex flex-col p-6 border-r border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Grafos Recife</h2>
+        
+        <div class="space-y-4 flex-1">
+            <div>
+                <label for="algoritmo" class="block text-sm font-semibold text-gray-700 mb-1">Algoritmo</label>
+                <select id="algoritmo" class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm transition-colors">
+                    <option value="dijkstra">Dijkstra</option>
+                    <option value="bellman">Bellman-Ford</option>
+                    <option value="bfs">BFS</option>
+                    <option value="dfs">DFS</option>
+                </select>
+            </div>
 
-    <div id="container-grafo" class="bg-gray-800"></div>
-    
-    <div id="info" class="hidden fixed bottom-5 left-5 bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-sm shadow-xl">
-        <h3 id="info-title" class="text-lg font-bold mb-2"></h3>
-        <div id="info-stats" class="text-sm mb-3"></div>
-        <div id="info-path" class="text-xs overflow-y-auto max-h-24 text-gray-300"></div>
-    </div>
+            <div>
+                <label for="origem" class="block text-sm font-semibold text-gray-700 mb-1">Origem</label>
+                <input type="text" id="origem" list="lista-bairros" placeholder="Ex: Nova Descoberta" 
+                       class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm">
+            </div>
 
-    <div id="toast" class="hidden fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white"></div>
+            <div id="grupo-destino">
+                <label for="destino" class="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
+                <input type="text" id="destino" list="lista-bairros" placeholder="Ex: Boa Viagem" 
+                       class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm">
+            </div>
 
-    <script>
-        const API_URL = '/api/calcular';
-        const COLORS = {
-            dijkstra: '#FF7A00',
-            bfs: '#FFB784',
-            bellman: '#FFBC7D',
-            dfs: '#FFA500',
-            start: '#00ff00',
-            end: '#ff0000'
-        };
+            <datalist id="lista-bairros"></datalist>
 
-        let network, nodes, edges, nodeMap = {}, edgeMap = {};
+            <button onclick="calcular()" 
+                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 shadow-md transition-all transform active:scale-95">
+                Executar Análise
+            </button>
 
-        fetch('./grafo_dados.json')
-            .then(r => r.json())
-            .then(init)
-            .catch(() => notificar('Erro ao carregar grafo', 'error'));
+            <div id="msg-erro" class="hidden p-3 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200" role="alert"></div>
+        </div>
 
-        function init(data) {
-            nodes = new vis.DataSet(data.nodes);
-            edges = new vis.DataSet(data.edges);
-            
-            data.nodes.forEach(n => nodeMap[n.id] = n);
-            data.edges.forEach(e => {
-                edgeMap[e.from] = edgeMap[e.from] || {};
-                edgeMap[e.to] = edgeMap[e.to] || {};
-                edgeMap[e.from][e.to] = e.id;
-                edgeMap[e.to][e.from] = e.id;
-            });
+        <div id="legend" class="mt-auto bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner">
+            <strong class="block text-gray-700 mb-2 text-sm">Legenda:</strong>
+            <div id="legend-content" class="space-y-2 text-sm text-gray-600">
+                </div>
+        </div>
+    </aside>
 
-            popularSelects(data.nodes);
-            criarGrafo();
-        }
+    <main id="network" class="flex-1 bg-slate-900 relative cursor-move">
+    </main>
 
-        function popularSelects(nodeList) {
-            const sorted = [...nodeList].sort((a,b) => a.label.localeCompare(b.label));
-            const selectOrigem = document.getElementById('origem');
-            const selectDestino = document.getElementById('destino');
-            
-            sorted.forEach(n => {
-                selectOrigem.add(new Option(n.label, n.id));
-                selectDestino.add(new Option(n.label, n.id));
-            });
-        }
-
-        function criarGrafo() {
-            network = new vis.Network(
-                document.getElementById('container-grafo'),
-                { nodes, edges },
-                {
-                    nodes: { shape: 'dot', font: { color: 'white' }, borderWidth: 2 },
-                    edges: { color: { color: '#666', opacity: 0.2 }, width: 1, smooth: { type: 'continuous' } },
-                    physics: { stabilization: { iterations: 100 }, barnesHut: { gravitationalConstant: -4000 } }
-                }
-            );
-        }
-
-        function executar() {
-            const selectOrigem = document.getElementById('origem');
-            const selectDestino = document.getElementById('destino');
-            const selectAlgoritmo = document.getElementById('algoritmo');
-            
-            if (
-            !selectOrigem.value 
-            || !selectDestino.value 
-            || selectOrigem.value.includes('...') 
-            || selectDestino.value.includes('...')
-            ) return notificar('Selecione origem e destino', 'warning');
-            
-            resetarVisual();
-            
-            (async () => {
-                try {
-                    const params = new URLSearchParams({
-                        alg: selectAlgoritmo.value,
-                        origem: selectOrigem.value,
-                        destino: selectDestino.value
-                    });
-                    const url = `${API_URL}?${params.toString()}`;
-
-                    const response = await fetch(url);
-                    const data = await response.json();
-
-                    if (!response.ok) throw data;
-
-                    destacarCaminho(data.caminho, data.algoritmo, data.custo);
-                } catch (err) {
-                    notificar(err.erro);
-                }
-            })();
-        }
-
-        function destacarCaminho(caminho, alg, custo) {
-            const cor = COLORS[alg.toLowerCase()] || COLORS.dijkstra;
-            
-            nodes.update(caminho.map((id, i) => ({
-                id,
-                color: { 
-                    background: i === 0 ? COLORS.start : i === caminho.length - 1 ? COLORS.end : cor,
-                    border: '#fff'
-                },
-                size: 30,
-                font: { size: 16, background: '#000' }
-            })));
-
-            const arestasAtualizadas = [];
-            for (let i = 0; i < caminho.length - 1; i++) {
-                const edgeId = edgeMap[caminho[i]]?.[caminho[i+1]];
-                if (edgeId) arestasAtualizadas.push({ id: edgeId, color: { color: cor, opacity: 1 }, width: 4 });
-            }
-            edges.update(arestasAtualizadas);
-
-            network.fit({ nodes: caminho, animation: true });
-            mostrarInfo(alg, custo, caminho);
-        }
-
-        function mostrarInfo(alg, custo, caminho) {
-            const panelInfo = document.getElementById('info');
-            const titulo = document.getElementById('info-title');
-            const stats = document.getElementById('info-stats');
-            const path = document.getElementById('info-path');
-            
-            panelInfo.classList.remove('hidden');
-            titulo.textContent = `${alg} (Python)`;
-            stats.innerHTML = `Custo: <b>${custo}</b> | Nós: <b>${caminho.length}</b>`;
-            path.textContent = caminho.map(id => nodeMap[id].label).join(' → ');
-        }
-
-        function notificar(msg, tipo = 'error') {
-            const toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.className = `fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white ${
-                tipo === 'error' ? 'bg-red-600' : 'bg-yellow-600'
-            }`;
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
-        }
-
-        function resetarVisual() {
-            nodes.update(nodes.getIds().map(id => ({
-                id,
-                color: null,
-                size: nodeMap[id].value || 20,
-                font: { size: 14, background: 'transparent' }
-            })));
-            edges.update(edges.getIds().map(id => ({
-                id,
-                color: { color: '#666', opacity: 0.2 },
-                width: 1
-            })));
-            info.classList.add('hidden');
-        }
-
-        function limpar() {
-            resetarVisual();
-            origem.value = destino.value = 'Origem...';
-            network.fit();
-        }
-
-        function rotaPDF() {
-            origem.value = 'nova descoberta';
-            destino.value = 'boa viagem';
-            algoritmo.value = 'dijkstra';
-            executar();
-        }
-    </script>
+    <script src="grafos_interativos.js"></script>
 </body>
 </html>

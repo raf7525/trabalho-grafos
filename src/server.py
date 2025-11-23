@@ -1,118 +1,96 @@
-import http.server
-import socketserver
-import json
-import urllib.parse
+from flask import Flask, request, jsonify, send_from_directory, render_template
+import sys
+import os
+from pathlib import Path
+
+ROOT_PATH = Path(__file__).parent.parent
+sys.path.append(str(ROOT_PATH))
 
 from src.graphs.io import carregar_grafo
 from src.graphs.algorithms import Sorting
-from src.config import OUT_DIR, BAIRROS_FILE, ARESTAS_FILE
+from src.config import OUT_DIR, TEMPLATES_DIR, BAIRROS_FILE, ARESTAS_FILE, HTML_METADATA, PNG_METADATA, PORT
 
-print("Carregando grafo do Recife...")
-path_nos = str(BAIRROS_FILE)
-path_arestas = str(ARESTAS_FILE)
-GRAFO_GLOBAL = carregar_grafo(path_nos, path_arestas)
-print(f"Grafo carregado! {GRAFO_GLOBAL.ordem} nós.")
+app = Flask(__name__, template_folder=str(TEMPLATES_DIR))
 
-class GraphHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        parsed_url = urllib.parse.urlparse(self.path)
-        path = parsed_url.path
-        query = urllib.parse.parse_qs(parsed_url.query)
+print("Carregando grafo...")
+try:
+    GRAFO_GLOBAL = carregar_grafo(str(BAIRROS_FILE), str(ARESTAS_FILE))
+    print(f"Grafo carregado com sucesso! {GRAFO_GLOBAL.ordem} nós.")
+except Exception as e:
+    print(f"ERRO: Não foi possível carregar o grafo. {e}")
+    GRAFO_GLOBAL = None
 
-        if path == "/api/calcular":
-            self.handle_algorithm(query)
-        else:
-            if path == "/" or path == "/index.html":
-                path = "/grafo_interativo.html"
-            
-            self.directory = str(OUT_DIR)
-            super().do_GET()
+ALGORITMOS = {
+    'dijkstra': lambda g, o, d: Sorting.dijkstra(g, o, d),
+    'bellman': lambda g, o, d: Sorting.bellman_ford(g, o, d),
+    'bfs': lambda g, o, d: Sorting.bfs_shortest_path(g, o, d),
+    'dfs': lambda g, o, d: Sorting.depth_first_search(g, o)
+}
 
-    def handle_algorithm(self, query):
-        try:
-            alg = query.get('alg', [''])[0]
-            origem_nome = query.get('origem', [''])[0]
-            destino_nome = query.get('destino', [''])[0]
+@app.route('/')
+def index():
+    Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
+    
+    html_files = [
+        {'name': f.name, 'title': HTML_METADATA.get(f.name, (f.stem.title(), ''))[0], 
+        'desc': HTML_METADATA.get(f.name, ('', 'Visualização'))[1]} 
+        for f in sorted(OUT_DIR.glob('*.html'))
+    ]
+    png_files = [
+        {'name': f.name, 'title': PNG_METADATA.get(f.name, (f.stem.title(), ''))[0], 
+        'desc': PNG_METADATA.get(f.name, ('', 'Gráfico'))[1]} 
+        for f in sorted(OUT_DIR.glob('*.png'))
+    ]
+    
+    return render_template('index.html', html_files=html_files, png_files=png_files)
 
-            if not alg or not origem_nome or not destino_nome:
-                self.send_error_json(400, "Parâmetros faltando.")
-                return
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(OUT_DIR, filename)
 
-            origem = GRAFO_GLOBAL.vertices.get(origem_nome)
-            destino = GRAFO_GLOBAL.vertices.get(destino_nome)
+@app.route('/api/calcular')
+def calcular():
+    if GRAFO_GLOBAL is None:
+        return jsonify({"erro": "Grafo não carregado."}), 500
 
-            if not origem or not destino:
-                self.send_error_json(404, "Bairro não encontrado no grafo.")
-                return
+    alg = request.args.get('alg', '').lower()
+    origem_nome = request.args.get('origem', '')
+    destino_nome = request.args.get('destino', '')
+    
+    origem = GRAFO_GLOBAL.vertices.get(origem_nome)
+    destino = GRAFO_GLOBAL.vertices.get(destino_nome) if destino_nome else None
 
-            result_path = []
-            custo = 0
+    try:
+        if alg not in ALGORITMOS:
+            return jsonify({"erro": f"Algoritmo '{alg}' não suportado"}), 400
 
-            if alg == 'dijkstra':
-                custo, result_path = Sorting.dijkstra(GRAFO_GLOBAL, origem, destino)
-                if result_path == [] and custo == float('inf'):
-                    result_path = None
-
-            elif alg == 'bellman':
-                try:
-                    custo, result_path = Sorting.bellman_ford(GRAFO_GLOBAL, origem, destino)
-                except Exception as e:
-                    self.send_error_json(500, f"Erro no Bellman-Ford: {str(e)}")
-                    return
-
-            elif alg == 'bfs':
-                resultado = Sorting.breadth_first_search(GRAFO_GLOBAL, origem)
-                anterior = resultado['anterior']
-                
-                if destino_nome in resultado['distancias'] and resultado['distancias'][destino_nome] != float('inf'):
-                    path = []
-                    curr = destino_nome
-                    while curr is not None:
-                        path.append(curr)
-                        curr = anterior.get(curr)
-                    result_path = list(reversed(path))
-                    custo = resultado['distancias'][destino_nome]
-                else:
-                    result_path = None
-
+        if alg in ['bfs', 'dfs'] and not destino_nome:
+            if alg == 'bfs':
+                res = Sorting.breadth_first_search(GRAFO_GLOBAL, origem)
+                niveis = {k: v for k, v in res['niveis'].items() if v != float('inf')}
+                return jsonify({"tipo": "expansao", "dados_nos": niveis, "metrica": "Nível BFS", "algoritmo": "BFS"})
             elif alg == 'dfs':
-                resultado = Sorting.depth_first_search(GRAFO_GLOBAL, origem, destino)
-                
-                if resultado is None:
-                    self.send_error_json(404, "Caminho não encontrado via DFS.")
-                    return
-                else:
-                    custo, result_path = resultado
-            else:
-                self.send_error_json(400, f"Algoritmo '{alg}' desconhecido.")
-                return
+                res = Sorting.depth_first_search(GRAFO_GLOBAL, origem)
+                return jsonify({"tipo": "expansao", "dados_nos": res['descoberta'], "metrica": "Ordem Descoberta", "algoritmo": "DFS"})
 
-            if result_path:
-                response = {
-                    "caminho": result_path,
-                    "custo": custo if custo != float('inf') else "Infinito",
-                    "algoritmo": alg.upper()
-                }
-                self.send_json(200, response)
-            else:
-                self.send_error_json(404, "Caminho não encontrado entre estes bairros.")
+        if not destino:
+            return jsonify({"erro": "Destino é obrigatório para cálculo de caminho."}), 400
 
-        except Exception as e:
-            print(f"Erro interno: {e}")
-            self.send_error_json(500, str(e))
+        resultado = ALGORITMOS[alg](GRAFO_GLOBAL, origem, destino)
+        
+        if isinstance(resultado, tuple) and len(resultado) == 2:
+            custo, caminho = resultado
+            if caminho and custo != float('inf'):
+                return jsonify({"tipo": "caminho", "caminho": caminho, "custo": custo, "algoritmo": alg.upper()})
+            return jsonify({"erro": "Caminho não encontrado"}), 404
+            
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 500
 
-    def send_json(self, code, data):
-        self.send_response(code)
-        self.send_header('Content-type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-        self.wfile.write(json.dumps(data).encode('utf-8'))
+def run_server(port=None):
+    port_to_use = port if port else PORT
+    print(f"Iniciando Servidor Flask na porta {port_to_use}...")
+    app.run(host='0.0.0.0', port=port_to_use, debug=True)
 
-    def send_error_json(self, code, message):
-        self.send_json(code, {"erro": message})
-
-PORT = 8000
-with socketserver.TCPServer(("", PORT), GraphHandler) as httpd:
-    print(f"\nSERVIDOR PYTHON RODANDO EM: http://127.0.0.1:{PORT}")
-    print("Use Ctrl+C para parar.")
-    httpd.serve_forever()
+if __name__ == '__main__':
+    run_server()

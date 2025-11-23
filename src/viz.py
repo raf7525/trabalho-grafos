@@ -1,5 +1,3 @@
-from pathlib import Path
-from typing import Any, Dict
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
@@ -13,8 +11,6 @@ from src.config import OUT_DIR
 
 plt.style.use('seaborn-v0_8-darkgrid')
 OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-
 
 def _calcular_densidade_ego(grafo: Grafo, nome_bairro: str, vizinhos: list) -> float:
     nos_ego = {nome_bairro, *vizinhos}
@@ -41,20 +37,29 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
         vizinhos = grafo.obter_vizinhos(nome_bairro)
         grau = len(vizinhos)
         microrregiao = vertice.atributos.get('microrregiao', 'Desconhecida')
-        
         densidade_ego = _calcular_densidade_ego(grafo, nome_bairro, vizinhos)
+        tooltip_html = (
+            f"<div style='font-family:sans-serif;padding:4px;'>"
+            f"<strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>{nome_bairro.title()}</strong>"
+            f"Microrregião: <b>{microrregiao}</b><br>"
+            f"Grau: <b>{grau}</b><br>"
+            f"Densidade Ego: <b>{densidade_ego:.4f}</b>"
+            f"</div>"
+        )
+        tooltip_text = (
+            f"{nome_bairro.title()}\n"
+            f"Microrregião: {microrregiao}\n"
+            f"Grau: {grau}\n"
+            f"Densidade Ego: {densidade_ego:.4f}"
+        )
         
         nodes.append({
             "id": nome_bairro,
             "label": nome_bairro.title(),
             "group": microrregiao,
             "value": grau, 
-            "title": (
-                f"{nome_bairro.title()}\n"
-                f"Microrregião: {microrregiao}\n"
-                f"Grau: {grau}\n"
-                f"Densidade Ego: {densidade_ego:.4f}"
-            )
+            "title": tooltip_html,
+            "title_plain": tooltip_text
         })
     
     edges = []
@@ -65,11 +70,15 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
         if chave in arestas_processadas:
             continue
             
+        peso = attrs.get('peso', '')
+        logradouro = attrs.get('logradouro', 'N/A')
+        tooltip_edge = f"Peso: <b>{peso}</b><br>Via: {logradouro}"
+
         edges.append({
             "from": origem,
             "to": destino,
-            "label": str(attrs.get('peso', '')),
-            "title": f"Peso: {attrs.get('peso', '')} Logradouro: {attrs.get('logradouro', 'N/A')}",
+            "label": str(peso),
+            "title": tooltip_edge,
             "color": {"color": "#848484", "opacity": 0.2}
         })
         arestas_processadas.add(chave)
@@ -82,7 +91,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     with open(caminho_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_completos, f, ensure_ascii=False, indent=2)
         
-    print(f"[OK] Dados JSON atualizados (com Densidade Ego) em: {caminho_saida}")
+    print(f"[OK] Dados JSON atualizados (com HTML Tooltips) em: {caminho_saida}")
     return caminho_saida
 
 
@@ -338,74 +347,15 @@ def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida
     return caminho_saida
 
 
-
-# Parte 2
-
-
-def visualizar_distribuicao_graus(grafo: Grafo, output_dir: Path, is_part1: bool = False):
-    """Gera um histograma da distribuição de graus do grafo."""
-    filename = "parte2_distribuicao_graus.png"
-    caminho_saida = output_dir / filename
-    graus = [len(v.vizinhos) for v in grafo.vertices.values()]
-    
-    plt.figure(figsize=(10, 6))
-    plt.hist(graus, bins=range(min(graus), max(graus) + 2), edgecolor='black', alpha=0.7)
-    title = "Distribuição de Graus dos Aeroportos"
-    plt.title(title, fontsize=14, fontweight='bold')
-    plt.xlabel("Grau (Número de Conexões)", fontsize=12)
-    plt.ylabel("Frequência", fontsize=12)
-    plt.grid(axis='y', alpha=0.5)
-    plt.tight_layout()
-    plt.savefig(caminho_saida, dpi=300)
-    plt.close()
-    print(f"[OK] Visualização (Distribuição de Graus) salva em: {caminho_saida}")
-
-def gerar_comparacao_performance(report_data: Dict[str, Any], output_dir: Path):
-    """Gera gráfico comparando performance dos algoritmos."""
-    output_file = output_dir / "parte2_comparacao_performance.png"
-    
-    df = pd.DataFrame(report_data)
-    
-    avg_times = df[~df['algoritmo'].str.contains('Negativo')].groupby('algoritmo')['tempo_execucao_s'].mean() * 1000
-    avg_times = avg_times.reindex(['BFS', 'DFS', 'Dijkstra', 'Bellman-Ford (Pesos Positivos)']).rename({'Bellman-Ford (Pesos Positivos)': 'Bellman-Ford'})
-    
-    fig, ax = plt.subplots(figsize=(10, 6))
-    avg_times.plot(kind='bar', ax=ax, color=['#3498db', '#e74c3c', '#2ecc71', '#f39c12'], alpha=0.8, edgecolor='black')
-    
-    ax.set_ylabel('Tempo Médio de Execução (ms)', fontsize=12)
-    ax.set_xlabel('Algoritmo', fontsize=12)
-    ax.set_title('Comparação de Performance Média dos Algoritmos', fontsize=14, fontweight='bold')
-    ax.tick_params(axis='x', rotation=0)
-    ax.grid(True, axis='y', linestyle='--', alpha=0.6)
-
-    for i, v in enumerate(avg_times):
-        ax.text(i, v + 0.01 * avg_times.max(), f"{v:.2f} ms", ha='center', va='bottom', fontweight='bold')
-
-    plt.tight_layout()
-    plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"[OK] Visualização (Comparação de Performance) salva em: {output_file}")
-
-def gerar_visualizacoes_parte2(grafo: Grafo, report_path: Path, output_dir: Path):
-    """Orquestra a geração de todas as visualizações para a Parte 2."""
-    print("\n--- Gerando Visualizações (Parte 2) ---")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    with open(report_path, 'r', encoding='utf-8') as f:
-        report_data = json.load(f)
-
-    visualizar_distribuicao_graus(grafo, output_dir, is_part1=False)
-    gerar_comparacao_performance(report_data, output_dir)
-
 def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = None):
     print("\n" + "="*70)
     print("GERANDO VISUALIZAÇÕES ANALÍTICAS")
     print("="*70 + "\n")
     
     if caminho_nos is None:
-        caminho_nos = str(RAIZ / "data" / "bairros_unique.csv")
+        caminho_nos = str(OUT_DIR.parent / "data" / "bairros_unique.csv")
     if caminho_arestas is None:
-        caminho_arestas = str(RAIZ / "data" / "bairros_vizinhos_tratados.csv")
+        caminho_arestas = str(OUT_DIR.parent / "data" / "adjacencias_bairros.csv")
     
     print("Carregando grafo...")
     try:
@@ -424,8 +374,6 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
         visualizar_subgrafo_top10(grafo)
         visualizar_distribuicao_graus(grafo)
         visualizar_arvore_bfs(grafo, origem="boa vista")
-        
-        gerar_visualizacoes_parte2
     except Exception as e:
         print(f"Erro ao gerar visualizações: {e}")
     

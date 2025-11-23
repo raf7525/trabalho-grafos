@@ -9,7 +9,6 @@ from src.config import ARESTAS_FILE, OUT_DIR, BAIRROS_FILE, ROOT_DIR, DATASET_2_
 
 
 def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
-    """Executa BFS e gera arquivo JSON com resultados"""
     origem_normalizada = normalizar_texto(origem) if normalizar else origem
     
     if origem_normalizada not in grafo.vertices:
@@ -20,11 +19,9 @@ def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
     print(f"Executando BFS a partir de '{origem_normalizada}'...")
     resultado = grafo.busca_em_largura(origem_normalizada)
     
-    # Converte valores infinitos para string "inf" para JSON
     niveis_json = {k: ("inf" if v == float('inf') else v) for k, v in resultado['niveis'].items()}
     distancias_json = {k: ("inf" if v == float('inf') else v) for k, v in resultado['distancias'].items()}
     
-    # Prepara dados para JSON
     dados_saida = {
         "algoritmo": "BFS",
         "origem": origem_normalizada,
@@ -40,12 +37,10 @@ def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
         }
     }
     
-    # Se destino foi especificado, adiciona informações do caminho
     if destino:
         destino_normalizado = normalizar_texto(destino) if normalizar else destino
         if destino_normalizado in grafo.vertices:
             if resultado['distancias'][destino_normalizado] != float('inf'):
-                # Reconstrói caminho
                 caminho = []
                 atual = destino_normalizado
                 while atual is not None:
@@ -64,7 +59,6 @@ def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
                 dados_saida["distancia_arestas"] = "inf"
                 print(f"Destino '{destino_normalizado}' não é alcançável a partir de '{origem_normalizada}'")
     
-    # Salva arquivo JSON
     arquivo_saida = OUT_DIR / f"percurso_bfs_{origem_normalizada.replace(' ', '_')}.json"
     with open(arquivo_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_saida, f, ensure_ascii=False, indent=2)
@@ -74,7 +68,6 @@ def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
 
 
 def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
-    """Executa DFS e gera arquivo JSON com resultados"""
     origem_normalizada = normalizar_texto(origem) if normalizar else origem
     
     if origem_normalizada not in grafo.vertices:
@@ -85,10 +78,8 @@ def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
     print(f"Executando DFS a partir de '{origem_normalizada}'...")
     resultado = grafo.busca_em_profundidade(origem_normalizada)
     
-    # Converte classificação de arestas para formato JSON-friendly
     classificacao_json = {f"{u}-{v}": tipo for (u, v), tipo in resultado['classificacao_arestas'].items()}
     
-    # Prepara dados para JSON
     dados_saida = {
         "algoritmo": "DFS",
         "origem": origem_normalizada,
@@ -110,12 +101,10 @@ def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
         }
     }
     
-    # Se destino foi especificado, adiciona informações do caminho
     if destino:
         destino_normalizado = normalizar_texto(destino) if normalizar else destino
         if destino_normalizado in grafo.vertices:
             if destino_normalizado in resultado['descoberta']:
-                # Reconstrói caminho usando predecessores
                 caminho = []
                 atual = destino_normalizado
                 while atual is not None:
@@ -134,7 +123,6 @@ def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
                 dados_saida["distancia_arestas"] = "inf"
                 print(f"Destino '{destino_normalizado}' não é alcançável a partir de '{origem_normalizada}'")
     
-    # Informações sobre ciclos
     if resultado['tem_ciclo']:
         print(f"[AVISO] Grafo contém ciclos! Arestas de retorno: {dados_saida['estatisticas']['arestas_retorno']}")
     else:
@@ -142,7 +130,6 @@ def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
     
     print(f"Componentes conexos: {dados_saida['estatisticas']['numero_componentes']}")
     
-    # Salva arquivo JSON
     arquivo_saida = OUT_DIR / f"percurso_dfs_{origem_normalizada.replace(' ', '_')}.json"
     with open(arquivo_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_saida, f, ensure_ascii=False, indent=2)
@@ -153,30 +140,39 @@ def executar_dfs(grafo, origem, destino, diretorio_saida, normalizar=True):
 
 def main():
     parser = argparse.ArgumentParser(description="Análise de Grafos - Teoria dos Grafos")
-    
     dataset_padrao = str(ARESTAS_FILE)
     
     parser.add_argument(
-        '--dataset', 
-        type=str, 
+        '--dataset',
+        type=str,
         required=False,
         default=dataset_padrao,
         help='Caminho para o dataset'
-    )
-    parser.add_argument('--alg', type=str, choices=['BFS', 'DFS', 'DIJKSTRA', 'BELLMAN_FORD'], help='Algoritmo a executar')
+        )
+    parser.add_argument(
+        '--alg', type=str,
+        choices=[
+            'BFS',
+            'DFS',
+            'DIJKSTRA',
+            'BELLMAN_FORD'
+            ],
+        help='Algoritimo a executar'
+        )
     parser.add_argument('--source', type=str, help='Nó de origem')
     parser.add_argument('--target', type=str, help='Nó de destino')
     parser.add_argument('--out', type=str, default=str(OUT_DIR), help='Diretório de saída')
     parser.add_argument('--interactive', action='store_true', help='Modo interativo')
     parser.add_argument('--metricas', action='store_true', help='Calcular métricas do grafo')
     parser.add_argument('--viz', action='store_true', help='Gerar todas as visualizações analíticas')
+    parser.add_argument('--server', action='store_true', help='Starta um servidor local para servir os arquivos de `out/`')
+    parser.add_argument('--port', type=int, default=None, help='Porta para o servidor local (se `--server` for usado)')
     parser.add_argument('--parte2', action='store_true', help='Executar análise completa da Parte 2 (Aeroportos)')
     
     args = parser.parse_args()
     
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
-    
     path_nos = str(BAIRROS_FILE)
     path_arestas = args.dataset
 
@@ -186,7 +182,7 @@ def main():
     
     # Parte 2: Análise completa de aeroportos
     if args.parte2:
-        print("\n🛫 Executando análise completa da Parte 2 (Aeroportos)...")
+        print("\nExecutando análise completa da Parte 2 (Aeroportos)...")
         dataset_parte2 = args.dataset if args.dataset != dataset_padrao else str(DATASET_2_CSV)
         
         if not Path(dataset_parte2).exists():
@@ -205,18 +201,10 @@ def main():
     
     if args.metricas:
         print("Calculando métricas do grafo...")
-        path_nos_metricas = str(BAIRROS_FILE)
-        path_arestas_metricas = path_arestas
-
-        if not Path(path_nos_metricas).exists():
-            print(f"Erro: Arquivo de nós não encontrado em {path_nos_metricas}")
+        if not Path(path_nos).exists():
+            print(f"Erro: Arquivo de nós não encontrado em {path_nos}")
             return
-        
-        orquestrar(
-            path_nos_metricas,
-            path_arestas_metricas,
-            str(out_dir)
-        )
+        orquestrar(path_nos, path_arestas, str(out_dir))
         print("Métricas calculadas com sucesso.")
         return
     
@@ -228,11 +216,9 @@ def main():
     
     if args.alg:
         print(f"Executando {args.alg}...")
-
         if not args.source:
             print(f"Erro: --source é obrigatório para executar {args.alg}.")
             return
-
         if args.alg in ['DIJKSTRA', 'BELLMAN_FORD'] and not args.target:
             print(f"Erro: --target é obrigatório para {args.alg}.")
             return
@@ -251,11 +237,8 @@ def main():
                 usar_normalizacao = True
             
             print(f"Grafo carregado: {grafo.ordem} vértices, {grafo.tamanho} arestas.")
-        except FileNotFoundError as e:
-            print(f"Erro ao carregar arquivos do grafo: {e}")
-            return
         except Exception as e:
-            print(f"Erro inesperado ao carregar o grafo: {e}")
+            print(f"Erro ao carregar arquivos do grafo: {e}")
             return
 
         try:
@@ -273,6 +256,14 @@ def main():
             if destino_nome and destino_nome not in grafo.vertices:
                 if args.alg != 'BFS':
                     raise KeyError(f"Vértice de destino '{args.target}' não encontrado no grafo.")
+            
+            destino_nome = None
+            if args.target:
+                destino_nome = normalizar_texto(args.target)
+                if destino_nome not in grafo.vertices:
+
+                    if args.alg != 'BFS':
+                        raise KeyError(f"Vértice de destino '{args.target}' (normalizado para '{destino_nome}') não encontrado.")
 
         except KeyError as e:
             print(f"Erro: {e}")
@@ -284,28 +275,15 @@ def main():
         try:
             if args.alg == 'DIJKSTRA':
                 dist, caminho = grafo.caminho_mais_curto_dijkstra(origem_nome, destino_nome)
-                resultado = {
-                    "algoritmo": "Dijkstra",
-                    "origem": origem_nome,
-                    "destino": destino_nome,
-                    "distancia_total": dist,
-                    "caminho": caminho
-                }
-                
-                if origem_nome == "nova descoberta" and (destino_nome == "boa viagem" or destino_nome == "setubal"):
+                resultado = {"algoritmo": "Dijkstra", "origem": origem_nome, "destino": destino_nome, "distancia_total": dist, "caminho": caminho}
+                if origem_nome == "nova descoberta" and "boa viagem" in str(destino_nome):
                     nome_arquivo = "percurso_nova_descoberta_setubal.json"
                 else:
                     nome_arquivo = f"dijkstra_{origem_nome}_para_{destino_nome}.json"
 
             elif args.alg == 'BELLMAN_FORD':
                 dist, caminho = grafo.caminho_mais_curto_bellman_ford(origem_nome, destino_nome)
-                resultado = {
-                    "algoritmo": "Bellman-Ford",
-                    "origem": origem_nome,
-                    "destino": destino_nome,
-                    "distancia_total": dist,
-                    "caminho": caminho
-                }
+                resultado = {"algoritmo": "Bellman-Ford", "origem": origem_nome, "destino": destino_nome, "distancia_total": dist, "caminho": caminho}
                 nome_arquivo = f"bellman_{origem_nome}_para_{destino_nome}.json"
 
             elif args.alg == 'BFS':
@@ -325,12 +303,23 @@ def main():
             with open(caminho_saida, 'w', encoding='utf-8') as f:
                 json.dump(resultado, f, indent=2, ensure_ascii=False)
             print(f"Resultado salvo em: {caminho_saida}")
-        
         return
     
     if args.interactive:
-        print("Modo interativo ativado (não implementado)")
+        print("Modo interativo ativado (não implementado no CLI)")
         return
+
+    if args.server or args.interactive:
+        try:
+            from src.server import run_server
+            run_server()
+            return
+        except ImportError as e:
+            print(f"Erro crítico: Não foi possível importar o servidor. Verifique se src/server.py existe. Detalhes: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"Erro iniciando servidor: {e}")
+            sys.exit(1)
 
     if not args.metricas and not args.alg and not args.interactive and not args.viz and not args.parte2:
         print("Nenhuma ação especificada. Use --metricas, --alg, --viz ou --parte2.")
