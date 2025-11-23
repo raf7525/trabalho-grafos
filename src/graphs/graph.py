@@ -141,10 +141,7 @@ class Grafo:
         return self.tamanho / arestas_maximas
     
     def caminho_mais_curto_dijkstra(self, origem: Union[Vertice, str], destino: Union[Vertice, str]) -> Tuple[float, List[str]]:
-        """
-        Encontra o caminho mais curto entre dois vértices usando o algoritmo de Dijkstra.
-        Eficiente para grafos com pesos positivos.
-        """
+       
         from .algorithms import Sorting
         
         v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
@@ -153,11 +150,7 @@ class Grafo:
         return Sorting.dijkstra(self, v_origem, v_destino)
     
     def caminho_mais_curto_bellman_ford(self, origem: Union[Vertice, str], destino: Union[Vertice, str] = None):
-        """
-        Encontra o caminho mais curto entre dois vértices usando o algoritmo de Bellman-Ford.
-        Funciona com pesos negativos e detecta ciclos negativos.
-            Se destino for None: Tupla (distancias_dict, anterior_dict, tem_ciclo_negativo)
-        """
+        
         from .algorithms import Sorting
         
         v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
@@ -169,34 +162,14 @@ class Grafo:
         return Sorting.bellman_ford(self, v_origem, v_destino)
     
     def busca_em_largura(self, origem: Union[Vertice, str]):
-        """
-        Executa busca em largura (BFS) a partir de um vértice inicial.
-        
-        Retorna dict com:
-            - niveis: nível de cada vértice na árvore BFS
-            - distancias: distância em número de arestas
-            - anterior: predecessor de cada vértice
-            - arvore: estrutura da árvore de percurso
-            - ordem_visita: ordem de visitação dos vértices
-        """
+       
         from .algorithms import Sorting
         
         v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
         return Sorting.breadth_first_search(self, v_origem)
     
     def busca_em_profundidade(self, origem: Union[Vertice, str]):
-        """
-        Executa busca em profundidade (DFS) a partir de um vértice inicial.
         
-        Retorna dict com:
-            - descoberta: timestamp de descoberta de cada vértice
-            - finalizacao: timestamp de finalização de cada vértice
-            - anterior: predecessor de cada vértice
-            - classificacao_arestas: classificação das arestas
-            - ordem_visita: ordem de descoberta dos vértices
-            - tem_ciclo: indica se há ciclos no grafo
-            - componentes: componentes conexos do grafo
-        """
         from .algorithms import Sorting
         
         v_origem = self.vertices[str(origem)] if isinstance(origem, str) else origem
@@ -208,10 +181,10 @@ class GrafoDirecionado(Grafo):
         if not self.contem_vertice(vertice_origem) or not self.contem_vertice(vertice_destino):
             return False
         
-        # Para grafo direcionado, adiciona vizinho apenas na origem
+        
         self.vertices[vertice_origem.nome].adicionar_vizinho(vertice_destino)
         
-        # Chave da aresta é (origem, destino) - não ordenada
+        
         chave_aresta = (vertice_origem.nome, vertice_destino.nome)
         self.arestas[chave_aresta] = {'peso': peso, **atributos}
         
@@ -251,10 +224,7 @@ class GrafoDirecionado(Grafo):
             return {}
 
     def obter_arestas_direcionadas(self) -> Generator[Tuple[str, str, float], None, None]:
-        """
-        Gera todas as arestas direcionadas (u, v, peso) para o grafo.
-        Para um grafo direcionado, cada aresta armazenada (u, v) gera uma aresta direcionada.
-        """
+        
         for (u_name, v_name), attrs in self.arestas.items():
             peso = attrs.get('peso', 1.0)
             yield u_name, v_name, peso
