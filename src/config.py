@@ -9,6 +9,11 @@ TEMPLATES_DIR = SRC_DIR / "templates"
 BAIRROS_FILE = DATA_DIR / "bairros_unique.csv"
 ARESTAS_FILE = DATA_DIR / "bairros_vizinhos_tratados.csv"
 
+DATASET_2_DIR = DATA_DIR / "dataset_parte2"
+DATASET_2_CSV = DATASET_2_DIR / "Airports_2008_2009_200k.csv"
+DATASET_2_EDGES = DATASET_2_DIR / "aeroportos_edges.csv"
+DATASET_2_NODES = DATASET_2_DIR / "aeroportos_nodes.csv"
+
 HTML_METADATA = {
     'grafo_interativo.html': ('Grafo Interativo Completo', 'Explore todos os bairros com algoritmos de busca'),
     'viz_arvore_bfs_boa_vista.html': ('Árvore BFS - Boa Vista', 'Visualização hierárquica da busca em largura'),

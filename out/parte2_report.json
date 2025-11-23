@@ -1,0 +1,116 @@
+[
+  {
+    "algoritmo": "BFS",
+    "origem": "SEA",
+    "destino": null,
+    "tempo_execucao_s": 0.002160439995350316,
+    "vertices_alcancados": 222
+  },
+  {
+    "algoritmo": "DFS",
+    "origem": "SEA",
+    "destino": null,
+    "tempo_execucao_s": 1.2079115099986666,
+    "vertices_visitados": 526,
+    "tem_ciclo": true
+  },
+  {
+    "algoritmo": "BFS",
+    "origem": "JFK",
+    "destino": null,
+    "tempo_execucao_s": 0.00040060100582195446,
+    "vertices_alcancados": 223
+  },
+  {
+    "algoritmo": "DFS",
+    "origem": "JFK",
+    "destino": null,
+    "tempo_execucao_s": 1.4525822599971434,
+    "vertices_visitados": 526,
+    "tem_ciclo": true
+  },
+  {
+    "algoritmo": "BFS",
+    "origem": "LAX",
+    "destino": null,
+    "tempo_execucao_s": 0.0004783669937751256,
+    "vertices_alcancados": 225
+  },
+  {
+    "algoritmo": "DFS",
+    "origem": "LAX",
+    "destino": null,
+    "tempo_execucao_s": 1.471449078002479,
+    "vertices_visitados": 526,
+    "tem_ciclo": true
+  },
+  {
+    "algoritmo": "Dijkstra",
+    "origem": "SEA",
+    "destino": "RDM",
+    "tempo_execucao_s": 0.002626237001095433,
+    "custo": 228.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Dijkstra",
+    "origem": "MHK",
+    "destino": "AMW",
+    "tempo_execucao_s": 0.00276631599990651,
+    "custo": 254.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Dijkstra",
+    "origem": "GEG",
+    "destino": "RDM",
+    "tempo_execucao_s": 0.0032924279948929325,
+    "custo": 291.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Dijkstra",
+    "origem": "AZA",
+    "destino": "RDM",
+    "tempo_execucao_s": 0.0028547140027512796,
+    "custo": 911.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Dijkstra",
+    "origem": "JFK",
+    "destino": "LAX",
+    "tempo_execucao_s": 0.0021689880013582297,
+    "custo": Infinity,
+    "tamanho_caminho": 0
+  },
+  {
+    "algoritmo": "Bellman-Ford (Pesos Positivos)",
+    "origem": "SEA",
+    "destino": "RDM",
+    "tempo_execucao_s": 0.5748165870027151,
+    "custo": 228.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Bellman-Ford (Pesos Positivos)",
+    "origem": "MHK",
+    "destino": "AMW",
+    "tempo_execucao_s": 0.552646812000603,
+    "custo": 254.0,
+    "tamanho_caminho": 2
+  },
+  {
+    "algoritmo": "Bellman-Ford (Pesos Negativos, SEM Ciclo - Dataset)",
+    "origem": "JFK",
+    "destino": "CLT",
+    "resultado": "Erro: Grafo contém ciclo negativo - Ciclo negativo detectado inesperadamente."
+  },
+  {
+    "algoritmo": "Bellman-Ford (Pesos Negativos, COM Ciclo)",
+    "origem": "SEA",
+    "destino": "LAX",
+    "tempo_execucao_s": 0.5732990959950257,
+    "resultado": "Grafo contém ciclo negativo"
+  }
+]

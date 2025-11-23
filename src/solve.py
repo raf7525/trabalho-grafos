@@ -4,8 +4,8 @@ import time
 from typing import Any, Dict, List
 import pandas as pd
 from pathlib import Path
-from graphs.graph import Grafo, Vertice
-from graphs.io import carregar_grafo
+from src.graphs.graph import Grafo, Vertice
+from src.graphs.io import carregar_grafo
 
 
 def calcular_metricas_globais(grafo: Grafo) -> dict:
@@ -139,7 +139,7 @@ def _run_benchmark(algorithm_func, *args, **kwargs) -> tuple[Any, float]:
 
 
 def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
-    import viz
+    from src import viz
 
     print("\n" + "=" * 70 + "\nEXECUTANDO ANÁLISE COMPLETA - PARTE 2\n" + "=" * 70 + "\n")
     print(f"Grafo Carregado: {grafo.ordem} vértices e {grafo.tamanho} arestas. Densidade: {grafo.densidade:.6f}")
