@@ -1,10 +1,5 @@
 ## Como Executar
 
-### Pré-requisitos
-
--   Python 3.8+
--   pip
-
 ### Instalação
 
 ```bash
@@ -24,19 +19,94 @@ pip install -r requirements.txt
 
 O script `src/cli.py` é a interface principal para executar análises e algoritmos.
 
-**Argumentos Disponíveis:**
--   `--dataset <PATH>`: (Obrigatório) Caminho para o arquivo do dataset
--   `--out <PATH>`: (Obrigatório) Diretório de saída para resultados
--   `--alg <ALGORITMO>`: Algoritmo específico a executar (BFS, DFS, DIJKSTRA, BELLMAN-FORD)
--   `--source <VERTICE>`: Vértice de origem (obrigatório para algoritmos)
--   `--target <VERTICE>`: Vértice de destino (obrigatório para Dijkstra e Bellman-Ford)
--   `--interactive`: Gera visualização interativa (apenas Parte 1)
--   `--metricas`: Gera todas as métricas do grafo
--   `--viz`: Gera todas as visualizações
--   `--parte2`: Executa análise completa da Parte 2 (benchmarks + visualizações)
+### Exemplos de Uso
+
+A seguir, exemplos de como usar os principais comandos da CLI.
+
+#### Parte 1: Análise dos Bairros de Recife
+
+O dataset padrão (`data/adjacencias_bairros.csv`) já é carregado se nenhum for especificado.
+
+**1. Calcular Métricas e Gerar Relatórios**
+
+Este comando calcula métricas como densidade, grau dos vértices, e gera rankings e outras análises.
+
+```bash
+python3 -m src.cli --metricas
+```
+*Os resultados serão salvos no diretório `out/`.*
+
+**2. Gerar Todas as Visualizações**
+
+Cria gráficos como o mapa de calor de graus, densidade por microrregião, e a distribuição de graus.
+
+```bash
+python3 -m src.cli --viz
+```
+*As imagens e arquivos HTML serão salvos em `out/`.*
+
+**3. Executar Algoritmos de Travessia e Caminho Mínimo**
+
+-   **Busca em Largura (BFS)**: Encontra o caminho mais curto em número de arestas.
+
+    ```bash
+    # De "Boa Viagem" para "Casa Amarela"
+    python3 -m src.cli --alg BFS --source "boa viagem" --target "casa amarela"
+    ```
+
+-   **Busca em Profundidade (DFS)**: Acha um caminho e identifica ciclos.
+
+    ```bash
+    # De "Boa Viagem" para "Casa Amarela"
+    python3 -m src.cli --alg DFS --source "boa viagem" --target "casa amarela"
+    ```
+
+-   **Dijkstra**: Encontra o caminho de menor custo (considerando peso 1 para cada aresta).
+
+    ```bash
+    # De "Nova Descoberta" para "Boa Viagem"
+    python3 -m src.cli --alg DIJKSTRA --source "nova descoberta" --target "boa viagem"
+    ```
+
+-   **Bellman-Ford**: Alternativa ao Dijkstra, também funcional em grafos sem pesos negativos.
+
+    ```bash
+    # De "Nova Descoberta" para "Boa Viagem"
+    python3 -m src.cli --alg BELLMAN_FORD --source "nova descoberta" --target "boa viagem"
+    ```
 
 ---
-## 🧪 Testes
+
+#### Parte 2: Análise da Malha Aérea dos EUA
+
+Para a parte 2, é preciso especificar o dataset de aeroportos.
+
+**1. Executar Análise Completa da Parte 2**
+
+Este comando executa benchmarks de performance com todos os algoritmos (BFS, DFS, Dijkstra, Bellman-Ford com e sem pesos negativos) e gera as visualizações comparativas.
+
+```bash
+python3 -m src.cli --parte2
+```
+*O relatório `parte2_report.json` e os gráficos de performance serão salvos em `out/`.*
+
+**2. Executar Algoritmos Específicos no Grafo de Aeroportos**
+
+-   **Dijkstra**: Encontra a rota de menor custo entre dois aeroportos.
+
+    ```bash
+    # De Los Angeles (LAX) para Nova York (JFK)
+    python3 -m src.cli --alg DIJKSTRA --source LAX --target JFK --dataset data/usa_airport_dataset.csv
+    ```
+
+-   **Bellman-Ford**: Alternativa ao Dijkstra.
+
+    ```bash
+    # De Seattle (SEA) para Redmond (RDM)
+    python3 -m src.cli --alg BELLMAN_FORD --source SEA --target RDM --dataset data/usa_airport_dataset.csv
+    ```
+---
+## Testes
 
 ### Executar Todos os Testes
 
@@ -44,13 +114,13 @@ O script `src/cli.py` é a interface principal para executar análises e algorit
 pytest tests/ -v
 ```
 
-**Status atual:** ✅ **46/46 testes passando**
+**Status atual:** **46/46 testes passando**
 
 **Breakdown:**
-- `test_bfs.py` - 9 testes ✅
-- `test_dfs.py` - 11 testes ✅
-- `test_dijkstra.py` - 12 testes ✅
-- `test_bellman_ford.py` - 14 testes ✅
+- `test_bfs.py` - 9 testes
+- `test_dfs.py` - 11 testes
+- `test_dijkstra.py` - 12 testes
+- `test_bellman_ford.py` - 14 testes
 
 ### Executar Testes Específicos
 

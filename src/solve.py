@@ -257,48 +257,49 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
         informacoes_aresta_original = grafo_neg_weights_no_cycle.obter_informacoes_aresta(vertice_origem_pn, vertice_destino_pn)
         
         # Remove aresta original e adiciona uma nova com peso negativo
-        grafo_neg_weights_no_cycle.remover_aresta(
-            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
-            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn]
-        )
-        grafo_neg_weights_no_cycle.adicionar_aresta(
-            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
-            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
-            peso=valor_peso_negativo,
-            **informacoes_aresta_original 
-        )
-        print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
+                grafo_neg_weights_no_cycle.remover_aresta(
+                    grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+                    grafo_neg_weights_no_cycle.vertices[vertice_destino_pn]
+                )
+                informacoes_aresta_original.pop('peso', None)
+        
+                grafo_neg_weights_no_cycle.adicionar_aresta(
+                    grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+                    grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
+                    peso=valor_peso_negativo,
+                    **informacoes_aresta_original
+                )        print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
         
         try:
             (cost_nw, path_nw), time_bf_nw = _run_benchmark(
                 grafo_neg_weights_no_cycle.caminho_mais_curto_bellman_ford, 
-                source_node_nw, 
-                target_node_nw
+                vertice_origem_pn, 
+                vertice_destino_pn
             )
             benchmark_results.append({
                     "algoritmo": "Bellman-Ford (Pesos Negativos, SEM Ciclo - Dataset)",
-                    "origem": source_node_nw,
-                    "destino": target_node_nw,
+                    "origem": vertice_origem_pn,
+                    "destino": vertice_destino_pn,
                     "tempo_execucao_s": time_bf_nw,
                     "custo": cost_nw,
                     "tamanho_caminho": len(path_nw) if path_nw else 0,
                 })
-            print(f"Bellman-Ford de {source_node_nw} para {target_node_nw} (pesos negativos, sem ciclo) concluído em {time_bf_nw:.6f}s. Custo: {cost_nw}")
+            print(f"Bellman-Ford de {vertice_origem_pn} para {vertice_destino_pn} (pesos negativos, sem ciclo) concluído em {time_bf_nw:.6f}s. Custo: {cost_nw}")
             print(f"Caminho: {' -> '.join(path_nw)}")
         except ValueError as e:
             benchmark_results.append({
                     "algoritmo": "Bellman-Ford (Pesos Negativos, SEM Ciclo - Dataset)",
-                    "origem": source_node_nw,
-                    "destino": target_node_nw,
+                    "origem": vertice_origem_pn,
+                    "destino": vertice_destino_pn,
                     "resultado": f"Erro: {str(e)} - Ciclo negativo detectado inesperadamente.",
                 })
             print(f"Erro: {e} - Ciclo negativo detectado inesperadamente ao testar pesos negativos sem ciclo no dataset.")
     else:
         benchmark_results.append({
                 "algoritmo": "Bellman-Ford (Pesos Negativos, SEM Ciclo - Dataset)",
-                "resultado": f"Não executado - Vértices {source_node_nw} ou {target_node_nw} não encontrados no grafo.",
+                "resultado": f"Não executado - Vértices {vertice_origem_pn} ou {vertice_destino_pn} não encontrados no grafo.",
             })
-        print(f"Não foi possível executar teste de Bellman-Ford (pesos negativos, sem ciclo): vértices {source_node_nw} ou {target_node_nw} não encontrados no grafo.")
+        print(f"Não foi possível executar teste de Bellman-Ford (pesos negativos, sem ciclo): vértices {vertice_origem_pn} ou {vertice_destino_pn} não encontrados no grafo.")
 
 
     

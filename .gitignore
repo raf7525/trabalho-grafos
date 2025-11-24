@@ -6,3 +6,5 @@ __pycache__/
 *.pyd
 .vscode
 .pytest_cache
+
+usa_airports_original_dataset.csv

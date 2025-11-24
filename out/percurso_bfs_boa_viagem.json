@@ -616,5 +616,16 @@
     "vertices_alcancados": 92,
     "vertices_totais": 94,
     "maior_nivel": 9
-  }
+  },
+  "destino": "casa amarela",
+  "caminho": [
+    "boa viagem",
+    "imbiribeira",
+    "afogados",
+    "prado",
+    "cordeiro",
+    "poco da panela",
+    "casa amarela"
+  ],
+  "distancia_arestas": 6
 }

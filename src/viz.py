@@ -238,7 +238,7 @@ def visualizar_subgrafo_top10(grafo: Grafo, caminho_saida: str = None):
     return caminho_saida
 
 
-def visualizar_distribuicao_graus(grafo: Grafo, caminho_saida: str = None):
+def visualizar_distribuicao_graus_parte1(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
         caminho_saida = str(OUT_DIR / "viz_distribuicao_graus.png")
     
@@ -434,9 +434,9 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
         visualizar_mapa_cores_grau(grafo)
         visualizar_densidade_por_microrregiao(grafo)
         visualizar_subgrafo_top10(grafo)
-        visualizar_distribuicao_graus(grafo)
+        visualizar_distribuicao_graus_parte1(grafo)
         visualizar_arvore_bfs(grafo, origem="boa vista")
-        gerar_visualizacoes_parte2(grafo, Path(OUT_DIR) / "report.json", OUT_DIR)
+        gerar_visualizacoes_parte2(grafo, Path(OUT_DIR) / "parte2_report.json", OUT_DIR)
     except Exception as e:
         print(f"Erro ao gerar visualizações: {e}")
     

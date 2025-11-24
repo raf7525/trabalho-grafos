@@ -10,10 +10,7 @@ BAIRROS_FILE = DATA_DIR / "bairros_unique.csv"
 ARESTAS_FILE = DATA_DIR / "adjacencias_bairros.csv"
 ENDERECOS_FILE = DATA_DIR / "enderecos.csv"
 
-DATASET_2_DIR = DATA_DIR / "dataset_parte2"
-DATASET_2_CSV = DATASET_2_DIR / "Airports_2008_2009_200k.csv"
-DATASET_2_EDGES = DATASET_2_DIR / "aeroportos_edges.csv"
-DATASET_2_NODES = DATASET_2_DIR / "aeroportos_nodes.csv"
+DATASET_2_CSV = DATA_DIR / "usa_airport_dataset.csv"
 
 HTML_METADATA = {
     'grafo_interativo.html': ('Grafo Interativo Completo', 'Explore todos os bairros com algoritmos de busca'),
