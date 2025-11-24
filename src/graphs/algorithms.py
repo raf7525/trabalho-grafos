@@ -11,19 +11,17 @@ class PositiveFloat(float):
 
 class Sorting:
     @staticmethod
-    def dijkstra(grafo: Grafo, inicio: str, fim: str):
-        
+    def dijkstra(grafo: Grafo, inicio: Vertice, fim: Vertice):
         distancias = {}
         visitados = set()
         anterior = {}
         fila: List[Tuple[int, str]] = []
         
-        
         for nome in grafo.vertices:
             distancias[nome] = float('inf')
             
-        distancias.update({inicio: 0})
-        heapq.heappush(fila, (0, inicio))
+        distancias[inicio.nome] = 0
+        heapq.heappush(fila, (0, inicio.nome))
         
         while fila:
             _, nome_atual = heapq.heappop(fila)
@@ -43,34 +41,31 @@ class Sorting:
                     heapq.heappush(fila, (nova_distancia, vizinho.nome))
 
         caminho = []
-        atual = fim
+        atual = fim.nome
         
-        if atual not in anterior and atual != inicio:
+        if atual not in anterior and atual != inicio.nome:
             return float('inf'), []
         
         while atual is not None:
             caminho.append(atual)
             atual = anterior.get(atual)
-            if atual == inicio:
+            if atual == inicio.nome:
                 caminho.append(atual)
                 break
         
         caminho.reverse()
         
-        return distancias[fim], caminho
+        return distancias[fim.nome], caminho
 
     @staticmethod
-    def bellman_ford(grafo: Union[Grafo, GrafoDirecionado], inicio: str, fim: str = None):
-        
-       
+    def bellman_ford(grafo: Union[Grafo, GrafoDirecionado], inicio: Vertice, fim: Vertice = None):
         distancias = {}
         anterior = {}
-        
         
         for nome_vertice in grafo.vertices:
             distancias[nome_vertice] = float('inf')
         
-        distancias[inicio] = 0
+        distancias[inicio.nome] = 0
         
        
         def obter_arestas_para_relaxar():
@@ -107,11 +102,10 @@ class Sorting:
         if tem_ciclo_negativo:
             raise ValueError("Grafo contém ciclo negativo")
         
-        
         caminho = []
-        atual = fim
+        atual = fim.nome
         
-        if atual not in anterior and atual != inicio:
+        if atual not in anterior and atual != inicio.nome:
             return float('inf'), []
         
         nos_caminho = set() 
@@ -121,32 +115,29 @@ class Sorting:
             nos_caminho.add(atual)
             caminho.append(atual)
             atual = anterior.get(atual)
-            if atual == inicio: 
+            if atual == inicio.nome: 
                 caminho.append(atual)
                 break
         
-        
-        if caminho and caminho[-1] != inicio:
+        if caminho and caminho[-1] != inicio.nome:
             return float('inf'), []
 
         caminho.reverse()
         
-        return distancias[fim], caminho
+        return distancias[fim.nome], caminho
     
     @staticmethod
-    def breadth_first_search(grafo: Grafo, inicio: str):
-        
-        visitado = set([inicio])
-        fila = deque([inicio])
-        anterior = {inicio: None}
-        niveis = {inicio: 0}
-        distancias = {inicio: 0}
-        arvore = {inicio: []}
-        ordem_visita = [inicio]
-        
+    def breadth_first_search(grafo: Grafo, inicio: Vertice):
+        visitado = set([inicio.nome])
+        fila = deque([inicio.nome])
+        anterior = {inicio.nome: None}
+        niveis = {inicio.nome: 0}
+        distancias = {inicio.nome: 0}
+        arvore = {inicio.nome: []}
+        ordem_visita = [inicio.nome]
         
         for nome in grafo.vertices:
-            if nome != inicio:
+            if nome != inicio.nome:
                 niveis[nome] = float('inf')
                 distancias[nome] = float('inf')
                 arvore[nome] = []
@@ -154,7 +145,6 @@ class Sorting:
         while fila:
             u = fila.popleft()
             vertice_atual = grafo.vertices[u]
-            
             
             for vizinho in vertice_atual.vizinhos:
                 v = vizinho.nome
@@ -178,7 +168,11 @@ class Sorting:
     @staticmethod
     def bfs_shortest_path(grafo: Grafo, inicio: str, fim: str) -> Tuple[float, List[str]]:
         
-        resultado = Sorting.breadth_first_search(grafo, inicio)
+        vertice_inicio = grafo.vertices.get(inicio)
+        if not vertice_inicio:
+            return float('inf'), []
+        
+        resultado = Sorting.breadth_first_search(grafo, vertice_inicio)
         
         if fim not in resultado['distancias'] or resultado['distancias'][fim] == float('inf'):
             return float('inf'), []
@@ -193,24 +187,20 @@ class Sorting:
         return resultado['distancias'][fim], list(reversed(caminho))
 
     @staticmethod
-    def depth_first_search(grafo: Grafo, inicio: str):
-        
-        
+    def depth_first_search(grafo: Grafo, inicio: Vertice):
         estado = {nome: 'nao_visitado' for nome in grafo.vertices}
         descoberta = {}
         finalizacao = {}
         anterior = {nome: None for nome in grafo.vertices}
         classificacao_arestas = {}
         ordem_visita = []
-        tempo = [0]  
+        tempo = [0]
         tem_ciclo = False
         componentes = []
         
         def dfs_visitar(u: str, pai: str = None):
-            
             nonlocal tem_ciclo
             
-           
             estado[u] = 'visitando'
             tempo[0] += 1
             descoberta[u] = tempo[0]
@@ -218,55 +208,44 @@ class Sorting:
             
             vertice_atual = grafo.vertices[u]
             
-            
             for vizinho in vertice_atual.vizinhos:
                 v = vizinho.nome
-                
                 aresta = tuple(sorted([u, v]))
                 
                 if estado[v] == 'nao_visitado':
-                    
                     anterior[v] = u
                     classificacao_arestas[aresta] = 'arvore'
                     dfs_visitar(v, u)
                     
                 elif estado[v] == 'visitando' and v != pai:
-                    
                     if aresta not in classificacao_arestas:
                         classificacao_arestas[aresta] = 'retorno'
                     tem_ciclo = True
                     
                 elif estado[v] == 'visitado':
-                    
                     if aresta not in classificacao_arestas:
                         if descoberta[u] < descoberta[v]:
-                            
                             if v in _obter_descendentes(u, anterior):
                                 classificacao_arestas[aresta] = 'avanco'
                             else:
                                 classificacao_arestas[aresta] = 'cruzamento'
                         else:
-                            
                             classificacao_arestas[aresta] = 'cruzamento'
-            
             
             estado[u] = 'visitado'
             tempo[0] += 1
             finalizacao[u] = tempo[0]
         
-        def _obter_descendentes(u: str, dicionario_anterior: dict) -> set:
-            
+        def _obter_descendentes(u: str, anterior_dict: dict) -> set:
             descendentes = set()
-            for vertice, pai in dicionario_anterior.items():
+            for vertice, pai in anterior_dict.items():
                 if pai == u:
                     descendentes.add(vertice)
                     descendentes.update(_obter_descendentes(vertice, anterior_dict))
             return descendentes
         
-       
-        dfs_visitar(inicio)
+        dfs_visitar(inicio.nome)
         componentes.append(ordem_visita.copy())
-        
         
         for nome in grafo.vertices:
             if estado[nome] == 'nao_visitado':

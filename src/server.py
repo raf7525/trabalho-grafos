@@ -21,10 +21,10 @@ except Exception as e:
     GRAFO_GLOBAL = None
 
 ALGORITMOS = {
-    'dijkstra': lambda g, o, d: Sorting.dijkstra(g, o, d),
-    'bellman': lambda g, o, d: Sorting.bellman_ford(g, o, d),
+    'dijkstra': lambda g, o, d: Sorting.dijkstra(g, g.vertices[o], g.vertices[d]),
+    'bellman': lambda g, o, d: Sorting.bellman_ford(g, g.vertices[o], g.vertices[d]),
     'bfs': lambda g, o, d: Sorting.bfs_shortest_path(g, o, d),
-    'dfs': lambda g, o, d: Sorting.depth_first_search(g, o)
+    'dfs': lambda g, o, d: Sorting.depth_first_search(g, g.vertices[o])
 }
 
 @app.route('/')
@@ -57,8 +57,10 @@ def calcular():
     origem_nome = request.args.get('origem', '')
     destino_nome = request.args.get('destino', '')
     
+    if origem_nome not in GRAFO_GLOBAL.vertices:
+        return jsonify({"erro": f"Origem '{origem_nome}' não encontrada"}), 400
+    
     origem = GRAFO_GLOBAL.vertices.get(origem_nome)
-    destino = GRAFO_GLOBAL.vertices.get(destino_nome) if destino_nome else None
 
     try:
         if alg not in ALGORITMOS:
@@ -73,10 +75,13 @@ def calcular():
                 res = Sorting.depth_first_search(GRAFO_GLOBAL, origem)
                 return jsonify({"tipo": "expansao", "dados_nos": res['descoberta'], "metrica": "Ordem Descoberta", "algoritmo": "DFS"})
 
-        if not destino:
+        if not destino_nome:
             return jsonify({"erro": "Destino é obrigatório para cálculo de caminho."}), 400
+            
+        if destino_nome not in GRAFO_GLOBAL.vertices:
+            return jsonify({"erro": f"Destino '{destino_nome}' não encontrado"}), 400
 
-        resultado = ALGORITMOS[alg](GRAFO_GLOBAL, origem, destino)
+        resultado = ALGORITMOS[alg](GRAFO_GLOBAL, origem_nome, destino_nome)
         
         if isinstance(resultado, tuple) and len(resultado) == 2:
             custo, caminho = resultado
