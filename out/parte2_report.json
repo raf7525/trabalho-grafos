@@ -3,14 +3,14 @@
     "algoritmo": "BFS",
     "origem": "SEA",
     "destino": null,
-    "tempo_execucao_s": 0.0005329350005922606,
+    "tempo_execucao_s": 0.0017997830000240356,
     "vertices_alcancados": 222
   },
   {
     "algoritmo": "DFS",
     "origem": "SEA",
     "destino": null,
-    "tempo_execucao_s": 0.9989371250003387,
+    "tempo_execucao_s": 0.9649400499999956,
     "vertices_visitados": 526,
     "tem_ciclo": true
   },
@@ -18,14 +18,14 @@
     "algoritmo": "BFS",
     "origem": "JFK",
     "destino": null,
-    "tempo_execucao_s": 0.0006410449996110401,
+    "tempo_execucao_s": 0.00041551599997546873,
     "vertices_alcancados": 223
   },
   {
     "algoritmo": "DFS",
     "origem": "JFK",
     "destino": null,
-    "tempo_execucao_s": 1.2032133149996298,
+    "tempo_execucao_s": 1.1334324379999998,
     "vertices_visitados": 526,
     "tem_ciclo": true
   },
@@ -33,14 +33,14 @@
     "algoritmo": "BFS",
     "origem": "LAX",
     "destino": null,
-    "tempo_execucao_s": 0.0002930210002887179,
+    "tempo_execucao_s": 0.0003859240000565478,
     "vertices_alcancados": 225
   },
   {
     "algoritmo": "DFS",
     "origem": "LAX",
     "destino": null,
-    "tempo_execucao_s": 1.2916886389994033,
+    "tempo_execucao_s": 1.206530267999824,
     "vertices_visitados": 526,
     "tem_ciclo": true
   },
@@ -48,7 +48,7 @@
     "algoritmo": "Dijkstra",
     "origem": "SEA",
     "destino": "RDM",
-    "tempo_execucao_s": 0.002758157000243955,
+    "tempo_execucao_s": 0.002228413000011642,
     "custo": 228.0,
     "tamanho_caminho": 2
   },
@@ -56,7 +56,7 @@
     "algoritmo": "Dijkstra",
     "origem": "MHK",
     "destino": "AMW",
-    "tempo_execucao_s": 0.002154252000764245,
+    "tempo_execucao_s": 0.0019504700001107267,
     "custo": 254.0,
     "tamanho_caminho": 2
   },
@@ -64,7 +64,7 @@
     "algoritmo": "Dijkstra",
     "origem": "GEG",
     "destino": "RDM",
-    "tempo_execucao_s": 0.002691752999453456,
+    "tempo_execucao_s": 0.002061213999922984,
     "custo": 291.0,
     "tamanho_caminho": 2
   },
@@ -72,7 +72,7 @@
     "algoritmo": "Dijkstra",
     "origem": "AZA",
     "destino": "RDM",
-    "tempo_execucao_s": 0.0023484909997932846,
+    "tempo_execucao_s": 0.0021392429998741136,
     "custo": 911.0,
     "tamanho_caminho": 2
   },
@@ -80,7 +80,7 @@
     "algoritmo": "Dijkstra",
     "origem": "JFK",
     "destino": "LAX",
-    "tempo_execucao_s": 0.0025651559999460005,
+    "tempo_execucao_s": 0.0019176350001544051,
     "custo": Infinity,
     "tamanho_caminho": 0
   },
@@ -88,7 +88,7 @@
     "algoritmo": "Bellman-Ford (Pesos Positivos)",
     "origem": "SEA",
     "destino": "RDM",
-    "tempo_execucao_s": 0.7572445649993824,
+    "tempo_execucao_s": 0.8854017460000705,
     "custo": 228.0,
     "tamanho_caminho": 2
   },
@@ -96,7 +96,7 @@
     "algoritmo": "Bellman-Ford (Pesos Positivos)",
     "origem": "MHK",
     "destino": "AMW",
-    "tempo_execucao_s": 0.7371597540004586,
+    "tempo_execucao_s": 0.8773881249999249,
     "custo": 254.0,
     "tamanho_caminho": 2
   },
@@ -104,6 +104,7 @@
     "algoritmo": "Bellman-Ford (Pesos Negativos, SEM Ciclo - Dataset)",
     "origem": "JFK",
     "destino": "CLT",
+    "tempo_execucao_s": 0.8192130960001123,
     "custo": -10.0,
     "tamanho_caminho": 2
   },
@@ -111,7 +112,7 @@
     "algoritmo": "Bellman-Ford (Pesos Negativos, COM Ciclo)",
     "origem": "SEA",
     "destino": "LAX",
-    "tempo_execucao_s": 0.6823229949995948,
+    "tempo_execucao_s": 0.8339298680000411,
     "resultado": "Grafo contém ciclo negativo"
   }
 ]

@@ -166,7 +166,7 @@ class Sorting:
         }
 
     @staticmethod
-    def bfs_shortest_path(grafo: Grafo, inicio: str, fim: str) -> Tuple[float, List[str]]:
+    def bfs_shortest_path(grafo: Grafo, inicio: Vertice, fim: Vertice) -> Tuple[float, List[str]]:
         
         vertice_inicio = grafo.vertices.get(inicio)
         if not vertice_inicio:
@@ -174,17 +174,17 @@ class Sorting:
         
         resultado = Sorting.breadth_first_search(grafo, vertice_inicio)
         
-        if fim not in resultado['distancias'] or resultado['distancias'][fim] == float('inf'):
+        if fim.nome not in resultado['distancias'] or resultado['distancias'][fim.nome] == float('inf'):
             return float('inf'), []
         
         
         caminho = []
-        atual = fim
+        atual = fim.nome
         while atual is not None:
             caminho.append(atual)
             atual = resultado['anterior'].get(atual)
         
-        return resultado['distancias'][fim], list(reversed(caminho))
+        return resultado['distancias'][fim.nome], list(reversed(caminho))
 
     @staticmethod
     def depth_first_search(grafo: Grafo, inicio: Vertice):
@@ -244,7 +244,7 @@ class Sorting:
                     descendentes.update(_obter_descendentes(vertice, anterior_dict))
             return descendentes
         
-        dfs_visitar(inicio)
+        dfs_visitar(inicio.nome)
         componentes.append(ordem_visita.copy())
         
         for nome in grafo.vertices:
