@@ -244,7 +244,7 @@ class Sorting:
                     descendentes.update(_obter_descendentes(vertice, anterior_dict))
             return descendentes
         
-        dfs_visitar(inicio.nome)
+        dfs_visitar(inicio)
         componentes.append(ordem_visita.copy())
         
         for nome in grafo.vertices:

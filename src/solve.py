@@ -257,18 +257,19 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
         informacoes_aresta_original = grafo_neg_weights_no_cycle.obter_informacoes_aresta(vertice_origem_pn, vertice_destino_pn)
         
         # Remove aresta original e adiciona uma nova com peso negativo
-                grafo_neg_weights_no_cycle.remover_aresta(
-                    grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
-                    grafo_neg_weights_no_cycle.vertices[vertice_destino_pn]
-                )
-                informacoes_aresta_original.pop('peso', None)
-        
-                grafo_neg_weights_no_cycle.adicionar_aresta(
-                    grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
-                    grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
-                    peso=valor_peso_negativo,
-                    **informacoes_aresta_original
-                )        print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
+        grafo_neg_weights_no_cycle.remover_aresta(
+            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn]
+        )
+        informacoes_aresta_original.pop('peso', None)
+
+        grafo_neg_weights_no_cycle.adicionar_aresta(
+            grafo_neg_weights_no_cycle.vertices[vertice_origem_pn],
+            grafo_neg_weights_no_cycle.vertices[vertice_destino_pn],
+            peso=valor_peso_negativo,
+            **informacoes_aresta_original
+        )
+        print(f"Modificada aresta {vertice_origem_pn} -> {vertice_destino_pn} para peso {valor_peso_negativo}.")
         
         try:
             (cost_nw, path_nw), time_bf_nw = _run_benchmark(
