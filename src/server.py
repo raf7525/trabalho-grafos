@@ -36,13 +36,30 @@ def index():
         'desc': HTML_METADATA.get(f.name, ('', 'Visualização'))[1]} 
         for f in sorted(OUT_DIR.glob('*.html'))
     ]
-    png_files = [
-        {'name': f.name, 'title': PNG_METADATA.get(f.name, (f.stem.title(), ''))[0], 
-        'desc': PNG_METADATA.get(f.name, ('', 'Gráfico'))[1]} 
-        for f in sorted(OUT_DIR.glob('*.png'))
-    ]
     
-    return render_template('index.html', html_files=html_files, png_files=png_files)
+    pngs = sorted(OUT_DIR.glob('*.png'))
+    
+    parte1 = []
+    parte2 = []
+    
+    for f in pngs:
+        item = {
+            'name': f.name,
+            'title': PNG_METADATA.get(f.name, (f.stem.title(), ''))[0], 
+            'desc': PNG_METADATA.get(f.name, ('', 'Gráfico'))[1]
+        }
+        
+        if f.name.lower().startswith('parte2'):
+            parte2.append(item)
+        else:
+            parte1.append(item)
+            
+    return render_template(
+        'index.html', 
+        html_files=html_files, 
+        parte1=parte1, 
+        parte2=parte2
+    )
 
 @app.route('/<path:filename>')
 def serve_static(filename):

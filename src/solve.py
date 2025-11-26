@@ -239,7 +239,7 @@ def run_part2_full_analysis(grafo: Grafo, output_dir: Path):
             })
         print(f"Bellman-Ford de {source} para {target} (pesos positivos) concluído em {time_bf:.6f}s.")
 
-    # --- NOVO: Teste de Bellman-Ford com Pesos Negativos e SEM Ciclo Negativo (Usando Grafo do Dataset) ---
+    #   Teste de Bellman-Ford com Pesos Negativos e SEM Ciclo Negativo (Usando Grafo do Dataset) ---
     print("\n--- Testando Bellman-Ford com pesos negativos (SEM ciclo) - Usando Grafo do Dataset ---")
     grafo_neg_weights_no_cycle = copy.deepcopy(grafo)
     
