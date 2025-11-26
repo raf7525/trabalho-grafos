@@ -2,59 +2,114 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafo Interativo - Recife</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Grafo Interativo</title>
+    
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="grafos_interativos.css">
 </head>
-<body class="bg-gray-100 h-screen flex overflow-hidden font-sans">
+<body class="h-screen flex overflow-hidden bg-gray-900 text-gray-200 font-sans">
 
-    <aside class="w-80 bg-white shadow-2xl z-10 flex flex-col p-6 border-r border-gray-200">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Grafos Recife</h2>
+    <div id="loading">
+        <div class="spinner"></div>
+        <span>Carregando Grafo...</span>
+    </div>
+
+    <aside class="w-80 bg-gray-800 border-r border-gray-700 flex flex-col shadow-xl z-20 relative">
         
-        <div class="space-y-4 flex-1">
-            <div>
-                <label for="algoritmo" class="block text-sm font-semibold text-gray-700 mb-1">Algoritmo</label>
-                <select id="algoritmo" class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm transition-colors">
-                    <option value="dijkstra">Dijkstra</option>
-                    <option value="bellman">Bellman-Ford</option>
-                    <option value="bfs">BFS</option>
-                    <option value="dfs">DFS</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="origem" class="block text-sm font-semibold text-gray-700 mb-1">Origem</label>
-                <input type="text" id="origem" list="lista-bairros" placeholder="Ex: Nova Descoberta" 
-                       class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm">
-            </div>
-
-            <div id="grupo-destino">
-                <label for="destino" class="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
-                <input type="text" id="destino" list="lista-bairros" placeholder="Ex: Boa Viagem" 
-                       class="w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border shadow-sm">
-            </div>
-
-            <datalist id="lista-bairros"></datalist>
-
-            <button onclick="calcular()" 
-                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 shadow-md transition-all transform active:scale-95">
-                Executar Análise
-            </button>
-
-            <div id="msg-erro" class="hidden p-3 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200" role="alert"></div>
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-bold text-indigo-400 mb-1">
+                <i class="fas fa-share-alt mr-2"></i>Grafos
+            </h1>
+            <p class="text-xs text-gray-400">Visualizador de Conectividade</p>
         </div>
 
-        <div id="legend" class="mt-auto bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner">
-            <strong class="block text-gray-700 mb-2 text-sm">Legenda:</strong>
-            <div id="legend-content" class="space-y-2 text-sm text-gray-600">
+        <div class="p-6 space-y-6 flex-1 overflow-y-auto">
+            
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Dataset</label>
+                <div class="relative">
+                    <select id="select-dataset" onchange="mudarDataset()" class="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-600 focus:ring-2 focus:ring-indigo-500 outline-none appearance-none cursor-pointer transition-all hover:border-gray-500">
+                        <option value="recife" selected>Bairros do Recife</option>
+                        <option value="usa">Aeroportos USA</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
                 </div>
+            </div>
+
+            <hr class="border-gray-700">
+
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Algoritmo</label>
+                <div class="relative">
+                    <select id="algoritmo" onchange="atualizarInputsAlgoritmo()" class="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-600 focus:ring-2 focus:ring-indigo-500 outline-none appearance-none cursor-pointer transition-all hover:border-gray-500">
+                        <option value="dijkstra">Dijkstra</option>
+                        <option value="bellman">Bellman-Ford</option>
+                        <option value="bfs">BFS</option>
+                        <option value="dfs">DFS</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+                <p id="desc-algoritmo" class="text-xs text-gray-500 mt-1">Encontra o caminho de menor custo entre dois pontos.</p>
+            </div>
+
+            <div class="space-y-4 bg-gray-900/50 p-4 rounded-xl border border-gray-700/50">
+                
+                <div>
+                    <label class="text-xs text-gray-400 ml-1 mb-1 block">Ponto de Origem</label>
+                    <div class="relative">
+                        <i class="fas fa-map-marker-alt absolute left-3 top-3.5 text-green-500"></i>
+                        <input type="text" id="origem" placeholder="Ex: Nova Descoberta" list="lista-bairros"
+                            class="w-full bg-gray-800 text-white pl-9 pr-3 py-2.5 rounded-lg border border-gray-600 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all placeholder-gray-600">
+                    </div>
+                </div>
+
+                <div id="container-destino" class="transition-all duration-300 ease-in-out overflow-hidden">
+                    <label class="text-xs text-gray-400 ml-1 mb-1 block">Ponto de Destino</label>
+                    <div class="relative">
+                        <i class="fas fa-flag-checkered absolute left-3 top-3.5 text-red-500"></i>
+                        <input type="text" id="destino" placeholder="Ex: Boa Viagem" list="lista-bairros"
+                            class="w-full bg-gray-800 text-white pl-9 pr-3 py-2.5 rounded-lg border border-gray-600 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all placeholder-gray-600">
+                    </div>
+                </div>
+
+                <div class="pt-2 flex gap-2">
+                    <button onclick="calcularRota()" class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-4 py-2.5 rounded-lg font-semibold transition-all shadow-lg shadow-indigo-900/30 active:scale-95 flex justify-center items-center gap-2">
+                        <i class="fas fa-play text-xs"></i> Executar
+                    </button>
+                    
+                    <button onclick="limparRota()" class="px-3 py-2.5 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors border border-gray-600" title="Limpar">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="p-4 border-t border-gray-700 text-center">
+            <div class="text-xs text-gray-500">Teoria dos Grafos 2025</div>
         </div>
     </aside>
 
-    <main id="network" class="flex-1 bg-slate-900 relative cursor-move">
+    <main class="flex-1 relative bg-gray-950">
+        <div id="mynetwork"></div>
+        
+        <div id="info-panel" class="absolute top-6 right-6 bg-gray-900/95 backdrop-blur-xl p-5 rounded-xl border border-gray-700 shadow-2xl max-w-xs hidden z-10 transition-all transform animate-fade-in">
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-gray-700">
+                <h3 class="text-lg font-bold text-indigo-400"><i class="fas fa-poll mr-2"></i>Resultado</h3>
+                <button onclick="document.getElementById('info-panel').classList.add('hidden')" class="text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="result-content" class="text-sm space-y-2 text-gray-300"></div>
+        </div>
     </main>
+
+    <datalist id="lista-bairros"></datalist>
 
     <script src="grafos_interativos.js"></script>
 </body>

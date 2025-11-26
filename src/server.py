@@ -6,19 +6,33 @@ from pathlib import Path
 ROOT_PATH = Path(__file__).parent.parent
 sys.path.append(str(ROOT_PATH))
 
-from src.graphs.io import carregar_grafo
+from src.graphs.io import carregar_grafo, carregar_dataset_parte2
 from src.graphs.algorithms import Sorting
-from src.config import OUT_DIR, TEMPLATES_DIR, BAIRROS_FILE, ARESTAS_FILE, HTML_METADATA, PNG_METADATA, PORT
+from src.config import OUT_DIR, TEMPLATES_DIR, BAIRROS_FILE, ARESTAS_FILE, HTML_METADATA, PNG_METADATA, PORT, DATASET_2_CSV
 
 app = Flask(__name__, template_folder=str(TEMPLATES_DIR))
 
-print("Carregando grafo...")
+GRAFOS = {
+    'recife': None,
+    'usa': None
+}
+
+print("Carregando grafos para memória...")
 try:
-    GRAFO_GLOBAL = carregar_grafo(str(BAIRROS_FILE), str(ARESTAS_FILE))
-    print(f"Grafo carregado com sucesso! {GRAFO_GLOBAL.ordem} nós.")
+    GRAFOS['recife'] = carregar_grafo(str(BAIRROS_FILE), str(ARESTAS_FILE))
+    print(f"[OK] Grafo Recife carregado: {GRAFOS['recife'].ordem} nós.")
 except Exception as e:
-    print(f"ERRO: Não foi possível carregar o grafo. {e}")
-    GRAFO_GLOBAL = None
+    print(f"[ERRO] Falha ao carregar Recife: {e}")
+
+try:
+    if os.path.exists(str(DATASET_2_CSV)):
+        GRAFOS['usa'] = carregar_dataset_parte2(str(DATASET_2_CSV))
+        print(f"[OK] Grafo USA carregado: {GRAFOS['usa'].ordem} nós.")
+    else:
+        print("[AVISO] Dataset USA não encontrado.")
+except Exception as e:
+    print(f"[ERRO] Falha ao carregar USA: {e}")
+
 
 ALGORITMOS = {
     'dijkstra': lambda g, o, d: Sorting.dijkstra(g, g.vertices[o], g.vertices[d]),
@@ -32,34 +46,29 @@ def index():
     Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
     
     html_files = [
-        {'name': f.name, 'title': HTML_METADATA.get(f.name, (f.stem.title(), ''))[0], 
-        'desc': HTML_METADATA.get(f.name, ('', 'Visualização'))[1]} 
+        {
+            'name': f.name, 
+            'title': HTML_METADATA.get(f.name, (f.stem.title(), ''))[0], 
+            'desc': HTML_METADATA.get(f.name, ('', 'Visualização'))[1]
+        } 
         for f in sorted(OUT_DIR.glob('*.html'))
     ]
     
     pngs = sorted(OUT_DIR.glob('*.png'))
-    
-    parte1 = []
-    parte2 = []
+    png_data = []
     
     for f in pngs:
-        item = {
+        meta = PNG_METADATA.get(f.name, (f.stem.replace('_', ' ').title(), 'Gráfico'))
+        png_data.append({
             'name': f.name,
-            'title': PNG_METADATA.get(f.name, (f.stem.title(), ''))[0], 
-            'desc': PNG_METADATA.get(f.name, ('', 'Gráfico'))[1]
-        }
-        
-        if f.name.lower().startswith('parte2'):
-            parte2.append(item)
-        else:
-            parte1.append(item)
-            
-    return render_template(
-        'index.html', 
-        html_files=html_files, 
-        parte1=parte1, 
-        parte2=parte2
-    )
+            'title': meta[0],
+            'desc': meta[1]
+        })
+    
+    parte1 = [item for item in png_data if not item['name'].lower().startswith('parte2')]
+    parte2 = [item for item in png_data if item['name'].lower().startswith('parte2')]
+    
+    return render_template('index.html', html_files=html_files, parte1=parte1, parte2=parte2)
 
 @app.route('/<path:filename>')
 def serve_static(filename):
@@ -67,17 +76,20 @@ def serve_static(filename):
 
 @app.route('/api/calcular')
 def calcular():
-    if GRAFO_GLOBAL is None:
-        return jsonify({"erro": "Grafo não carregado."}), 500
+    dataset_key = request.args.get('dataset', 'recife')
+    grafo_atual = GRAFOS.get(dataset_key)
+
+    if grafo_atual is None:
+        return jsonify({"erro": f"Dataset '{dataset_key}' não disponível."}), 500
 
     alg = request.args.get('alg', '').lower()
     origem_nome = request.args.get('origem', '')
     destino_nome = request.args.get('destino', '')
     
-    if origem_nome not in GRAFO_GLOBAL.vertices:
-        return jsonify({"erro": f"Origem '{origem_nome}' não encontrada"}), 400
+    if origem_nome not in grafo_atual.vertices:
+        return jsonify({"erro": f"Origem '{origem_nome}' não encontrada em {dataset_key}"}), 400
     
-    origem = GRAFO_GLOBAL.vertices.get(origem_nome)
+    origem = grafo_atual.vertices.get(origem_nome)
 
     try:
         if alg not in ALGORITMOS:
@@ -85,20 +97,20 @@ def calcular():
 
         if alg in ['bfs', 'dfs'] and not destino_nome:
             if alg == 'bfs':
-                res = Sorting.breadth_first_search(GRAFO_GLOBAL, origem)
+                res = Sorting.breadth_first_search(grafo_atual, origem)
                 niveis = {k: v for k, v in res['niveis'].items() if v != float('inf')}
                 return jsonify({"tipo": "expansao", "dados_nos": niveis, "metrica": "Nível BFS", "algoritmo": "BFS"})
             elif alg == 'dfs':
-                res = Sorting.depth_first_search(GRAFO_GLOBAL, origem)
+                res = Sorting.depth_first_search(grafo_atual, origem)
                 return jsonify({"tipo": "expansao", "dados_nos": res['descoberta'], "metrica": "Ordem Descoberta", "algoritmo": "DFS"})
 
         if not destino_nome:
             return jsonify({"erro": "Destino é obrigatório para cálculo de caminho."}), 400
             
-        if destino_nome not in GRAFO_GLOBAL.vertices:
+        if destino_nome not in grafo_atual.vertices:
             return jsonify({"erro": f"Destino '{destino_nome}' não encontrado"}), 400
 
-        resultado = ALGORITMOS[alg](GRAFO_GLOBAL, origem_nome, destino_nome)
+        resultado = ALGORITMOS[alg](grafo_atual, origem_nome, destino_nome)
         
         if isinstance(resultado, tuple) and len(resultado) == 2:
             custo, caminho = resultado

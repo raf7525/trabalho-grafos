@@ -6,10 +6,11 @@ import matplotlib.colors as mcolors
 from pyvis.network import Network
 from itertools import combinations
 import json
+import os
 
-from src.graphs.io import carregar_grafo
+from src.graphs.io import carregar_grafo, carregar_dataset_parte2
 from src.graphs.graph import Grafo
-from src.config import OUT_DIR
+from src.config import OUT_DIR, DATASET_2_CSV
 
 plt.style.use('seaborn-v0_8-darkgrid')
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -29,58 +30,58 @@ def _calcular_densidade_ego(grafo: Grafo, nome_bairro: str, vizinhos: list) -> f
     return (2 * arestas_ego) / (qtd_nos * (qtd_nos - 1))
 
 
+def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None, tipo: str = "recife"):
 
-def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     if caminho_saida is None:
         caminho_saida = str(OUT_DIR / "grafo_dados.json")
     
     nos = []
-    for nome_bairro, vertice in grafo.vertices.items():
-        vizinhos = grafo.obter_vizinhos(nome_bairro)
+    for nome, vertice in grafo.vertices.items():
+        vizinhos = grafo.obter_vizinhos(nome)
         grau = len(vizinhos)
-        microrregiao = vertice.atributos.get('microrregiao', 'Desconhecida')
-        densidade_ego = _calcular_densidade_ego(grafo, nome_bairro, vizinhos)
-        tooltip_html = (
-            f"<div style='font-family:sans-serif;padding:4px;'>"
-            f"<strong style='font-size:1.1em;border-bottom:1px solid #ccc;display:block;margin-bottom:4px;'>{nome_bairro.title()}</strong>"
-            f"Microrregião: <b>{microrregiao}</b><br>"
-            f"Grau: <b>{grau}</b><br>"
-            f"Densidade Ego: <b>{densidade_ego:.4f}</b>"
-            f"</div>"
-        )
-        tooltip_text = (
-            f"{nome_bairro.title()}\n"
-            f"Microrregião: {microrregiao}\n"
-            f"Grau: {grau}\n"
-            f"Densidade Ego: {densidade_ego:.4f}"
-        )
+        if tipo == 'usa':
+            grupo = vertice.atributos.get('cidade', 'USA')
+            tooltip_html = f"<b>{nome}</b><br>Cidade: {grupo}<br>Grau: {grau}"
+            tooltip_title = f"{nome} ({grupo})"
+        else:
+            grupo = vertice.atributos.get('microrregiao', 'Desconhecida')
+            densidade_ego = _calcular_densidade_ego(grafo, nome, vizinhos)
+            tooltip_html = f"<b>{nome.title()}</b><br>Micro: {grupo}<br>Grau: {grau}<br>Densidade: {densidade_ego:.2f}"
+            tooltip_title = nome.title()
         
         nos.append({
-            "id": nome_bairro,
-            "label": nome_bairro.title(),
-            "group": microrregiao,
+            "id": nome,
+            "label": nome if len(nome) < 5 else nome.title(),
+            "group": grupo,
             "value": grau, 
             "title": tooltip_html,
-            "title_plain": tooltip_text
+            "original_title": tooltip_title
         })
     
     arestas = []
     arestas_processadas = set()
     
     for (origem, destino), attrs in grafo.arestas.items():
-        chave = tuple(sorted((origem, destino)))
-        if chave in arestas_processadas:
+        eh_direcionado = tipo == 'usa'
+        chave = tuple(sorted((origem, destino))) if not eh_direcionado else (origem, destino)
+        
+        if not eh_direcionado and chave in arestas_processadas:
             continue
             
-        peso = attrs.get('peso', '')
-        logradouro = attrs.get('logradouro', 'N/A')
-        tooltip_edge = f"Peso: <b>{peso}</b><br>Via: {logradouro}"
+        peso = attrs.get('peso', 1.0)
+        
+        if tipo == 'recife':
+            info_extra = attrs.get('logradouro', 'N/A')
+        else:
+            dist = attrs.get('distancia', peso)
+            info_extra = f"{dist} miles"
 
         arestas.append({
             "from": origem,
             "to": destino,
-            "label": str(peso),
-            "title": tooltip_edge,
+            "label": "",
+            "title": f"Peso: {peso}\nInfo: {info_extra}",
+            "arrows": "to" if eh_direcionado else "",
             "color": {"color": "#848484", "opacity": 0.2}
         })
         arestas_processadas.add(chave)
@@ -93,7 +94,7 @@ def exportar_grafo_para_json(grafo: Grafo, caminho_saida: str = None):
     with open(caminho_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_completos, f, ensure_ascii=False, indent=2)
         
-    print(f"[OK] Dados JSON atualizados (com HTML Tooltips) em: {caminho_saida}")
+    print(f"[OK] JSON exportado ({tipo}) em: {caminho_saida}")
     return caminho_saida
 
 
@@ -343,13 +344,9 @@ def visualizar_arvore_bfs(grafo: Grafo, origem: str = "boa vista", caminho_saida
     net.save_graph(caminho_saida)
     
     print(f"[OK] Visualização 5 salva em: {caminho_saida}")
-    print(f"  Origem: {origem.title()}")
-    print(f"  Níveis encontrados: {max_nivel + 1}")
-    print(f"  Vértices alcançados: {len([v for v in niveis.values() if v != float('inf')])}/{len(niveis)}")
     return caminho_saida
 
 
-# Parte 2
 
 
 def visualizar_distribuicao_graus(grafo: Grafo, output_dir: Path, is_part1: bool = False):
@@ -407,6 +404,18 @@ def gerar_visualizacoes_parte2(grafo: Grafo, report_path: Path, output_dir: Path
     visualizar_distribuicao_graus(grafo, output_dir, is_part1=False)
     gerar_comparacao_performance(report_data, output_dir)
 
+def gerar_json_usa_limitado(limite_nos: int = 94):
+    caminho_csv = str(DATASET_2_CSV)
+    if not os.path.exists(caminho_csv): return
+    
+    print(f"\nGerando JSON USA (Top {limite_nos})...")
+    grafo = carregar_dataset_parte2(caminho_csv)
+    
+    graus = sorted([(n, len(v.vizinhos)) for n, v in grafo.vertices.items()], key=lambda x: x[1], reverse=True)
+    top_nodes = {x[0] for x in graus[:limite_nos]}
+    subgrafo = grafo.criar_subgrafo(top_nodes)
+    
+    exportar_grafo_para_json(subgrafo, str(OUT_DIR / "grafo_usa.json"), tipo="usa")
 
 
 def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = None):
@@ -422,23 +431,29 @@ def gerar_todas_visualizacoes(caminho_nos: str = None, caminho_arestas: str = No
     print("Carregando grafo...")
     try:
         grafo = carregar_grafo(caminho_nos, caminho_arestas)
-        print(f"Grafo carregado: {grafo.ordem} vértices, {grafo.tamanho} arestas\n")
-    except Exception as e:
-        print(f"Erro fatal ao carregar grafo: {e}")
-        return
-    
-    print("Gerando visualizações...\n")
-    
-    try:
-        exportar_grafo_para_json(grafo)
+        print(f"Grafo Recife carregado: {grafo.ordem} vértices.")
+        
+        exportar_grafo_para_json(grafo, str(OUT_DIR / "grafo_dados.json"), tipo="recife")
         visualizar_mapa_cores_grau(grafo)
         visualizar_densidade_por_microrregiao(grafo)
         visualizar_subgrafo_top10(grafo)
         visualizar_distribuicao_graus_parte1(grafo)
         visualizar_arvore_bfs(grafo, origem="boa vista")
-        gerar_visualizacoes_parte2(grafo, Path(OUT_DIR) / "parte2_report.json", OUT_DIR)
+        
+        gerar_json_usa_limitado(limite_nos=94)
+        
+        report_parte2 = Path(OUT_DIR) / "parte2_report.json"
+        if report_parte2.exists():
+             try:
+                 grafo_usa = carregar_dataset_parte2(str(DATASET_2_CSV))
+                 gerar_visualizacoes_parte2(grafo_usa, report_parte2, OUT_DIR)
+             except Exception as e2:
+                 print(f"Aviso: Não foi possível gerar gráficos da Parte 2: {e2}")
+
     except Exception as e:
         print(f"Erro ao gerar visualizações: {e}")
+        import traceback
+        traceback.print_exc()
     
     print("\n" + "="*70)
     print("TODAS AS VISUALIZAÇÕES FORAM GERADAS COM SUCESSO!")
