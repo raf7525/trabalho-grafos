@@ -1,0 +1,15 @@
+{
+  "algoritmo": "Bellman-Ford",
+  "origem": "boa viagem",
+  "destino": "casa amarela",
+  "distancia_total": 10.8,
+  "caminho": [
+    "boa viagem",
+    "imbiribeira",
+    "jiquia",
+    "san martin",
+    "cordeiro",
+    "poco da panela",
+    "casa amarela"
+  ]
+}

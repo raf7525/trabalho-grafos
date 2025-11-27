@@ -1,11 +1,11 @@
 import argparse
-import sys
 import json
+import sys
 from pathlib import Path
 
+from src.config import ARESTAS_FILE, BAIRROS_FILE, DATASET_2_CSV, OUT_DIR
+from src.graphs.io import carregar_dataset_parte2, carregar_grafo, normalizar_texto
 from src.solve import orquestrar, run_part2_full_analysis
-from src.graphs.io import carregar_grafo, normalizar_texto, carregar_dataset_parte2
-from src.config import ARESTAS_FILE, OUT_DIR, BAIRROS_FILE, ROOT_DIR, DATASET_2_CSV
 
 
 def executar_bfs(grafo, origem, destino, diretorio_saida, normalizar=True):
@@ -285,11 +285,11 @@ def main():
                 nome_arquivo = f"bellman_{origem_nome}_para_{destino_nome}.json"
 
             elif args.alg == 'BFS':
-                executar_bfs(grafo, origem_nome, destino_nome, args.out, normalizar=usar_normalizacao)
+                executar_bfs(grafo, origem_nome, destino_nome, out_dir, normalizar=usar_normalizacao)
                 resultado = None
 
             elif args.alg == 'DFS':
-                executar_dfs(grafo, origem_nome, destino_nome, args.out, normalizar=usar_normalizacao)
+                executar_dfs(grafo, origem_nome, destino_nome, out_dir, normalizar=usar_normalizacao)
                 resultado = None
         
         except ValueError as e:

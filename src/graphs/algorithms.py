@@ -1,7 +1,9 @@
-from collections import deque
 import heapq
+from collections import deque
 from typing import List, Tuple, Union
+
 from src.graphs.graph import Grafo, GrafoDirecionado, Vertice
+
 
 class PositiveFloat(float):
     def __new__(cls, value):
@@ -32,7 +34,10 @@ class Sorting:
             for vizinho in vertice.vizinhos:
                 if vizinho in visitados: continue
     
-                peso_aresta = PositiveFloat(grafo.obter_peso(nome_atual, vizinho.nome))
+                peso_aresta = grafo.obter_peso(nome_atual, vizinho.nome)
+                if peso_aresta < 0:
+                    raise ValueError("Dijkstra não suporta pesos negativos")
+                    
                 nova_distancia = distancias[nome_atual] + peso_aresta
                 
                 if nova_distancia < distancias[vizinho.nome]:
@@ -72,11 +77,11 @@ class Sorting:
             if isinstance(grafo, GrafoDirecionado):
                 yield from grafo.obter_arestas_direcionadas()
             else: 
-                for nome_u, vertice_u in grafo.vertices.items():
-                    for vizinho_v in vertice_u.vizinhos:
-                        nome_v = vizinho_v.nome
-                        peso_aresta = grafo.obter_peso(nome_u, nome_v)
-                        yield nome_u, nome_v, peso_aresta
+                for (u, v), atributos in grafo.arestas.items():
+                    peso = atributos.get('peso', 1.0)
+                    # Como é não-direcionado, a aresta (u,v) implica relaxar u->v e v->u
+                    yield u, v, peso
+                    yield v, u, peso
 
         
         for _ in range(len(grafo.vertices)):
@@ -86,6 +91,9 @@ class Sorting:
                     distancias[nome_v] = distancias[nome_u] + peso_aresta
                     anterior[nome_v] = nome_u
                     relaxou_nesta_passada = True
+            
+            if not relaxou_nesta_passada:
+                break
             
         
         tem_ciclo_negativo = False
@@ -225,24 +233,13 @@ class Sorting:
                 elif estado[v] == 'visitado':
                     if aresta not in classificacao_arestas:
                         if descoberta[u] < descoberta[v]:
-                            if v in _obter_descendentes(u, anterior):
-                                classificacao_arestas[aresta] = 'avanco'
-                            else:
-                                classificacao_arestas[aresta] = 'cruzamento'
+                            classificacao_arestas[aresta] = 'avanco'
                         else:
                             classificacao_arestas[aresta] = 'cruzamento'
             
             estado[u] = 'visitado'
             tempo[0] += 1
             finalizacao[u] = tempo[0]
-        
-        def _obter_descendentes(u: str, anterior_dict: dict) -> set:
-            descendentes = set()
-            for vertice, pai in anterior_dict.items():
-                if pai == u:
-                    descendentes.add(vertice)
-                    descendentes.update(_obter_descendentes(vertice, anterior_dict))
-            return descendentes
         
         dfs_visitar(inicio.nome)
         componentes.append(ordem_visita.copy())

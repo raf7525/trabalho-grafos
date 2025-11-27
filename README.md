@@ -1,10 +1,14 @@
-## Como Executar
+# Teoria dos Grafos - Projeto Final
 
-### Instalação
+Este projeto implementa uma biblioteca de manipulação de grafos em Python, aplicada a dois cenários distintos:
+1.  **Análise de Bairros de Recife**: Modelagem da malha urbana para análise de conectividade e rotas.
+2.  **Malha Aérea dos EUA**: Análise de rotas de voos e performance de algoritmos em grafos de maior escala.
+
+## Instalação
 
 ```bash
 # 1. Clone o repositório
-git clone <url-do-repositorio>
+git clone https://github.com/raf7525/trabalho-grafos
 cd trabalho-grafos
 
 # 2. Crie e ative o ambiente virtual
@@ -15,7 +19,7 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Uso da Interface de Linha de Comando (CLI)
+## Uso da Interface de Linha de Comando (CLI)
 
 O script `src/cli.py` é a interface principal para executar análises e algoritmos.
 
@@ -75,8 +79,6 @@ python3 -m src.cli --viz
     python3 -m src.cli --alg BELLMAN_FORD --source "nova descoberta" --target "boa viagem"
     ```
 
----
-
 #### Parte 2: Análise da Malha Aérea dos EUA
 
 Para a parte 2, é preciso especificar o dataset de aeroportos.
@@ -105,7 +107,7 @@ python3 -m src.cli --parte2
     # De Seattle (SEA) para Redmond (RDM)
     python3 -m src.cli --alg BELLMAN_FORD --source SEA --target RDM --dataset data/usa_airport_dataset.csv
     ```
----
+
 ## Testes
 
 ### Executar Todos os Testes
@@ -114,9 +116,9 @@ python3 -m src.cli --parte2
 pytest tests/ -v
 ```
 
-**Status atual:** **46/46 testes passando**
+**Status atual:** 46/46 testes passando
 
-**Breakdown:**
+**Detalhamento:**
 - `test_bfs.py` - 9 testes
 - `test_dfs.py` - 11 testes
 - `test_dijkstra.py` - 12 testes
@@ -145,65 +147,61 @@ pytest tests/ --cov=src --cov-report=html
 # Abre htmlcov/index.html no navegador
 ```
 
----
+## Visualizações e Análises
 
-## Explicação dos gráficos
+Abaixo, a descrição das visualizações geradas pelo sistema:
 
-viz_densidade_microregiao:
-o gráfico em questão, mede a densidade diante da zona administrativa do recife ou seja:
+### 1. Densidade por Microrregião (`viz_densidade_microregiao`)
+Este gráfico mede a densidade de conexões dentro de cada zona administrativa (RPA) do Recife:
+- RPA 1 - Centro (Recife, Santo Antônio)
+- RPA 2 - Norte (Casa Amarela, Dois Unidos, etc.)
+- RPA 3 - Noroeste (Casa Forte, Monteiro, etc.)
+- RPA 4 - Oeste (Cordeiro, Torrões, etc.)
+- RPA 5 - Sudoeste (Afogados, Bongi, etc.)
+- RPA 6 - Sul (Boa Viagem, Pina, etc.)
 
-RPA 1 - Centro (Recife, Santo Antônio)
-RPA 2 - Norte (Casa Amarela, Dois Unidos, etc.)
-RPA 3 - Noroeste (Casa Forte, Monteiro, etc.)
-RPA 4 - Oeste (Cordeiro, Torrões, etc.)
-RPA 5 - Sudoeste (Afogados, Bongi, etc.)
-RPA 6 - Sul (Boa Viagem, Pina, etc.)
+**Utilidade:** Auxilia no planejamento urbano, análise de acessibilidade e impacto socioeconômico.
 
-Isso ajuda a fazer planejamento urbano, Análise de Acessibilidae e impacto socieconômico
+### 2. Distribuição de Graus (`viz_distribuicao_graus`)
+Histograma que mostra a frequência de conexões por bairro:
+- **Eixo X:** Número de conexões (grau).
+- **Eixo Y:** Quantidade de bairros com aquele grau.
+- Inclui estatísticas como média, mediana, mínimo e máximo.
 
-viz_distribuicao_graus:
-o gráfico mostra um histograma da distribuição de graus dos bairros do Recife, ou seja:
+**Utilidade:** Revela se a rede possui poucos "hubs" (bairros muito conectados) ou se a conectividade é distribuída uniformemente.
 
-- Eixo X: Número de conexões (grau) que cada bairro possui
-- Eixo Y: Frequência (quantos bairros têm esse número de conexões)
-- Inclui estatísticas: média, mediana, mínimo e máximo
+### 3. Mapa de Calor de Graus (`viz_mapa_cores_grau`)
+Gráfico de barras horizontais onde cada bairro é colorido conforme seu grau:
+- **Cores Quentes (Vermelho/Laranja):** Bairros com mais conexões.
+- **Cores Frias (Amarelo/Claro):** Bairros com menos conexões.
 
-Isso revela se o grafo tem poucos "hubs" (bairros muito conectados) e muitos bairros com poucas conexões, ou se a conectividade é mais distribuída uniformemente.
+**Utilidade:** Facilita a identificação visual dos bairros centrais na rede de conectividade.
 
-viz_mapa_cores_grau:
-o gráfico apresenta um gráfico de barras horizontais onde cada bairro é colorido de acordo com seu grau:
+### 4. Subgrafo Top 10 (`viz_subgrafo_top10`)
+Visualização interativa dos 10 bairros com maior conectividade e seus vizinhos diretos:
+- **Nós Vermelhos:** Top 10 bairros mais conectados.
+- **Nós Azuis:** Vizinhos desses bairros.
+- **Tamanho dos Nós:** Proporcional ao grau.
 
-- Cor mais intensa (vermelho/laranja): bairros com mais conexões
-- Cor mais clara (amarelo): bairros com menos conexões
-- Bairros ordenados do menor para o maior grau
-- Barra de cores lateral mostra a escala
+**Utilidade:** Permite explorar os principais "hubs" de conectividade e suas relações.
 
-Facilita identificar visualmente quais bairros são mais centrais na rede de conectividade urbana.
+### 5. Árvore BFS (`viz_arvore_bfs`)
+Representação visual da execução do algoritmo de Busca em Largura:
+- Layout hierárquico com níveis definidos.
+- Cores distintas para cada nível de profundidade a partir da origem.
+- Setas indicando o caminho da descoberta.
 
-viz_subgrafo_top10:
-o gráfico interativo mostra os 10 bairros com maior grau de conectividade e seus vizinhos:
+**Utilidade:** Demonstra como a conectividade se propaga a partir de um ponto inicial.
 
-- Nós vermelhos: Top 10 bairros mais conectados
-- Nós azuis: Vizinhos desses bairros principais
-- Tamanho dos nós: proporcional ao grau de conectividade
-- Arestas brancas: conexões entre bairros do Top 10
-- Permite zoom, pan e hover para ver detalhes
+## Sobre a Parte 2 (Malha Aérea)
 
-Útil para entender quais são os "hubs" de conectividade e como eles se relacionam.
+Na segunda etapa do projeto, utilizamos um dataset de voos dos Estados Unidos. O processo envolveu:
 
-viz_arvore_bfs:
-o gráfico mostra a árvore de busca em largura (BFS) a partir de um bairro origem:
+1.  **Tratamento de Dados:** Limpeza e separação dos dados em arquivos CSV otimizados, removendo informações irrelevantes.
+2.  **Modelagem:** Criação do grafo com aeroportos como vértices e rotas como arestas ponderadas pela distância.
+3.  **Análise de Performance:** Execução e benchmark dos algoritmos implementados.
 
-- Layout hierárquico com níveis bem definidos
-- Cores diferentes para cada nível da busca
-- Nível 0: bairro de origem (maior e destacado)
-- Níveis crescentes: bairros alcançados em cada etapa da busca
-- Setas direcionadas mostrando o caminho da busca
-
-Demonstra como a conectividade se espalha a partir de um ponto e quais bairros são mais "próximos" em termos de saltos na rede.
-
-## parte 2
-
-Na parte dois usamos um dataset de voos pelos estados unidos, a primeira parte foi tratar os dados para facilitar o uso deles, por isso separamos em 2 csv e tiramos todos os dados não úteis, após isso começamos criamos os grafos com os nós,arestas,pesos e por fim testamos os algorítmos nos grafos criados, descobrimos por exemplo que o dfs por algum motivo está com o tempo muito acima enquanto o dfs sendo o mais rápido de todos, o djkstra também é muito mais rápido que o bell-man ford.
-
-Um fato a se destacar é que não usamos pesos negativos visto que nossa medida de peso seria com base na distância, portanto não tem como se ter distâncias negativas.
+**Observações:**
+- O algoritmo DFS apresentou tempos de execução superiores em comparação ao BFS neste cenário específico.
+- O algoritmo Dijkstra demonstrou performance superior ao Bellman-Ford, como esperado pela complexidade assintótica.
+- Não foram utilizados pesos negativos, pois a métrica de custo é baseada na distância física entre aeroportos.
