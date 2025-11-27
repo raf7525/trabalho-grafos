@@ -1,4 +1,4 @@
-# Teoria dos Grafos - Projeto Final
+<img width="906" height="511" alt="image" src="https://github.com/user-attachments/assets/92398267-c411-4d40-8531-827bc62a5655" /># Teoria dos Grafos - Projeto Final
 
 Este projeto implementa uma biblioteca de manipulação de grafos em Python, aplicada a dois cenários distintos:
 1.  **Análise de Bairros de Recife**: Modelagem da malha urbana para análise de conectividade e rotas.
@@ -200,6 +200,11 @@ Na segunda etapa do projeto, utilizamos um dataset de voos dos Estados Unidos. O
 1.  **Tratamento de Dados:** Limpeza e separação dos dados em arquivos CSV otimizados, removendo informações irrelevantes.
 2.  **Modelagem:** Criação do grafo com aeroportos como vértices e rotas como arestas ponderadas pela distância.
 3.  **Análise de Performance:** Execução e benchmark dos algoritmos implementados.
+
+## Links 
+[Slides](https://docs.google.com/presentation/d/1EjbdolanhynPRMIbFp7eazDzbNyJEDP-6PewBcEHLJc/edit?usp=sharing)
+
+[Docs](https://docs.google.com/document/d/1UQnw3xZlcla2azSovl_LatdyIgDfCXFOHyRSJ3vZjLA/edit?tab=t.0)
 
 **Observações:**
 - O algoritmo DFS apresentou tempos de execução superiores em comparação ao BFS neste cenário específico.
