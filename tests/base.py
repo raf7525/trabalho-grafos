@@ -14,7 +14,6 @@ class HelperTest:
 
     @staticmethod
     def criar_grafo_com_vertices():
-        """Cria um grafo com 5 vértices (A, B, C, D, E)"""
         grafo = Grafo()
         
         nomes_upper = ['A', 'B', 'C', 'D', 'E']
@@ -34,7 +33,6 @@ class HelperTest:
 
     @staticmethod
     def carregar_grafo_real():
-        """Carrega o grafo real dos bairros do Recife"""
         path_nos = str(BAIRROS_FILE)
         path_arestas = str(ARESTAS_FILE)
         
@@ -42,13 +40,11 @@ class HelperTest:
     
     @staticmethod
     def assert_caminho_valido(grafo, caminho, origem_esperada, destino_esperado):
-        """Verifica se um caminho é válido e contínuo"""
         assert caminho is not None, "Caminho não pode ser nulo"
         assert len(caminho) > 0, "Caminho não pode estar vazio"
         assert caminho[0] == origem_esperada, f"Origem esperada: {origem_esperada}, obtida: {caminho[0]}"
         assert caminho[-1] == destino_esperado, f"Destino esperado: {destino_esperado}, obtido: {caminho[-1]}"
         
-        # Verifica que o caminho é contínuo (cada par consecutivo é vizinho)
         for i in range(len(caminho) - 1):
             vizinhos = grafo.obter_vizinhos(caminho[i])
             assert caminho[i + 1] in vizinhos, \
@@ -56,7 +52,6 @@ class HelperTest:
 
     @staticmethod
     def calcular_distancia_caminho(grafo, caminho):
-        """Calcula o peso total de um caminho."""
         distancia = 0.0
         if len(caminho) < 2:
             return 0.0
@@ -70,17 +65,14 @@ class HelperTest:
 
     @staticmethod
     def assert_caminho_direto(caminho, u, v):
-        """Helper para testar caminhos diretos simples."""
         assert len(caminho) == 2
         assert caminho[0] == u
         assert caminho[-1] == v
 
     @staticmethod
     def assert_distancia_infinita(dist):
-        """Verifica se um caminho é inalcançável."""
         assert dist == math.inf, "Distância deveria ser infinita"
 
     @staticmethod
     def assert_distancia_aproximada(dist, val, precisao=4):
-        """Compara floats com uma margem de aproximação."""
         assert round(dist, precisao) == round(val, precisao)
