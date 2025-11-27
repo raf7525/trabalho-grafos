@@ -202,6 +202,114 @@ function atualizarDatalist(nodes) {
     });
 }
 
+async function NovaDescobertaAteSetubal() {
+    const origem = 'Nova Descoberta'
+    const destino = 'Boa Viagem'
+    const alg = 'dijkstra'
+
+    const origemId = resolverId(origem);
+    const destinoId = resolverId(destino);
+
+    const url = `/api/calcular?alg=${alg}&origem=${encodeURIComponent(origemId)}&destino=${encodeURIComponent(destinoId || '')}&dataset=${datasetAtual}`;
+
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.erro) return alert(data.erro);
+
+        nodesDataSet.update(allNodesData.map(n => ({
+            id: n.id, 
+            color: { 
+                background: '#1f2937', border: '#374151',
+                highlight: VISUAL_STYLE.node.highlight,
+                hover: VISUAL_STYLE.node.hover
+            },
+            size: n.value ? 15 : 10,
+            font: { color: '#4b5563', strokeWidth: 0 }
+        })));
+        
+        edgesDataSet.update(edgesDataSet.getIds().map(id => ({
+            id: id, 
+            color: {color: '#1f2937', opacity: 0.05}, 
+            width: 1
+        })));
+
+        const panel = document.getElementById('info-panel');
+        const content = document.getElementById('result-content');
+        
+        if (data.tipo === 'caminho') {
+            destacarCaminho(data.caminho);
+            content.innerHTML = `
+                <div class="flex justify-between items-end mb-2">
+                    <span class="text-gray-400 text-xs uppercase tracking-wide">Algoritmo</span>
+                    <span class="font-mono text-indigo-400 font-bold text-sm">${data.algoritmo}</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 mb-3">
+                    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
+                        <div class="text-xs text-gray-500">Custo</div>
+                        <div class="font-bold text-green-400 text-lg">${Number(data.custo).toFixed(1)}</div>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
+                        <div class="text-xs text-gray-500">Saltos</div>
+                        <div class="font-bold text-white text-lg">${data.caminho.length - 1}</div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-gray-700">
+                    <p class="text-xs text-gray-500 mb-2">Trajeto:</p>
+                    <div class="max-h-40 overflow-y-auto text-xs text-indigo-200 leading-loose custom-scrollbar bg-gray-800/50 p-2 rounded border border-gray-700">
+                        ${data.caminho.join(' <br><i class="fas fa-arrow-down text-gray-600 mx-auto block w-min my-1"></i> ')}
+                    </div>
+                </div>
+            `;
+        } else if (data.tipo === 'expansao') {
+            colorirExpansao(data.dados_nos, data.metrica);
+            const nomeMetrica = data.metrica || 'Níveis';
+            
+            content.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-bold text-white uppercase text-sm tracking-wider">${data.algoritmo}</span>
+                    <span class="text-xs bg-indigo-900 text-indigo-200 px-2 py-1 rounded-full border border-indigo-700 font-mono">
+                        ${Object.keys(data.dados_nos).length} nós
+                    </span>
+                </div>
+                
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <div class="flex justify-between text-[10px] text-gray-400 mb-1 uppercase font-bold tracking-wider">
+                        <span>Início</span>
+                        <span>Fim</span>
+                    </div>
+                    <div class="gradient-bar"></div>
+                    <div class="flex justify-between text-[10px] text-gray-500 font-mono">
+                        <span>0</span>
+                        <span>Max</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4 pt-3 border-t border-gray-700 text-xs text-gray-400 space-y-2">
+                    <div class="flex items-center gap-2">
+                        <div style="width: 12px; height: 12px; background: #3b82f6; border: 2px solid white; border-radius: 50%;"></div> 
+                        <span>Origem da Busca</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></div> 
+                        <span>Últimos Visitados</span>
+                    </div>
+                </div>
+                
+                <div class="mt-3 text-center">
+                    <span class="text-[10px] text-gray-600 uppercase tracking-widest">Métrica: ${nomeMetrica}</span>
+                </div>
+            `;
+        }
+        if(panel) panel.classList.remove('hidden');
+
+    } catch (e) {
+        console.error(e);
+        alert("Erro na API.");
+    }
+}
+
 async function calcularRota() {
     const origemRaw = document.getElementById('origem').value;
     const destinoRaw = document.getElementById('destino').value;
